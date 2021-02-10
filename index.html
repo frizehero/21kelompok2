@@ -444,7 +444,7 @@
                                     <div class="panel panel-primary panel-colorful">
                                         <div class="pad-all text-center">
                                             <span class="text-3x text-normal">53</span>
-                                            <p>Siswa PKL Periode Ke-1</p>
+                                            <p>Jumlah Siswa</p>
                                         </div>
                                     </div>
                                     <!--===================================================-->
@@ -455,7 +455,7 @@
                                     <div class="panel panel-warning panel-colorful">
                                         <div class="pad-all text-center">
                                             <span class="text-3x text-normal">68</span>
-                                            <p>Siswa PKL Periode ke-2</p>
+                                            <p>Siswa Sudah Mengisi Jurnal</p>
                                         </div>
                                     </div>
                                     <!--===================================================-->
@@ -468,7 +468,7 @@
                                     <div class="panel panel-purple panel-colorful">
                                         <div class="pad-all text-center">
                                             <span class="text-3x text-nowrap">32</span>
-                                            <p>Siswa Sudah Mengisi Jurnal</p>
+                                            <p>Siswa Tidak Masuk</p>
                                         </div>
                                     </div>
                                     <!--===================================================-->
@@ -493,13 +493,33 @@
 
                             <!-- Donut Chart -->
                             <!---------------------------------->
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Donut Chart</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="demo-morris-donut" class="morris-donut" style="height: 250px"></div>
-                                </div>
+                            <div class="panel" class="text-right">
+                                <script type="text/javascript">
+                                      window.onload = function () {
+                                        var chart = new CanvasJS.Chart("chartContainer",
+                                        {
+                                          data: [
+                                          {
+                                           type: "doughnut",
+                                           dataPoints: [
+                                           {  y: 53, indexLabel: "Jumlah Siswa" },
+                                           {  y: 68, indexLabel: "Siswa Sudah Mengisi Jurnal" },
+                                           {  y: 12, indexLabel: "Siswa Belum Mengisi Jurnal" },
+                                           {  y: 25, indexLabel: "Siswa Izin" },
+                                           {  y: 7, indexLabel: "Siswa Alpha" }
+                                           ]
+                                         }
+                                         ]
+                                       });
+
+                                        chart.render();
+                                      }
+                                      </script>
+                                      <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                                      <body>
+                                        <div id="chartContainer" style="height: 300px; width: 100%; margin-right: 50px;">
+                                       </div>
+                                   </body>
                             </div>
                         </div>
 
@@ -517,136 +537,77 @@
 
 
             <div class="row">
-                <div class="col-md-12">
-                </div>
-                <div class="col-md-12">
-                    <div class="panel">
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <div class="col-sm-5 toolbar-left text-left">
-                                    Cari :
-                                    <div class="select">
-                                        <select id="demo-ease">
-                                            <option value="date-created" selected="">Jurusan</option>
-                                            <option value="date-modified">Nama Siswa</option>
-                                            <option value="frequency-used">Nama Dudi</option>
-                                        </select>
+                <div class="panel panel-primary">
+                    <div class="page-heading">
+                        
+                    </div>
+                    <div class="panel-body">
+                        <h3 class="panel-title">WOKWOKWO</h3>
+
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-lg-6">
+                    
+                                    <!--Profile Widget-->
+                                    <!--===================================================-->
+                                    <div class="panel widget">
+                                        <div class="widget-header bg-primary text-center">
+                                            <h4 class="text-light mar-no pad-top">Muhammad Khadafi H</h4>
+                                            <p class="mar-btm">Hummasoft</p>
+                                        </div>
+                                        <div class="widget-body">
+                                            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="img/profile-photos/4.png">
+                    
+                                            <div class="list-group bg-trans mar-no">
+                                                <a class="list-group-item list-item-sm" href="#">
+                                                    <span class="label label-primary pull-right">15</span>
+                                                    Masuk
+                                                </a>
+                                                <a class="list-group-item list-item-sm" href="#">
+                                                    <span class="label label-success pull-right">100</span>
+                                                    Izin
+                                                </a>
+                                                <a class="list-group-item list-item-sm" href="#">
+                                                    <span class="label label-danger pull-right">300</span>
+                                                    Alpha
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <button class="btn btn-default">Filter</button>
                                 </div>
-                                <div class="col-sm-5 toolbar-right" text-right align="right">
-                                    <button data-toggle="modal" data-target="#exampleModal" id="demo-btn-addrow" class="btn btn-purple">Tambah Data</button>
-                                </div>
-                                <table class="table table-vcenter mar-top">
-                                    <thead>
-                                        <tr>
-                                            <th class="min-w-td">#</th>
-                                            <th class="min-w-td">Foto</th>
-                                            <th>Nama Siswa</th>
-                                            <th>Jurusan</th>
-                                            <th>Nama dudi</th>
-                                            <th class="text-center">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="min-w-td">1</td>
-                                            <td><img src="img/profile-photos/1.png" alt="Profile Picture" class="img-circle img-sm"></td>
-                                            <td><a class="btn-link" href="#"> Dafi</a></td>
-                                            <td>RPL</td>
-                                            <td><span class="label label-table label-info">Hummasoft</span></td>
-                                            <td class="text-center">
-                                                <div class="btn-group">
-                                                    <a class="btn btn-sm btn-default btn-hover-success demo-psi-pen-5 add-tooltip" href="#" data-original-title="Edit" data-container="body"></a>
-                                                    <a class="btn btn-sm btn-default btn-hover-danger demo-pli-trash add-tooltip" href="#" data-original-title="Delete" data-container="body"></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="min-w-td">2</td>
-                                            <td><img src="img/profile-photos/2.png" alt="Profile Picture" class="img-circle img-sm"></td>
-                                            <td><a class="btn-link" href="#">Ucupp</a></td>
-                                            <td>TKRO</td>
-                                            <td><span class="label label-table label-danger">Jaya Motor</span></td>
-                                            <td class="text-center">
-                                                <div class="btn-group">
-                                                    <a class="btn btn-sm btn-default btn-hover-success demo-psi-pen-5 add-tooltip" href="#" data-original-title="Edit" data-container="body"></a>
-                                                    <a class="btn btn-sm btn-default btn-hover-danger demo-pli-trash add-tooltip" href="#" data-original-title="Delete" data-container="body"></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="min-w-td">3</td>
-                                            <td><img src="img/profile-photos/3.png" alt="Profile Picture" class="img-circle img-sm"></td>
-                                            <td><a class="btn-link" href="#">Scott S. Calabrese</a></td>
-                                            <td>scot.em23@example.com</td>
-                                            <td><span class="label label-table label-purple">Bussiness</span></td>
-                                            <td class="text-center">
-                                                <div class="btn-group">
-                                                    <a class="btn btn-sm btn-default btn-hover-success demo-psi-pen-5 add-tooltip" href="#" data-original-title="Edit" data-container="body"></a>
-                                                    <a class="btn btn-sm btn-default btn-hover-danger demo-pli-trash add-tooltip" href="#" data-original-title="Delete" data-container="body"></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="min-w-td">4</td>
-                                            <td><img src="img/profile-photos/4.png" alt="Profile Picture" class="img-circle img-sm"></td>
-                                            <td><a class="btn-link" href="#">Lucy Moon</a></td>
-                                            <td>just_lucy.doe@example.com</td>
-                                            <td><span class="label label-table label-mint">Personal</span></td>
-                                            <td class="text-center">
-                                                <div class="btn-group">
-                                                    <a class="btn btn-sm btn-default btn-hover-success demo-psi-pen-5 add-tooltip" href="#" data-original-title="Edit" data-container="body"></a>
-                                                    <a class="btn btn-sm btn-default btn-hover-danger demo-pli-trash add-tooltip" href="#" data-original-title="Delete" data-container="body"></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="min-w-td">5</td>
-                                            <td><img src="img/profile-photos/5.png" alt="Profile Picture" class="img-circle img-sm"></td>
-                                            <td><a class="btn-link" href="#">Teresa L. Doe</a></td>
-                                            <td>ter.l.doe@example.com</td>
-                                            <td><span class="label label-table label-success">Free</span></td>
-                                            <td class="text-center">
-                                                <div class="btn-group">
-                                                    <a class="btn btn-sm btn-default btn-hover-success demo-psi-pen-5 add-tooltip" href="#" data-original-title="Edit" data-container="body"></a>
-                                                    <a class="btn btn-sm btn-default btn-hover-danger demo-pli-trash add-tooltip" href="#" data-original-title="Delete" data-container="body"></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="min-w-td">6</td>
-                                            <td><img src="img/profile-photos/6.png" alt="Profile Picture" class="img-circle img-sm"></td>
-                                            <td><a class="btn-link" href="#">Maria Marz</a></td>
-                                            <td>maria_545@example.com</td>
-                                            <td><span class="label label-table label-info">Trial</span></td>
-                                            <td class="text-center">
-                                                <div class="btn-group">
-                                                    <a class="btn btn-sm btn-default btn-hover-success demo-psi-pen-5 add-tooltip" href="#" data-original-title="Edit" data-container="body"></a>
-                                                    <a class="btn btn-sm btn-default btn-hover-danger demo-pli-trash add-tooltip" href="#" data-original-title="Delete" data-container="body"></a>
-
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <hr>
-
-                                <!--Pagination-->
-                                <div class="text-right">
-                                    <ul class="pagination mar-no">
-                                        <li class="disabled"><a class="demo-pli-arrow-left-2" href="#"></a></li>
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><span>...</span></li>
-                                        <li><a href="#">20</a></li>
-                                        <li><a class="demo-pli-arrow-right-2" href="#"></a></li>
-                                    </ul>
+                                <div class="col-lg-6">
+                    
+                                    <!--Profile Widget-->
+                                    <!--===================================================-->
+                                    <div class="panel widget">
+                                        <div class="widget-header bg-primary text-center">
+                                            <h4 class="text-light mar-no pad-top">Muhammad Nur Fauzi</h4>
+                                            <p class="mar-btm">Hummasoft</p>
+                                        </div>
+                                        <div class="widget-body">
+                                            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="img/profile-photos/4.png">
+                    
+                                            <div class="list-group bg-trans mar-no">
+                                                <a class="list-group-item list-item-sm" href="#">
+                                                    <span class="label label-primary pull-right">15</span>
+                                                    Masuk
+                                                </a>
+                                                <a class="list-group-item list-item-sm" href="#">
+                                                    <span class="label label-success pull-right">100</span>
+                                                    Izin
+                                                </a>
+                                                <a class="list-group-item list-item-sm" href="#">
+                                                    <span class="label label-danger pull-right">300</span>
+                                                    Alpha
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                
+                        
                     </div>
                 </div>
             </div>
@@ -1181,8 +1142,7 @@
     <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-    <p class="pad-lft">&#0169; 2018 Your Company</p>
-
+    
 
 
 </footer>
