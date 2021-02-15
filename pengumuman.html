@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Profile | Nifty - Admin Template</title>
+    <title>Static Tables | Nifty - Admin Template</title>
 
 
     <!--STYLESHEET-->
@@ -74,7 +72,7 @@
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
-    <div id="container" class="effect aside-float aside-bright mainnav-sm page-fixedbar page-fixedbar-right">
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
         
         <!--NAVBAR-->
         <!--===================================================-->
@@ -415,30 +413,61 @@
             <!--===================================================-->
             <div id="content-container">
                 <div id="page-head">
-                                    </div>
+                    
+                    <!--Page Title-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <div id="page-title">
+                        <h1 class="page-header text-overflow"></h1>
+                    </div>
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <!--End page title-->
 
-                                
-                <!--Fixedbar-->
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+                    <!--Breadcrumb-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <ol class="breadcrumb">
+                    <div class="pad-all text-center">
+    <h3>Pengumuman</h3>
+</div>
+                    </ol>
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <!--End breadcrumb-->
+
+                </div>
+
                 
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!--End Fixedbar-->
-
                 <!--Page content-->
                 <!--===================================================-->
-                ============================================-->
+                <div id="page-content">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Papan Pengumuman Siswa</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Isi Pengumuman</th>
+                                        <th class="min-desktop">Tanggal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>15-02-2021</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                        
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--===================================================-->
                 <!--End page content-->
 
             </div>
-
-            <div class="panel">
-                                     <div class="panel-heading">
-                                         <h3 class="panel-title">Paste your copied text.</h3>
-                                     </div>
-                                     <div class="panel-body">
-                                        <textarea class="form-control"  placeholder="Paste and test you copied text." rows="7"></textarea>
-                                     </div>
-                                 </div>
             <!--===================================================-->
             <!--END CONTENT CONTAINER-->
 
@@ -592,7 +621,7 @@
 
                                     <!--Monthly billing-->
                                     <div class="pad-all">
-                                        <p class="pad-ver text-main text-sm text-uppercase text-bold">cara</p>
+                                        <p class="pad-ver text-main text-sm text-uppercase text-bold">Billing &amp; reports</p>
                                         <p>Get <strong class="text-main">$5.00</strong> off your next bill by making sure your full payment reaches us before August 5, 2018.</p>
                                     </div>
                                     <hr class="new-section-xs">
@@ -928,7 +957,7 @@
                                     </li>
                         
                                     <!--Menu list item-->
-                                    <li>
+                                    <li class="active-sub">
                                         <a href="#">
                                             <i class="demo-pli-receipt-4"></i>
                                             <span class="menu-title">Tables</span>
@@ -936,8 +965,8 @@
                                         </a>
                         
                                         <!--Submenu-->
-                                        <ul class="collapse">
-                                            <li><a href="tables-static.html">Static Tables</a></li>
+                                        <ul class="collapse in">
+                                            <li class="active-link"><a href="tables-static.html">Static Tables</a></li>
                                             <li><a href="tables-bootstrap.html">Bootstrap Tables</a></li>
                                             <li><a href="tables-datatable.html">Data Tables</a></li>
                                             <li><a href="tables-footable.html">Foo Tables</a></li>
@@ -1011,7 +1040,7 @@
                                     <li class="list-header">More</li>
                         
                                     <!--Menu list item-->
-                                    <li class="active-sub">
+                                    <li>
                                         <a href="#">
                                             <i class="demo-pli-computer-secure"></i>
                                             <span class="menu-title">App Views</span>
@@ -1019,11 +1048,11 @@
                                         </a>
                         
                                         <!--Submenu-->
-                                        <ul class="collapse in">
+                                        <ul class="collapse">
                                             <li><a href="app-file-manager.html">File Manager</a></li>
                                             <li><a href="app-users.html">Users</a></li>
                                             <li><a href="app-users-2.html">Users 2</a></li>
-                                            <li class="active-link"><a href="app-profile.html">Profile</a></li>
+                                            <li><a href="app-profile.html">Profile</a></li>
                                             <li><a href="app-calendar.html">Calendar</a></li>
                                             <li><a href="app-taskboard.html">Taskboard</a></li>
                                             <li><a href="app-chat.html">Chat</a></li>
@@ -1105,7 +1134,7 @@
                                     <li>
                                         <a href="#">
                                             <i class="demo-pli-photo-2"></i>
-                                            <span class="menu-title">Galeri </span>
+                                            <span class="menu-title">Gallery</span>
                                             <i class="arrow"></i>
                                         </a>
                         
@@ -1287,15 +1316,12 @@
 
             <!-- Visible when footer positions are static -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            
-
 
 
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-            <
 
 
         </footer>
@@ -1344,3 +1370,4 @@
 
 </body>
 </html>
+
