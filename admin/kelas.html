@@ -443,24 +443,62 @@
                         <!---------------------------------->
                         <div class="row pad-btm">
                             <div class="col-sm-6 toolbar-left">
-                                <button id="demo-btn-addrow" class="btn btn-purple">Tambah Kelas</button>
+                                <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">Tambah</button>
                             </div>
-                            <div class="col-sm-6 toolbar-right text-right">
-                                <div class="select">
-                                   <select>
-                                       <option>hummasoft</option>
-                                       <option>kodesoft</option>
-                                       <option>perusahaan asuransi</option>
-                                   </select>
-                                   <select>
-                                       <option>RPL</option>
-                                       <option>AKL</option>
-                                       <option>TKJ</option>
-                                   </select>
-                                </div>
-                                <button class="btn btn-default">Filter</button>
-                            </div>
+                            
                         </div>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Tambah Pengumuman</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                             <form>
+                              <div class="form-row">
+                                <div class="form-group col-md-6">
+                                  <label for="inputEmail4">Judul</label>
+                                  <input type="email" class="form-control" id="inputEmail4" placeholder="Judul pengumuman">
+                              </div>
+                              <div class="form-group col-md-6">
+                                  <label for="inputPassword4">Tanggal</label>
+                                  <input type="date" class="form-control" id="inputPassword4">
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                            <label for="inputAddress">Isi pengumuman</label>
+                            <textarea  class="form-control" id="inputAddress"></textarea>
+                        </div>
+                              
+                          </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputCity">City</label>
+                              <input type="text" class="form-control" id="inputCity">
+                          </div>
+                          <div class="form-group col-md-4">
+                              <label for="inputState">Tertuju:</label>
+                              <select id="inputState" class="form-control">
+                                <option selected>siswa</option>
+                                <option>Guru</option>
+                            </select>
+                        </div>
+                  </div>
+                  
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        
+        <button type="button" data-dismiss="modal" class="btn btn-primary">Save changes</button>
+    </div>
+</div>
+</div>
+</div>
                         <!---------------------------------->
                     
                     
