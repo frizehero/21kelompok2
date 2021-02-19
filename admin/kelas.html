@@ -440,10 +440,9 @@
                 <!--===================================================-->
                 <div id="page-content">
                         <!-- Contact Toolbar -->
-                        <!---------------------------------->
                         <div class="row pad-btm">
                             <div class="col-sm-6 toolbar-left">
-                                <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">Tambah Kelas</button>
+                                <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">Tambah</button>
                             </div>
                             
                         </div>
@@ -451,7 +450,7 @@
                           <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Tambah Kelas</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Tambah Pengumuman</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                               </button>
@@ -459,30 +458,31 @@
                           <div class="modal-body">
                              <form>
                               <div class="form-row">
-                                <div class="form-group">
-                                    <form>
-                                      <div class="form-row">
-                                        <div class="form-group">
-                                          <label for="inputEmail4">Kelas</label>
-                                          <input type="email" class="form-control" id="inputEmail4" placeholder="XI...">
-                                      </div>
-
-                                      <div class="form-group col-md-4">
-
-                              <hr<label for="inputState">Jurusan:</label></hr>
-
+                                <div class="form-group col-md-6">
+                                  <label for="inputEmail4">Judul</label>
+                                  <input type="email" class="form-control" id="inputEmail4" placeholder="Judul pengumuman">
+                              </div>
+                              <div class="form-group col-md-6">
+                                  <label for="inputPassword4">Tanggal</label>
+                                  <input type="date" class="form-control" id="inputPassword4">
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                            <label for="inputAddress">Isi pengumuman</label>
+                            <textarea  class="form-control" id="inputAddress"></textarea>
+                        </div>
+                              
+                          </div>
+                        <div class="form-row">
+                            
+                          <div class="form-group col-md-4">
+                              <label for="inputState">Tertuju:</label>
                               <select id="inputState" class="form-control">
-                                <option selected>RPL</option>
-                                <option>TKJ</option>
-                                <option>AKL</option>
+                                <option selected>siswa</option>
+                                <option>Guru</option>
                             </select>
                         </div>
-                                  </div>
-                                  
-                        </div>
-                        </form>
-                          </div>
-                        
                   </div>
                   
 
@@ -495,6 +495,8 @@
 </div>
 </div>
 </div>
+                        <!---------------------------------->
+
                         <!---------------------------------->
                     
                     
