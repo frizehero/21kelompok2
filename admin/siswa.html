@@ -189,7 +189,7 @@
                               <div class="modal-dialog">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Tambah dudi</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Tambah Siswa</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                   </button>
@@ -198,26 +198,30 @@
                                <form>
                                   <div class="form-row">
                                     <div class="form-group col-md-6">
-                                      <label for="inputEmail4">Nama dudi</label>
-                                      <input type="email" class="form-control" id="inputEmail4" placeholder="Nama Dudi">
+                                      <label for="inputEmail4">Nama Siswa</label>
+                                      <input type="email" class="form-control" id="inputEmail4" placeholder="Nama Siswa">
                                   </div>
                                   <div class="form-group col-md-6">
-                                      <label for="inputPassword4">Telepon</label>
-                                      <input type="text" placeholder="Telepon Dudi" class="form-control" id="inputPassword4">
+                                      <label for="inputPassword4">Tempat Magang</label>
+                                      <input type="text" placeholder="DUDI" class="form-control" id="inputPassword4">
                                   </div>
                               </div>
-                              <div class="col-md-12">
+                              <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="inputAddress">Alamat</label>
+                                    <label for="inputAddress">NISN</label>
                                     <textarea  class="form-control" id="inputAddress"></textarea>
                                 </div>
 
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-5">
-                                  <label for="inputCity">Email</label>
-                                  <input type="text" placeholder="Email Dudi" class="form-control" id="inputCity">
-                              </div>
+                                <div class="form-group col-md-4">
+                                  <label for="inputState">Jenis Kelamin:</label>
+                                  <select id="inputState" class="form-control">
+                                    <option selected>Perempuan</option>
+                                    <option>Laki laki</option>
+                                </select>
+                            </div>
+                                
                               <div class="form-group col-md-4">
                                   <label for="inputState">Jurusan:</label>
                                   <select id="inputState" class="form-control">
@@ -243,10 +247,32 @@
 </div>
 <div class="col-sm-6 toolbar-right text-right">
 
-    <input type="text" placeholder="Normal" class="form-control" id="demo-is-inputnormal">
+    <div class="row pad-btm">
 
- <button class="btn btn-default">Filter</button>
-
+                 <div class="col-sm-12 toolbar-right text-right">
+                     FILTER :
+                     <div class="select">
+                         <select id="demo-ease">
+                             <option value="date-created" selected="">XI RPL 1</option>
+                             <option value="date-modified">XI RPL 2</option>
+                             <option value="frequency-used">XI RPL 3</option>
+                             <option value="alpabetically">XI TKJ </option>
+                             <option value="alpabetically-reversed">XI PNP</option>
+                         </select>
+                     </div>
+                     <div class="select">
+                         <select id="demo-ease">
+                             <option value="date-created" selected="">HUMMASOFT</option>
+                             <option value="date-modified">KODESOFT</option>
+                             <option value="frequency-used">ANGON DATA</option>
+                             <option value="alpabetically">Alpabetically</option>
+                             <option value="alpabetically-reversed">Alpabetically Reversed</option>
+                         </select>
+                     </div>
+                     <button class="btn btn-default">Filter</button>
+                     
+                 </div>
+             </div>
 </div>
 </div>
 
@@ -755,18 +781,7 @@
 
                                 <!--Widget-->
                                 <!--================================-->
-                                <div class="mainnav-widget">
-
-                                    <!-- Show the button on collapsed navigation -->
-                                    <div class="show-small">
-                                        <a href="#" data-toggle="menu-widget" data-target="#demo-wg-server">
-                                            <i class="demo-pli-monitor-2"></i>
-                                        </a>
-                                    </div>
-
-                                    <!-- Hide the content on collapsed navigation -->
-                                    
-                                </div>
+                                
                                 <!--================================-->
                                 <!--End widget-->
 
@@ -787,33 +802,7 @@
 
         <!-- FOOTER -->
         <!--===================================================-->
-        <footer id="footer">
-
-            <!-- Visible when footer positions are fixed -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <div class="show-fixed pad-rgt pull-right">
-                You have <a href="#" class="text-main"><span class="badge badge-danger">3</span> pending action.</a>
-            </div>
-
-
-
-            <!-- Visible when footer positions are static -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <div class="hide-fixed pull-right pad-rgt">
-                14GB of <strong>512GB</strong> Free.
-            </div>
-
-
-
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-            <p class="pad-lft">&#0169; 2018 Your Company</p>
-
-
-
-        </footer>
+        
         <!--===================================================-->
         <!-- END FOOTER -->
 
