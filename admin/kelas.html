@@ -164,62 +164,99 @@
                     <!--Page content-->
                     <!--===================================================-->
                     <div id="page-content">
-                        <!-- Contact Toolbar -->
                         <div class="row pad-btm">
                             <div class="col-sm-6 toolbar-left">
-                                <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">Tambah</button>
-                            </div>
-                            
-                        </div>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Tambah Pengumuman</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                              </button>
+                                <a class="btn btn-default" href="kelas.html">Kembali</a>
+                              <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">tambah</button>
+
                           </div>
-                          <div class="modal-body">
-                           <form>
-                              <div class="form-row">
-                                <div class="form-group col-md-6">
-                                  <label for="inputEmail4">Judul</label>
-                                  <input type="email" class="form-control" id="inputEmail4" placeholder="Judul pengumuman">
+                          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Tambah Siswa</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                  </button>
                               </div>
-                              <div class="form-group col-md-6">
-                                  <label for="inputPassword4">Tanggal</label>
-                                  <input type="date" class="form-control" id="inputPassword4">
+                              <div class="modal-body">
+                               <form>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                      <label for="inputEmail4">Nama Siswa</label>
+                                      <input type="email" class="form-control" id="inputEmail4" placeholder="Nama Siswa">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                      <label for="inputPassword4">Tempat Magang</label>
+                                      <input type="text" placeholder="DUDI" class="form-control" id="inputPassword4">
+                                  </div>
                               </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                                <labbel for="inputAddress">Isi pengumuman</label>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputAddress">NISN</label>
                                     <textarea  class="form-control" id="inputAddress"></textarea>
                                 </div>
 
                             </div>
                             <div class="form-row">
-
-                              <div class="form-group col-md-4">
-                                  <label for="inputState">Tertuju:</label>
+                                <div class="form-group col-md-4">
+                                  <label for="inputState">Jenis Kelamin:</label>
                                   <select id="inputState" class="form-control">
-                                    <option selected>siswa</option>
-                                    <option>Guru</option>
+                                    <option selected>Perempuan</option>
+                                    <option>Laki laki</option>
                                 </select>
                             </div>
-                        </div>
+                                
+                              <div class="form-group col-md-4">
+                                  <label for="inputState">Jurusan:</label>
+                                  <select id="inputState" class="form-control">
+                                    <option selected>RPL</option>
+                                    <option>TKJ</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                              <label for="inputState">Foto:</label>
+                              <input type="file"  class="form-control" id="inputCity">
+                          </div>
+                      </div>
 
 
-                    </form>
-                </div>
-                <div class="modal-footer">
+                  </form>
+              </div>
+              <div class="modal-footer">
 
-                    <button type="button" data-dismiss="modal" class="btn btn-primary">Save changes</button>
-                </div>
+                <button type="button" data-dismiss="modal" class="btn btn-primary">Save changes</button>
             </div>
         </div>
-    </div><br>
+    </div>
+</div>
+<div class="col-sm-6 toolbar-right text-right">
+
+    <div class="row pad-btm">
+
+                 <div class="col-sm-12 toolbar-right text-right">
+                     FILTER :
+                     <div class="select">
+                         <select id="demo-ease">
+                             <option value="date-created" selected="">RPL</option>
+                             <option value="date-modified">TKJ</option>
+                             <option value="frequency-used">TBSM</option>
+                             <option value="alpabetically">TKRO </option>
+                             <option value="alpabetically-reversed">TEI</option>
+                         </select>
+                     </div>
+                     
+                     <button class="btn btn-default">Filter</button>
+                     
+                 </div>
+             </div>
+</div>
+
+                        <!-- Contact Toolbar -->
+                        
+                        
+
+    </div>
     <!---------------------------------->
 
     <!---------------------------------->
