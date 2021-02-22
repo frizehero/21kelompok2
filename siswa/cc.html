@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Profile | Nifty - Admin Template</title>
+    <title>Advanced Form Elements | Nifty - Admin Template</title>
 
 
     <!--STYLESHEET-->
@@ -43,6 +43,38 @@
 
 
 
+    <!--Switchery [ OPTIONAL ]-->
+    <link href="plugins/switchery/switchery.min.css" rel="stylesheet">
+
+
+    <!--Bootstrap Select [ OPTIONAL ]-->
+    <link href="plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+
+
+    <!--Bootstrap Tags Input [ OPTIONAL ]-->
+    <link href="plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.css" rel="stylesheet">
+
+
+    <!--Chosen [ OPTIONAL ]-->
+    <link href="plugins/chosen/chosen.min.css" rel="stylesheet">
+
+
+    <!--noUiSlider [ OPTIONAL ]-->
+    <link href="plugins/noUiSlider/nouislider.min.css" rel="stylesheet">
+
+
+    <!--Select2 [ OPTIONAL ]-->
+    <link href="plugins/select2/css/select2.min.css" rel="stylesheet">
+
+
+    <!--Bootstrap Timepicker [ OPTIONAL ]-->
+    <link href="plugins/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+
+
+    <!--Bootstrap Datepicker [ OPTIONAL ]-->
+    <link href="plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+
+    
     <!--=================================================
 
     REQUIRED
@@ -74,7 +106,7 @@
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
-    <div id="container" class="effect aside-float aside-bright mainnav-sm page-fixedbar page-fixedbar-right">
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
 
         <!--NAVBAR-->
         <!--===================================================-->
@@ -98,55 +130,9 @@
                 <!--Navbar Dropdown-->
                 <!--================================-->
                 <div class="navbar-content">
-                    <ul class="nav navbar-top-links">
 
-                        <!--Navigation toogle button-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <li class="tgl-menu-btn">
-                            <a class="mainnav-toggle" href="#">
-                                <i class="demo-pli-list-view"></i>
-                            </a>
-                        </li>
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End Navigation toogle button-->
+                </ul>
 
-
-
-                        <!--Search-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End Search-->
-
-                    </ul>
-                    <ul class="nav navbar-top-links">
-
-
-                        <!--Mega dropdown-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End mega dropdown-->
-
-
-
-                        <!--Notification dropdown-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End notifications dropdown-->
-
-
-
-                        <!--User dropdown-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End user dropdown-->
-
-                        
-
-                    </ul>
                 </div>
                 <!--================================-->
                 <!--End Navbar Dropdown-->
@@ -163,11 +149,10 @@
             <div id="content-container">
                 <div id="page-head">
 
-
                     <!--Page Title-->
                     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                     <div id="page-title">
-                        <h1 class="page-header text-overflow">Jurnal Siswa</h1>
+                        <h1 class="page-header text-overflow">Cetak Jurnal</h1>
                     </div>
                     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                     <!--End page title-->
@@ -178,319 +163,158 @@
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="demo-pli-home"></i></a></li>
                         <li><a href="#">Jurnal</a></li>
-                        <li class="active">Jurnal Siswa</li><br>
-
+                        <li class="active">Cetak Jurnal</li>
                     </ol>
                     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                     <!--End breadcrumb-->
 
-
                 </div>
 
+                
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
 
-                <!--Fixedbar-->
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <div class="page-fixedbar-container">
-                    <div class="page-fixedbar-content">
-                        <div class="nano">
-                            <div class="nano-content">
-                                <p class="pad-all text-main text-sm text-uppercase text-bold">
-                                    Siswa Yang  PKL di Hummasoft
-                                </p>
+                    <div class="row">
+                        <div class="col-lg-12">
 
-                                <!--Family-->
-                                <div class="list-group bg-trans bord-btm">
-                                   <hr class="new-section-xs">
-                                   <div class="list-group-item">
-                                    <div class="media-left pos-rel">
-                                        <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
+
+                            <div class="panel">
+
+                                <div class="panel-body">
+
+
+                                    <!--Bootstrap Datepicker : Text Input-->
+                                    <!--===================================================-->
+
+
+                                    <!--Bootstrap Datepicker : Component-->
+                                    <!--===================================================-->
+
+                                    <!--===================================================-->
+
+                                    <hr class="new-section-sm bord-no">
+                                    <p class="text-main text-bold">Range</p>
+
+                                    <!--Bootstrap Datepicker : Range-->
+                                    <!--===================================================-->
+                                    <div id="demo-dp-range">
+                                        <div class="input-daterange input-group" id="datepicker">
+                                            <input type="text" class="form-control" name="start" />
+                                            <span class="input-group-addon">to</span>
+                                            <input type="text" class="form-control" name="end" />
+                                        </div>
                                     </div>
-                                    <div class="media-body">
-                                        <a href="#" class="text-main">
-                                            <p>Brittany Meyer</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="list-group-item">
-                                    <div class="media-left pos-rel">
-                                        <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="#" class="text-main">
-                                            <p>Brittany Meyer</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="list-group-item">
-                                    <div class="media-left pos-rel">
-                                        <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="#" class="text-main">
-                                            <p>Brittany Meyer</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="list-group-item">
-                                    <div class="media-left pos-rel">
-                                        <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="#" class="text-main">
-                                            <p>Brittany Meyer</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="list-group-item">
-                                    <div class="media-left pos-rel">
-                                        <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="#" class="text-main">
-                                            <p>Brittany Meyer</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="list-group-item">
-                                    <div class="media-left pos-rel">
-                                        <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="#" class="text-main">
-                                            <p>Brittany Meyer</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="list-group-item">
-                                    <div class="media-left pos-rel">
-                                        <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="#" class="text-main">
-                                            <p>Brittany Meyer</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="list-group-item">
-                                    <div class="media-left pos-rel">
-                                        <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="#" class="text-main">
-                                            <p>Brittany Meyer</p>
-                                        </a>
-                                    </div>
+                                    <!--===================================================-->
+
+                                    <!--===================================================-->
+
                                 </div>
                             </div>
 
-
-                            <!--Monthly billing-->
-
-
-
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-            <!--End Fixedbar-->
+                        <div class="col-lg-6">
 
-            <!--Page content-->
-            <!--===================================================-->
-            <div id="page-content">
-                <div class="panel">
-                    <div class="panel-body">
-                        <div class="fixed-fluid">
-                            <div class="fixed-md-200 pull-sm-left fixed-right-border">
 
-                                <!-- Simple profile -->
-                                <div class="text-center">
-                                    <div class="pad-ver">
-                                        <img src="https://smanegeri1pseksu.files.wordpress.com/2017/10/dsc_0010.jpg?w=246&h=370" class="img-lg img-circle" alt="Profile Picture">
+
+                            <div class="hidden">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Range Slider component</h3>
                                     </div>
-                                    <h4 class="text-lg text-overflow mar-no">Anton</h4>
-                                    <p class="text-sm text-muted">Rekayasa Perangkat Lunak</p>
+                                    <div class="panel-body">
+                                        <p class="text-main text-semibold text-lg">Horizontal</p>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <p class="text-main mar-btm">Default</p>
 
+                                                <!--Default Range Slider-->
+                                                <!--===================================================-->
+                                                <div id="demo-range-def"></div>
+                                                <!--===================================================-->
 
-                                </div>
-                                <hr>
-
-                                <!-- Profile Details -->
-                                <p class="pad-top text-main text-center text-uppercase text-bold">profil siswa </p></p>
-                                <p><a class><strong>Nama:</strong>Asfi Dwi Farel Anggraini</a></p>
-                                <p><a class><strong>Nis/Nisn:</strong>5204/0046709994</a></p>
-                                <p><a class><strong>Ttgl Lahir:</strong>Trenggalek,28 Mei 2004</a></p>
-                                <p><a class><strong>Agama:</strong>Islam</a></p>
-                                <p><a class><strong>jenis kelamin:</strong>perempuan</a></p>
-                                <p><a class><strong>Alamat:</strong>Dsn.Depok kec.pule</a></p>
-                                <P><a class><strong>No.HP:</strong>081295588487</a></p>
-                                    <p><a class><strong>Jurusan:</strong>Rekayasa Perangkat Lunak</a></p>
-                                    <p><a class><strong>Email:</strong>asfianggraini@gmail.com</a></p>
-
-
-                                    
-
-                                </div>
-                                <div class="fluid">
-                                 <div>
-                                    <div class="col-md-6">
-                                        <div class="panel panel-info panel-colorful media middle pad-all">
-                                            <div class="media-left">
-                                                <div class="pad-hor">
-                                                    <img height="50px" src="img/qq.png">
+                                                <br>
+                                                <div>
+                                                    <strong>Value : </strong>
+                                                    <span id="demo-range-def-val"></span>
                                                 </div>
                                             </div>
-                                            <div class="media-body">
-                                                <p class="text-2x mar-no text-semibold">958</p>
-                                                <p class="mar-no">Telah Mengisi Jurnal</p>
+                                            <div class="col-xs-6">
+                                                <p class="text-main mar-btm">Step</p>
+
+                                                <!--Range Slider : Steps-->
+                                                <!--===================================================-->
+                                                <div id="demo-range-step"></div>
+                                                <!--===================================================-->
+
+                                                <br>
+                                                <div>
+                                                    <strong>Value : </strong>
+                                                    <span id="demo-range-step-val"></span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="panel panel-danger panel-colorful media middle pad-all">
-                                            <div class="media-left">
-                                                <div class="pad-hor">
-                                                    <img height="50px" src="img/ww.png">
-                                                </div>
-                                            </div>
-                                            <div class="media-body">
-                                                <p class="text-2x mar-no text-semibold">5</p>
-                                                <p class="mar-no">Tidak Mengisi Jurnal</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="pad-btm">
-                                        <textarea class="form-control" rows="4" placeholder="Tulis Jurnal"></textarea>
-                                        <div class="mar-top clearfix">
-                                            <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="demo-psi-right-4 icon-fw"></i> Share</button>
-                                            <a class="btn btn-icon demo-pli-video icon-lg add-tooltip" href="#" data-original-title="Add Video" data-toggle="tooltip"></a>
-                                            <a class="btn btn-icon demo-pli-camera-2 icon-lg add-tooltip" href="#" data-original-title="Add Photo" data-toggle="tooltip"></a>
-                                            <a class="btn btn-icon demo-pli-file icon-lg add-tooltip" href="#" data-original-title="Add File" data-toggle="tooltip"></a>
-                                        </div>
-                                    </div>
-                                </div>
 
+                                        <hr class="new-section-sm bord-no">
+                                        <p class="text-main mar-btm">Disabled</p>
+                                        <div id="demo-range-disabled" disabled></div>
+                                        <hr class="new-section-sm bord-no">
 
+                                        <p class="text-main text-semibold text-lg">Vertical</p>
+                                        <p class="text-main mar-btm">Fixed Drag</p>
+                                        <div class="mar-rgt box-inline">
 
-
-
-
-                                <hr>
-                                <div class="comments media-block">
-                                    <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="img/profile-photos/10.png"></a>
-                                    <div class="media-body">
-                                        <div class="comment-header">
-                                            <div>
-                                                <a href="#" class="media-heading box-inline text-main text-semibold">Anton</a>  <span class="text-semibold text-main">added new Jurnal</span>
-                                                <div style="margin-left: 500px" class="btn-group dropdown">
-                                             <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
-                                             <ul class="dropdown-menu dropdown-menu-right" style="">
-                                                 <li><a href="#"><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
-                                                 <li><a href="#"><i class="icon-lg icon-fw demo-pli-recycling"></i> Remove</a></li>
-                                                 <li class="divider"></li>
-                                             </ul>
-                                         </div></div>
-                                                <p class="text-muted text-sm"><i class="demo-pli-smartphone-3 icon-lg"></i> Mobile - 15-02-2021</p>
-
-                                         
-                                  
-
-                                            </div>
-
-                                            <p>Membuat CRUD dengan Codeigniter 3</p>
-
-                                            <div class="comment-content comment-photos row">
-                                                <div class="col-sm-6">
-                                                    <img class="img-responsive" src="https://tempatpkltkjdibandunghome.files.wordpress.com/2019/05/d84d97e8-70cc-4ecb-948f-256b17646461.jpg?w=700&h=" alt="Image">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <img class="img-responsive" src="https://tempatpkltkjdibandunghome.files.wordpress.com/2019/05/9491d9df-e25e-4ee2-a926-1383f67cab1e.jpg?w=700&h=" alt="Image">
-                                                </div>
-                                            </div>
-
-
-
-                                            <!-- Comments -->
+                                            <!--Vertical Range Slider-->
+                                            <!--===================================================-->
+                                            <div id="demo-range-ver1" class="range-vertical box-inline mar-rgt"></div>
+                                            <div id="demo-range-ver2" class="range-vertical box-inline mar-hor"></div>
+                                            <div id="demo-range-ver3" class="range-vertical box-inline mar-hor"></div>
+                                            <div id="demo-range-ver4" class="range-vertical box-inline mar-hor"></div>
+                                            <div id="demo-range-ver5" class="range-vertical box-inline mar-lft"></div>
+                                            <!--===================================================-->
 
                                         </div>
-                                    </div>
-                                    <div class="comments media-block">
-                                        <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="img/profile-photos/10.png"></a>
-                                        <div class="media-body">
-                                            <div class="comment-header">
-                                                <div><a href="#" class="media-heading box-inline text-main text-semibold">Anton</a>  <span class="text-semibold text-main">added new Jurnal</span></div>
-                                                <p class="text-muted text-sm"><i class="demo-pli-smartphone-3 icon-lg"></i> Mobile - 15-02-2021</p>
+
+                                        <hr class="new-section-sm bord-no">
+                                        <p class="text-main text-semibold text-lg">Slider behaviour</p>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <p class="text-main mar-btm">Drag</p>
+
+                                                <!--Range Slider : Drag -->
+                                                <!--===================================================-->
+                                                <div id="demo-range-drg"></div>
+
                                             </div>
-                                            <p>Membuat CRUD dengan Codeigniter 3</p>
+                                            <div class="col-xs-6">
+                                                <p class="text-main mar-btm">Fixed Drag</p>
 
-                                            <div class="comment-content comment-photos row">
-                                                <div class="col-sm-6">
-                                                    <img class="img-responsive" src="https://tempatpkltkjdibandunghome.files.wordpress.com/2019/05/d84d97e8-70cc-4ecb-948f-256b17646461.jpg?w=700&h=" alt="Image">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <img class="img-responsive" src="https://tempatpkltkjdibandunghome.files.wordpress.com/2019/05/9491d9df-e25e-4ee2-a926-1383f67cab1e.jpg?w=700&h=" alt="Image">
-                                                </div>
+                                                <!--Range slider : Fixed Drag -->
+                                                <!--===================================================-->
+                                                <div id="demo-range-fxt"></div>
+
                                             </div>
-
-
-
-                                            <!-- Comments -->
-                                            <button class="btn btn-primary btn-block mar-ver"><span class="text-semibold">36</span> Load More</button>
                                         </div>
+
+                                        <hr class="new-section-sm bord-no">
+                                        <p class="text-main text-semibold text-lg">Pips</p>
+
+                                        <!--Range Slider : Pips -->
+                                        <!--===================================================-->
+                                        <div class="mar-btm pad-btm">
+                                            <div id="demo-range-hpips" class="demo-pips pips"></div>
+                                        </div>
+                                        <!--===================================================-->
+
+
                                     </div>
-
-
-                                    <!-- Newsfeed Content -->
-                                    <!--===================================================-->
-
-                                    <!--===================================================-->
-                                    <!-- End Newsfeed Content -->
-
-
-
-                                    <!-- Newsfeed Content -->
-                                    <!--===================================================-->
-
-                                    <!--===================================================-->
-                                    <!-- End Newsfeed Content -->
-
-
-                                    <!-- Newsfeed Content -->
-                                    <!--===================================================-->
-
-                                    <!--===================================================-->
-                                    <!-- End Newsfeed Content -->
-
-
-
-                                    <!-- Newsfeed Content -->
-                                    <!--===================================================-->
-
-                                    <!--===================================================-->
-                                    <!-- End Newsfeed Content -->
-
-
-
-                                    <!-- Newsfeed Content -->
-                                    <!--===================================================-->
-
-                                    <!--===================================================-->
-                                    <!-- End Newsfeed Content -->
-
-
-                                    <!-- Newsfeed Content -->
-                                    <!--===================================================-->
-
-                                    <!--===================================================-->
-                                    <!-- End Newsfeed Content -->
-
-
-
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
+                    
+                    
                 </div>
                 <!--===================================================-->
                 <!--End page content-->
@@ -877,7 +701,7 @@
                             <!--End shortcut buttons-->
 
 
-                            <ul id="mainnav-menu" class="list-group">
+                           <ul id="mainnav-menu" class="list-group">
 
                               <!--Category name-->
                               <li class="list-header">Navigation</li>
@@ -904,44 +728,27 @@
                               <!--Category name-->
                               <li class="list-header">Components</li>
 
-                              <!--Menu list item-->
-                              <li>
-                                  <a href="#">
+                              <a href="datadudisiswa.html">
                                       <i class="demo-pli-pen-5"></i>
-                                      <span class="menu-title">Data</span>
-                                      <i class="arrow"></i>
+                                      <span class="menu-title">Dudi</span>
                                   </a>
 
-                                  <!--Submenu-->
-                                  <ul class="collapse">
-                                      <li><a href="datadudisiswa.html">Data Dudi</a></li>
 
-
-                                  </ul>
-                              </li>
-
-                              <li class="list-divider"></li>
+                              <!--Menu list item-->
                               <li class="active-sub">
                                   <a href="#">
                                       <i class="demo-pli-pen-5"></i>
-                                      <span class="menu-title">Jurnal</span>
+                                      <span class="menu-title">jurnal</span>
                                       <i class="arrow"></i>
                                   </a>
 
                                   <!--Submenu-->
                                   <ul class="collapse">
-                                      <li><a href="jurnalsiswa.html">Laporan Jurnal</a></li>
+                                      <li><a href="jurnal_siswa.html">Laporan Jurnal</a></li>
                                       <li><a href="cc.html">Cetak Jurnal</a></li>
 
                                   </ul>
                               </li>
-                              
-
-                              <!--Widget-->
-                              <!--================================-->
-
-                              <!--================================-->
-                              <!--End widget-->
 
                           </div>
                       </div>
@@ -1026,6 +833,42 @@
 
 <!--Demo script [ DEMONSTRATION ]-->
 <script src="js/demo/nifty-demo.min.js"></script>
+
+
+<!--Switchery [ OPTIONAL ]-->
+<script src="plugins/switchery/switchery.min.js"></script>
+
+
+<!--Bootstrap Select [ OPTIONAL ]-->
+<script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
+
+
+<!--Bootstrap Tags Input [ OPTIONAL ]-->
+<script src="plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+
+
+<!--Chosen [ OPTIONAL ]-->
+<script src="plugins/chosen/chosen.jquery.min.js"></script>
+
+
+<!--noUiSlider [ OPTIONAL ]-->
+<script src="plugins/noUiSlider/nouislider.min.js"></script>
+
+
+<!--Select2 [ OPTIONAL ]-->
+<script src="plugins/select2/js/select2.min.js"></script>
+
+
+<!--Bootstrap Timepicker [ OPTIONAL ]-->
+<script src="plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+
+
+<!--Bootstrap Datepicker [ OPTIONAL ]-->
+<script src="plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+
+
+<!--Form Component [ SAMPLE ]-->
+<script src="js/demo/form-component.js"></script>
 
 
 
