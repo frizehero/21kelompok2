@@ -16,18 +16,40 @@ class Data_siswa extends MX_Controller {
 	function index()
 	{
 		$data = array(
-			'namamodule' 	=> "data_siswa",
+			'namamodule' 	=> "Data_siswa",
 			'namafileview' 	=> "V_data_siswa",
-			'datasiswa'     => $this->m_data_siswa->tampilsiswa(),
+			'tampil'		=> $this->m_data_siswa->tampil(),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
+
+	function tambah()
+	{
+		$this->m_data_sekolah->tambah();
+		redirect('data_sekolah');
+	}
+
+	function edit()
+	{
+		$this->m_data_sekolah->edit();
+		redirect('data_sekolah');
+	}
+
+	function hapus($id)
+	{
+		$this->m_data_sekolah->hapus($id);
+		redirect('data_sekolah');
+	}
+
+	function cari()
+	{
+		$data = array(
+			'namamodule' 	=> "data_sekolah",
+			'namafileview' 	=> "V_data_sekolah",
+			'tampil'		=> $this->m_data_sekolah->cari(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
 	
-	// control tambah siswa
-	function tambahsiswa(){
-		$this->m_data_siswa->tambah();
-		redirect('data_siswa');
-	}
-    
 }
-?>
+ 

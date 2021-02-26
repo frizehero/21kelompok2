@@ -526,21 +526,23 @@
 
 
                         <ul id="mainnav-menu" class="list-group">
-
-                            <?php if($this->uri->segment('1') == 'data_sekolah'){ ?>
+                            <?php if($this->uri->segment('1') == 'dashboard'){ ?>
                                 <li class="active-sub">
-                                    <a href="<?php echo base_url('data_sekolah'); ?>">
-                                        <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data Sekolah</span>
+                                    <a href="<?php echo base_url('dashboard'); ?>">
+                                        <i class="demo-pli-home"></i>
+                                        <span class="menu-title">dashboard</span>
                                         <i class="arrow"></i>
                                     </a>
                                     <!--Submenu-->
                                 </li>
                             <?php } else{ ?>
+
+
+
                                 <li>
-                                    <a href="<?php echo base_url('data_sekolah'); ?>">
-                                        <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data Sekolah</span>
+                                    <a href="<?php echo base_url('dashboard'); ?>">
+                                        <i class="demo-pli-home"></i>
+                                        <span class="menu-title">dashboard</span>
                                         <i class="arrow"></i>
                                     </a>
                                     <!--Submenu-->
@@ -549,23 +551,30 @@
 
                             <?php if($this->uri->segment('1') == 'data_siswa'){ ?>
                                 <li class="active-sub">
-                                    <a href="<?php echo base_url('data_siswa'); ?>">
-                                        <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data Siswa</span>
-                                        <i class="arrow"></i>
-                                    </a>
-                                    <!--Submenu-->
-                                </li>
+                                  <a href="#">
+                                      <i class="demo-pli-receipt-4"></i>
+                                      <span class="menu-title">Data</span>
+                                      <i class="arrow"></i>
+                                  </a>
+
+                                  <!--Submenu-->
+                                  <ul class="collapse">
+                                      <li><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
+                                      <li><a href="datadudi.html">Data Dudi</a></li>
+
+                                  </ul>
+                              </li>
                             <?php } else{ ?>
                                 <li>
-                                    <a href="<?php echo base_url('data_siswa'); ?>">
+                                    <a href="<?php echo base_url('data_sekolah'); ?>">
                                         <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data siswa</span>
+                                        <span class="menu-title">Data Sekolah</span>
                                         <i class="arrow"></i>
                                     </a>
                                     <!--Submenu-->
                                 </li>
                             <?php } ?>
+
 
                             <?php if($this->uri->segment('1') == 'data_guru'){ ?>
                                 <li class="active-sub">
