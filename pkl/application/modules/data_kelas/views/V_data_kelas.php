@@ -16,40 +16,39 @@
           </div>
           <div class="modal-body">
            <form>
-               <div class="col-md-6">
-            <label for="" class="control-label">Nama siswa :</label>
-            <input type="text" name="nama_siswa" placeholder="Nama" class="form-control"></input>
-          </div>
-          <br>
-          <div class="col-md-6">
-            <label for="" class="control-label">NISN :</label>
-            <input type="text" name="nisn" placeholder="NISN" class="form-control"></input>
-          </div>
-          <div class="col-md-6">
-            <label for="" class="control-label">Jenis Kelamin :</label>
-            <select class="form-control" name="jenis_kelamin">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Nama Kelas</label>
+                <input name="nama_kelas"  class="form-control" id="inputEmail4" placeholder="Nama Kelas">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6">
+            <label for="" class="control-label">Jurusan:</label>
+            <select class="form-control" name="jurusan">
               <option>
-                Jenis Kelamin Anda
+                Pilih Jurusan
               </option>
-              <option  value="Laki Laki">Laki Laki
+              <option  value="1">Rekasaya Perangkat Lunak
               </option>
-              <option  value="Perempuan">Perempuan
+              <option  value="2">Teknik Komputer Jaringan
               </option>
             </select>
-          </div><br>
-          <div class="col-md-6" ><br>
-            <label for="" class="control-label">Foto :</label>
-            <input type="file" name="gambar" placeholder="Logo " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
           </div>
-          <div class="col-md-6" style="margin-top: 2%">
-            <label for="" class="control-label">DU/DI :</label>
-            <textarea type="text" name="dudi" rows="5" placeholder="dudi" class="form-control"></textarea>
+              <div class="col-md-6" >
+            <label for="" class="control-label">Foto :</label>
+            <input type="file" name="gambar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
           </div>
           <div class="col-md-6 " style="margin-top: 2%">
             <label for="" class="control-label">Preview Foto Profile</label>
             <img id="preview" width="150px" />
           </div>
-           </form>
+              
+
+            </div>
+
+
+          </form>
         </div>
         <div class="modal-footer">
 
@@ -78,7 +77,7 @@
 <div class="row">
   <a href="detaildudi.html">
     <?php foreach($tampil as $res) {
-      $id = $res->id_siswa;
+      $id = $res->id_kelas;
       $gambar = $res->logo;
       ?>
       <div class="col-md-4">
@@ -96,39 +95,15 @@
                </ul>
              </div>
            </div>
-           <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>">
            <div class="panel widget" style="height: 200px," >
-       <div class ="text-center" style="margin-top:15px;">
-        <p class="text-muted mar-no" style="height:20px;">
-          Nama :
-          <b><?= $res->nama_siswa ?></b>
-
-        </p>
-      </div>
-      <div class ="text-center" style="margin-top:15px;">
-        <p class="text-muted mar-no" style="height:20px;">
-          NISN :
-          <b><?= $res->nisn ?></b>
-
-        </p>
-      </div>
-      <div class ="text-center" style="margin-top:15px;">
-        <p class="text-muted mar-no" style="height:20px;">
-          DU/Di
-          <b><?= $res->dudi ?></b>
-
-        </p>
-      </div>
-      <div class ="text-center" style="margin-top:15px;">
-        <p class="text-muted mar-no" style="height:20px;">
-          Jenis Kelamin :
-          <b><?= $res->jenis_kelamin ?></b>
-
-        </p>
-      </div>
-  </div>
+       <div class="widget-header bg-default">
+         <a href="<?php echo base_url('data_siswa') ?>"> <img class="widget-bg img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>" alt="Image"></a>
+       </div>
+           <h4  class="mar-no text-main"><?php echo $res->nama_kelas?></h4>
+           <h5 class="mar-no text-main"><?php echo $res->nama?></h5>
          </div>
        </div>
+     </div>
 
 
 

@@ -5,17 +5,15 @@ class M_data_siswa extends CI_Model {
 
 	function tampil()
 	{
-		return $this->db->from('siswa')
-		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
-		->get()
-		->result();
+		return $this->db->get('siswa')->result();
 	}
 
 	function tambah()
 	{
-		$nama 		= $this->input->post('nama_sekolah');
-		$keterangan	= $this->input->post('keterangan');
-
+		$nama_siswa 		= $this->input->post('nama_siswa');
+		$nisn 				= $this->input->post('nisn');
+		$jenis_kelamin 		= $this->input->post('jenis_kelamin');
+		$dudi 				= $this->input->post('dudi');
 
 		$this->load->library('upload');
 		$nmfile = "file_".time();
@@ -29,37 +27,41 @@ class M_data_siswa extends CI_Model {
 		$this->upload->initialize($config);
 		
 		if($_FILES['gambar']['name'])
-        {
-            if ($this->upload->do_upload('gambar'))
-            {
+		{
+			if ($this->upload->do_upload('gambar'))
+			{
 				$gbr = $this->upload->data();
 				$data = array(
-					'nama_sekolah'		=> $nama,
-					'keterangan'		=> $keterangan,
-					'logo' 				=> $gbr['file_name'],
-					
-					
+					'nama_siswa'			=> $nama_siswa,
+					'nisn'					=> $nisn,
+					'jenis_kelamin'			=> $jenis_kelamin,
+					'dudi'					=> $dudi,
+					'logo' 					=> $gbr['file_name'],
+
 				);
-				$this->db->insert('sekolah', $data);
-			
+				$this->db->insert('siswa', $data);
+
 			}	 
 		}
 		else{
-				$data = array(
-					'nama_sekolah'		=> $nama,
-					'keterangan'		=> $keterangan,
-					'logo' 				=> 'kosong1.png',
-				);
-				$this->db->insert('sekolah', $data);
-			}
+			$data = array(
+				'nama_siswa'			=> $nama_siswa,
+				'nisn'					=> $nisn,
+				'jenis_kelamin'			=> $jenis_kelamin,
+				'dudi'					=> $dudi,
+				'logo' 				=> 'kosong1.png',
+			);
+			$this->db->insert('siswa', $data);
+		}
 	}
 
 	function edit()
 	{
-		$id_sekolah = $this->input->post('id_sekolah');
-		$nama 		= $this->input->post('nama_sekolah');
-		$keterangan	= $this->input->post('keterangan');
-
+		$id_siswa 		= $this->input->post('id_siswa');
+		$nama_siswa 		= $this->input->post('nama_siswa');
+		$nisn 				= $this->input->post('nisn');
+		$jenis_kelamin 		= $this->input->post('jenis_kelamin');
+		$dudi 				= $this->input->post('dudi');
 
 		$this->load->library('upload');
 		$nmfile = "file_".time();
@@ -73,36 +75,40 @@ class M_data_siswa extends CI_Model {
 		$this->upload->initialize($config);
 		
 		if($_FILES['gambar']['name'])
-        {
-            if ($this->upload->do_upload('gambar'))
-            {
+		{
+			if ($this->upload->do_upload('gambar'))
+			{
 				$gbr = $this->upload->data();
 				$data = array(
-					'nama_sekolah'		=> $nama,
-					'keterangan'		=> $keterangan,
-					'logo' 				=> $gbr['file_name'],
+					'nama_siswa'			=> $nama_siswa,
+					'nisn'					=> $nisn,
+					'jenis_kelamin'			=> $jenis_kelamin,
+					'dudi'					=> $dudi,
+					'logo' 			=> $gbr['file_name'],
 				);
-				$this->db->where('id_sekolah',$id_sekolah)->update('sekolah', $data);
-			
+				$this->db->where('id_siswa',$id_siswa)->update('siswa', $data);
+
 			}	 
 		}
 		else{
-				$data = array(
-					'nama_sekolah'		=> $nama,
-					'keterangan'		=> $keterangan,
-				);
-				$this->db->where('id_sekolah',$id_sekolah)->update('sekolah', $data);
-			}
+			$data = array(
+				'nama_siswa'			=> $nama_siswa,
+				'nisn'					=> $nisn,
+				'jenis_kelamin'			=> $jenis_kelamin,
+				'dudi'					=> $dudi,
+			);
+			$this->db->where('id_siswa',$id_siswa)->update('siswa', $data);
+		}
 	}
 
 	function hapus($id)
 	{
-		$this->db->where('id_sekolah', $id)->delete('sekolah');
+		$this->db->where('id_siswa', $id)->delete('siswa');
 	}
 
 	function cari()
 	{
 		$cari 		= $this->input->post('cari');
-		return $this->db->like('nama_sekolah',$cari)->get('sekolah')->result();
+		return $this->db->like('nama_siswa',$cari)->get('siswa')->result();
 	}
 }
