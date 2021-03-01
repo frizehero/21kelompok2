@@ -2,15 +2,14 @@
 
   <div class="row pad-btm">
     <div class="col-sm-6 toolbar-left">
-      <a class="btn btn-default" href="kelas.html">Kembali</a>
       <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">tambah</button>
-
     </div>
+      <?= form_open_multipart('data_dudi/tambah'); ?>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Tambah Siswa</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Tambah dudi</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -19,43 +18,36 @@
            <form>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">Nama Siswa</label>
-                <input name="nama_siswa" type="text" class="form-control" id="inputEmail4" placeholder="Nama Siswa">
+                <label for="inputEmail4">Nama DU/DI</label>
+                <input name="nama_dudi"  class="form-control" id="inputEmail4" placeholder="Nama DU/DI">
               </div>
               <div class="form-group col-md-6">
-                <label for="inputPassword4">Tempat Magang</label>
-                <input type="text" placeholder="Dudi" class="form-control" id="inputPassword4">
+                <label for="inputPassword4">Telepon</label>
+                <input name="telepon_dudi" type="number" placeholder="Telepon Dudi" class="form-control" id="inputPassword4">
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group">
-                <label for="inputAddress">NISN</label>
-                <input type="text" placeholder="Nisn" class="form-control" id="inputPassword4">
+                <label for="inputAddress">Alamat</label>
+                <textarea name="alamat"  class="form-control" id="inputAddress"></textarea>
               </div>
 
             </div>
             <div class="form-row">
-              <div class="form-group col-md-4">
-                <label for="inputState">Jenis Kelamin:</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Pilih</option>
-                  <option>Laki laki</option>
-                  <option>Perempuan</option>
-                </select>
+              <div class="form-group col-md-5">
+                <label for="inputCity">Email</label>
+                <input name="email_dudi" type="text" placeholder="Email Dudi" class="form-control" id="inputCity">
               </div>
-
               <div class="form-group col-md-4">
                 <label for="inputState">Jurusan:</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Pilih</option>
-                  <option>RPL</option>
-                  <option>AKL</option>
-                  <option>TKJ</option>
+                <select name="jurusan_dudi" id="inputState" class="form-control">
+                  <option value="1" selected>RPL</option>
+                  <option value="2" >TKJ</option>
                 </select>
               </div>
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-3">
                 <label for="inputState">Foto:</label>
-                <input type="file"  class="form-control" id="inputCity">
+                <input name="gambar" type="file"  class="form-control" id="inputCity">
               </div>
             </div>
 
@@ -64,54 +56,74 @@
         </div>
         <div class="modal-footer">
 
-          <button type="button" data-dismiss="modal" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save</button>
         </div>
       </div>
     </div>
   </div>
+  <?= form_close(); ?>
   <div class="col-sm-6 toolbar-right text-right">
 
-    <div class="row pad-btm">
-
-     <div class="col-sm-12 toolbar-right text-right">
-      <div class="form-group">
-       <input type="text" placeholder="Masukan Nama" class="form-control" id="demo-is-inputnormal">
-     </div>
-     <button class="btn btn-default">Cari</button>
-
+    <div class="select">
+     <select>
+       <option>hummasoft</option>
+       <option>kodesoft</option>
+       <option>perusahaan asuransi</option>
+     </select>
+     <select>
+       <option>RPL</option>
+       <option>AKL</option>
+       <option>TKJ</option>
+     </select>
    </div>
+   <button class="btn btn-default">Cari</button>
+
  </div>
 </div>
-</div>
+<!---------------------------------->
 
-<?php foreach($tampil as $res) {
-  $id = $res->id_siswa;
-  $gambar = $res->foto;
-  ?>
-  <div class="col-md-3">
-    <div class="panel">
-      <div class="widget-control">
-       <div class="btn-group dropdown">
-         <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
-         <ul class="dropdown-menu dropdown-menu-right" style="">
-           <li><a href="#"><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
-           <li><a href="#"><i class="icon-lg icon-fw demo-pli-recycling"></i> Hapus</a></li>
-         </ul>
+
+<div class="row">
+  <a href="detaildudi.html">
+    <?php foreach($tampil as $res) {
+      $id = $res->id_dudi;
+      $gambar = $res->foto;
+      ?>
+      <div class="col-md-4">
+
+        <div class="panel widget">
+          <div class="widget-header bg-purple">
+            <img class="widget-bg img-responsive" src="img/foto_dudi/hummasoft1.jpeg" alt="Image">
+          </div>
+          <div class="widget-body text-center">
+            <div class="widget-control">
+             <div class="btn-group dropdown">
+               <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
+               <ul class="dropdown-menu dropdown-menu-right" style="">
+                 <li><a href="#"><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
+                 <li><a href="#"><i class="icon-lg icon-fw demo-pli-recycling"></i> Hapus </a></li>
+                 <li class="divider"></li>
+
+               </ul>
+             </div>
+           </div>
+           <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="img/logo_dudi/hummasoft.png">
+           <h4 class="mar-no text-main"><?php echo $res->nama_dudi?></h4>
+           <p class="text-muted mar-no"><?php echo $res->nama?></p>
+         </div>
        </div>
-     </div>
-     <div class="panel-body text-center">
-      <img alt="Profile Picture" class="img-lg img-circle mar-btm" src="img/profile-photos/5.png">
-      <div class="mar-btm text-center">
-        <a href="profil.html"><button class="btn btn-mint"><?php echo $res->nama?></button></a>
-      </div>
-      <p class="text-muted">NIS:<?php echo $res->nis?></p>
-      <p class="text-muted"><?php echo $res->nama_dudi?> </p>
-      <p class="text-muted"><?php echo $res->jenis_kelamin?></p>
-    </div>
-  </div>
 
-</div>
-<?php }?>
+
+
+     </div>
+   <?php }?>
+   </a>
+
+ </div>
+
+
+
+
 </div>
 <!--jQuery [ REQUIRED ]-->
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>

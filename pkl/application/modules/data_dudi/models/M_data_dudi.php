@@ -1,20 +1,27 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_data_siswa extends CI_Model {
+class M_data_dudi extends CI_Model {
 
 	function tampil()
 	{
-		return $this->db->from('siswa')
-		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
+		return $this->db->from('dudi')
+		->join('jurusan', 'jurusan.id_jurusan = dudi.id_jurusan')
 		->get()
 		->result();
 	}
 
 	function tambah()
 	{
-		$nama 		= $this->input->post('nama_sekolah');
-		$keterangan	= $this->input->post('keterangan');
+		$nama 		= $this->input->post('nama_dudi');
+		$telepon	= $this->input->post('telepon_dudi');
+		$alamat  	= $this->input->post('alamat');
+		$email 		= $this->input->post('email_dudi');
+		$telepon	= $this->input->post('telepon_dudi');
+		$jurusan 	= $this->input->post('jurusan_dudi');
+
+
+
 
 
 		$this->load->library('upload');
@@ -46,11 +53,11 @@ class M_data_siswa extends CI_Model {
 		}
 		else{
 				$data = array(
-					'nama_sekolah'		=> $nama,
-					'keterangan'		=> $keterangan,
-					'logo' 				=> 'kosong1.png',
+					'nama_dudi'		=> $nama,
+					'no_telepon'		=> $telepon,
+					'id_jurusan' 	=> $jurusan,
 				);
-				$this->db->insert('sekolah', $data);
+				$this->db->insert('dudi', $data);
 			}
 	}
 

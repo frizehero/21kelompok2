@@ -1,14 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_data_siswa extends CI_Model {
+class M_data_list extends CI_Model {
 
 	function tampil()
 	{
-		return $this->db->from('siswa')
-		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
-		->get()
-		->result();
+		return $this->db->get('sekolah')->result();
 	}
 
 	function tambah()

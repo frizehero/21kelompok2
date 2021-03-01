@@ -560,15 +560,15 @@
                                   <!--Submenu-->
                                   <ul class="collapse">
                                       <li><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
-                                      <li><a href="datadudi.html">Data Dudi</a></li>
+                                      <li><a href="<?php echo base_url('data_dudi'); ?>">Data Dudi</a></li>
 
                                   </ul>
                               </li>
                             <?php } else{ ?>
                                 <li>
-                                    <a href="<?php echo base_url('data_sekolah'); ?>">
+                                    <a href="<?php echo base_url('data_siswa'); ?>">
                                         <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data Sekolah</span>
+                                        <span class="menu-title">Data siswa</span>
                                         <i class="arrow"></i>
                                     </a>
                                     <!--Submenu-->
