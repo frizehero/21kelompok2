@@ -37,16 +37,16 @@ class Data_dudi extends MX_Controller {
 
 	function hapus($id)
 	{
-		$this->m_data_sekolah->hapus($id);
-		redirect('data_sekolah');
+		$this->m_data_dudi->hapus($id);
+		redirect('data_dudi');
 	}
 
 	function cari()
 	{
 		$data = array(
-			'namamodule' 	=> "data_sekolah",
-			'namafileview' 	=> "V_data_sekolah",
-			'tampil'		=> $this->m_data_sekolah->cari(),
+			'namamodule' 	=> "data_dudi",
+			'namafileview' 	=> "V_data_dudi",
+			'tampil'		=> $this->m_data_dudi->cari(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}

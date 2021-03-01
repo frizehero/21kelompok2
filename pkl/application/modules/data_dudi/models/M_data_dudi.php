@@ -114,12 +114,14 @@ class M_data_dudi extends CI_Model {
 
 	function hapus($id)
 	{
-		$this->db->where('id_sekolah', $id)->delete('sekolah');
+		$this->db->where('id_dudi', $id)->delete('dudi');
 	}
 
 	function cari()
 	{
 		$cari 		= $this->input->post('cari');
-		return $this->db->like('nama_sekolah',$cari)->get('sekolah')->result();
+		return $this->db->like('nama_dudi',$cari)->get('dudi')->result();
+
+		
 	}
 }
