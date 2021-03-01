@@ -17,7 +17,6 @@ class M_data_dudi extends CI_Model {
 		$telepon	= $this->input->post('telepon_dudi');
 		$alamat  	= $this->input->post('alamat');
 		$email 		= $this->input->post('email_dudi');
-		$telepon	= $this->input->post('telepon_dudi');
 		$jurusan 	= $this->input->post('jurusan_dudi');
 
 
@@ -41,13 +40,17 @@ class M_data_dudi extends CI_Model {
             {
 				$gbr = $this->upload->data();
 				$data = array(
-					'nama_sekolah'		=> $nama,
-					'keterangan'		=> $keterangan,
+					'nama_dudi'		=> $nama,
+					'no_telepon'		=> $telepon,
+					'id_jurusan' 	=> $jurusan,
+					'alamat' 	=> $alamat,
+					'id_jurusan' 	=> $jurusan,
+					'email' 	=> $email,
 					'logo' 				=> $gbr['file_name'],
 					
 					
 				);
-				$this->db->insert('sekolah', $data);
+				$this->db->insert('dudi', $data);
 			
 			}	 
 		}
@@ -56,6 +59,13 @@ class M_data_dudi extends CI_Model {
 					'nama_dudi'		=> $nama,
 					'no_telepon'		=> $telepon,
 					'id_jurusan' 	=> $jurusan,
+					'alamat' 	=> $alamat,
+					'id_jurusan' 	=> $jurusan,
+					'email' 	=> $email,
+
+
+
+
 				);
 				$this->db->insert('dudi', $data);
 			}

@@ -49,6 +49,8 @@
                 <label for="inputState">Foto:</label>
                 <input name="gambar" type="file"  class="form-control" id="inputCity">
               </div>
+              
+
             </div>
 
 
@@ -107,7 +109,7 @@
                </ul>
              </div>
            </div>
-           <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="img/logo_dudi/hummasoft.png">
+           <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>">
            <h4 class="mar-no text-main"><?php echo $res->nama_dudi?></h4>
            <p class="text-muted mar-no"><?php echo $res->nama?></p>
          </div>
