@@ -1,26 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_data_dudi extends CI_Model {
+class M_data_pesan extends CI_Model {
 
 	function tampil()
 	{
-		return $this->db->from('dudi')
-		->join('jurusan', 'jurusan.id_jurusan = dudi.id_jurusan')
-		->get()
-		->result();
+		return $this->db->get('pesan')->result();
 	}
 
 	function tambah()
 	{
-		$nama 		= $this->input->post('nama_dudi');
-		$telepon	= $this->input->post('telepon_dudi');
-		$alamat  	= $this->input->post('alamat');
-		$email 		= $this->input->post('email_dudi');
-		$jurusan 	= $this->input->post('jurusan_dudi');
-
-
-
+		$nama 		= $this->input->post('nama_sekolah');
+		$keterangan	= $this->input->post('keterangan');
 
 
 		$this->load->library('upload');
@@ -40,34 +31,23 @@ class M_data_dudi extends CI_Model {
             {
 				$gbr = $this->upload->data();
 				$data = array(
-					'nama_dudi'		=> $nama,
-					'no_telepon'		=> $telepon,
-					'id_jurusan' 	=> $jurusan,
-					'alamat' 	=> $alamat,
-					'id_jurusan' 	=> $jurusan,
-					'email' 	=> $email,
+					'nama_sekolah'		=> $nama,
+					'keterangan'		=> $keterangan,
 					'logo' 				=> $gbr['file_name'],
 					
 					
 				);
-				$this->db->insert('dudi', $data);
+				$this->db->insert('sekolah', $data);
 			
 			}	 
 		}
 		else{
 				$data = array(
-					'nama_dudi'		=> $nama,
-					'no_telepon'		=> $telepon,
-					'id_jurusan' 	=> $jurusan,
-					'alamat' 	=> $alamat,
-					'id_jurusan' 	=> $jurusan,
-					'email' 	=> $email,
-
-
-
-
+					'nama_sekolah'		=> $nama,
+					'keterangan'		=> $keterangan,
+					'logo' 				=> 'kosong1.png',
 				);
-				$this->db->insert('dudi', $data);
+				$this->db->insert('sekolah', $data);
 			}
 	}
 
@@ -114,27 +94,12 @@ class M_data_dudi extends CI_Model {
 
 	function hapus($id)
 	{
-		$this->db->where('id_dudi', $id)->delete('dudi');
+		$this->db->where('id_sekolah', $id)->delete('sekolah');
 	}
 
 	function cari()
 	{
 		$cari 		= $this->input->post('cari');
-		return $this->db->like('nama_dudi',$cari)
-		->select('*')
-		->join('jurusan', 'jurusan.id_jurusan = dudi.id_jurusan')
-		->get('dudi')->result();
-
-
-	}
-	function cari_jurusan()
-	{
-		$cari_jurusan	= $this->input->post('cari_jurusan');
-		return $this->db->like('jurusan',$cari)
-		->select('*')
-		->join('nama_dudi', 'nama_dudi.id_dudi = jurusan.id_jurusan')
-		->get('dudi')->result();
-
-
+		return $this->db->like('nama_sekolah',$cari)->get('sekolah')->result();
 	}
 }
