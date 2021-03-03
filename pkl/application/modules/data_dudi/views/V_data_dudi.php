@@ -94,12 +94,11 @@
       <?php } ?>
       <?php if($this->uri->segment(2) == 'cari'){
             $cari = $this->input->post('cari'); ?>
-            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control input-sm " placeholder="Outlet">
+            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control" id="demo-is-inputnormal" placeholder="Outlet">
       <?php } ?>
     </div>
-
     <div class="select">
-     <select>
+     <select name="cari_jurusan">
        <option>RPL</option>
        <option>AKL</option>
        <option>TKJ</option>
@@ -109,6 +108,7 @@
 
  </div>
 </div>
+</form>
 <!---------------------------------->
 
 
