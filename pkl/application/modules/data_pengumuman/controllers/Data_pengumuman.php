@@ -25,28 +25,28 @@ class Data_pengumuman extends MX_Controller {
 
 	function tambah()
 	{
-		$this->m_data_sekolah->tambah();
-		redirect('data_sekolah');
+		$this->m_data_pengumuman->tambah();
+		redirect('Data_pengumuman');
 	}
 
 	function edit()
 	{
-		$this->m_data_sekolah->edit();
-		redirect('data_sekolah');
+		$this->m_data_pengumuman->edit();
+		redirect('Data_pengumuman');
 	}
 
 	function hapus($id)
 	{
-		$this->m_data_sekolah->hapus($id);
-		redirect('data_sekolah');
+		$this->m_data_pengumuman->hapus($id);
+		redirect('Data_pengumuman');
 	}
 
 	function cari()
 	{
 		$data = array(
-			'namamodule' 	=> "data_sekolah",
-			'namafileview' 	=> "V_data_sekolah",
-			'tampil'		=> $this->m_data_sekolah->cari(),
+			'namamodule' 	=> "Data_pengumuman",
+			'namafileview' 	=> "V_data_pengumuman",
+			'tampil'		=> $this->m_data_pengumuman->cari(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}

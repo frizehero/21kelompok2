@@ -27,30 +27,19 @@ class M_data_pengumuman extends CI_Model {
 		
 		$this->upload->initialize($config);
 		
-		if($_FILES['gambar']['name'])
-        {
-            if ($this->upload->do_upload('gambar'))
-            {
-				$gbr = $this->upload->data();
+
 				$data = array(
-					'nama_sekolah'		=> $nama,
-					'keterangan'		=> $keterangan,
-					'logo' 				=> $gbr['file_name'],
+					'judul_pengumuman'		=> $judul_pengumuman,
+					'tanggal'		=> $tanggal_pengumuman,
+					'isi_pengumuman' 				=> $isi_pengumuman,
+					'tertuju'						=>$tertuju,
 					
 					
 				);
-				$this->db->insert('sekolah', $data);
+				$this->db->insert('pengumuman', $data);
 			
-			}	 
-		}
-		else{
-				$data = array(
-					'nama_sekolah'		=> $nama,
-					'keterangan'		=> $keterangan,
-					'logo' 				=> 'kosong1.png',
-				);
-				$this->db->insert('sekolah', $data);
-			}
+	
+		
 	}
 
 	function edit()
