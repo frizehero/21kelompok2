@@ -68,7 +68,7 @@
                                </ul>
                            </div>
                        </div>
-                       <a href="laporan.html">
+                       <a href="<?php echo base_url('data_jurnal/detail_jurnal/'. $res->id_jurnal) ?>">
                            <img alt="Profile Picture" class="img-lg img-circle mar-ver" src="img/profile-photos/2.png">
                            <p class="text-lg text-semibold mar-no text-main"><?php echo $res->nama_siswa?> </p>
                            <p class="text-sm">Rekayasa Perangkat Lunak</p>
