@@ -1,4 +1,26 @@
-<div id="page-content">
+<div id="page-head">
+
+                        <!--Page Title-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <div id="page-title">
+                            <h1 style="margin-top: -20px; margin-left: -20px" class="page-header text-overflow">Data DU/DI</h1>
+                        </div>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End page title-->
+
+
+                        <!--Breadcrumb-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <ol style="margin-bottom: 20px; margin-left: -20px" class="breadcrumb">
+                            <li><a href="index.html"><i class="demo-pli-home"></i></a></li>
+                            <li><a href="#">Data</a></li>
+                            <li class="active">Data DU/DI</li>
+                        </ol>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End breadcrumb-->
+
+                    </div>
+
 
   <div class="row pad-btm">
     <div class="col-sm-6 toolbar-left">
@@ -22,36 +44,36 @@
                 <input name="nama_dudi"  class="form-control" id="inputEmail4" placeholder="Nama DU/DI">
               </div>
               <div class="form-group col-md-6">
-                <label for="inputPassword4">Telepon</label>
-                <input name="telepon_dudi" type="number" placeholder="Telepon Dudi" class="form-control" id="inputPassword4">
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <label for="inputAddress">Alamat</label>
-                <textarea name="alamat"  class="form-control" id="inputAddress"></textarea>
-              </div>
-
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-5">
-                <label for="inputCity">Email</label>
-                <input name="email_dudi" type="text" placeholder="Email Dudi" class="form-control" id="inputCity">
-              </div>
-              <div class="form-group col-md-4">
                 <label for="inputState">Jurusan:</label>
                 <select name="jurusan_dudi" id="inputState" class="form-control">
                   <option value="1" selected>RPL</option>
                   <option value="2" >TKJ</option>
                 </select>
               </div>
-              <div class="form-group col-md-3">
-                <label for="inputState">Foto:</label>
+            
+
+              
+              <div class="form-group col-md-6">
+                <label for="inputState">logo:</label>
                 <input name="gambar" type="file"  class="form-control" id="inputCity">
               </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">logo:</label>
+                <input name="gambar" type="file"  class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputCity">Email</label>
+                <input name="email_dudi" type="text" placeholder="Email Dudi" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputCity">telepon</label>
+                <input name="telepon" type="text" placeholder="Email Dudi" class="form-control" id="inputCity">
+              </div>
+
               
 
             </div>
+
 
 
           </form>
@@ -64,15 +86,19 @@
     </div>
   </div>
   <?= form_close(); ?>
+  <form method="post" action="<?php echo site_url('data_dudi/cari') ?>" >
   <div class="col-sm-6 toolbar-right text-right">
-
+    <div class="form-group">
+      <?php if($this->uri->segment(2) != 'cari'){?>
+      <input type="text" placeholder="Normal" name="cari" class="form-control" id="demo-is-inputnormal">
+      <?php } ?>
+      <?php if($this->uri->segment(2) == 'cari'){
+            $cari = $this->input->post('cari'); ?>
+            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control" id="demo-is-inputnormal" placeholder="Outlet">
+      <?php } ?>
+    </div>
     <div class="select">
-     <select>
-       <option>hummasoft</option>
-       <option>kodesoft</option>
-       <option>perusahaan asuransi</option>
-     </select>
-     <select>
+     <select name="cari_jurusan">
        <option>RPL</option>
        <option>AKL</option>
        <option>TKJ</option>
@@ -82,6 +108,7 @@
 
  </div>
 </div>
+</form>
 <!---------------------------------->
 
 
@@ -103,7 +130,7 @@
                <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
                <ul class="dropdown-menu dropdown-menu-right" style="">
                  <li><a href="#"><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
-                 <li><a href="#"><i class="icon-lg icon-fw demo-pli-recycling"></i> Hapus </a></li>
+                 <li><a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_dudi?>"><i class="icon-lg icon-fw demo-pli-recycling"></i> Hapus </a></li>
                  <li class="divider"></li>
 
                </ul>
@@ -115,13 +142,41 @@
          </div>
        </div>
 
-
-
      </div>
+     <div class="modal fade" id="demo-default-modal2<?php echo $res->id_dudi?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!--Modal header-->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+          <h4 class="modal-title">Hapus</h4>
+        </div>
+
+        <!--Modal body-->
+        <div class="modal-body">
+          <p class="text-semibold text-main"></p>
+          <p>Anda Yakin Ingin Menghapus <b><?php echo $res->nama_dudi ?></b> ? </p>
+          <br>
+          
+          
+          
+        </div>
+
+        <!--Modal footer-->
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
+          <a class="btn btn-danger" href="<?php echo base_url('data_dudi/hapus/'. $res->id_dudi) ?>">Hapus Dudi</a>
+        </div>
+      </div>
+    </div>
+  </div>
    <?php }?>
    </a>
 
+
  </div>
+
 
 
 

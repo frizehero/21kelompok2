@@ -4,7 +4,7 @@
     <div class="col-sm-6 toolbar-left">
       <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">tambah</button>
     </div>
-      <?= form_open_multipart('data_kelas/tambah'); ?>
+    <?= form_open_multipart('data_kelas/tambah'); ?>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -24,25 +24,25 @@
             </div>
             <div class="form-row">
               <div class="col-md-6">
-            <label for="" class="control-label">Jurusan:</label>
-            <select class="form-control" name="jurusan">
-              <option>
-                Pilih Jurusan
-              </option>
-              <option  value="1">Rekasaya Perangkat Lunak
-              </option>
-              <option  value="2">Teknik Komputer Jaringan
-              </option>
-            </select>
-          </div>
+                <label for="" class="control-label">Jurusan:</label>
+                <select class="form-control" name="jurusan">
+                  <option>
+                    Pilih Jurusan
+                  </option>
+                  <option  value="1">Rekasaya Perangkat Lunak
+                  </option>
+                  <option  value="2">Teknik Komputer Jaringan
+                  </option>
+                </select>
+              </div>
               <div class="col-md-6" >
-            <label for="" class="control-label">Foto :</label>
-            <input type="file" name="gambar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
-          </div>
-          <div class="col-md-6 " style="margin-top: 2%">
-            <label for="" class="control-label">Preview Foto Profile</label>
-            <img id="preview" width="150px" />
-          </div>
+                <label for="" class="control-label">Foto :</label>
+                <input type="file" name="gambar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
+              </div>
+              <div class="col-md-6 " style="margin-top: 2%">
+                <label for="" class="control-label">Preview Foto Profile</label>
+                <img id="preview" width="150px" />
+              </div>
               
 
             </div>
@@ -71,22 +71,27 @@
 
  </div>
 </div>
- <!-- update -->
-  <div class="modal fade" id="demo-default-modal1<?php echo $res->id_kelas?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
+ <?php foreach($tampil as $res) {
+    $id = $res->id_kelas;
+    $gambar = $res->logo;
+    ?>
+    <!-- update -->
+    <div class="modal fade" id="demo-default-modal1<?php echo $res->id_kelas?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
 
-        <!--Modal Update-->
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-          <h4 class="modal-title">Update</h4>
-        </div>
-        <?= form_open_multipart('data_kelas/edit'); ?>
-        <input type="hidden" name="id_kelas" value="<?php echo $res->id_kelas?>">
+          <!--Modal Update-->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+            <h4 class="modal-title">Update</h4>
+          </div>
+          <?= form_open_multipart('data_kelas/edit'); ?>
+          <input type="hidden" name="id_kelas" value="<?php echo $res->id_kelas?>">
 
-        <!--Modal body--> 
-       <div class="modal-body">
-           <form>
+          <!--Modal body--> 
+          <div class="modal-body">
+           <div class="panel-body">
+             <form>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Nama Kelas</label>
@@ -95,103 +100,97 @@
             </div>
             <div class="form-row">
               <div class="col-md-6">
-            <label for="" class="control-label">Jurusan:</label>
-            <select class="form-control" name="jurusan">
-              <option>
-                Pilih Jurusan
-              </option>
-              <option  value="1">Rekasaya Perangkat Lunak
-              </option>
-              <option  value="2">Teknik Komputer Jaringan
-              </option>
-            </select>
-          </div>
+                <label for="" class="control-label">Jurusan:</label>
+                <select class="form-control" name="jurusan">
+                  <option>
+                    Pilih Jurusan
+                  </option>
+                  <option  value="1">Rekasaya Perangkat Lunak
+                  </option>
+                  <option  value="2">Teknik Komputer Jaringan
+                  </option>
+                </select>
+              </div>
               <div class="col-md-6" >
-            <label for="" class="control-label">Foto :</label>
-            <input type="file" name="gambar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
-          </div>
-          <div class="col-md-6 " style="margin-top: 2%">
-            <label for="" class="control-label">Preview Foto Profile</label>
-            <img id="preview" width="150px" />
-          </div>
-              
-
+                <label for="" class="control-label">Foto :</label>
+                <input type="file" name="gambar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
+              </div>
+              <div class="col-md-6 " style="margin-top: 2%">
+                <label for="" class="control-label">Preview Foto Profile</label>
+                <img id="preview" width="150px" />
+              </div>
             </div>
-
-
-          </form>
+          
+           </div>
         </div>
 
 
 
-        </div>
-
-        <!--Modal footer-->
-        <div class="modal-footer">
-          <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-          <button class="btn btn-primary" type="submit">Simpan</button>
-        </div>
-        <?= form_close(); ?>
       </div>
+
+      <!--Modal footer-->
+      <div class="modal-footer">
+        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+        <button class="btn btn-primary" type="submit">Simpan</button>
+      </div>
+      <?= form_close(); ?>
     </div>
   </div>
-  <!-- end update -->
+</div>
+</form>
+<!-- end update -->
 
 <div class="row">
-  <a href="detaildudi.html">
-    <?php foreach($tampil as $res) {
-      $id = $res->id_kelas;
-      $gambar = $res->logo;
-      ?>
-      <div class="col-md-4">
 
-        <div class="panel widget">
-          <div class="widget-body text-center">
-            <div class="widget-control">
-             <div class="btn-group dropdown">
-               <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
-               <ul class="dropdown-menu dropdown-menu-right" style="">
-                 <li><a href="#"><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
-                 <li><a href="#"><i class="icon-lg icon-fw demo-pli-recycling"></i> Hapus </a></li>
-                 <li class="divider"></li>
+  <div class="col-md-4">
 
-               </ul>
-             </div>
-           </div>
-           <div class="panel widget" style="height: 200px," >
-       <div class="widget-header bg-default">
-         <a href="<?php echo base_url('data_siswa') ?>"> <img class="widget-bg img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>" alt="Image"></a>
-       </div>
-           <h4  class="mar-no text-main"><?php echo $res->nama_kelas?></h4>
-           <h5 class="mar-no text-main"><?php echo $res->nama?></h5>
+    <div class="panel widget">
+      <div class="widget-body text-center">
+        <div class="widget-control">
+         <div class="btn-group dropdown">
+           <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
+           <ul class="dropdown-menu dropdown-menu-right" style="">
+             <li><a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_kelas?>"><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
+             <li><a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_kelas?>"><i class="icon-lg icon-fw demo-pli-recycling"></i> Hapus </a></li>
+             <li class="divider"></li>
+
+           </ul>
          </div>
        </div>
+       <div class="panel widget" style="height: 200px," >
+         <div class="widget-header bg-default">
+           <a href="<?php echo base_url('data_siswa') ?>"> <img class="widget-bg img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>" alt="Image"></a>
+         </div>
+         <h4  class="mar-no text-main"><?php echo $res->nama_kelas?></h4>
+         <h5 class="mar-no text-main"><?php echo $res->nama?></h5>
+       </div>
      </div>
+   </div>
 
-     <div class="pad-all text-center">
-       <span>
-        <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_kelas?>" class=" btn btn-success btn-sm">
-          <span class="fa fa-edit"></span>
-          &nbsp;Edit
-        </a>
-      </span>
-      <span>
-        <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_kelas?>" class=" btn btn-danger btn-sm">
-          <span class="fa fa-trash"></span>
-          &nbsp;Hapus
-        </a>
-        <a data-toggle="modal" data-target="#demo-default-detail<?php echo $res->id_kelas?>" class=" btn btn-primary btn-sm">
-          <span class="fa fa-sticky-note"></span>
-          &nbsp;Detail
-        </a>
-      </span>           
-    </div>
+   <div class="pad-all text-center">
+     <span>
+      <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_kelas?>" class=" btn btn-success btn-sm">
+        <span class="fa fa-edit"></span>
+        &nbsp;Edit
+      </a>
+    </span>
+    <span>
+      <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_kelas?>" class=" btn btn-danger btn-sm">
+        <span class="fa fa-trash"></span>
+        &nbsp;Hapus
+      </a>
+      <a data-toggle="modal" data-target="#demo-default-detail<?php echo $res->id_kelas?>" class=" btn btn-primary btn-sm">
+        <span class="fa fa-sticky-note"></span>
+        &nbsp;Detail
+      </a>
+    </span>           
+  </div>
 
-     </div>
-   <?php }?>
-   </a>
+</div>
+<?php }?>
+</a>
 
- </div>
+</div>
 
 
 

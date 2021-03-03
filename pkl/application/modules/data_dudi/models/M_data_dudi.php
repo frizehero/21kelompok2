@@ -114,12 +114,27 @@ class M_data_dudi extends CI_Model {
 
 	function hapus($id)
 	{
-		$this->db->where('id_sekolah', $id)->delete('sekolah');
+		$this->db->where('id_dudi', $id)->delete('dudi');
 	}
 
 	function cari()
 	{
 		$cari 		= $this->input->post('cari');
-		return $this->db->like('nama_sekolah',$cari)->get('sekolah')->result();
+		return $this->db->like('nama_dudi',$cari)
+		->select('*')
+		->join('jurusan', 'jurusan.id_jurusan = dudi.id_jurusan')
+		->get('dudi')->result();
+
+
+	}
+	function cari_jurusan()
+	{
+		$cari_jurusan	= $this->input->post('cari_jurusan');
+		return $this->db->like('jurusan',$cari)
+		->select('*')
+		->join('nama_dudi', 'nama_dudi.id_dudi = jurusan.id_jurusan')
+		->get('dudi')->result();
+
+
 	}
 }
