@@ -123,16 +123,17 @@
           
            </div>
         </div>
+        <div class="modal-footer">
+        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+        <button class="btn btn-primary" type="submit">Simpan</button>
+      </div>
 
 
 
       </div>
 
       <!--Modal footer-->
-      <div class="modal-footer">
-        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-        <button class="btn btn-primary" type="submit">Simpan</button>
-      </div>
+      
       <?= form_close(); ?>
     </div>
   </div>
@@ -166,25 +167,6 @@
        </div>
      </div>
    </div>
-
-   <div class="pad-all text-center">
-     <span>
-      <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_kelas?>" class=" btn btn-success btn-sm">
-        <span class="fa fa-edit"></span>
-        &nbsp;Edit
-      </a>
-    </span>
-    <span>
-      <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_kelas?>" class=" btn btn-danger btn-sm">
-        <span class="fa fa-trash"></span>
-        &nbsp;Hapus
-      </a>
-      <a data-toggle="modal" data-target="#demo-default-detail<?php echo $res->id_kelas?>" class=" btn btn-primary btn-sm">
-        <span class="fa fa-sticky-note"></span>
-        &nbsp;Detail
-      </a>
-    </span>           
-  </div>
 
 </div>
 <?php }?>
