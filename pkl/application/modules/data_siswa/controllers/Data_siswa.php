@@ -16,7 +16,7 @@ class Data_siswa extends MX_Controller {
 	function index()
 	{
 		$data = array(
-			'namamodule' 	=> "Data_siswa",
+			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_data_siswa",
 			'tampil'		=> $this->m_data_siswa->tampil(),
 		);
@@ -25,31 +25,30 @@ class Data_siswa extends MX_Controller {
 
 	function tambah()
 	{
-		$this->m_data_sekolah->tambah();
-		redirect('data_sekolah');
+		$this->m_data_siswa->tambah();
+		redirect('data_siswa');
 	}
 
 	function edit()
 	{
-		$this->m_data_sekolah->edit();
-		redirect('data_sekolah');
+		$this->m_data_siswa->edit();
+		redirect('data_siswa');
 	}
 
 	function hapus($id)
 	{
-		$this->m_data_sekolah->hapus($id);
-		redirect('data_sekolah');
+		$this->m_data_siswa->hapus($id);
+		redirect('data_siswa');
 	}
 
 	function cari()
 	{
 		$data = array(
-			'namamodule' 	=> "data_sekolah",
-			'namafileview' 	=> "V_data_sekolah",
-			'tampil'		=> $this->m_data_sekolah->cari(),
+			'namamodule' 	=> "data_siswa",
+			'namafileview' 	=> "V_data_siswa",
+			'tampil'		=> $this->m_data_siswa->cari(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
 	
 }
- 
