@@ -88,12 +88,69 @@
               SISWA
             </td>
             <td>
-              <button class="btn btn-warning">EDIT</button>
-              <button class="btn btn-danger">HAPUS</button>
+              <button class="btn btn-warning"><button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Judul</label>
+            <input name="judul_pengumuman" type="text" class="form-control" id="inputEmail4" placeholder="Judul pengumuman">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Tanggal</label>
+            <input name="tanggal_pengumuman" type="date" class="form-control" id="inputPassword4">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Isi pengumuman</label>
+          <textarea name="isi_pengumuman"  class="form-control" id="inputAddress"></textarea>
+        </div>
+        <div class="form-row">
+
+
+          <label for="inputState">Tertuju:</label>
+          <select name="tertuju" id="inputState" class="form-control">
+            <option value="siswa" selected>siswa</option>
+            <option value="guru" >Guru</option>
+          </select>
+
+        </div>EDIT</button>
+              <button class="btn btn-danger" data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pengumuman?>">HAPUS</button>
             </td>
 
           </tr>
         </tbody>
+        <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pengumuman?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!--Modal header-->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+          <h4 class="modal-title">Hapus</h4>
+        </div>
+
+        <!--Modal body-->
+        <div class="modal-body">
+          <p class="text-semibold text-main"></p>
+          <p>Anda Yakin Ingin Menghapus <b><?php echo $res->judul_pengumuman ?></b> ? </p>
+          <br>
+          
+          
+          
+        </div>
+
+        <!--Modal footer-->
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
+          <a class="btn btn-danger" href="<?php echo base_url('data_pengumuman/hapus/'. $res->id_pengumuman) ?>">Hapus Pengumuman</a>
+        </div>
+      </div>
+    </div>
+  </div>
       <?php }?>
       </table>
     </div>
