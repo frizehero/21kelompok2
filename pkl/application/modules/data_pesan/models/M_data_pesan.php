@@ -10,7 +10,7 @@ class M_data_pesan extends CI_Model {
 
 	function tambah()
 	{
-		$nama 		= $this->input->post('nama_sekolah');
+		$nama 		= $this->input->post('nama_pesan');
 		$keterangan	= $this->input->post('keterangan');
 
 
@@ -31,30 +31,30 @@ class M_data_pesan extends CI_Model {
             {
 				$gbr = $this->upload->data();
 				$data = array(
-					'nama_sekolah'		=> $nama,
+					'nama_pesan'		=> $nama,
 					'keterangan'		=> $keterangan,
 					'logo' 				=> $gbr['file_name'],
 					
 					
 				);
-				$this->db->insert('sekolah', $data);
+				$this->db->insert('pesan', $data);
 			
 			}	 
 		}
 		else{
 				$data = array(
-					'nama_sekolah'		=> $nama,
+					'nama_pesan'		=> $nama,
 					'keterangan'		=> $keterangan,
 					'logo' 				=> 'kosong1.png',
 				);
-				$this->db->insert('sekolah', $data);
+				$this->db->insert('pesan', $data);
 			}
 	}
 
 	function edit()
 	{
-		$id_sekolah = $this->input->post('id_sekolah');
-		$nama 		= $this->input->post('nama_sekolah');
+		$id_pesan = $this->input->post('id_pesan');
+		$nama 		= $this->input->post('nama_pesan');
 		$keterangan	= $this->input->post('keterangan');
 
 
@@ -75,31 +75,31 @@ class M_data_pesan extends CI_Model {
             {
 				$gbr = $this->upload->data();
 				$data = array(
-					'nama_sekolah'		=> $nama,
+					'nama_pesan'		=> $nama,
 					'keterangan'		=> $keterangan,
 					'logo' 				=> $gbr['file_name'],
 				);
-				$this->db->where('id_sekolah',$id_sekolah)->update('sekolah', $data);
+				$this->db->where('id_pesan',$id_pesan)->update('pesan', $data);
 			
 			}	 
 		}
 		else{
 				$data = array(
-					'nama_sekolah'		=> $nama,
+					'nama_pesan'		=> $nama,
 					'keterangan'		=> $keterangan,
 				);
-				$this->db->where('id_sekolah',$id_sekolah)->update('sekolah', $data);
+				$this->db->where('id_pesan',$id_pesan)->update('pesan', $data);
 			}
 	}
 
 	function hapus($id)
 	{
-		$this->db->where('id_sekolah', $id)->delete('sekolah');
+		$this->db->where('id_pesan', $id)->delete('pesan');
 	}
 
 	function cari()
 	{
 		$cari 		= $this->input->post('cari');
-		return $this->db->like('nama_sekolah',$cari)->get('sekolah')->result();
+		return $this->db->like('nama_pesan',$cari)->get('pesan')->result();
 	}
 }

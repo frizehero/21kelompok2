@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class pengumuman extends CI_Model {
+class M_data_pengumuman extends CI_Model {
 
 	function tampil()
 	{
@@ -10,10 +10,10 @@ class pengumuman extends CI_Model {
 
 	function tambah()
 	{
-		$id_pengumuman 		= $this->input->post('id_pengumuman');
-		$id_user	= $this->input->post('id_user');
-		$tanggal	=> $this->input->post('tanggal');
-		$isi_pengumuman		=> $this->input->post('isi_pengumuman');
+		$judul_pengumuman 		= $this->input->post('judul_pengumuman');
+		$tanggal_pengumuman	= $this->input->post('tanggal_pengumuman');
+		$isi_pengumuman	= $this->input->post('isi_pengumuman');
+		$tertuju	= $this->input->post('tertuju');
 
 
 		$this->load->library('upload');
@@ -27,42 +27,26 @@ class pengumuman extends CI_Model {
 		
 		$this->upload->initialize($config);
 		
-		if($_FILES['gambar']['name'])
-        {
-            if ($this->upload->do_upload('gambar'))
-            {
-				$gbr = $this->upload->data();
+
 				$data = array(
-					'id_pengumuman'		=> $id_pengumuman,
-					'id_user'			=> $id_user,
-					'keterangan'		=> $keterangan,
-					'tanggal'			=> $tanggal,
-					'isi_pengumuman'	=> $isi_pengumuman,
+					'judul_pengumuman'		=> $judul_pengumuman,
+					'tanggal'		=> $tanggal_pengumuman,
+					'isi_pengumuman' 				=> $isi_pengumuman,
+					'tertuju'						=>$tertuju,
 					
 					
 				);
 				$this->db->insert('pengumuman', $data);
 			
-			}	 
-		}
-		else{
-				$data = array(
-					'id_pengumuman'		=> $id_pengumuman,
-					'id_user'		=> $id_user,
-					'tanggal'		=> $tanggal,
-					'isi_pengumuman'	=> $isi_pengumuman,				
-				);
-				$this->db->insert('pengumuman', $data);
-			}
+	
+		
 	}
 
 	function edit()
 	{
-		$id_pengumuman = $this->input->post('id_pengumuman');
-		$id_user	= $this->input->post('id_user');
-		$tanggal	= $this->input->post('tanggal');
-		$isi_pengumuman	= $this->input->post('isi_pengumuman');
-
+		$id_sekolah = $this->input->post('id_sekolah');
+		$nama 		= $this->input->post('nama_sekolah');
+		$keterangan	= $this->input->post('keterangan');
 
 
 		$this->load->library('upload');
@@ -82,34 +66,31 @@ class pengumuman extends CI_Model {
             {
 				$gbr = $this->upload->data();
 				$data = array(
-					'id_pengumuman'		=> $id_pengumuman,
-					'id_user'		=> $id_user,
-					'tanggal'			=>$tanggal,
-					'isi_pengumuman'	=>$isi_pengumuman
+					'nama_sekolah'		=> $nama,
+					'keterangan'		=> $keterangan,
+					'logo' 				=> $gbr['file_name'],
 				);
-				$this->db->where('id_pengumuman',$id_pengumuman)->update('pengumuman', $data);
+				$this->db->where('id_sekolah',$id_sekolah)->update('sekolah', $data);
 			
 			}	 
 		}
 		else{
 				$data = array(
-					'id_pengumuman'		=> $id_pengumuman,
-					'id_user'		=> $id_user,
-					'tanggal'			=>$tanggal,
-					'isi_pengumuman'	=>$isi_pengumuman
+					'nama_sekolah'		=> $nama,
+					'keterangan'		=> $keterangan,
 				);
-				$this->db->where('id_pengumuman',$id_pengumuman)->update('pengumuman', $data);
+				$this->db->where('id_sekolah',$id_sekolah)->update('sekolah', $data);
 			}
 	}
 
 	function hapus($id)
 	{
-		$this->db->where('id_pengumuman', $id)->delete('pengumuman');
+		$this->db->where('id_sekolah', $id)->delete('sekolah');
 	}
 
 	function cari()
 	{
 		$cari 		= $this->input->post('cari');
-		return $this->db->like('id_pengumuman',$cari)->get('pengumuman')->result();
+		return $this->db->like('nama_sekolah',$cari)->get('sekolah')->result();
 	}
 }
