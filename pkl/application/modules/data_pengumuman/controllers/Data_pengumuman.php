@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Data_sekolah extends MX_Controller {
+class Data_pengumuman extends MX_Controller {
 
 	function __construct()
 	{
 		parent::__construct();
 		// model
-		 $this->load->model('m_data_sekolah');
+		 $this->load->model('m_data_pengumuman');
 		 $this->load->model('login/m_session');
 	}
 
@@ -16,9 +16,9 @@ class Data_sekolah extends MX_Controller {
 	function index()
 	{
 		$data = array(
-			'namamodule' 	=> "data_sekolah",
-			'namafileview' 	=> "V_data_sekolah",
-			'tampil'		=> $this->m_data_sekolah->tampil(),
+			'namamodule' 	=> "Data_pengumuman",
+			'namafileview' 	=> "V_data_pengumuman",
+			'tampil'		=> $this->m_data_pengumuman->tampil(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}

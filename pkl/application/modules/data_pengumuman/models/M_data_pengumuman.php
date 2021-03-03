@@ -1,17 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_data_sekolah extends CI_Model {
+class M_data_pengumuman extends CI_Model {
 
 	function tampil()
 	{
-		return $this->db->get('sekolah')->result();
+		return $this->db->get('pengumuman')->result();
 	}
 
 	function tambah()
 	{
-		$nama 		= $this->input->post('nama_sekolah');
-		$keterangan	= $this->input->post('keterangan');
+		$judul_pengumuman 		= $this->input->post('judul_pengumuman');
+		$tanggal_pengumuman	= $this->input->post('tanggal_pengumuman');
+		$isi_pengumuman	= $this->input->post('isi_pengumuman');
+		$tertuju	= $this->input->post('tertuju');
 
 
 		$this->load->library('upload');
