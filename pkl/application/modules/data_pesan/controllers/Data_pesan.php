@@ -16,7 +16,7 @@ class Data_pesan extends MX_Controller {
 	function index()
 	{
 		$data = array(
-			'namamodule' 	=> "data_pesan",
+			'namamodule' 	=> "Data_pesan",
 			'namafileview' 	=> "V_data_pesan",
 			'tampil'		=> $this->m_data_pesan->tampil(),
 		);
@@ -25,28 +25,28 @@ class Data_pesan extends MX_Controller {
 
 	function tambah()
 	{
-		$this->m_data_sekolah->tambah();
-		redirect('data_sekolah');
+		$this->m_data_pesan->tambah();
+		redirect('Data_pesan');
 	}
 
 	function edit()
 	{
-		$this->m_data_sekolah->edit();
-		redirect('data_sekolah');
+		$this->m_data_pesan->edit();
+		redirect('Data_pesan');
 	}
 
 	function hapus($id)
 	{
-		$this->m_data_sekolah->hapus($id);
-		redirect('data_sekolah');
+		$this->m_data_pesan->hapus($id);
+		redirect('Data_pesan');
 	}
 
 	function cari()
 	{
 		$data = array(
-			'namamodule' 	=> "data_sekolah",
-			'namafileview' 	=> "V_data_sekolah",
-			'tampil'		=> $this->m_data_sekolah->cari(),
+			'namamodule' 	=> "Data_pesan",
+			'namafileview' 	=> "V_data_pesan",
+			'tampil'		=> $this->m_data_pesan->cari(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
