@@ -4,28 +4,9 @@
                      <div class="fixed-fluid">
                          <div class="fixed-sm-200 pull-sm-left fixed-right-border">
                              
-                             <div class="pad-btm bord-btm">
-                                 <a href="mailbox-compose.html" class="btn btn-block btn-success">Menulis surat</a>
-                             </div>
+                            
                              
-                             <p class="pad-hor mar-top text-main text-bold text-sm text-uppercase">Folders</p>
-                             <div class="list-group bg-trans pad-btm bord-btm">
-                                 <a href="#" class="list-group-item mail-nav-unread">
-                                     <i class="demo-pli-mail-unread icon-lg icon-fw"></i> Pesan
-                                 </a>
-                                 <a href="#" class="list-group-item">
-                                     <i class="demo-pli-pen-5 icon-lg icon-fw"></i> Draft
-                                 </a>
-                                 <a href="#" class="list-group-item">
-                                     <i class="demo-pli-mail-send icon-lg icon-fw"></i> Terkirim
-                                 </a>
-                                 <a href="#" class="list-group-item mail-nav-unread">
-                                     <i class="demo-pli-fire-flame-2 icon-lg icon-fw"></i> Spam
-                                 </a>
-                                 <a href="#" class="list-group-item">
-                                     <i class="demo-pli-trash icon-lg icon-fw"></i> Sampah
-                                 </a>
-                             </div>
+                             
                              
                              
                              
