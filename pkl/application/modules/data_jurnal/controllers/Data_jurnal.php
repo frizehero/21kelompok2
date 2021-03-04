@@ -53,8 +53,11 @@ class Data_jurnal extends MX_Controller {
 	function detail_jurnal($id)
 	{
 		 $data = array(
-			$this->load->view('V_detail')
+			'namamodule' 	=> "Data_jurnal",
+			'namafileview' 	=> "V_detail",
+			'tampil_detail'		=> $this->m_data_jurnal->tampil_detail($id),
 		);
+		echo Modules::run('template/tampilCore', $data);
 	}
 	
 }
