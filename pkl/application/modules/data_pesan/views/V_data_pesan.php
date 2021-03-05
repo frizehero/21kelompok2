@@ -79,202 +79,23 @@
                                  
                                  <!--Mail list group-->
                                  <ul id="demo-mail-list" class="mail-list pad-top bord-top">
-                                     
-                                     <!--Mail list item-->
-                                     <li class="mail-list-unread mail-attach">
+                                    <?php foreach($tampil as $res) {
+      $id = $res->id_pesan;
+      ?>
+                                    <li class="mail-list-unread mail-attach">
                                          <div class="mail-control">
                                              <input id="email-list-1" class="magic-checkbox" type="checkbox">
                                              <label for="email-list-1"></label>
                                          </div>
                                          <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-                                         <div class="mail-from"><a href="#">Aprilia Susanti</a></div>
-                                         <div class="mail-time">05:55 PM</div>
+                                         <div class="mail-from"><a href="#"><?php echo $res->nama_pengirim?> </a></div>
+                                         <div class="mail-time"><?php echo $res->tanggal_pesan?></div>
                                          <div class="mail-attach-icon"></div>
                                          <div class="mail-subject">
-                                             <a href="mailbox-message.html">mengirimkan sebuah pesan</a>
+                                             <a href="mailbox-message.html"><?php echo $res->judul_pesan?></a>
                                          </div>
                                      </li>
-                                     
-                                     <!--Mail list item-->
-                                     <li class="mail-starred">
-                                         <div class="mail-control">
-                                             <input id="email-list-2" class="magic-checkbox" type="checkbox">
-                                             <label for="email-list-2"></label>
-                                         </div>
-                                         <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-                                         <div class="mail-from"><a href="#">Shopping Mall</a></div>
-                                         <div class="mail-time">10:45 AM</div>
-                                         <div class="mail-attach-icon"></div>
-                                         <div class="mail-subject">
-                                             <a href="mailbox-message.html">Tracking Your Order - Shoes Store Online</a>
-                                         </div>
-                                     </li>
-                                     
-                                     <!--Mail list item-->
-                                     <li class="mail-list-unread mail-starred mail-attach">
-                                         <div class="mail-control">
-                                             <input id="email-list-3" class="magic-checkbox" type="checkbox">
-                                             <label for="email-list-3"></label>
-                                         </div>
-                                         <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-                                         <div class="mail-from"><a href="#">Dropbox</a></div>
-                                         <div class="mail-time">07:18 AM</div>
-                                         <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
-                                         <div class="mail-subject">
-                                             <a href="mailbox-message.html">Reset your account password</a>
-                                         </div>
-                                     </li>
-                                     
-                                     <!--Mail list item-->
-                                     <li class="mail-list-unread">
-                                         <div class="mail-control">
-                                             <input id="email-list-4" class="magic-checkbox" type="checkbox">
-                                             <label for="email-list-4"></label>
-                                         </div>
-                                         <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-                                         <div class="mail-from"><a href="#">Server Host</a></div>
-                                         <div class="mail-time">01:51 PM</div>
-                                         <div class="mail-attach-icon"></div>
-                                         <div class="mail-subject">
-                                             <a href="mailbox-message.html">
-                                                 <span class="label label-danger">
-                                                     Bussines
-                                                 </span>
-                                                 Regarding to your website issues.
-                                             </a>
-                                         </div>
-                                     </li>
-                                     
-                                     <!--Mail list item-->
-                                     <li>
-                                         <div class="mail-control">
-                                             <input id="email-list-5" class="magic-checkbox" type="checkbox">
-                                             <label for="email-list-5"></label>
-                                         </div>
-                                         <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-                                         <div class="mail-from"><a href="#">Lisa D. Smith</a></div>
-                                         <div class="mail-time">Yesterday</div>
-                                         <div class="mail-attach-icon"></div>
-                                         <div class="mail-subject">
-                                             <a href="mailbox-message.html">Hi John! How are you?</a>
-                                         </div>
-                                     </li>
-                                     
-                                     <!--Mail list item-->
-                                     <li class="mail-starred">
-                                         <div class="mail-control">
-                                             <input id="email-list-6" class="magic-checkbox" type="checkbox">
-                                             <label for="email-list-6"></label>
-                                         </div>
-                                         <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-                                         <div class="mail-from"><a href="#">Johny Juan</a></div>
-                                         <div class="mail-time">Yesterday</div>
-                                         <div class="mail-attach-icon"></div>
-                                         <div class="mail-subject">
-                                             <a href="mailbox-message.html">
-                                                 <span class="label label-info">
-                                                     Partner
-                                                 </span>
-                                                 Repair Status Unregistered User
-                                             </a>
-                                         </div>
-                                     </li>
-                                     
-                                     <!--Mail list item-->
-                                     
-                                     
-                                     <!--Mail list item-->
-                                     
-                                     
-                                     <!--Mail list item-->
-                                     
-                                     
-                                     <!--Mail list item-->
-                                     
-                                     
-                                     <!--Mail list item-->
-                                     <li class="mail-list-unread">
-                                         <div class="mail-control">
-                                             <input id="email-list-11" class="magic-checkbox" type="checkbox">
-                                             <label for="email-list-11"></label>
-                                         </div>
-                                         <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-                                         <div class="mail-from"><a href="#">Server Host</a></div>
-                                         <div class="mail-time">Oct 7</div>
-                                         <div class="mail-attach-icon"></div>
-                                         <div class="mail-subject">
-                                             <a href="mailbox-message.html">
-                                                 <span class="label label-danger">
-                                                     Bussines
-                                                 </span>
-                                                 Regarding to your website issues.
-                                             </a>
-                                         </div>
-                                     </li>
-                                     
-                                     <!--Mail list item-->
-                                     <li class="mail-starred">
-                                         <div class="mail-control">
-                                             <input id="email-list-12" class="magic-checkbox" type="checkbox">
-                                             <label for="email-list-12"></label>
-                                         </div>
-                                         <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-                                         <div class="mail-from"><a href="#">Lisa D. Smith</a></div>
-                                         <div class="mail-time">Oct 5</div>
-                                         <div class="mail-attach-icon"></div>
-                                         <div class="mail-subject"><a href="mailbox-message.html">Hi John! How are you?</a></div>
-                                     </li>
-                                     
-                                     
-                                     <!--Mail list item-->
-                                     <li class="mail-starred">
-                                         <div class="mail-control">
-                                             <input id="email-list-13" class="magic-checkbox" type="checkbox">
-                                             <label for="email-list-13"></label>
-                                         </div>
-                                         <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-                                         <div class="mail-from"><a href="#">Johny Juan</a></div>
-                                         <div class="mail-time">Oct 5</div>
-                                         <div class="mail-attach-icon"></div>
-                                         <div class="mail-subject">
-                                             <a href="mailbox-message.html">
-                                                 <span class="label label-info">
-                                                     Partner
-                                                 </span>
-                                                 Repair Status Unregistered User
-                                             </a>
-                                         </div>
-                                     </li>
-                                     
-                                     
-                                     <!--Mail list item-->
-                                     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                                     <li class="mail-attach">
-                                         <div class="mail-control">
-                                             <input id="email-list-14" class="magic-checkbox" type="checkbox">
-                                             <label for="email-list-14"></label>
-                                         </div>
-                                         <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-                                         <div class="mail-from"><a href="#">Bobby Marz</a></div>
-                                         <div class="mail-time">Oct 3</div>
-                                         <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
-                                         <div class="mail-subject"><a href="mailbox-message.html">Bugs in your system.</a></div>
-                                     </li>
-                                     
-                                     
-                                     <!--Mail list item-->
-                                     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                                     <li class="mail-list-unread mail-starred">
-                                         <div class="mail-control">
-                                             <input id="email-list-15" class="magic-checkbox" type="checkbox">
-                                             <label for="email-list-15"></label>
-                                         </div>
-                                         <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-                                         <div class="mail-from"><a href="#">Lucy Moon</a></div>
-                                         <div class="mail-time">Oct 1</div>
-                                         <div class="mail-attach-icon"></div>
-                                         <div class="mail-subject"><a href="mailbox-message.html">We need to meet up soon</a></div>
-                                     </li>
+                                 <?php }?>
                                  </ul>
                              </div>
                              

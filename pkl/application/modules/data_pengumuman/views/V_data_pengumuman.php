@@ -88,7 +88,7 @@
               SISWA
             </td>
             <td>
-              <button class="btn btn-warning">EDIT</button>
+              <button data-toggle="modal" data-target="#exampleModal" class="btn btn-warning" >EDIT</button>
               <button class="btn btn-danger" data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pengumuman?>">HAPUS</button>
             </td>
 
@@ -96,7 +96,9 @@
         </tbody>
         <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pengumuman?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content"> 
+
+
 
         <!--Modal header-->
         <div class="modal-header">
@@ -122,6 +124,59 @@
       </div>
     </div>
   </div>
+  <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pengumuman?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Edit Pengumuman</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                     <form>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputEmail4">Judul</label>
+                          <input name="judul_pengumuman" type="text" class="form-control" id="inputEmail4" placeholder="Judul pengumuman">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputPassword4">Tanggal</label>
+                          <input name="tanggal_pengumuman" type="date" class="form-control" id="inputPassword4">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputAddress">Isi pengumuman</label>
+                        <textarea name="isi_pengumuman"  class="form-control" id="inputAddress"></textarea>
+                      </div>
+                      <div class="form-row">
+
+
+                        <label for="inputState">Tertuju:</label>
+                        <select name="tertuju" id="inputState" class="form-control">
+                          <option value="siswa" selected>siswa</option>
+                          <option value="guru" >Guru</option>
+                        </select>
+
+                      </div>
+
+
+
+                    </div>
+                    <div class="modal-footer">
+
+                      <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?= form_close(); ?>
       <?php }?>
       </table>
     </div>

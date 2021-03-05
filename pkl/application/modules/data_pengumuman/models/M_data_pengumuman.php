@@ -85,7 +85,7 @@ class M_data_pengumuman extends CI_Model {
 
 	function hapus($id)
 	{
-		$this->db->where('id_sekolah', $id)->delete('sekolah');
+		$this->db->where('id_pengumuman', $id)->delete('pengumuman');
 	}
 
 	function cari()
