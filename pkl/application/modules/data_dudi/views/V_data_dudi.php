@@ -118,7 +118,8 @@
       $id = $res->id_dudi;
       $gambar = $res->foto;
       ?>
-      <div class="col-md-4">
+      <a href="<?php echo base_url('data_dudi/detail_dudi/'. $res->id_dudi) ?>">
+        <div class="col-md-4">
 
         <div class="panel widget">
           <div class="widget-header bg-purple">
@@ -143,6 +144,7 @@
        </div>
 
      </div>
+      </a>
      <div class="modal fade" id="demo-default-modal2<?php echo $res->id_dudi?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">

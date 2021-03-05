@@ -32,7 +32,7 @@
         </div>
         <div class="form-group">
           <label for="inputAddress">Isi pengumuman</label>
-          <textarea name="isi_pengumuman"  class="form-control" id="inputAddress"></textarea>
+          <textarea name="isi_pengumuman" type="text"  class="form-control" id="inputAddress"></textarea>
         </div>
         <div class="form-row">
 
@@ -82,11 +82,9 @@
             <td><?php echo $res->tanggal?></td>
             <td><?php echo $res->judul_pengumuman?></td>
             <td>
-              lorem ipsum 
-            </td>
+             <?php echo $res->isi_pengumuman?></td>
             <td>
-              SISWA
-            </td>
+              <?php echo $res->tertuju?></td>
             <td>
               <button data-toggle="modal" data-target="#exampleModal" class="btn btn-warning" >EDIT</button>
               <button class="btn btn-danger" data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pengumuman?>">HAPUS</button>
@@ -124,6 +122,7 @@
       </div>
     </div>
   </div>
+  <?= form_open_multipart('data_pengumuman/edit'); ?>
   <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pengumuman?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -152,7 +151,7 @@
                       </div>
                       <div class="form-group">
                         <label for="inputAddress">Isi pengumuman</label>
-                        <textarea name="isi_pengumuman"  class="form-control" id="inputAddress"></textarea>
+                        <textarea name="isi_pengumuman"  type="text" class="form-control" id="inputAddress"></textarea>
                       </div>
                       <div class="form-row">
 

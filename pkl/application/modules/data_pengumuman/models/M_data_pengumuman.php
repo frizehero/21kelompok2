@@ -44,9 +44,10 @@ class M_data_pengumuman extends CI_Model {
 
 	function edit()
 	{
-		$id_sekolah = $this->input->post('id_sekolah');
-		$nama 		= $this->input->post('nama_sekolah');
-		$keterangan	= $this->input->post('keterangan');
+		$judul_pengumuman = $this->input->post('judul_pengumuman');
+		$tanggal_pengumuman		= $this->input->post('tanggal_pengumuman');
+		$isi_pengumuman	= $this->input->post('isi_pengumuman');
+		$tertuju	= $this->input->post('tertuju');
 
 
 		$this->load->library('upload');
@@ -66,20 +67,23 @@ class M_data_pengumuman extends CI_Model {
             {
 				$gbr = $this->upload->data();
 				$data = array(
-					'nama_sekolah'		=> $nama,
-					'keterangan'		=> $keterangan,
-					'logo' 				=> $gbr['file_name'],
+					'judul_pengumuman'		=> $judul_pengumuman,
+					'tanggal_pengumuman'		=> $tanggal_pengumuman,
+					'isi_pengumuman'		=> $isi_pengumuman,
+					'tertuju'		=> $tertuju,
 				);
-				$this->db->where('id_sekolah',$id_sekolah)->update('sekolah', $data);
+				$this->db->where('id_pengumuman',$id_pengumuman)->update('pengumuman', $data);
 			
 			}	 
 		}
 		else{
 				$data = array(
-					'nama_sekolah'		=> $nama,
-					'keterangan'		=> $keterangan,
+					'judul_pengumuman'		=> $judul_pengumuman,
+					'tanggal_pengumuman'		=> $tanggal_pengumuman,
+					'isi_pengumuman'		=> $isi_pengumuman,
+					'tertuju'		=> $tertuju,
 				);
-				$this->db->where('id_sekolah',$id_sekolah)->update('sekolah', $data);
+				$this->db->where('id_pengumuman',$id_pengumuman)->update('pengumuman', $data);
 			}
 	}
 
@@ -91,6 +95,6 @@ class M_data_pengumuman extends CI_Model {
 	function cari()
 	{
 		$cari 		= $this->input->post('cari');
-		return $this->db->like('nama_sekolah',$cari)->get('sekolah')->result();
+		return $this->db->like('judul_pengumuman',$cari)->get('pengumuman')->result();
 	}
 }

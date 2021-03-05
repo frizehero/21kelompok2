@@ -69,8 +69,8 @@
                            </div>
                        </div>
                        <a href="<?php echo base_url('data_jurnal/detail_jurnal/'. $res->id_jurnal) ?>">
-                           <img alt="Profile Picture" class="img-lg img-circle mar-ver" src="img/profile-photos/2.png">
-                           <p class="text-lg text-semibold mar-no text-main"><?php echo $res->nama_siswa?> </p>
+                           <img alt="Profile Picture" class="img-lg img-circle mar-ver" src="https://smanegeri1pseksu.files.wordpress.com/2017/10/dsc_0010.jpg?w=246&h=370">
+                           <p class="text-lg text-semibold mar-no text-main"><?php echo $res->nama?> </p>
                            <p class="text-sm">Rekayasa Perangkat Lunak</p>
 
                        </a>
