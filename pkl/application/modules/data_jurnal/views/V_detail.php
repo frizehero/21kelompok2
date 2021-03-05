@@ -10,7 +10,7 @@
                                         <div class="pad-ver">
                                             <img src="https://smanegeri1pseksu.files.wordpress.com/2017/10/dsc_0010.jpg?w=246&h=370" class="img-lg img-circle" alt="Profile Picture">
                                         </div>
-                                        <h4 class="text-lg text-overflow mar-no">Anton</h4>
+                                        <h4 class="text-lg text-overflow mar-no"><?php echo $tampil_detail['nama_siswa'] ?></h4>
                                         <p class="text-sm text-muted">Rekayasa Perangkat Lunak</p>
                                         
                                         
@@ -19,7 +19,6 @@
                                     
                                     <!-- Profile Details -->
                                     <p class="pad-top text-main text-center text-uppercase text-bold">profil siswa </p></p>
-                                    <p><a class><strong>Nama:</strong><?php echo $tampil_detail['nama_siswa'] ?></a></p>
                                     <p><a class><strong>Nis/Nisn:</strong><?php echo $tampil_detail['nisn'] ?></a></p>
                                     <p><a class><strong>Ttgl Lahir:</strong><?php echo $tampil_detail['tempat_tanggal_lahir'] ?></a></p>
                                     <p><a class><strong>Agama:</strong>Islam</a></p>
@@ -100,10 +99,10 @@
                                 <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="img/profile-photos/10.png"></a>
                                 <div class="media-body">
                                     <div class="comment-header">
-                                        <div><a href="#" class="media-heading box-inline text-main text-semibold">Anton</a>  <span class="text-semibold text-main">added new Jurnal</span></div>
+                                        <div><a href="#" class="media-heading box-inline text-main text-semibold"><?php echo $tampil_detail['nama_siswa'] ?></a>  <span class="text-semibold text-main">added new Jurnal</span></div>
                                         <p class="text-muted text-sm"><i class="demo-pli-smartphone-3 icon-lg"></i> Mobile - 15-02-2021</p>
                                     </div>
-                                    <p>Membuat CRUD dengan Codeigniter 3</p>
+                                    <p><?php echo $tampil_detail ['kegiatan']?> </p>
                                     
                                     <div class="comment-content comment-photos row">
                                         <div class="col-sm-6">
@@ -113,37 +112,18 @@
                                             <img class="img-responsive" src="https://tempatpkltkjdibandunghome.files.wordpress.com/2019/05/9491d9df-e25e-4ee2-a926-1383f67cab1e.jpg?w=700&h=" alt="Image">
                                         </div>
                                     </div>
-                                    
-                                    
-                                    
-                                    <!-- Comments -->
-                                    
-                                </div>
-                            </div>
-                            <div class="comments media-block">
-                                <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="img/profile-photos/10.png"></a>
-                                <div class="media-body">
-                                    <div class="comment-header">
-                                        <div><a href="#" class="media-heading box-inline text-main text-semibold">Anton</a>  <span class="text-semibold text-main">added new Jurnal</span></div>
-                                        <p class="text-muted text-sm"><i class="demo-pli-smartphone-3 icon-lg"></i> Mobile - 15-02-2021</p>
-                                    </div>
-                                    <p>Membuat CRUD dengan Codeigniter 3</p>
-                                    
-                                    <div class="comment-content comment-photos row">
-                                        <div class="col-sm-6">
-                                            <img class="img-responsive" src="https://tempatpkltkjdibandunghome.files.wordpress.com/2019/05/d84d97e8-70cc-4ecb-948f-256b17646461.jpg?w=700&h=" alt="Image">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <img class="img-responsive" src="https://tempatpkltkjdibandunghome.files.wordpress.com/2019/05/9491d9df-e25e-4ee2-a926-1383f67cab1e.jpg?w=700&h=" alt="Image">
-                                        </div>
-                                    </div>
-                                    
-                                    
-                                    
-                                    <!-- Comments -->
+
                                     <button class="btn btn-primary btn-block mar-ver"><span class="text-semibold">36</span> Load More</button>
-                                </div>
+                                            </div>
                             </div>
+                            
+                                    
+                                    
+                                    
+                                    <!-- Comments -->
+                                    
+                       
+                            
                             
                             
                             <!-- Newsfeed Content -->
