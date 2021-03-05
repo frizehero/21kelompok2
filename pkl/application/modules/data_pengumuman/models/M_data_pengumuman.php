@@ -44,6 +44,7 @@ class M_data_pengumuman extends CI_Model {
 
 	function edit()
 	{
+		$id_pengumuman = $this->input->post('id_pengumuman');
 		$judul_pengumuman = $this->input->post('judul_pengumuman');
 		$tanggal_pengumuman		= $this->input->post('tanggal_pengumuman');
 		$isi_pengumuman	= $this->input->post('isi_pengumuman');
