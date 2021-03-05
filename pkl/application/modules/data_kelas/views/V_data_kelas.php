@@ -158,11 +158,11 @@
            </ul>
          </div>
        </div>
-       <div class="panel widget" style="height: 200px," >
+       <div class="panel widget" style="height: 20px," >
          <div class="widget-header bg-default">
            <a href="<?php echo base_url('data_siswa') ?>"> <img class="widget-bg img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>" alt="Image"></a>
          </div>
-         <h4  class="mar-no text-main"><?php echo $res->nama_kelas?></h4>
+         <h4 style="margin-top: 200px;"  class="mar-no text-main"><?php echo $res->nama_kelas?></h4>
          <h5 class="mar-no text-main"><?php echo $res->nama?></h5>
        </div>
      </div>
