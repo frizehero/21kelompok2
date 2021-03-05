@@ -86,15 +86,16 @@
             <td>
               <?php echo $res->tertuju?></td>
             <td>
-              <button data-toggle="modal" data-target="#exampleModal3" class="btn btn-warning">EDIT</button>
+              <button data-toggle="modal" data-target="#exampleModal3<?php echo $res->id_pengumuman?>" class="btn btn-warning">EDIT</button>
               <button class="btn btn-danger" data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pengumuman?>">HAPUS</button>
             </td>
 
           </tr>
         </tbody>
-        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        
+        <div class="modal fade" id="exampleModal3<?php echo $res->id_pengumuman?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-   
+   <?= form_open_multipart('data_pengumuman/edit'); ?>
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">edit Pengumuman</h5>
@@ -107,6 +108,7 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Judul</label>
+            <input type="hidden" value='<?php echo $res->id_kelas?>' name="id_jurnal">
             <input name="judul_pengumuman" type="text" class="form-control" id="inputEmail4" placeholder="Judul pengumuman">
           </div>
           <div class="form-group col-md-6">
@@ -135,12 +137,13 @@
     <div class="modal-footer">
 
       <button type="submit" class="btn btn-primary">Save</button>
-      </form>
+ 
     </div>
   </div>
 </div>
 </div>
 <?= form_close(); ?>
+     </form>
         
 
 
