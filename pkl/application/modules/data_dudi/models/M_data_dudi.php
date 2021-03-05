@@ -10,6 +10,16 @@ class M_data_dudi extends CI_Model {
 		->get()
 		->result();
 	}
+	function tampil_detail($id)
+	{
+
+		$this->db->select('*')
+				 ->from('dudi')
+				 ->join('siswa', 'siswa.id_siswa = dudi.id_siswa')
+				 ->where('id_dudi',$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
 
 	function tambah()
 	{
