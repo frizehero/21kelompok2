@@ -50,6 +50,15 @@ class Data_dudi extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+	function detail_dudi($id)
+	{
+		 $data = array(
+			'namamodule' 	=> "Data_jurnal",
+			'namafileview' 	=> "V_detail",
+			'tampil_detail'		=> $this->m_data_dudi->tampil_detail($id),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
 	
 }
  

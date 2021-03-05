@@ -71,74 +71,13 @@
 
  </div>
 </div>
+</div>
  <?php foreach($tampil as $res) {
     $id = $res->id_kelas;
     $gambar = $res->logo;
     ?>
     <!-- update -->
-    <div class="modal fade" id="demo-default-modal1<?php echo $res->id_kelas?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!--Modal Update-->
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-            <h4 class="modal-title">Update</h4>
-          </div>
-          <?= form_open_multipart('data_kelas/edit'); ?>
-          <input type="hidden" name="id_kelas" value="<?php echo $res->id_kelas?>">
-
-          <!--Modal body--> 
-          <div class="modal-body">
-           <div class="panel-body">
-             <form>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Nama Kelas</label>
-                <input name="nama_kelas"  class="form-control" id="inputEmail4" placeholder="Nama Kelas">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="" class="control-label">Jurusan:</label>
-                <select class="form-control" name="jurusan">
-                  <option>
-                    Pilih Jurusan
-                  </option>
-                  <option  value="1">Rekasaya Perangkat Lunak
-                  </option>
-                  <option  value="2">Teknik Komputer Jaringan
-                  </option>
-                </select>
-              </div>
-              <div class="col-md-6" >
-                <label for="" class="control-label">Foto :</label>
-                <input type="file" name="gambar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
-              </div>
-              <div class="col-md-6 " style="margin-top: 2%">
-                <label for="" class="control-label">Preview Foto Profile</label>
-                <img id="preview" width="150px" />
-              </div>
-            </div>
-          
-           </div>
-        </div>
-        <div class="modal-footer">
-        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-        <button class="btn btn-primary" type="submit">Simpan</button>
-      </div>
-
-
-
-      </div>
-
-      <!--Modal footer-->
-      
-      <?= form_close(); ?>
-    </div>
-  </div>
-</div>
-</form>
+    
 <!-- end update -->
 
 <div class="row">
@@ -167,8 +106,9 @@
        </div>
      </div>
    </div>
-
 </div>
+
+
 <?php }?>
 </a>
 

@@ -549,72 +549,73 @@
                                 </li>
                             <?php } ?>
 
-                            <?php if($this->uri->segment('1') == 'data_siswa'){ ?>
+                           <li class=" <?=$this->uri->segment('1') == 'data_siswa' || $this->uri->segment(1) == 'data_dudi' ? "active-sub" : ''?>">
+                                <a href="">
+                                   <i class="demo-pli-receipt-4"></i>
+                                    <span>Data Siswa</span>
+                                    <i class="arrow"></i>
+                                </a>
+                                <ul class="collapse">
+                                        <li <?=$this->uri->segment('1') == 'data_siswa' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
+                                        <li <?=$this->uri->segment('1') == 'data_dudi' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_dudi'); ?>">Data DU/DI</a></li>
+                                    </ul>
+                            </li>
+
+
+                            <?php if($this->uri->segment('1') == 'data_jurnal'){ ?>
                                 <li class="active-sub">
-                                  <a href="#">
-                                      <i class="demo-pli-receipt-4"></i>
-                                      <span class="menu-title">Data</span>
-                                      <i class="arrow"></i>
-                                  </a>
-
-                                  <!--Submenu-->
-                                  <ul class="collapse">
-                                      <li><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
-                                      <li><a href="<?php echo base_url('data_dudi'); ?>">Data Dudi</a></li>
-
-                                  </ul>
-                              </li>
-                            <?php } else{ ?>
-                                <li>
-                                    <a href="<?php echo base_url('data_siswa'); ?>">
+                                    <a href="<?php echo base_url('data_jurnal'); ?>">
                                         <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data siswa</span>
-                                        <i class="arrow"></i>
-                                    </a>
-                                    <!--Submenu-->
-                                </li>
-                            <?php } ?>
-
-
-                            <?php if($this->uri->segment('1') == 'data_guru'){ ?>
-                                <li class="active-sub">
-                                    <a href="<?php echo base_url('data_guru'); ?>">
-                                        <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data Guru</span>
-                                        <i class="arrow"></i>
+                                        <span class="menu-title">Data Jurnal</span>
                                     </a>
                                     <!--Submenu-->
                                 </li>
                             <?php } else{ ?>
                                 <li>
-                                    <a href="<?php echo base_url('data_guru'); ?>">
+                                    <a href="<?php echo base_url('data_jurnal'); ?>">
                                         <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data Guru</span>
-                                        <i class="arrow"></i>
+                                        <span class="menu-title">Data jurnal</span>
                                     </a>
                                     <!--Submenu-->
                                 </li>
                             <?php } ?>
 
-                            <?php if($this->uri->segment('1') == 'data_form'){ ?>
+                            <?php if($this->uri->segment('1') == 'data_pengumuman'){ ?>
                                 <li class="active-sub">
-                                    <a href="<?php echo base_url('data_form'); ?>">
+                                    <a href="<?php echo base_url('data_pengumuman'); ?>">
                                         <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data ML</span>
-                                        <i class="arrow"></i>
+                                        <span class="menu-title">Data Pengumuman</span>
                                     </a>
                                     <!--Submenu-->
                                 </li>
                             <?php } else{ ?>
                                 <li>
-                                    <a href="<?php echo base_url('data_form'); ?>">
+                                    <a href="<?php echo base_url('data_pengumuman'); ?>">
                                         <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data ML</span>
-                                        <i class="arrow"></i>
+                                        <span class="menu-title">Data Pengumuman</span>
                                     </a>
                                     <!--Submenu-->
                                 </li>
                             <?php } ?>
+
+                            <?php if($this->uri->segment('1') == 'data_pesan'){ ?>
+                                <li class="active-sub">
+                                    <a href="<?php echo base_url('data_pesan'); ?>">
+                                        <i class="fa fa-list"></i>
+                                        <span class="menu-title">Data pesan</span>
+                                    </a>
+                                    <!--Submenu-->
+                                </li>
+                            <?php } else{ ?>
+                                <li>
+                                    <a href="<?php echo base_url('data_pesan'); ?>">
+                                        <i class="fa fa-list"></i>
+                                        <span class="menu-title">Data pesan</span>
+                                    </a>
+                                    <!--Submenu-->
+                                </li>
+                            <?php } ?>
+
 
 
 
