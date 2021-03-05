@@ -93,7 +93,7 @@ class M_data_kelas extends CI_Model {
 
 	function hapus($id)
 	{
-		$this->db->where('id_kelas', $id)->delete('kelas');
+		$this->db->where('id_kelas', $id_kelas)->delete('kelas');
 	}
 
 	function cari()
