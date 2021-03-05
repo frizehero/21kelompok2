@@ -73,117 +73,129 @@
  </div>
 </div>
 
- <?php foreach($tampil as $res) {
-      $id = $res->id_siswa;
-      $gambar = $res->logo;
-      ?>
+<?php foreach($tampil as $res) {
+  $id = $res->id_siswa;
+  $gambar = $res->logo;
+  ?>
 
-<div class="row">
-  <div class="col-md-3">
-    <div class="panel widget">
-      <div class="widget-body text-center">
-        <div class="widget-control">
-         <div class="btn-group dropdown">
-           <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
-           <ul class="dropdown-menu dropdown-menu-right" style="">
-            <li><a data-toggle="modal" data-target="#exampleModal2" ><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
-            <li><a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_siswa?>"><i class="icon-lg icon-fw demo-pli-recycling"></i> Hapus </a></li>
-            <li class="divider"></li> 
+  <div class="row">
+    <div class="col-md-3">
+      <div class="panel widget">
+        <div class="widget-body text-center">
+          <div class="widget-control">
+           <div class="btn-group dropdown">
+             <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
+             <ul class="dropdown-menu dropdown-menu-right" style="">
+              <li><a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_siswa?>"><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
+              <li><a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_siswa?>"><i class="icon-lg icon-fw demo-pli-recycling"></i> Hapus </a></li>
+              <li class="divider"></li> 
 
-          </ul>
+            </ul>
+          </div>
         </div>
-      </div>
-      <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>">
-      <div class="panel widget" style="height: 200px," >
-       <div class ="text-center" style="margin-top:15px;">
-        <p class="text-muted mar-no" style="height:20px;">
-          Nama :
-          <b><?= $res->nama_siswa ?></b>
+        <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>">
+        <div class="panel widget" style="height: 200px," >
+         <div class ="text-center" style="margin-top:15px;">
+          <p class="text-muted mar-no" style="height:20px;">
+            Nama :
+            <b><?= $res->nama_siswa ?></b>
 
-        </p>
-      </div>
-      <div class ="text-center" style="margin-top:15px;">
-        <p class="text-muted mar-no" style="height:20px;">
-          NISN :
-          <b><?= $res->nisn ?></b>
+          </p>
+        </div>
+        <div class ="text-center" style="margin-top:15px;">
+          <p class="text-muted mar-no" style="height:20px;">
+            NISN :
+            <b><?= $res->nisn ?></b>
 
-        </p>
-      </div>
-      <div class ="text-center" style="margin-top:15px;">
-        <p class="text-muted mar-no" style="height:20px;">
-          DU/Di
-          <b><?= $res->dudi ?></b>
+          </p>
+        </div>
+        <div class ="text-center" style="margin-top:15px;">
+          <p class="text-muted mar-no" style="height:20px;">
+            DU/Di
+            <b><?= $res->dudi ?></b>
 
-        </p>
-      </div>
-      <div class ="text-center" style="margin-top:15px;">
-        <p class="text-muted mar-no" style="height:20px;">
-          Jenis Kelamin :
-          <b><?= $res->jenis_kelamin ?></b>
+          </p>
+        </div>
+        <div class ="text-center" style="margin-top:15px;">
+          <p class="text-muted mar-no" style="height:20px;">
+            Jenis Kelamin :
+            <b><?= $res->jenis_kelamin ?></b>
 
-        </p>
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 </div>
 </div>
-</div>
-<?= form_open_multipart('data_siswa/edit'); ?>
-    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">EDIT</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+<div class="modal fade" id="demo-default-modal1<?php echo $res->id_siswa?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!--Modal Update-->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+        <h4 class="modal-title">Update</h4>
+      </div>
+      <?= form_open_multipart('data_siswa/edit'); ?>
+      <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa?>">
+
+      <!--Modal body--> 
+      <div class="modal-body">
+       <div class="panel-body">
+         <form>
+          <div class="form-row">
+            <div class="col-md-6">
+              <label for="" class="control-label">Nama siswa :</label>
+              <input type="hidden" name="id_siswa"></input>
+              <input type="text" name="nama_siswa" placeholder="Nama" class="form-control"></input>
+            </div>
+             <div class="col-md-6">
+              <label for="" class="control-label">NISN :</label>
+              <input type="text" name="nisn" placeholder="NISN" class="form-control"></input>
+            </div>
           </div>
-          <div class="modal-body">
-           <div class="panel-body">
-             <form>
-               <div class="col-md-6">
-                <label for="" class="control-label">Nama siswa :</label>
-                <input type="text" name="nama_siswa" placeholder="Nama" class="form-control"></input>
-              </div>
-              <div class="col-md-6">
-                <label for="" class="control-label">NISN :</label>
-                <input type="text" name="nisn" placeholder="NISN" class="form-control"></input>
-              </div>
-              <div class="col-md-6">
-                <label for="" class="control-label">Jenis Kelamin :</label>
-                <select class="form-control" name="jenis_kelamin">
-                  <option>
-                    Jenis Kelamin Anda
-                  </option>
-                  <option  value="Laki Laki">Laki Laki
-                  </option>
-                  <option  value="Perempuan">Perempuan
-                  </option>
-                </select>
-              </div>
-              <div class="col-md-6" >
-                <label for="" class="control-label">Foto :</label>
-                <input type="file" name="gambar" placeholder="Logo " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
-              </div>
-              <div class="col-md-6" style="margin-top: 2%">
-                <label for="" class="control-label">DU/DI :</label>
-                <textarea type="text" name="dudi" rows="5" placeholder="dudi" class="form-control"></textarea>
-              </div>
-              <div class="col-md-6 " style="margin-top: 2%">
-                <label for="" class="control-label">Preview Foto Profile</label>
-                <img id="preview" width="150px" />
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Save</button>
+          <div class="col-md-6">
+              <label for="" class="control-label">Jenis Kelamin :</label>
+              <select class="form-control" name="jenis_kelamin">
+                <option>
+                  Jenis Kelamin Anda
+                </option>
+                <option  value="Laki Laki">Laki Laki
+                </option>
+                <option  value="Perempuan">Perempuan
+                </option>
+              </select>
+            </div>
+            <div class="col-md-6" >
+              <label for="" class="control-label">Foto :</label>
+              <input type="file" name="gambar" placeholder="Logo " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
+            </div>
+            <div class="col-md-6" style="margin-top: 2%">
+              <label for="" class="control-label">DU/DI :</label>
+              <textarea type="text" name="dudi" rows="5" placeholder="dudi" class="form-control"></textarea>
+            </div>
+            <div class="col-md-6 " style="margin-top: 2%">
+              <label for="" class="control-label">Preview Foto Profile</label>
+              <img id="preview" width="150px" />
+            </div>
         </div>
       </div>
+      <div class="modal-footer">
+        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+        <button class="btn btn-primary" type="submit">Simpan</button>
+      </div>
+
+
+
     </div>
+
+    <!--Modal footer-->
+
+    <?= form_close(); ?>
   </div>
-  <?= form_close(); ?>
+</div>
 <div class="modal fade" id="demo-default-modal2<?php echo $res->id_siswa?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -211,8 +223,8 @@
       </div>
     </div>
   </div>
-   
-   <?php }?>
+
+<?php }?>
 </div>
 
 <!--jQuery [ REQUIRED ]-->

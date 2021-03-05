@@ -57,7 +57,7 @@ class M_data_siswa extends CI_Model {
 
 	function edit()
 	{
-		$id_siswa 		= $this->input->post('id_siswa');
+		$id_siswa 	    	= $this->input->post('id_siswa');
 		$nama_siswa 		= $this->input->post('nama_siswa');
 		$nisn 				= $this->input->post('nisn');
 		$jenis_kelamin 		= $this->input->post('jenis_kelamin');
