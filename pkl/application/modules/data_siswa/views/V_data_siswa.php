@@ -140,7 +140,7 @@
       <!--Modal Update-->
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-        <h4 class="modal-title">Update</h4>
+        <h4 class="modal-title">Edit</h4>
       </div>
       <?= form_open_multipart('data_siswa/edit'); ?>
       <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa?>">
