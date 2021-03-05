@@ -101,19 +101,7 @@
                              
                              
                              <!--Mail footer-->
-                             <div class="panel-footer clearfix">
-                                 <div class="pull-right">
-                                     <span class="text-main"><strong>1-50</strong> of <strong>160</strong></span>
-                                     <div class="btn-group btn-group">
-                                         <button type="button" class="btn btn-default">
-                                             <i class="demo-psi-arrow-left"></i>
-                                         </button>
-                                         <button type="button" class="btn btn-default">
-                                             <i class="demo-psi-arrow-right"></i>
-                                         </button>
-                                     </div>
-                                 </div>
-                             </div>
+                             
                          </div>
                      </div>
                  </div>
