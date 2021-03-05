@@ -29,7 +29,7 @@
                 <label for="" class="control-label">Jenis Kelamin :</label>
                 <select class="form-control" name="jenis_kelamin">
                   <option>
-                    Jenis Kelamin Anda
+                    Jenis Kelamin
                   </option>
                   <option  value="Laki Laki">Laki Laki
                   </option>
@@ -113,7 +113,7 @@
       </div>
       <div class ="text-center" style="margin-top:15px;">
         <p class="text-muted mar-no" style="height:10px;">
-          DU/Di
+          DU/Di :
           <b><?= $res->dudi ?></b>
 
         </p>
@@ -180,11 +180,7 @@
             <label for="" class="control-label">Preview Foto Profile</label>
             <img id="preview" width="150px" />
           </div>
-
         </div>
-
-
-
       </div>
 
       <!--Modal footer-->
@@ -212,9 +208,6 @@
         <p class="text-semibold text-main"></p>
         <p>Anda Yakin Ingin Menghapus <b><?php echo $res->nama_siswa ?></b> ? </p>
         <br>
-
-
-
       </div>
 
       <!--Modal footer-->
@@ -224,6 +217,7 @@
       </div>
     </div>
   </div>
+</div>
 
 <?php }?>
 </div>
