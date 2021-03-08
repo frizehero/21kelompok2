@@ -1,4 +1,133 @@
+<div id="page-head">
 
+                        
+                        <!--Page Title-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <div id="page-title">
+                            <h1 class="page-header text-overflow">Jurnal Siswa</h1>
+                        </div>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End page title-->
+
+
+                        <!--Breadcrumb-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <ol class="breadcrumb">
+                            <li><a href="#"><i class="demo-pli-home"></i></a></li>
+                            <li><a href="#">Jurnal</a></li>
+                            <li class="active">Jurnal siswa</li><br>
+                            <a style="margin-top: 10px" class="btn btn-default" href="forms-general.html"> Kembali</a>
+                        </ol>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End breadcrumb-->
+
+                        
+                    </div>
+                    <div id="container" class="effect aside-float aside-bright mainnav-sm page-fixedbar page-fixedbar-right">
+        
+                    <div class="page-fixedbar-container">
+                        <div class="page-fixedbar-content">
+                            <div class="nano">
+                                <div class="nano-content">
+                                    <p class="pad-all text-main text-sm text-uppercase text-bold">
+                                        Siswa Yang  PKL di Hummasoft
+                                    </p>
+
+                                    <!--Family-->
+                                    <div class="list-group bg-trans bord-btm">
+                                     <hr class="new-section-xs">
+                                     <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Brittany Meyer</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Brittany Meyer</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Brittany Meyer</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Brittany Meyer</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Brittany Meyer</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Brittany Meyer</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Brittany Meyer</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Brittany Meyer</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!--Monthly billing-->
+                                
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
                 <div id="page-content">
                     <div class="panel">
                         <div class="panel-body">
