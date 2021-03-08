@@ -15,8 +15,7 @@
                         <ol class="breadcrumb">
                             <li><a href="#"><i class="demo-pli-home"></i></a></li>
                             <li><a href="#">Jurnal</a></li>
-                            <li class="active">Jurnal siswa</li><br>
-                            <a style="margin-top: 10px" class="btn btn-default" href="forms-general.html"> Kembali</a>
+                            <li class="active"><?php echo $tampil_detail['nama_siswa']?></li><br>
                         </ol>
                         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                         <!--End breadcrumb-->
@@ -127,7 +126,7 @@
                         </div>
                     </div>
                 </div>
-              
+
                 <div id="page-content">
                     <div class="panel">
                         <div class="panel-body">
@@ -139,7 +138,7 @@
                                         <div class="pad-ver">
                                             <img src="https://smanegeri1pseksu.files.wordpress.com/2017/10/dsc_0010.jpg?w=246&h=370" class="img-lg img-circle" alt="Profile Picture">
                                         </div>
-                                        <h4 class="text-lg text-overflow mar-no"><?php echo $tampil_detail['nama'] ?></h4>
+                                        <h4 class="text-lg text-overflow mar-no"><?php echo $tampil_detail['nama_siswa'] ?></h4>
                                         <p class="text-sm text-muted">Rekayasa Perangkat Lunak</p>
                                         
                                         
@@ -148,7 +147,7 @@
                                     
                                     <!-- Profile Details -->
                                     <p class="pad-top text-main text-center text-uppercase text-bold">profil siswa </p></p>
-                                    <p><a class><strong>Nis/Nisn:</strong><?php echo $tampil_detail['nis'] ?></a></p>
+                                    <p><a class><strong>Nis/Nisn:</strong><?php echo $tampil_detail['nisn'] ?></a></p>
                                     <p><a class><strong>Ttgl Lahir:</strong><?php echo $tampil_detail['tempat_tanggal_lahir'] ?></a></p>
                                     <p><a class><strong>Agama:</strong>Islam</a></p>
                                     <p><a class><strong>jenis kelamin:</strong>L</a></p>
@@ -228,7 +227,7 @@
                                 <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="img/profile-photos/10.png"></a>
                                 <div class="media-body">
                                     <div class="comment-header">
-                                        <div><a href="#" class="media-heading box-inline text-main text-semibold"><?php echo $tampil_detail['nama'] ?></a>  <span class="text-semibold text-main">added new Jurnal</span></div>
+                                        <div><a href="#" class="media-heading box-inline text-main text-semibold"><?php echo $tampil_detail['nama_siswa'] ?></a>  <span class="text-semibold text-main">added new Jurnal</span></div>
                                         <p class="text-muted text-sm"><i class="demo-pli-smartphone-3 icon-lg"></i> Mobile - 15-02-2021</p>
                                     </div>
                                     <p><?php echo $tampil_detail ['kegiatan']?> </p>
