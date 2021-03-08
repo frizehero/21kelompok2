@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Mar 2021 pada 02.33
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.4.4
+-- Waktu pembuatan: 01 Mar 2021 pada 05.43
+-- Versi server: 10.4.17-MariaDB
+-- Versi PHP: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -48,6 +48,11 @@ CREATE TABLE `dudi` (
 --
 
 INSERT INTO `dudi` (`id_dudi`, `id_guru`, `id_jurusan`, `nama_dudi`, `alamat`, `tentang`, `no_telepon`, `logo`, `foto`, `kepala_perusahaan`, `email`, `website`, `create_at`) VALUES
+(1, 1, 1, 'Hummasoft', 'malang', 'bagus', '1', NULL, 'uzi', NULL, NULL, NULL, '2021-03-01 03:55:00'),
+(2, 2, 2, 'kodesoft', 'malang', 'syfuasvd', NULL, NULL, NULL, NULL, NULL, NULL, '2021-03-01 03:55:14'),
+(3, NULL, 1, 'tes', NULL, NULL, '232', NULL, NULL, NULL, NULL, NULL, '2021-03-01 04:22:12'),
+(4, NULL, 2, 'uzi', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '2021-03-01 04:33:09'),
+(5, NULL, 1, 'a', 'malang', NULL, '231', NULL, NULL, NULL, 'email@email.com', NULL, '2021-03-01 04:35:45'),
 (6, NULL, 1, 'tes', 'malang', NULL, '12', 'file_1614573722.png', NULL, NULL, 'email@email.com', NULL, '2021-03-01 04:42:03');
 
 -- --------------------------------------------------------
@@ -75,21 +80,12 @@ CREATE TABLE `guru` (
 
 CREATE TABLE `jurnal` (
   `id_jurnal` int(100) NOT NULL,
-  `id_siswa` int(11) NOT NULL,
+  `id_siswa` int(100) DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `foto_kegiatan` varchar(100) DEFAULT NULL,
   `kegiatan` varchar(100) DEFAULT NULL,
   `create_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `jurnal`
---
-
-INSERT INTO `jurnal` (`id_jurnal`, `id_siswa`, `tanggal`, `foto_kegiatan`, `kegiatan`, `create_at`) VALUES
-(2, 9, '2021-03-04', '12', '211', '2021-03-05 03:43:29'),
-(10, 9, '2021-03-04', 'rgdg', 'rgd', '2021-03-05 03:43:19'),
-(12, 4, '2021-03-04', '23423', 'efwfw', '2021-03-04 12:18:53');
 
 -- --------------------------------------------------------
 
@@ -119,21 +115,10 @@ INSERT INTO `jurusan` (`id_jurusan`, `nama`, `create_at`) VALUES
 
 CREATE TABLE `kelas` (
   `id_kelas` int(100) NOT NULL,
-  `id_jurusan` int(11) NOT NULL,
+  `id_jurusan` int(100) DEFAULT NULL,
   `nama_kelas` varchar(100) DEFAULT NULL,
-  `logo` varchar(500) DEFAULT NULL,
   `create_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `kelas`
---
-
-INSERT INTO `kelas` (`id_kelas`, `id_jurusan`, `nama_kelas`, `logo`, `create_at`) VALUES
-(2, 0, 'XI RPL 2', 'file_1614924855.jpg', '2021-03-05 08:11:59'),
-(10, 1, NULL, NULL, '2021-03-05 09:58:54'),
-(11, 1, 'XI', 'kosong1.png', '2021-03-05 09:59:13'),
-(12, 1, 'XI RPL 2', 'file_1614938391.jpg', '2021-03-05 09:59:51');
 
 -- --------------------------------------------------------
 
@@ -159,13 +144,12 @@ CREATE TABLE `siswa` (
   `id_siswa` int(11) NOT NULL,
   `id_kelas` int(11) DEFAULT NULL,
   `id_dudi` int(11) DEFAULT NULL,
-  `nama_siswa` varchar(100) DEFAULT NULL,
+  `nama` varchar(100) DEFAULT NULL,
   `no_telepon` varchar(20) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `alamat` varchar(100) DEFAULT NULL,
-  `nisn` varchar(30) DEFAULT NULL,
-  `dudi` varchar(50) NOT NULL,
-  `logo` varchar(100) DEFAULT NULL,
+  `nis` varchar(30) DEFAULT NULL,
+  `foto` varchar(100) DEFAULT NULL,
   `jenis_kelamin` varchar(20) DEFAULT NULL,
   `tempat_tanggal_lahir` varchar(100) DEFAULT NULL,
   `create_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -175,9 +159,9 @@ CREATE TABLE `siswa` (
 -- Dumping data untuk tabel `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `id_kelas`, `id_dudi`, `nama_siswa`, `no_telepon`, `email`, `alamat`, `nisn`, `dudi`, `logo`, `jenis_kelamin`, `tempat_tanggal_lahir`, `create_at`) VALUES
-(16, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '2021-03-05 09:07:55'),
-(17, NULL, NULL, 'aa', NULL, NULL, NULL, '', '', 'kosong1.png', 'Jenis Kelamin Anda', NULL, '2021-03-05 09:18:10');
+INSERT INTO `siswa` (`id_siswa`, `id_kelas`, `id_dudi`, `nama`, `no_telepon`, `email`, `alamat`, `nis`, `foto`, `jenis_kelamin`, `tempat_tanggal_lahir`, `create_at`) VALUES
+(1, 1, 1, 'uzi', '081', 'uzi', 'malang', '1', 'uzi.jpg', 'L', '22-Feb', '2021-03-01 03:04:39'),
+(2, 2, 2, 'dafi', '11', 'uziuxi', NULL, NULL, NULL, NULL, NULL, '2021-03-01 03:40:59');
 
 -- --------------------------------------------------------
 
@@ -218,7 +202,7 @@ ALTER TABLE `guru`
 --
 ALTER TABLE `jurnal`
   ADD PRIMARY KEY (`id_jurnal`),
-  ADD KEY `id_siswa` (`id_siswa`);
+  ADD UNIQUE KEY `id_siswa` (`id_siswa`);
 
 --
 -- Indeks untuk tabel `jurusan`
@@ -231,7 +215,7 @@ ALTER TABLE `jurusan`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id_kelas`),
-  ADD KEY `id_jurusan` (`id_jurusan`);
+  ADD UNIQUE KEY `id_jurusan` (`id_jurusan`);
 
 --
 -- Indeks untuk tabel `pengumuman`
@@ -264,7 +248,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `dudi`
 --
 ALTER TABLE `dudi`
-  MODIFY `id_dudi` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_dudi` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `guru`
@@ -276,7 +260,7 @@ ALTER TABLE `guru`
 -- AUTO_INCREMENT untuk tabel `jurnal`
 --
 ALTER TABLE `jurnal`
-  MODIFY `id_jurnal` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_jurnal` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `jurusan`
@@ -288,7 +272,7 @@ ALTER TABLE `jurusan`
 -- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_kelas` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengumuman`
@@ -300,7 +284,7 @@ ALTER TABLE `pengumuman`
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
