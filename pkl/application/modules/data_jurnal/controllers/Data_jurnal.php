@@ -59,7 +59,7 @@ class Data_jurnal extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
-	function tambah_siswa
+	function tambah_siswa()
 	{
 		$this->m_data_dudi->tambah_siswa();
 		redirect('data_dudi');
