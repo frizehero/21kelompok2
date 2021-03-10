@@ -50,5 +50,20 @@ class Data_kelas extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
-	
+	function detail_kelas($id)
+	{
+		 $data = array(
+			'namamodule' 	=> "Data_kelas",
+			'namafileview' 	=> "V_detail_kelas",
+			'tampil_detail'		=> $this->m_data_kelas->tampil_detail($id),
+			'tampil_data'		=> $this->m_data_kelas->tampil_data($id),
+
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
+	function tambah_siswa()
+	{
+		$this->m_data_kelas->tambah_siswa();
+		redirect('data_kelas');
+	}
 }

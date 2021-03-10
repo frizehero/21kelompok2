@@ -10,6 +10,23 @@ class M_data_kelas extends CI_Model {
 		->get()
 		->result();
 	}
+	function tampil_detail($id)
+	{
+
+		$this->db->select('*')
+		->from('kelas')
+		->where('id_kelas',$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+	function tampil_data($id)
+	{
+		return $this->db->from('siswa')
+		->join('kelas', 'kelas.id_kelas = siswa.id_kelas')
+		->where('kelas.id_kelas',$id)
+		->get()
+		->result();
+	}
 
 	function tambah()
 	{
@@ -29,29 +46,29 @@ class M_data_kelas extends CI_Model {
 		$this->upload->initialize($config);
 		
 		if($_FILES['gambar']['name'])
-        {
-            if ($this->upload->do_upload('gambar'))
-            {
+		{
+			if ($this->upload->do_upload('gambar'))
+			{
 				$gbr = $this->upload->data();
 				$data = array(
 					'nama_kelas'			=> $nama_kelas,
 					'logo' 			=> $gbr['file_name'],
 					'id_jurusan' =>$jurusan,
 
-						
+
 				);
 				$this->db->insert('kelas', $data);
-			
+
 			}	 
 		}
 		else{
-				$data = array(
-					'nama_kelas'			=> $nama_kelas,
-					'logo' 				=> 'kosong1.png',
-					'id_jurusan' =>$jurusan,
-				);
-				$this->db->insert('kelas', $data);
-			}
+			$data = array(
+				'nama_kelas'			=> $nama_kelas,
+				'logo' 				=> 'kosong1.png',
+				'id_jurusan' =>$jurusan,
+			);
+			$this->db->insert('kelas', $data);
+		}
 	}
 
 	function edit()
@@ -71,24 +88,24 @@ class M_data_kelas extends CI_Model {
 		$this->upload->initialize($config);
 		
 		if($_FILES['gambar']['name'])
-        {
-            if ($this->upload->do_upload('gambar'))
-            {
+		{
+			if ($this->upload->do_upload('gambar'))
+			{
 				$gbr = $this->upload->data();
 				$data = array(
 					'nama_kelas'			=> $nama_kelas,
 					'logo' 			=> $gbr['file_name'],
 				);
 				$this->db->where('id_kelas',$id_kelas)->update('kelas', $data);
-			
+
 			}	 
 		}
 		else{
-				$data = array(
-					'nama_kelas'			=> $nama_kelas,
-				);
-				$this->db->where('id_kelas',$id_kelas)->update('kelas', $data);
-			}
+			$data = array(
+				'nama_kelas'			=> $nama_kelas,
+			);
+			$this->db->where('id_kelas',$id_kelas)->update('kelas', $data);
+		}
 	}
 
 	function hapus($id)
@@ -100,5 +117,51 @@ class M_data_kelas extends CI_Model {
 	{
 		$cari 		= $this->input->post('cari');
 		return $this->db->like('nama_kelas',$cari)->get('kelas')->result();
+	}
+	function tambah_siswa()
+	{
+		$nama_siswa 		= $this->input->post('nama_siswa');
+		$nisn 				= $this->input->post('nisn');
+		$jenis_kelamin 		= $this->input->post('jenis_kelamin');
+		$dudi 				= $this->input->post('dudi');
+
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
+		
+		$this->upload->initialize($config);
+		
+		if($_FILES['gambar']['name'])
+		{
+			if ($this->upload->do_upload('gambar'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'nama_siswa'			=> $nama_siswa,
+					'nisn'					=> $nisn,
+					'jenis_kelamin'			=> $jenis_kelamin,
+					'dudi'					=> $dudi,
+					'logo' 					=> $gbr['file_name'],
+
+				);
+				$this->db->insert('siswa', $data);
+
+			}	 
+		}
+		else{
+			$data = array(
+				'nama_siswa'			=> $nama_siswa,
+				'nisn'					=> $nisn,
+				'jenis_kelamin'			=> $jenis_kelamin,
+				'dudi'					=> $dudi,
+				'logo' 				=> 'kosong1.png',
+			);
+			$this->db->insert('siswa', $data);
+		}
 	}
 }

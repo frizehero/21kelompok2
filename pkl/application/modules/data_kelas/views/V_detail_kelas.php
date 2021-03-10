@@ -1,10 +1,11 @@
-<div id="page-content">
+
+ <div id="page-content">
 
   <div class="row pad-btm">
     <div class="col-sm-6 toolbar-left">
       <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">tambah</button>
     </div>
-    <?= form_open_multipart('data_siswa/tambah'); ?>
+    <?= form_open_multipart('data_kelas/tambah_siswa'); ?>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -49,6 +50,7 @@
                 <label for="" class="control-label">Preview Foto Profile</label>
                 <img id="preview" width="150px" />
               </div>
+              
             </form>
           </div>
         </div>
@@ -76,7 +78,7 @@
 
 
   <div class="row">
-    <?php foreach($tampil as $res) {
+    <?php foreach($tampil_data as $res) {
   $id = $res->id_siswa;
   $gambar = $res->logo;
   ?>
@@ -140,7 +142,7 @@
         <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
         <h4 class="modal-title">Edit</h4>
       </div>
-      <?= form_open_multipart('data_siswa/edit'); ?>
+      <?= form_open_multipart('$tampil_detail/edit'); ?>
       <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa?>">
 
       <!--Modal body--> 
@@ -218,7 +220,7 @@
       <!--Modal footer-->
       <div class="modal-footer">
         <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-        <a class="btn btn-danger" href="<?php echo base_url('data_siswa/hapus/'. $res->id_siswa) ?>">Hapus Dudi</a>
+        <a class="btn btn-danger" href="<?php echo base_url('$tampil_detail/hapus/'. $res->id_siswa) ?>">Hapus Dudi</a>
       </div>
     </div>
   </div>
