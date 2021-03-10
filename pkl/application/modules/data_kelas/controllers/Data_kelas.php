@@ -19,6 +19,7 @@ class Data_kelas extends MX_Controller {
 			'namamodule' 	=> "data_kelas",
 			'namafileview' 	=> "V_data_kelas",
 			'tampil'		=> $this->m_data_kelas->tampil(),
+			'filter_jurusan'		=> $this->m_data_kelas->filter_jurusan(),
 			
 
 		);
@@ -69,4 +70,20 @@ class Data_kelas extends MX_Controller {
 		$this->m_data_kelas->tambah_siswa();
 		redirect('data_kelas');
 	}
+
+	function filter()
+	{
+
+		$jurusan 					= $this->input->post('jurusan');
+		// echo $jurusan;
+
+		$data = array(
+			'namamodule' 	=> "data_kelas",
+			'namafileview' 	=> "V_data_kelas",
+			'tampil'		=> $this->m_data_kelas->filter($jurusan),
+			'filter_jurusan'	=> $this->m_data_kelas->filter_jurusan(),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
+
 }

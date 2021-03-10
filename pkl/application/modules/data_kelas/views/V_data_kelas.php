@@ -83,19 +83,22 @@
 <div class="col-sm-6 toolbar-right text-right">
 
   <div class="select">
+    <form method="post" action="<?php echo site_url('data_kelas/filter') ?>">
     
-   <select>
-    <?php foreach ($v_filter as $fil) {?>
-     <option><?= $fil->nama_dudi?></option>
+   <select name="jurusan">
+    <?php foreach ($filter_jurusan as $fil) {?>
+     <option value="<?= $fil->id_jurusan?>" ><?= $fil->nama?></option>
       <?php }?>
    </select>
+   
 
  </div>
- <button class="btn btn-default">Cari</button>
+ <button type="submit" class="btn btn-default">Cari</button>
+ </form>
 
 </div>
 </div>
-</form>
+
 <!---------------------------------->
 
 

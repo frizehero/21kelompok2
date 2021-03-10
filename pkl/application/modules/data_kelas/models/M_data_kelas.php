@@ -10,12 +10,9 @@ class M_data_kelas extends CI_Model {
 		->get()
 		->result();
 	}
-	function filter()
+	function filter_jurusan()
 	{
-		$this->db->select('*')
-				 ->from('dudi');
-		$query = $this->db->get();
-		return $query;
+			return $this->db->get('jurusan')->result();
 	}
 	function tampil_detail($id)
 	{
@@ -174,6 +171,15 @@ class M_data_kelas extends CI_Model {
 	{
 		$cari 		= $this->input->post('cari');
 		return $this->db->like('nama_kelas',$cari)->get('kelas')->result();
+	}
+	function filter ($jurusan)
+	{
+
+			$this->db->select('*')
+			->join('jurusan','jurusan.id_jurusan = kelas.id_jurusan')
+			->where('kelas.id_jurusan',$jurusan);
+			$query = $this->db->get('kelas');
+			return $query->result();
 	}
 	
 	
