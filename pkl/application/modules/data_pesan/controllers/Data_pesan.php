@@ -50,6 +50,16 @@ class Data_pesan extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+	function detail_pesan($id)
+	{
+
+		 $data = array(
+			'namamodule' 	=> "Data_pesan",
+			'namafileview' 	=> "V_detail_pesan",
+			'tampil_detail'		=> $this->m_data_pesan->tampil_detail($id),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
 	
 }
  

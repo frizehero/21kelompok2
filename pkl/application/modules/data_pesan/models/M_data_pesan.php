@@ -102,4 +102,12 @@ class M_data_pesan extends CI_Model {
 		$cari 		= $this->input->post('cari');
 		return $this->db->like('nama_pesan',$cari)->get('pesan')->result();
 	}
+	function tampil_detail($id)
+	{
+        $this->db->select('*')
+				 ->from('pesan')
+				 ->where('id_pesan',$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
 }

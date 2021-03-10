@@ -1,10 +1,54 @@
-<div id="page-content">
-  <div class="panel">
+<div id="page-head">
+
+                        <!--Page Title-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <div id="page-title">
+                            <h1 style="margin-top: -20px; margin-left: -20px" class="page-header text-overflow">Pesan</h1>
+                        </div>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End page title-->
+
+
+                        <!--Breadcrumb-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <ol style="margin-bottom: 20px; margin-left: -20px" class="breadcrumb">
+                            <li><a href="index.html"><i class="demo-pli-home"></i></a></li>
+                            <li class="active">Data Pesan</li>
+                        </ol>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End breadcrumb-->
+
+                    </div>
+                
+             <!-- MAIL INBOX -->
+             <!--===================================================-->
+             <div class="panel">
                  <div class="panel-body">
                      <div class="fixed-fluid">
                          <div class="fixed-sm-200 pull-sm-left fixed-right-border">
                              
+                             <div class="pad-btm bord-btm">
+                                 <a href="mailbox-compose.html" class="btn btn-block btn-success">Menulis surat</a>
+                             </div>
                              
+                             <p class="pad-hor mar-top text-main text-bold text-sm text-uppercase">Folders</p>
+                             <div class="list-group bg-trans pad-btm bord-btm">
+                                 <a href="#" class="list-group-item mail-nav-unread">
+                                     <i class="demo-pli-mail-unread icon-lg icon-fw"></i> Pesan
+                                 </a>
+                                 <a href="#" class="list-group-item">
+                                     <i class="demo-pli-pen-5 icon-lg icon-fw"></i> Draft
+                                 </a>
+                                 <a href="#" class="list-group-item">
+                                     <i class="demo-pli-mail-send icon-lg icon-fw"></i> Terkirim
+                                 </a>
+                                 <a href="#" class="list-group-item mail-nav-unread">
+                                     <i class="demo-pli-fire-flame-2 icon-lg icon-fw"></i> Spam
+                                 </a>
+                                 <a href="#" class="list-group-item">
+                                     <i class="demo-pli-trash icon-lg icon-fw"></i> Sampah
+                                 </a>
+                             </div>
                              
                              
                              
@@ -78,121 +122,48 @@
                                  </div>
                                  
                                  <!--Mail list group-->
+                                 <?php foreach ($tampil as $key => $res) {?>
+                                   
                                  <ul id="demo-mail-list" class="mail-list pad-top bord-top">
-                                    <?php foreach($tampil as $res) {
-      $id = $res->id_pesan;
-      ?>
-                                    <li class="mail-list-unread mail-attach">
+                                   <li class="mail-list-unread mail-attach">
                                          <div class="mail-control">
                                              <input id="email-list-1" class="magic-checkbox" type="checkbox">
                                              <label for="email-list-1"></label>
                                          </div>
                                          <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-                                         <div class="mail-from"><a href="#"><?php echo $res->nama_pengirim?> </a></div>
-                                         <div class="mail-time"><?php echo $res->tanggal_pesan?></div>
+                                         <div class="mail-from"><a href="#"><?php echo $res->nama_pengirim?></a></div>
+                                         <div class="mail-time">05:55 PM</div>
                                          <div class="mail-attach-icon"></div>
                                          <div class="mail-subject">
-                                             <a href="mailbox-message.html"><?php echo $res->judul_pesan?></a>
+                                             <a href="<?php echo base_url('data_pesan/detail_pesan/'. $res->id_pesan) ?>">mengirimkan sebuah pesan</a>
                                          </div>
                                      </li>
-                                 <?php }?>
                                  </ul>
+                               <?php }?>
                              </div>
                              
                              
                              <!--Mail footer-->
-                             
+                             <div class="panel-footer clearfix">
+                                 <div class="pull-right">
+                                     <span class="text-main"><strong>1-50</strong> of <strong>160</strong></span>
+                                     <div class="btn-group btn-group">
+                                         <button type="button" class="btn btn-default">
+                                             <i class="demo-psi-arrow-left"></i>
+                                         </button>
+                                         <button type="button" class="btn btn-default">
+                                             <i class="demo-psi-arrow-right"></i>
+                                         </button>
+                                     </div>
+                                 </div>
+                             </div>
                          </div>
                      </div>
                  </div>
              </div>
-</div>
-<!--jQuery [ REQUIRED ]-->
-<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
-
-<script>
-  $(document).ready(function () {
-
-
-    $('#demo-dp-txtinputmasukkerja input').datepicker({
-      format: "yyyy-m-d",
-      todayBtn: "linked",
-      todayHighlight: true
-    });
-
-    $('#demo-dp-txtinputakhirkerja input').datepicker({
-      format: "yyyy-m-d",
-      todayBtn: "linked",
-      todayHighlight: true
-    });
-
-
-
-  });
-</script>
-
-
-<script type="text/javascript">
-
-
-  function tampilkanPreview(userfile,idpreview)
-  {
-    var gb = userfile.files;
-    for (var i = 0; i < gb.length; i++)
-    {
-      var gbPreview = gb[i];
-      var imageType = /image.*/;
-      var preview=document.getElementById(idpreview);
-      var reader = new FileReader();
-      if (gbPreview.type.match(imageType))
-      {
-      //jika tipe data sesuai
-      preview.file = gbPreview;
-      reader.onload = (function(element)
-      {
-        return function(e)
-        {
-          element.src = e.target.result;
-        };
-      })(preview);
-      //membaca data URL gambar
-      reader.readAsDataURL(gbPreview);
-    }
-    else
-    {
-        //jika tipe data tidak sesuai
-        alert("Tipe file tidak sesuai. Gambar harus bertipe .png, .gif atau .jpg.");
-      }
-    }
-  }
-  function tampilkanPreview1(userfile,idpreview1)
-  {
-    var gb = userfile.files;
-    for (var i = 0; i < gb.length; i++)
-    {
-      var gbPreview1 = gb[i];
-      var imageType = /image.*/;
-      var preview1=document.getElementById(idpreview1);
-      var reader = new FileReader();
-      if (gbPreview1.type.match(imageType))
-      {
-      //jika tipe data sesuai
-      preview1.file = gbPreview1;
-      reader.onload = (function(element)
-      {
-        return function(e)
-        {
-          element.src = e.target.result;
-        };
-      })(preview1);
-      //membaca data URL gambar
-      reader.readAsDataURL(gbPreview1);
-    }
-    else
-    {
-        //jika tipe data tidak sesuai
-        alert("Tipe file tidak sesuai. Gambar harus bertipe .png, .gif atau .jpg.");
-      }
-    }
-  }
-</script>
+             
+             <!--===================================================-->
+             <!-- END OF MAIL INBOX -->
+             
+             
+         

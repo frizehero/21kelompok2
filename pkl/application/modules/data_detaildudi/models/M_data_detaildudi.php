@@ -5,7 +5,7 @@ class M_data_detaildudi extends CI_Model {
 
 	function tampil()
 	{
-		return $this->db->from('dudi')
+		return $this->db->from('detaildudi')
 		
 		->get() 
 		->result();
