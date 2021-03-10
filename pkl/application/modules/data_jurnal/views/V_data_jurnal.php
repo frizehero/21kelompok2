@@ -22,31 +22,21 @@
 
                  <div class="col-sm-12 toolbar-right text-right">
                      FILTER :
+                     <form method="post" action="<?php echo site_url('data_jurnal/filter') ?>">
                      <div class="select">
-                         <select id="demo-ease">
-                             <option value="date-created" selected="">XI RPL 3</option>
-                             <option value="date-modified">XI RPL 2</option>
-                             <option value="frequency-used">XI RPL 1</option>
-                             <option value="alpabetically">XI TKJ</option>
-                             <option value="alpabetically-reversed">XI PNP</option>
+                         <select name="dudi" id="demo-ease">
+                          <option selected="" value="">Dudi</option>
+                          <?php foreach ($filter_dudi as $zi) {?>  
+                             <option  value="<?php echo $zi->id_dudi?>" ><?php echo $zi->nama_dudi?></option>
+                           <?php }?>
                          </select>
                      </div>
-                     <div class="select">
-                         <select id="demo-ease">
-                             <option value="date-created" selected="">HUMMASOFT</option>
-                             <option value="date-modified">KODESFOT</option>
-                             <option value="frequency-used">ANGON DATA</option>
-                             <option value="alpabetically">Alpabetically</option>
-                             <option value="alpabetically-reversed">Alpabetically Reversed</option>
-                         </select>
-                     </div>
-                     <button class="btn btn-default">Filter</button>
+                     <button type="submit" class="btn btn-default">Filter</button>
+                   </form>
                      
                  </div>
              </div>
              <?php foreach($tampil as $res) {
-             $id = $res->id_jurnal;
-             $gambar = $res->foto_kegiatan;
                 ?>
              <div class="col-sm-4 col-md-3">
 
@@ -68,7 +58,7 @@
                                </ul>
                            </div>
                        </div>
-                       <a href="<?php echo base_url('data_jurnal/detail_jurnal/'. $res->id_jurnal) ?>">
+                       <a href="<?php echo base_url('data_jurnal/detail_jurnal/'. $res->id_siswa) ?>">
                            <img alt="Profile Picture" class="img-lg img-circle mar-ver" src="https://smanegeri1pseksu.files.wordpress.com/2017/10/dsc_0010.jpg?w=246&h=370">
                            <p class="text-lg text-semibold mar-no text-main"><?php echo $res->nama_siswa?> </p>
                            <p class="text-sm">Rekayasa Perangkat Lunak</p>
@@ -83,7 +73,7 @@
            </div>
          <?php }?>
 
-       </div>
+   
 <!--jQuery [ REQUIRED ]-->
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 

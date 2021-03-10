@@ -10,6 +10,13 @@ class M_data_kelas extends CI_Model {
 		->get()
 		->result();
 	}
+	function filter()
+	{
+		$this->db->select('*')
+				 ->from('dudi');
+		$query = $this->db->get();
+		return $query;
+	}
 	function tampil_detail($id)
 	{
 
@@ -168,5 +175,6 @@ class M_data_kelas extends CI_Model {
 		$cari 		= $this->input->post('cari');
 		return $this->db->like('nama_kelas',$cari)->get('kelas')->result();
 	}
+	
 	
 }

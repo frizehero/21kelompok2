@@ -5,21 +5,31 @@ class M_data_jurnal extends CI_Model {
 
 	function tampil()
 	{
-		return $this->db->from('jurnal')
-		->join('siswa', 'siswa.id_siswa = jurnal.id_siswa')
-		->get()
-		->result();
+		return $this->db->get('siswa')->result();
+
 	}
 	function tampil_detail($id)
 	{
 
 		$this->db->select('*')
-				 ->from('jurnal')
-				 ->join('siswa', 'siswa.id_siswa = jurnal.id_siswa')
-				 ->where('id_jurnal',$id);
+				 ->from('siswa')
+				 ->where('id_siswa',$id);
 		$query = $this->db->get();
 		return $query->row_array();
 	}
+	function tampil_data($id)
+	{
+		return $this->db->from('jurnal')
+		->join('siswa', 'siswa.id_siswa = jurnal.id_siswa')
+		->where('siswa.id_siswa',$id)
+		->get()
+		->result();
+	}
+	function filter_dudi()
+	{
+			return $this->db->get('dudi')->result();
+	}
+	
 
 	function tambah()
 	{
@@ -114,5 +124,14 @@ class M_data_jurnal extends CI_Model {
 	{
 		$cari 		= $this->input->post('cari');
 		return $this->db->like('nama_sekolah',$cari)->get('sekolah')->result();
+	}
+	function filter($dudi)
+	{
+
+			$this->db->select('*')
+			->join('dudi','dudi.id_dudi = siswa.id_dudi')
+			->where('siswa.id_dudi',$dudi);
+			$query = $this->db->get('siswa');
+			return $query->result();
 	}
 }

@@ -19,6 +19,8 @@ class Data_kelas extends MX_Controller {
 			'namamodule' 	=> "data_kelas",
 			'namafileview' 	=> "V_data_kelas",
 			'tampil'		=> $this->m_data_kelas->tampil(),
+			
+
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -57,6 +59,7 @@ class Data_kelas extends MX_Controller {
 			'namafileview' 	=> "V_detail_kelas",
 			'tampil_detail'		=> $this->m_data_kelas->tampil_detail($id),
 			'tampil_data'		=> $this->m_data_kelas->tampil_data($id),
+		
 
 		);
 		echo Modules::run('template/tampilCore', $data);

@@ -83,11 +83,13 @@
 <div class="col-sm-6 toolbar-right text-right">
 
   <div class="select">
+    
    <select>
-     <option>hummasoft</option>
-     <option>kodesoft</option>
-     <option>perusahaan asuransi</option>
+    <?php foreach ($v_filter as $fil) {?>
+     <option><?= $fil->nama_dudi?></option>
+      <?php }?>
    </select>
+
  </div>
  <button class="btn btn-default">Cari</button>
 
