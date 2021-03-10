@@ -69,7 +69,7 @@ class M_data_pengumuman extends CI_Model {
 				$gbr = $this->upload->data();
 				$data = array(
 					'judul_pengumuman'		=> $judul_pengumuman,
-					'tanggal'		=> $tanggal_pengumuman,
+					'tanggal_pengumuman'		=> $tanggal_pengumuman,
 					'isi_pengumuman'		=> $isi_pengumuman,
 					'tertuju'		=> $tertuju,
 				);
@@ -80,7 +80,7 @@ class M_data_pengumuman extends CI_Model {
 		else{
 				$data = array(
 					'judul_pengumuman'		=> $judul_pengumuman,
-					'tanggal'		=> $tanggal_pengumuman,
+					'tanggal_pengumuman'		=> $tanggal_pengumuman,
 					'isi_pengumuman'		=> $isi_pengumuman,
 					'tertuju'		=> $tertuju,
 				);

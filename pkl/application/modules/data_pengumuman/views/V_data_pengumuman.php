@@ -95,7 +95,7 @@
         
         <div class="modal fade" id="exampleModal3<?php echo $res->id_pengumuman?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-   <?= form_open_multipart('data_pengumuman/edit'); ?>
+   <?= form_open_multipart('data_pengumuman/'); ?>
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">edit Pengumuman</h5>

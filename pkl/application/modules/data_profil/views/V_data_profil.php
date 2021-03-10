@@ -1,267 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>Profile | Nifty - Admin Template</title>
-
-
-    <!--STYLESHEET-->
-    <!--=================================================-->
-
-    <!--Open Sans Font [ OPTIONAL ]-->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-
-
-    <!--Bootstrap Stylesheet [ REQUIRED ]-->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!--Nifty Stylesheet [ REQUIRED ]-->
-    <link href="css/nifty.min.css" rel="stylesheet">
-
-
-    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
-    <link href="css/demo/nifty-demo-icons.min.css" rel="stylesheet">
-
-
-    <!--=================================================-->
-
-
-
-    <!--Pace - Page Load Progress Par [OPTIONAL]-->
-    <link href="plugins/pace/pace.min.css" rel="stylesheet">
-    <script src="plugins/pace/pace.min.js"></script>
-
-
-    <!--Demo [ DEMONSTRATION ]-->
-    <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
-
-
-
-    <!--=================================================
-
-    REQUIRED
-    You must include this in your project.
-
-
-    RECOMMENDED
-    This category must be included but you may modify which plugins or components which should be included in your project.
-
-
-    OPTIONAL
-    Optional plugins. You may choose whether to include it in your project or not.
-
-
-    DEMONSTRATION
-    This is to be removed, used for demonstration purposes only. This category must not be included in your project.
-
-
-    SAMPLE
-    Some script samples which explain how to initialize plugins or components. This category should not be included in your project.
-
-
-    Detailed information and more samples can be found in the document.
-
-    =================================================-->
-
-</head>
-
-<!--TIPS-->
-<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
-<body>
-    <div id="container" class="effect aside-float aside-bright mainnav-sm page-fixedbar page-fixedbar-right">
-
-        <!--NAVBAR-->
-        <!--===================================================-->
-        <header id="navbar">
-            <div id="navbar-container" class="boxed">
-
-                <!--Brand logo & name-->
-                <!--================================-->
-                <div class="navbar-header">
-                    <a href="index.html" class="navbar-brand">
-                        <img src="img/logo.png" alt="Nifty Logo" class="brand-icon">
-                        <div class="brand-title">
-                            <span class="brand-text">Nifty</span>
-                        </div>
-                    </a>
-                </div>
-                <!--================================-->
-                <!--End brand logo & name-->
-
-
-                <!--Navbar Dropdown-->
-                <!--================================-->
-                <div class="navbar-content">
-                    <ul class="nav navbar-top-links">
-
-                        <!--Navigation toogle button-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End Navigation toogle button-->
-
-
-
-                        <!--Search-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End Search-->
-
-                    </ul>
-                    <ul class="nav navbar-top-links">
-
-
-                        <!--Mega dropdown-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        
-                        </ul>
-                    </div>
-                    <!--================================-->
-                    <!--End Navbar Dropdown-->
-
-                </div>
-            </header>
-            <!--===================================================-->
-            <!--END NAVBAR-->
-
-            <div class="boxed">
-
-                <!--CONTENT CONTAINER-->
-                <!--===================================================-->
-                <div id="content-container">
-                    <div id="page-head">
-
-
-                        
-                        <!--Page Title-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <div id="page-title">
-                            <h1 class="page-header text-overflow">Profil Siswa</h1>
-                        </div>
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End page title-->
-
-
-                        <!--Breadcrumb-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <ol class="breadcrumb">
-                            <li><a href="#"><i class="demo-pli-home"></i></a></li>
-                            <li><a href="#">Profil</a></li>
-                            <li class="active">Profil siswa</li><br>
-                            <a style="margin-top: 10px" class="btn btn-default" href="siswa.html"> Kembali</a>
-                        </ol>
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End breadcrumb-->
-
-                        
-                    
-                    </div>
-
-
-                    <!--Fixedbar-->
-                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                    <div class="page-fixedbar-container">
-                        <div class="page-fixedbar-content">
-                            <div class="nano">
-                                <div class="nano-content">
-                                    <p class="pad-all text-main text-sm text-uppercase text-bold">
-                                        Siswa Perkelas
-                                    </p>
-
-                                    <!--Family-->
-                                    <div class="list-group bg-trans bord-btm">
-                                        <div class="list-group-item list-item-sm">
-                                            <div class="media-left pos-rel">
-                                                <a href="#"><img class="img-circle img-xs" src="img/profile-photos/2.png" alt="Profile Picture"></a>
-                                            </div>
-                                            <div class="media-body">
-                                                <a href="#" class="text-main">
-                                                    <p>Ardita Puspitasari</p>
-                                                </a>
-                                                <button class="btn btn-xs btn-default"><i class="demo-pli-add-user"></i>Hummasoft</button>
-                                            </div>
-
-                                        </div>
-                                        <div class="list-group bg-trans bord-btm">
-                                            <div class="list-group-item list-item-sm">
-                                                <div class="media-left pos-rel">
-                                                    <a href="#"><img class="img-circle img-xs" src="img/profile-photos/2.png" alt="Profile Picture"></a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <a href="#" class="text-main">
-                                                        <p>Ardita Puspitasari</p>
-                                                    </a>
-                                                    <button class="btn btn-xs btn-default"><i class="demo-pli-add-user"></i>Hummasoft</button>
-                                                </div>
-
-                                            </div>
-                                            <div class="list-group-item">
-                                                <div class="media-left pos-rel">
-                                                    <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <a href="#" class="text-main">
-                                                        <p>Muhammad Khadafi Hibatullah</p>
-                                                    </a>
-                                                    <button class="btn btn-xs btn-default"><i class="demo-pli-add-user"></i>Hummasoft</button>
-                                                </div>
-                                            </div>
-                                            <div class="list-group-item">
-                                                <div class="media-left pos-rel">
-                                                    <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <a href="#" class="text-main">
-                                                        <p>Muhammad Khadafi Hibatullah</p>
-                                                    </a>
-                                                    <button class="btn btn-xs btn-default"><i class="demo-pli-add-user"></i>Hummasoft</button>
-                                                </div>
-                                            </div>
-                                            <div class="list-group-item">
-                                                <div class="media-left pos-rel">
-                                                    <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <a href="#" class="text-main">
-                                                        <p>Muhammad Khadafi Hibatullah</p>
-                                                    </a>
-                                                    <button class="btn btn-xs btn-default"><i class="demo-pli-add-user"></i>Hummasoft</button>
-                                                </div>
-                                            </div>
-                                            <div class="list-group-item">
-                                                <div class="media-left pos-rel">
-                                                    <a href="#"><img class="img-circle img-xs" src="img/profile-photos/4.png" alt="Profile Picture"></a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <a href="#" class="text-main">
-                                                        <p>Muhammad Nurfauzi Ikhsan</p>
-                                                    </a>
-                                                    <button class="btn btn-xs btn-default"><i class="demo-pli-add-user"></i>Hummasoft</button>
-                                                </div>
-                                            </div>
-                                            
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                    <!--End Fixedbar-->
-
-                    <!--Page content-->
-                    <!--===================================================-->
-                    <div id="page-content">
+<div id="page-content">
+  <div id="page-content">
                         <div class="panel">
                             <div class="panel-body">
                                 <div class="fixed-fluid">
@@ -721,239 +459,93 @@
                             </div>
                         </div>
                     </aside>
-                    <!--===================================================-->
-                    <!--END ASIDE-->
+</div>
+<!--jQuery [ REQUIRED ]-->
+<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function () {
 
 
-                    <!--MAIN NAVIGATION-->
-                    <!--===================================================-->
-                    <nav id="mainnav-container">
-                        <div id="mainnav">
+    $('#demo-dp-txtinputmasukkerja input').datepicker({
+      format: "yyyy-m-d",
+      todayBtn: "linked",
+      todayHighlight: true
+    });
 
-
-                            <!--OPTIONAL : ADD YOUR LOGO TO THE NAVIGATION-->
-                            <!--It will only appear on small screen devices.-->
-                    <!--================================
-                    <div class="mainnav-brand">
-                        <a href="index.html" class="brand">
-                            <img src="img/logo.png" alt="Nifty Logo" class="brand-icon">
-                            <span class="brand-text">Nifty</span>
-                        </a>
-                        <a href="#" class="mainnav-toggle"><i class="pci-cross pci-circle icon-lg"></i></a>
-                    </div>
-                -->
-
-
-
-                <!--Menu-->
-                <!--================================-->
-                <div id="mainnav-menu-wrap">
-                    <div class="nano">
-                        <div class="nano-content">
-
-                            <!--Profile Widget-->
-                            <!--================================-->
-                            <div id="mainnav-profile" class="mainnav-profile">
-                                <div class="profile-wrap text-center">
-                                    <div class="pad-btm">
-                                        <img class="img-circle img-md" src="img/profile-photos/1.png" alt="Profile Picture">
-                                    </div>
-                                    <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
-                                        <span class="pull-right dropdown-toggle">
-                                            <i class="dropdown-caret"></i>
-                                        </span>
-                                        <p class="mnp-name">Aaron Chavez</p>
-                                        <span class="mnp-desc">aaron.cha@themeon.net</span>
-                                    </a>
-                                </div>
-                                <div id="profile-nav" class="collapse list-group bg-trans">
-                                    <a href="#" class="list-group-item">
-                                        <i class="demo-pli-male icon-lg icon-fw"></i> View Profile
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="demo-pli-gear icon-lg icon-fw"></i> Settings
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="demo-pli-information icon-lg icon-fw"></i> Help
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
-                                    </a>
-                                </div>
-                            </div>
-
-
-                            <!--Shortcut buttons-->
-                            <!--================================-->
-                            <div id="mainnav-shortcut" class="hidden">
-                                <ul class="list-unstyled shortcut-wrap">
-                                    <li class="col-xs-3" data-content="My Profile">
-                                        <a class="shortcut-grid" href="#">
-                                            <div class="icon-wrap icon-wrap-sm icon-circle bg-mint">
-                                                <i class="demo-pli-male"></i>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="col-xs-3" data-content="Messages">
-                                        <a class="shortcut-grid" href="#">
-                                            <div class="icon-wrap icon-wrap-sm icon-circle bg-warning">
-                                                <i class="demo-pli-speech-bubble-3"></i>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="col-xs-3" data-content="Activity">
-                                        <a class="shortcut-grid" href="#">
-                                            <div class="icon-wrap icon-wrap-sm icon-circle bg-success">
-                                                <i class="demo-pli-thunder"></i>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="col-xs-3" data-content="Lock Screen">
-                                        <a class="shortcut-grid" href="#">
-                                            <div class="icon-wrap icon-wrap-sm icon-circle bg-purple">
-                                                <i class="demo-pli-lock-2"></i>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!--================================-->
-                            <!--End shortcut buttons-->
-
-
-                         <ul id="mainnav-menu" class="list-group">
-
-                              <!--Category name-->
-                              <li class="list-header">Navigation</li>
-
-                              <!--Menu list item-->
-                              <li >
-                                  <a href="index.html">
-                                      <i class="demo-pli-home"></i>
-                                      <span class="index.html"></span>
-                                      <i class="arrow"></i>
-                                  </a>
-
-                                  <!--Submenu-->
-                              </li>
-
-                              <!--Menu list item-->
-
-
-                              <!--Menu list item-->
-
-
-                              <li class="list-divider"></li>
-
-                              <!--Category name-->
-                              <li class="list-header">Components</li>
-
-                              <!--Menu list item-->
-                              <li>
-                                  <a href="#">
-                                      <i class="demo-pli-receipt-4"></i>
-                                      <span class="menu-title">Data</span>
-                                      <i class="arrow"></i>
-                                  </a>
-
-                                  <!--Submenu-->
-                                  <ul class="collapse">
-                                      <li><a href="siswa.html">Data Siswa</a></li>
-                                      <li><a href="datadudi.html">Data Dudi</a></li>
-
-                                  </ul>
-                              </li>
-                              
-                              <li class="list-divider"></li>
-                              <li class="active-sub">
-                                  <a href="#">
-                                      <i class="demo-pli-pen-5"></i>
-                                      <span class="menu-title">Forms</span>
-                                      <i class="arrow"></i>
-                                  </a>
-
-                                  <!--Submenu-->
-                                  <ul class="collapse">
-                                      <li><a href="forms-general.html">Laporan Jurnal</a></li>
-                                      
-                                  </ul>
-                                <li>
-                                  <a href="pengumuman.html">
-                                      <i class="demo-pli-warning-window"></i>
-                                      <span class="menu-title">Pengumuman</span>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="kontak.html">
-                                      <i class="demo-pli-mail"></i>
-                                      <span class="menu-title">Pesan</span>
-                                  </a>
-                              </li>
-                              </li>
-
-                              <!--Widget-->
-                              <!--================================-->
-                              
-                              <!--================================-->
-                              <!--End widget-->
-                            </div>
-                        </div>
-                    </div>
-                    <!--================================-->
-                    <!--End menu-->
-
-                </div>
-            </nav>
-            <!--===================================================-->
-            <!--END MAIN NAVIGATION-->
-
-        </div>
-
-        
-
-        <!-- FOOTER -->
-        <!--===================================================-->
-        <!--===================================================-->
-        <!-- END FOOTER -->
-
-
-        <!-- SCROLL PAGE BUTTON -->
-        <!--===================================================-->
-        <button class="scroll-top btn">
-            <i class="pci-chevron chevron-up"></i>
-        </button>
-        <!--===================================================-->
-    </div>
-    <!--===================================================-->
-    <!-- END OF CONTAINER -->
-
-
-    
-    
-    
-    <!--JAVASCRIPT-->
-    <!--=================================================-->
-
-    <!--jQuery [ REQUIRED ]-->
-    <script src="js/jquery.min.js"></script>
-
-
-    <!--BootstrapJS [ RECOMMENDED ]-->
-    <script src="js/bootstrap.min.js"></script>
-
-
-    <!--NiftyJS [ RECOMMENDED ]-->
-    <script src="js/nifty.min.js"></script>
+    $('#demo-dp-txtinputakhirkerja input').datepicker({
+      format: "yyyy-m-d",
+      todayBtn: "linked",
+      todayHighlight: true
+    });
 
 
 
+  });
+</script>
 
-    <!--=================================================-->
-    
-    <!--Demo script [ DEMONSTRATION ]-->
-    <script src="js/demo/nifty-demo.min.js"></script>
 
-    
+<script type="text/javascript">
 
-</body>
-</html>
+
+  function tampilkanPreview(userfile,idpreview)
+  {
+    var gb = userfile.files;
+    for (var i = 0; i < gb.length; i++)
+    {
+      var gbPreview = gb[i];
+      var imageType = /image.*/;
+      var preview=document.getElementById(idpreview);
+      var reader = new FileReader();
+      if (gbPreview.type.match(imageType))
+      {
+      //jika tipe data sesuai
+      preview.file = gbPreview;
+      reader.onload = (function(element)
+      {
+        return function(e)
+        {
+          element.src = e.target.result;
+        };
+      })(preview);
+      //membaca data URL gambar
+      reader.readAsDataURL(gbPreview);
+    }
+    else
+    {
+        //jika tipe data tidak sesuai
+        alert("Tipe file tidak sesuai. Gambar harus bertipe .png, .gif atau .jpg.");
+      }
+    }
+  }
+  function tampilkanPreview1(userfile,idpreview1)
+  {
+    var gb = userfile.files;
+    for (var i = 0; i < gb.length; i++)
+    {
+      var gbPreview1 = gb[i];
+      var imageType = /image.*/;
+      var preview1=document.getElementById(idpreview1);
+      var reader = new FileReader();
+      if (gbPreview1.type.match(imageType))
+      {
+      //jika tipe data sesuai
+      preview1.file = gbPreview1;
+      reader.onload = (function(element)
+      {
+        return function(e)
+        {
+          element.src = e.target.result;
+        };
+      })(preview1);
+      //membaca data URL gambar
+      reader.readAsDataURL(gbPreview1);
+    }
+    else
+    {
+        //jika tipe data tidak sesuai
+        alert("Tipe file tidak sesuai. Gambar harus bertipe .png, .gif atau .jpg.");
+      }
+    }
+  }
+</script>
