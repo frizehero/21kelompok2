@@ -19,6 +19,7 @@ class Data_jurnal extends MX_Controller {
 			'namamodule' 	=> "Data_jurnal",
 			'namafileview' 	=> "V_data_jurnal",
 			'tampil'		=> $this->m_data_jurnal->tampil(),
+			'filter_dudi'		=> $this->m_data_jurnal->filter_dudi(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -56,6 +57,8 @@ class Data_jurnal extends MX_Controller {
 			'namamodule' 	=> "Data_jurnal",
 			'namafileview' 	=> "V_detail",
 			'tampil_detail'		=> $this->m_data_jurnal->tampil_detail($id),
+			'tampil_data'		=> $this->m_data_jurnal->tampil_data($id),
+
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -63,6 +66,19 @@ class Data_jurnal extends MX_Controller {
 	{
 		$this->m_data_dudi->tambah_siswa();
 		redirect('data_dudi');
+	}
+	function filter()
+	{
+
+		$dudi 					= $this->input->post('dudi');
+
+		$data = array(
+			'namamodule' 	=> "data_jurnal",
+			'namafileview' 	=> "V_data_jurnal",
+			'tampil'		=> $this->m_data_jurnal->filter($dudi),
+			'filter_dudi'	=> $this->m_data_jurnal->filter_dudi(),
+		);
+		echo Modules::run('template/tampilCore', $data);
 	}
 	
 }

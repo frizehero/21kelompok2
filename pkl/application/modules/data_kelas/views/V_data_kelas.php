@@ -83,17 +83,22 @@
 <div class="col-sm-6 toolbar-right text-right">
 
   <div class="select">
-   <select>
-     <option>hummasoft</option>
-     <option>kodesoft</option>
-     <option>perusahaan asuransi</option>
+    <form method="post" action="<?php echo site_url('data_kelas/filter') ?>">
+    
+   <select name="jurusan">
+    <?php foreach ($filter_jurusan as $fil) {?>
+     <option value="<?= $fil->id_jurusan?>" ><?= $fil->nama?></option>
+      <?php }?>
    </select>
+   
+
  </div>
- <button class="btn btn-default">Cari</button>
+ <button type="submit" class="btn btn-default">Cari</button>
+ </form>
 
 </div>
 </div>
-</form>
+
 <!---------------------------------->
 
 
@@ -114,6 +119,7 @@
                <div class="btn-group dropdown">
                  <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
                  <ul class="dropdown-menu dropdown-menu-right" style="">
+                  <li><a data-toggle="modal" data-target="#demo-default-modal3<?php echo $res->id_kelas?>"><i class="icon-lg ion-image demo-psi-pen-5"></i> Tambah Foto Sampul</a></li>
                    <li><a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_kelas?>"><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
                    <li><a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_kelas?>"><i class="icon-lg icon-fw demo-pli-recycling"></i> Hapus </a></li>
                    <li class="divider"></li>
@@ -208,6 +214,43 @@
       <!--Modal footer-->
 
       <?= form_close(); ?>
+    </div>
+  </div>
+
+  <div class="modal fade" id="demo-default-modal3<?php echo $res->id_kelas?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+          <!--Modal body-->
+          <div class="modal-body">
+            <p class="text-main text-bold mar-no">Tambah Foto Sampul</p>
+          
+                  <br>
+                  <form id="demo-dropzone" action="<?php echo site_url('data_kelas/edit_sampul')?>" class="dropzone">
+                    <input type="hidden" name="id_kelas" value="<?php echo $res->id_kelas?>">
+                      <div class="dz-default dz-message">
+                          <div class="dz-icon">
+                              <i class="demo-pli-upload-to-cloud icon-5x"></i>
+                          </div>
+                          <div>
+                              <span class="dz-text">Taruh Foto Yang Kalian Pilih</span>
+                              <p class="text-sm text-muted">Klik Untuk Pilih Foto</p>
+                          </div>
+                      </div>
+                      <div class="fallback">
+                          <input name="foto" type="file" multiple>
+                          
+                      </div>
+                  
+          </div>
+
+          <!--Modal footer-->
+          <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
+            <button class="btn btn-primary" type="submit">Simpan</button>
+            </form>
+          </div>
+        </div>
     </div>
   </div>
 
