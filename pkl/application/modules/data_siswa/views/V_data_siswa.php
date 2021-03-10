@@ -73,12 +73,14 @@
  </div>
 </div>
 
-<?php foreach($tampil as $res) {
+
+
+  <div class="row">
+    <?php foreach($tampil as $res) {
   $id = $res->id_siswa;
   $gambar = $res->logo;
   ?>
-
-  <div class="col-md-3">
+    <div class="col-md-3">
 
     <div class="panel widget">
 
@@ -128,6 +130,8 @@
     </div>
   </div>
 </div>
+<?php }?>
+  </div>
 
 </div>
 </div>
@@ -225,7 +229,7 @@
     </div>
   </div>
 
-<?php }?>
+
 </div>
 
 <!--jQuery [ REQUIRED ]-->
