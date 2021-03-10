@@ -74,6 +74,45 @@ class M_data_kelas extends CI_Model {
 			$this->db->insert('kelas', $data);
 		}
 	}
+	function edit_sampul()
+	{
+		$id_kelas 		= $this->input->post('id_kelas');
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
+		
+		$this->upload->initialize($config);
+		
+		if($_FILES['foto']['name'])
+		{
+			if ($this->upload->do_upload('foto'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'foto' 			=> $gbr['file_name'],
+
+
+				);
+				$this->db->where('id_kelas',$id_kelas)->update('kelas', $data);
+
+			}
+		}
+		else{
+			$gbr = $this->upload->data();
+				$data = array(
+					'foto' 			=> $gbr['file_name'],
+
+
+				);
+			$this->db->where('id_kelas',$id_kelas)->update('kelas', $data);
+		}
+
+	}
 
 	function tambah_siswa()
 	{

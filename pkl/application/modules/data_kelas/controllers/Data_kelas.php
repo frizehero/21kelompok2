@@ -31,6 +31,11 @@ class Data_kelas extends MX_Controller {
 		$this->m_data_kelas->tambah();
 		redirect('data_kelas');
 	}
+	function edit_sampul()
+	{
+		$this->m_data_kelas->edit_sampul();
+		redirect('data_kelas');
+	}
 
 	function edit()
 	{
