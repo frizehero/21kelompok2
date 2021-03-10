@@ -1,4 +1,25 @@
+<div id="page-head">
 
+                        <!--Page Title-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <div id="page-title">
+                            <h1 style="margin-top: -20px; margin-left: -20px" class="page-header text-overflow">Data Kelas</h1>
+                        </div>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End page title-->
+
+
+                        <!--Breadcrumb-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <ol style="margin-bottom: 20px; margin-left: -20px" class="breadcrumb">
+                            <li><a href="index.html"><i class="demo-pli-home"></i></a></li>
+                            <li><a href="#">Data</a></li>
+                            <li class="active">XI RPL</li>
+                        </ol>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End breadcrumb-->
+
+                    </div>
  <div id="page-content">
 
   <div class="row pad-btm">
@@ -6,6 +27,7 @@
       <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">tambah</button>
     </div>
     <?= form_open_multipart('data_kelas/tambah_siswa'); ?>
+
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -21,6 +43,7 @@
                <div class="col-md-6">
                 <label for="" class="control-label">Nama siswa :</label>
                 <input type="text" name="nama_siswa" placeholder="Nama" class="form-control"></input>
+
               </div>
               <div class="col-md-6">
                 <label for="" class="control-label">NISN :</label>

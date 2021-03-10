@@ -53,7 +53,7 @@ class Data_dudi extends MX_Controller {
 	function detail_dudi($id)
 	{
 		 $data = array(
-			'namamodule' 	=> "Data_jurnal",
+			'namamodule' 	=> "data_dudi",
 			'namafileview' 	=> "V_detail",
 			'tampil_detail'		=> $this->m_data_dudi->tampil_detail($id),
 		);
