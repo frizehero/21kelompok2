@@ -9,11 +9,24 @@ Class M_master_userid extends CI_Model {
 	// for checking credential
 	function getCredential($varUser, $varPassword)
 	{
-		$getField = array('username' => $varUser, 'password' => $varPassword);
+		
+		// $query = "SELECT * FROM tb_login where username='$varUser' AND password='varPassword' AND level";
+		// $result = $this->db->row($query);
 
-		$query = $this->db->get_where('tb_login', $getField);
 
-		return $query->row();
+		$this->db->select('*')
+				 ->from('tb_login')
+				 ->where('username',$varUser,'password',$varPassword,'level');
+		$query = $this->db->get();
+		return $query->row_array();
+
+		
+		// $getField = array('username' => $varUser, 'password' => $varPassword );
+
+		// $query = $this->db->get_where('tb_login', $getField);
+
+		// return $query->row();
+		
 	}
 
 	function cekAdmin()
