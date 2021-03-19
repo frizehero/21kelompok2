@@ -12,7 +12,7 @@ class M_data_kelas extends CI_Model {
 	}
 	function filter_jurusan()
 	{
-			return $this->db->get('jurusan')->result();
+		return $this->db->get('jurusan')->result();
 	}
 	function tampil_detail($id)
 	{
@@ -56,7 +56,7 @@ class M_data_kelas extends CI_Model {
 				$gbr = $this->upload->data();
 				$data = array(
 					'nama_kelas'			=> $nama_kelas,
-					'logo' 			=> $gbr['file_name'],
+					'logo_kelas' 			=> $gbr['file_name'],
 					'id_jurusan' =>$jurusan,
 
 
@@ -68,7 +68,7 @@ class M_data_kelas extends CI_Model {
 		else{
 			$data = array(
 				'nama_kelas'			=> $nama_kelas,
-				'logo' 				=> 'kosong1.png',
+				'logo_kelas' 				=> 'kosong1.png',
 				'id_jurusan' =>$jurusan,
 			);
 			$this->db->insert('kelas', $data);
@@ -77,6 +77,9 @@ class M_data_kelas extends CI_Model {
 	function edit_sampul()
 	{
 		$id_kelas 		= $this->input->post('id_kelas');
+
+
+		echo $id_kelas;
 		$this->load->library('upload');
 		$nmfile = "file_".time();
 		$config['upload_path']		= 'assets/img/';
@@ -102,21 +105,21 @@ class M_data_kelas extends CI_Model {
 
 			}
 		}
-		else{
-			$gbr = $this->upload->data();
-				$data = array(
-					'foto' 			=> $gbr['file_name'],
 
+		// else{
+		// 	$gbr = $this->upload->data();
+		// 	$data = array(
+		// 		'foto' 				=> 'kosong1.png',
 
-				);
-			$this->db->where('id_kelas',$id_kelas)->update('kelas', $data);
-		}
+		// 	);
+		// 	$this->db->where('id_kelas',$id_kelas)->update('kelas', $data);
+		// }
 
 	}
 
 	function tambah_siswa()
 	{
-		$$nama_siswa 		= $this->input->post('nama_siswa');
+		$nama_siswa 		= $this->input->post('nama_siswa');
 		$nisn 				= $this->input->post('nisn');
 		$jenis_kelamin 		= $this->input->post('jenis_kelamin');
 		$dudi 				= $this->input->post('dudi');
@@ -187,7 +190,7 @@ class M_data_kelas extends CI_Model {
 				$gbr = $this->upload->data();
 				$data = array(
 					'nama_kelas'			=> $nama_kelas,
-					'logo' 			=> $gbr['file_name'],
+					'logo_kelas' 			=> $gbr['file_name'],
 				);
 				$this->db->where('id_kelas',$id_kelas)->update('kelas', $data);
 
@@ -214,11 +217,11 @@ class M_data_kelas extends CI_Model {
 	function filter ($jurusan)
 	{
 
-			$this->db->select('*')
-			->join('jurusan','jurusan.id_jurusan = kelas.id_jurusan')
-			->where('kelas.id_jurusan',$jurusan);
-			$query = $this->db->get('kelas');
-			return $query->result();
+		$this->db->select('*')
+		->join('jurusan','jurusan.id_jurusan = kelas.id_jurusan')
+		->where('kelas.id_jurusan',$jurusan);
+		$query = $this->db->get('kelas');
+		return $query->result();
 	}
 	
 	

@@ -68,13 +68,11 @@
 
 
           </div>
+          <div class="modal-footer">
 
-
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
         </form>
-      </div>
-      <div class="modal-footer">
-
-        <button type="submit" class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>
@@ -84,17 +82,17 @@
 
   <div class="select">
     <form method="post" action="<?php echo site_url('data_kelas/filter') ?>">
-    
-   <select name="jurusan">
-    <?php foreach ($filter_jurusan as $fil) {?>
-     <option value="<?= $fil->id_jurusan?>" ><?= $fil->nama?></option>
-      <?php }?>
+
+     <select name="jurusan">
+      <?php foreach ($filter_jurusan as $fil) {?>
+       <option value="<?= $fil->id_jurusan?>" ><?= $fil->nama?></option>
+     <?php }?>
    </select>
    
 
  </div>
  <button type="submit" class="btn btn-default">Cari</button>
- </form>
+</form>
 
 </div>
 </div>
@@ -103,156 +101,157 @@
 
 
 <div class="row">
-    <?php foreach($tampil as $res) {
-      $id = $res->id_kelas;
-      $gambar = $res->logo;
-      ?>
-        <div class="col-md-4">
+  <?php foreach($tampil as $res) {
+    $id = $res->id_kelas;
+    $gambar = $res->logo_kelas;
+    ?>
+    <div class="col-md-4">
 
 
-          <div class="panel widget">
-            <div class="widget-header bg-purple">
-              <img class="widget-bg img-responsive" src="img/foto_dudi/hummasoft1.jpeg" alt="Image">
-            </div>
-            <div class="widget-body text-center">
-              <div class="widget-control">
-               <div class="btn-group dropdown">
-                 <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
-                 <ul class="dropdown-menu dropdown-menu-right" style="">
-                  <li><a data-toggle="modal" data-target="#demo-default-modal3<?php echo $res->id_kelas?>"><i class="icon-lg ion-image demo-psi-pen-5"></i> Tambah Foto Sampul</a></li>
-                   <li><a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_kelas?>"><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
-                   <li><a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_kelas?>"><i class="icon-lg icon-fw demo-pli-recycling"></i> Hapus </a></li>
-                   <li class="divider"></li>
+      <div class="panel widget">
+        <div class="widget-header">
+          <img class="widget-bg img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto?>">
+        </div>
+        <div class="widget-body text-center">
+          <div class="widget-control">
+           <div class="btn-group dropdown">
+             <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
+             <ul class="dropdown-menu dropdown-menu-right" style="">
+              <li><a data-toggle="modal" data-target="#demo-default-modal3<?php echo $res->id_kelas?>"><i class="icon-lg ion-image demo-psi-pen-5"></i> Tambah Foto Sampul</a></li>
+              <li><a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_kelas?>"><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
+              <li><a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_kelas?>"><i class="icon-lg icon-fw demo-pli-recycling"></i> Hapus </a></li>
+              <li class="divider"></li>
 
-                 </ul>
-               </div>
-             </div>
-             <a href="<?php echo base_url('data_kelas/detail_kelas/'. $res->id_kelas) ?>"><img alt="Profile Picture" class="widget-img img-circle img-border-light" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>"></a>
-             <h4 class="mar-no text-main"><?php echo $res->nama_kelas?></h4>
-             <p class="text-muted mar-no"><?php echo $res->nama?></p>
-           </div>
-         </div>
-       </div>
-     <div class="modal fade" id="demo-default-modal2<?php echo $res->id_kelas?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!--Modal header-->
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-            <h4 class="modal-title">Hapus</h4>
-          </div>
-
-          <!--Modal body-->
-          <div class="modal-body">
-            <p class="text-semibold text-main"></p>
-            <p>Anda Yakin Ingin Menghapus <b><?php echo $res->nama_kelas ?></b> ? </p>
-            <br>
-
-
-
-          </div>
-
-          <!--Modal footer-->
-          <div class="modal-footer">
-            <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-            <a class="btn btn-danger" href="<?php echo base_url('data_kelas/hapus/'. $res->id_kelas) ?>">Hapus kelas</a>
+            </ul>
           </div>
         </div>
+        <a href="<?php echo base_url('data_kelas/detail_kelas/'. $res->id_kelas) ?>"><img alt="Profile Picture" class="widget-img img-circle img-border-light" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo_kelas?>"></a>
+        <h4 class="mar-no text-main"><?php echo $res->nama_kelas?></h4>
+        <p class="text-muted mar-no"><?php echo $res->nama?></p>
       </div>
-    </div>
-
-    <div class="modal fade" id="demo-default-modal1<?php echo $res->id_kelas?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!--Modal Update-->
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-            <h4 class="modal-title">Edit</h4>
-          </div>
-          <?= form_open_multipart('data_kelas/edit'); ?>
-          <input type="hidden" name="id_kelas" value="<?php echo $res->id_kelas?>">
-
-          <!--Modal body--> <div class="modal-body">
-           <form>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Nama Kelas</label>
-                <input name="nama_kelas"  class="form-control" id="inputEmail4" placeholder="Nama Kelas">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="" class="control-label">Jurusan:</label>
-                <select class="form-control" name="jurusan">
-                  <option>
-                    Pilih Jurusan
-                  </option>
-                  <option  value="1">Rekasaya Perangkat Lunak
-                  </option>
-                  <option  value="2">Teknik Komputer Jaringan
-                  </option>
-                </select>
-              </div>
-              <div class="col-md-6" >
-                <label for="" class="control-label">Foto :</label>
-                <input type="file" name="gambar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
-              </div>
-              <div class="col-md-6 " style="margin-top: 2%">
-                <label for="" class="control-label">Preview Foto Profile</label>
-                <img id="preview" width="150px" />
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-              <button class="btn btn-primary" type="submit">Simpan</button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!--Modal footer-->
-
-      <?= form_close(); ?>
     </div>
   </div>
-
-  <div class="modal fade" id="demo-default-modal3<?php echo $res->id_kelas?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+  <div class="modal fade" id="demo-default-modal2<?php echo $res->id_kelas?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
     <div class="modal-dialog">
-
       <div class="modal-content">
-          <!--Modal body-->
-          <div class="modal-body">
-            <p class="text-main text-bold mar-no">Tambah Foto Sampul</p>
-          
-                  <br>
-                  <form id="demo-dropzone" action="<?php echo site_url('data_kelas/edit_sampul')?>" class="dropzone">
-                    <input type="hidden" name="id_kelas" value="<?php echo $res->id_kelas?>">
-                      <div class="dz-default dz-message">
-                          <div class="dz-icon">
-                              <i class="demo-pli-upload-to-cloud icon-5x"></i>
-                          </div>
-                          <div>
-                              <span class="dz-text">Taruh Foto Yang Kalian Pilih</span>
-                              <p class="text-sm text-muted">Klik Untuk Pilih Foto</p>
-                          </div>
-                      </div>
-                      <div class="fallback">
-                          <input name="foto" type="file" multiple>
-                          
-                      </div>
-                  
-          </div>
 
-          <!--Modal footer-->
-          <div class="modal-footer">
-            <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-            <button class="btn btn-primary" type="submit">Simpan</button>
-            </form>
-          </div>
+        <!--Modal header-->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+          <h4 class="modal-title">Hapus</h4>
         </div>
+
+        <!--Modal body-->
+        <div class="modal-body">
+          <p class="text-semibold text-main"></p>
+          <p>Anda Yakin Ingin Menghapus <b><?php echo $res->nama_kelas ?></b> ? </p>
+          <br>
+
+
+
+        </div>
+
+        <!--Modal footer-->
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
+          <a class="btn btn-danger" href="<?php echo base_url('data_kelas/hapus/'. $res->id_kelas) ?>">Hapus kelas</a>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="modal fade" id="demo-default-modal1<?php echo $res->id_kelas?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!--Modal Update-->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+          <h4 class="modal-title">Edit</h4>
+        </div>
+        <?= form_open_multipart('data_kelas/edit'); ?>
+        <input type="hidden" name="id_kelas" value="<?php echo $res->id_kelas?>">
+
+        <!--Modal body--> <div class="modal-body">
+         <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Nama Kelas</label>
+              <input name="nama_kelas"  class="form-control" id="inputEmail4" placeholder="Nama Kelas">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6">
+              <label for="" class="control-label">Jurusan:</label>
+              <select class="form-control" name="jurusan">
+                <option>
+                  Pilih Jurusan
+                </option>
+                <option  value="1">Rekasaya Perangkat Lunak
+                </option>
+                <option  value="2">Teknik Komputer Jaringan
+                </option>
+              </select>
+            </div>
+            <div class="col-md-6" >
+              <label for="" class="control-label">Foto :</label>
+              <input type="file" name="gambar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
+            </div>
+            <div class="col-md-6 " style="margin-top: 2%">
+              <label for="" class="control-label">Preview Foto Profile</label>
+              <img id="preview" width="150px" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+            <button class="btn btn-primary" type="submit">Simpan</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!--Modal footer-->
+
+    <?= form_close(); ?>
+  </div>
+</div>
+
+<div class="modal fade" id="demo-default-modal3<?php echo $res->id_kelas?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header"></div>
+      <!--Modal body-->
+      <div class="panel">
+                  <div class="panel-body">
+                      <p class="text-main text-bold mar-no">Edit foto sampul</p>
+                      <p>masukan foto yang anda pilih</p>
+              
+                      <br>
+              
+                        <!--Dropzonejs-->
+                      <!--===================================================-->
+                      <?= form_open_multipart('data_kelas/edit_sampul'); ?>
+                         
+                        <input type="hidden" name="id_kelas" value="<?php echo $res->id_kelas?>">
+              
+                        
+                              <input name="foto" type="file"  multiple>
+                          
+                      <!--===================================================-->
+                      <!-- End Dropzonejs -->
+              
+                  </div>
+              </div>
+
+        <!--Modal footer-->
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
+          <button class="btn btn-primary" type="submit">Simpan</button>
+        <?= form_close(); ?>
+      </div>
+    </div>
+  </div>
+</div>
 
 <?php }?>
 
