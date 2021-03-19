@@ -1,4 +1,24 @@
+<div id="page-head">
 
+  <!--Page Title-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <div id="page-title">
+    <h1 style="margin-top: -20px; margin-left: -20px" class="page-header text-overflow">Data Pengumuman</h1>
+  </div>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--End page title-->
+
+
+  <!--Breadcrumb-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <ol style="margin-bottom: 20px; margin-left: -20px" class="breadcrumb">
+    <li><a href="index.html"><i class="demo-pli-home"></i></a></li>
+    <li><a href="#">Data Pengumuman</a></li>
+  </ol>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--End breadcrumb-->
+
+</div>
 
 
 <div class="row pad-btm">

@@ -125,6 +125,7 @@ class M_data_kelas extends CI_Model {
 		$dudi 				= $this->input->post('dudi');
 		$kelas              = $this->input->post('kelas');
 
+
 		$this->load->library('upload');
 		$nmfile = "file_".time();
 		$config['upload_path']		= 'assets/img/';

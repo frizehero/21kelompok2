@@ -74,7 +74,7 @@
 					                            <!--Sender Information-->
 					                            <div class="media">
 					                                <span class="media-left">
-					                                <img src="img/profile-photos/8.png" class="img-circle img-sm" alt="Profile Picture">
+					                                <img src="https://rifphotography.id/wp-content/uploads/2018/11/pas-foto-2.jpeg" class="img-circle img-sm" alt="Profile Picture">
 					                            </span>
 					                                <div class="media-body text-left">
 					                                    <div class="text-bold"><?php echo $tampil_detail ['nama_pengirim']?></div>

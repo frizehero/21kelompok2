@@ -552,7 +552,7 @@
                            <li class=" <?=$this->uri->segment('1') == 'data_kelas' || $this->uri->segment(1) == 'data_dudi' ? "active-sub" : ''?>">
                                 <a href="">
                                    <i class="demo-pli-receipt-4"></i>
-                                    <span>Data Kelas</span>
+                                    <span>Data</span>
                                     <i class="arrow"></i>
                                 </a>
                                 <ul class="collapse">

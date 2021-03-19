@@ -20,13 +20,14 @@
   <!--End breadcrumb-->
 
 </div>
-<div id="page-content">
-
+<div id="page-content"> 
   <div class="row pad-btm">
     <div class="col-sm-6 toolbar-left">
       <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">tambah</button>
     </div>
     <?= form_open_multipart('data_kelas/tambah_siswa'); ?>
+
+     <input type="hidden" value="<?php echo $tampil_detail['id_kelas']?>" name="kelas">
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -43,7 +44,7 @@
                <div class="col-md-6">
                 <label for="" class="control-label">Nama siswa :</label>
                 <input type="text" name="nama_siswa" placeholder="Nama" class="form-control"></input>
-                <input type="hidden" value="<?php $tampil_detail['id_kelas']?>" name="kelas">
+               
 
               </div>
               <div class="col-md-6">
@@ -112,7 +113,9 @@
 
         <div class="widget-body text-center">
           <divc class="widget-header">
-            <img class="widget-img img-circle" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>">
+            <!-- <img class="widget-img img-circle" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>"> -->
+            <img class="widget-img img-circle" src="https://www.sbmptnplus.com/wp-content/uploads/2019/05/Pas-Foto-SBMPTN-Terbaru.jpg">
+
           </div>
           <div class="widget-control">
            <div class="btn-group dropdown">
