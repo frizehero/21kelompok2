@@ -1,1 +1,0 @@
-<h1><?php echo $tampil->username?></h1>

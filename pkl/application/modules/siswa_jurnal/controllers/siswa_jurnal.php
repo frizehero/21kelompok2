@@ -15,13 +15,17 @@ class siswa_jurnal extends MX_Controller {
 	// index
 	function index()
 	{
-		$data = array(
-			'namamodule' 	=> "siswa_jurnal",
-			'namafileview' 	=> "V_siswa_jurnal",
-			'tampil'		=> $this->m_siswa_jurnal->tampil(),
-		);
-		echo Modules::run('template/tampilCore', $data);
+		$ses = $this->session->userdata('session_id');
+		echo  $ses;
+		// $data = array(
+		// 	'namamodule' 	=> "siswa_jurnal",
+		// 	'namafileview' 	=> "V_siswa_jurnal",
+		// 	'tampil'		=> $this->m_siswa_jurnal->tampil(),
+		// );
+		// echo Modules::run('template/tampilCore', $data);
+		
 	}
+
 
 	function tambah()
 	{
