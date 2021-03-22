@@ -16,10 +16,10 @@ Class M_master_userid extends CI_Model {
 
 		$this->db->select('*')
 				 ->from('tb_login')
-				 ->where('username',$varUser,'password',$varPassword,'level');
+				 ->where('username',$varUser,'password',$varPassword,'level' AND 'id_admin');
+				 
 		$query = $this->db->get();
-		return $query->row_array();
-
+		return $query->row();
 		
 		// $getField = array('username' => $varUser, 'password' => $varPassword );
 

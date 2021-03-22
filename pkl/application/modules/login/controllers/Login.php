@@ -52,17 +52,25 @@ class Login extends MX_Controller {
 			// flashdata
 			$this->session->set_flashdata('msg', 'greeting');
 			// masukan ke  dalam session
-			if ($getData['level']==1 ) 
+			if ($getData->level==1 ) 
 			{
+
 			
 
 			    redirect('data_sekolah');
+			    // redirect('siswa_jurnal');
+			    echo $getData->id_admin;
 			}
-			else if ($getData['level']==2) 
+			else if ($getData->level==2) 
 			{
 
 			    redirect('data_siswa');
 			}
+			
+
+			// flashdata
+			$this->session->set_flashdata('msg', 'greeting');
+			$this->M_session->store_session( $getData->id_admin);
 		} else { // gagal login
 
 			$this->session->set_flashdata('msg', 'loginError');
