@@ -7,6 +7,7 @@ class M_siswa_jurnal extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('tb_login')
+		->join('siswa', 'siswa.id_siswa = tb_login.id_siswa')
 		->where('id_admin',$datasiswa);
 		$query = $this->db->get();
 		return $query->row_array();

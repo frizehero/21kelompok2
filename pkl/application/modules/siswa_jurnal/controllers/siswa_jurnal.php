@@ -19,7 +19,6 @@ class siswa_jurnal extends MX_Controller {
 
 		$datasiswa=  $this->session->userdata('session_id');
 
-		echo "string". $datasiswa;
 
 		$data = array(
 			'namamodule' 	=> "siswa_jurnal",
