@@ -15,6 +15,15 @@ class Data_kelas extends MX_Controller {
 	// index
 	function index()
 	{
+		// $id = $this->session->userdata('session_id');
+
+		// $query =$this->db->select('*')
+		// 		 ->from('tb_login')
+		// 		 ->where('id_admin',$id)
+		//          ->get();
+		// return $query->result();
+		
+
 		$data = array(
 			'namamodule' 	=> "data_kelas",
 			'namafileview' 	=> "V_data_kelas",
@@ -42,12 +51,23 @@ class Data_kelas extends MX_Controller {
 		$this->m_data_kelas->edit();
 		redirect('data_kelas');
 	}
+	function edit_siswa($id)
+	{
+		$this->m_data_kelas->edit_siswa();
+		redirect('data_kelas/detail_kelas/'.$id);
+	}
 
 	function hapus($id)
 	{
 		$this->m_data_kelas->hapus($id);
 		redirect('data_kelas');
 	}
+	function hapus_siswa($id)
+	{
+		$this->m_data_kelas->hapus_siswa($id);
+		redirect('data_kelas');
+	}
+
 
 	function cari()
 	{
@@ -58,6 +78,17 @@ class Data_kelas extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+
+	function cari_siswa()
+	{
+		$data = array(
+			'namamodule' 	=> "data_kelas",
+			'namafileview' 	=> "V_detail_kelas",
+			'tampil'		=> $this->m_data_kelas->cari_siswa(),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
+
 	function detail_kelas($id)
 	{
 		 $data = array(
@@ -65,15 +96,16 @@ class Data_kelas extends MX_Controller {
 			'namafileview' 	=> "V_detail_kelas",
 			'tampil_detail'		=> $this->m_data_kelas->tampil_detail($id),
 			'tampil_data'		=> $this->m_data_kelas->tampil_data($id),
+
 		
 
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
-	function tambah_siswa()
+	function tambah_siswa($id)
 	{
 		$this->m_data_kelas->tambah_siswa();
-		redirect('data_kelas');
+		redirect('data_kelas/detail_kelas/'.$id);
 	}
 
 	function filter()

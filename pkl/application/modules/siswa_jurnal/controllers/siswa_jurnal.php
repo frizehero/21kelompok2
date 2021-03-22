@@ -8,13 +8,19 @@ class siswa_jurnal extends MX_Controller {
 		parent::__construct();
 		// model
 		 $this->load->model('m_siswa_jurnal');
-		 $this->load->model('login/m_session');
+		 $this->load->library('session');
+
 	}
 
 	
 	// index
 	function index()
 	{
+
+		$datasiswa=  $this->session->userdata('session_id');
+
+		echo "string". $datasiswa;
+
 		$data = array(
 			'namamodule' 	=> "siswa_jurnal",
 			'namafileview' 	=> "V_siswa_jurnal",

@@ -1,1 +1,3 @@
-<h1><?php echo $tampil->username?></h1>
+<h1>
+	
+</h1>

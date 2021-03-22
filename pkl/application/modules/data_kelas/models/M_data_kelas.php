@@ -209,12 +209,26 @@ class M_data_kelas extends CI_Model {
 	{
 		$this->db->where('id_kelas', $id)->delete('kelas');
 	}
+	function hapus_siswa($id)
+	{
+		$this->db->where('id_siswa', $id)->delete('siswa');
+	}
+
 
 	function cari()
 	{
 		$cari 		= $this->input->post('cari');
 		return $this->db->like('nama_kelas',$cari)->get('kelas')->result();
 	}
+
+	function cari_siswa()
+	{
+		$cari 		= $this->input->post('cari_siswa');
+		return $this->db->like('nama_siswa',$cari)
+		->select('*')
+		->get('siswa')->result();
+	}
+
 	function filter ($jurusan)
 	{
 
@@ -225,5 +239,54 @@ class M_data_kelas extends CI_Model {
 		return $query->result();
 	}
 	
+	function edit_siswa()
+	{	
+		$id_siswa			= $this->input->post('id_siswa');
+		$nama_siswa 		= $this->input->post('nama_siswa');
+		$nisn 				= $this->input->post('nisn');
+		$jenis_kelamin 		= $this->input->post('jenis_kelamin');
+		$dudi 				= $this->input->post('dudi');
+		$kelas              = $this->input->post('kelas');
+
+
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
+		
+		$this->upload->initialize($config);
+		
+		if($_FILES['gambar']['name'])
+		{
+			if ($this->upload->do_upload('gambar'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'nama_siswa'			=> $nama_siswa,
+					'nisn'					=> $nisn,
+					'jenis_kelamin'			=> $jenis_kelamin,
+					'dudi'					=> $dudi,
+					'id_kelas'              => $kelas,
+					'logo' 					=> $gbr['file_name'],
+
+				);
+				$this->db->where('id_siswa',$id_siswa)->update('siswa', $data);
+
+			}	 
+		}
+		else{
+			$data = array(
+				'nama_siswa'			=> $nama_siswa,
+				'nisn'					=> $nisn,
+				'jenis_kelamin'			=> $jenis_kelamin,
+				'dudi'					=> $dudi,
+			);
+			$this->db->where('id_siswa',$id_siswa)->update('siswa', $data);
+		}
+	}
 	
 }

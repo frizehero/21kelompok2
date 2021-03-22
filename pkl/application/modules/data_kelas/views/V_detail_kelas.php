@@ -25,7 +25,7 @@
     <div class="col-sm-6 toolbar-left">
       <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">tambah</button>
     </div>
-    <?= form_open_multipart('data_kelas/tambah_siswa'); ?>
+    <?= form_open_multipart('data_kelas/tambah_siswa/'.$tampil_detail['id_kelas']); ?>
 
      <input type="hidden" value="<?php echo $tampil_detail['id_kelas']?>" name="kelas">
 
@@ -86,18 +86,22 @@
     </div>
   </div>
   <?= form_close(); ?>
+  <form method="post" action="<?php echo site_url('data_kelas/cari_siswa') ?>" >
   <div class="col-sm-6 toolbar-right text-right">
-
-    <div class="select">
-     <select>
-       <option>hummasoft</option>
-       <option>kodesoft</option>
-       <option>perusahaan asuransi</option>
-     </select>
-   </div>
+    <div class="form-group">
+      <?php if($this->uri->segment(2) != 'cari_siswa'){?>
+      <input type="text" placeholder="Cari Nama" name="cari_siswa" class="form-control" id="demo-is-inputnormal">
+      <?php } ?>
+      <?php if($this->uri->segment(2) == 'cari_siswa'){
+            $cari_siswa = $this->input->post('cari_siswa'); ?>
+            <input type="text" autocomplete="off" value="<?= $cari_siswa ?>" name="cari_siswa" class="form-control" id="demo-is-inputnormal" placeholder="Outlet">
+      <?php } ?>
+    </div>
+    
    <button class="btn btn-default">Cari</button>
 
  </div>
+</form>
 </div>
 
 
@@ -114,7 +118,7 @@
         <div class="widget-body text-center">
           <divc class="widget-header">
             <!-- <img class="widget-img img-circle" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>"> -->
-            <img class="widget-img img-circle" src="https://www.sbmptnplus.com/wp-content/uploads/2019/05/Pas-Foto-SBMPTN-Terbaru.jpg">
+            <img class="widget-img img-circle" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>">
 
           </div>
           <div class="widget-control">
@@ -169,7 +173,7 @@
           <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
           <h4 class="modal-title">Edit</h4>
         </div>
-        <?= form_open_multipart('$tampil_detail/edit'); ?>
+        <?= form_open_multipart('data_kelas/edit_siswa/'.$tampil_detail['id_kelas']); ?>
         <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa?>">
 
         <!--Modal body--> 
@@ -247,7 +251,7 @@
         <!--Modal footer-->
         <div class="modal-footer">
           <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-          <a class="btn btn-danger" href="<?php echo base_url('$tampil_detail/hapus/'. $res->id_siswa) ?>">Hapus Dudi</a>
+          <a class="btn btn-danger" href="<?php echo base_url('data_kelas/hapus_siswa/'. $res->id_siswa) ?>">Hapus Dudi</a>
         </div>
       </div>
     </div>
