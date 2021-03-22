@@ -24,11 +24,9 @@ class siswa_jurnal extends MX_Controller {
 		$data = array(
 			'namamodule' 	=> "siswa_jurnal",
 			'namafileview' 	=> "V_siswa_jurnal",
-			'tampil'		=> $this->m_siswa_jurnal->tampil(),
+			'tampil'		=> $this->m_siswa_jurnal->tampil($datasiswa),
 		);
 		echo Modules::run('template_siswa/tampilCore', $data);
-		$ses = $this->session->userdata('session_id');
-		echo  $ses;
 		// $data = array(
 		// 	'namamodule' 	=> "siswa_jurnal",
 		// 	'namafileview' 	=> "V_siswa_jurnal",

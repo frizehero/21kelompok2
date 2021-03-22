@@ -3,15 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_siswa_jurnal extends CI_Model {
 
-	function tampil()
+	function tampil($datasiswa)
 	{
-		$id = $this->session->userdata('absen_id');
-
-		$query =$this->db->select('*')
-				 ->from('tb_login')
-				 ->where('id_admin',$id)
-		         ->get();
-		return $query->result();
+		$this->db->select('*')
+		->from('tb_login')
+		->where('id_admin',$datasiswa);
+		$query = $this->db->get();
+		return $query->row_array();
 	}
 
 	function tambah()
