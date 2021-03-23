@@ -15,7 +15,7 @@
     <ol class="breadcrumb">
         <li><a href="#"><i class="demo-pli-home"></i></a></li>
         <li><a href="#">Jurnal</a></li>
-        <li class="active"><?php echo $tampil['nama_siswa']?></li><br>
+        <li class="active"<?php echo $tampil['nama_siswa']?>></li><br>
     </ol>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End breadcrumb-->
@@ -34,8 +34,8 @@
 
                     <!--Family-->
                     <div class="list-group bg-trans bord-btm">
-                       <hr class="new-section-xs">
-                       <div class="list-group-item">
+                     <hr class="new-section-xs">
+                     <div class="list-group-item">
                         <div class="media-left pos-rel">
                             <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
                         </div>
@@ -161,7 +161,7 @@
 
                     </div>
                     <div class="fluid">
-                     <div>
+                       <div>
                         <div class="col-md-6">
                             <div class="panel panel-info panel-colorful media middle pad-all">
                                 <div class="media-left">
@@ -189,41 +189,38 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row pad-btm">
+                    <div class="pad-btm">
+                      <?= form_open_multipart('siswa_jurnal/tambah'); ?>
+                      <textarea name="jurnal" class="form-control" rows="4" placeholder="Tulis Jurnal"></textarea>
+                      <input type="hidden" value="<?php echo $tampil['id_siswa']?>" name="id_bang">
+                      <input type="hidden" value="<?php echo date('d-m-y')?>" name="tanggal">
+                      <div class="mar-top clearfix">
 
-                       <div>
-                           <div class="col-sm-12 toolbar-right text-right">
-
-                              <div class="select">
-                               <select >
-                                   <option value="date-created" selected="">01-02-2021</option>
-                                   <option value="date-modified">XI RPL 2</option>
-                                   <option value="frequency-used">XI RPL 1</option>
-                                   <option value="alpabetically">XI TKJ</option>
-                                   <option value="alpabetically-reversed">XI PNP</option>
-                               </select>
-                           </div>
-                           Sampai
-                           <div class="select">
-                               <select id="demo-ease">
-                                   <option value="date-created" selected="">15-02-2021</option>
-                                   <option value="date-modified">KODESFOT</option>
-                                   <option value="frequency-used">ANGON DATA</option>
-                               </select>
-                           </div>
-
-                           <button class="btn btn-primary">Filter</button>
-
-                       </div>
-                   </div>
-               </div>
+                        <!-- <a class="btn btn-icon demo-pli-camera-2 icon-lg add-tooltip" href="#" data-original-title="Add Photo" data-toggle="tooltip"></a> -->
+                        <div style="margin-top: -5px" class="image-uploud">
+                            <label for="file-input">
+                                <img height="30px" src="img/kamera.png">
+                            </label>
+                            <input type="file" id="file-input" name="foto_kegiatan">
+                            <style type="text/css">
+                                .image-uploud >input
+                                {
+                                    display: none;
+                                }
+                            </style>
+                        </div>
+                        
+                    </div>
+                    <button style="margin-top: -30px" class="btn btn-sm btn-primary pull-right" type="submit"><i class="demo-psi-right-4 icon-fw"></i> Share</button>
+                    <?= form_close(); ?>
+                </div> 
 
 
 
 
 
-               <hr>
-               <?php foreach($tampil_data as $res) {
+                <hr>
+                <?php foreach($tampil_data as $res) {
                   $id = $res->id_siswa;
                   $gambar = $res->logo;
                   ?>
@@ -231,84 +228,128 @@
                     <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="img/profile-photos/10.png"></a>
                     <div class="media-body">
                         <div class="comment-header">
-                            <div><a href="#" class="media-heading box-inline text-main text-semibold">uzi</a>  <span class="text-semibold text-main">added new Jurnal</span></div>
-                            <p class="text-muted text-sm"><i class="demo-pli-smartphone-3 icon-lg"></i> Mobile - 15-02-2021</p>
-                        </div>
-                        <p><?php echo $res->kegiatan?> </p>
+                            <div><a href="#" class="media-heading box-inline text-main text-semibold">uzi</a>
 
-                        <div class="comment-content comment-photos row">
-                            <div class="col-sm-6">
-                                <img class="img-responsive" src="https://tempatpkltkjdibandunghome.files.wordpress.com/2019/05/d84d97e8-70cc-4ecb-948f-256b17646461.jpg?w=700&h=" alt="Image">
-                            </div>
-                            <div class="col-sm-6">
-                                <img class="img-responsive" src="https://tempatpkltkjdibandunghome.files.wordpress.com/2019/05/9491d9df-e25e-4ee2-a926-1383f67cab1e.jpg?w=700&h=" alt="Image">
-                            </div>
+                              <span class="text-semibold text-main">added new Jurnal</span>
+                              <div style="margin-left: 450px; margin-top: -55px;" class="btn-group dropdown">
+                               <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
+                               <ul class="dropdown-menu dropdown-menu-right" style="">
+                                   <li><a href="#"><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
+                                   <li><a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_jurnal?>"><i class="icon-lg icon-fw demo-pli-recycling"></i> Remove</a></li>
+                                   <li class="divider"></li>
+                               </ul>
+                           </div>
+                       </div>
+
+                       <p class="text-muted text-sm"><i class="demo-pli-smartphone-3 icon-lg"></i> Mobile - 15-02-2021</p>
+                   </div>
+                   <p><?php echo $res->kegiatan?> </p>
+
+                   <div class="comment-content comment-photos row">
+                            <div class="col-sm-12">
+                                <img style="height: 200px" class="img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_kegiatan?>" alt="Image">
                         </div>
 
-                        
+
                     </div>
+                    <hr>
+
+
                 </div>
-            <?php }?>
-            <button class="btn btn-primary btn-block mar-ver"><span class="text-semibold">36</span> Load More</button>
-
-
-
-
-                <!-- Comments -->
-
-
-
-
-
-                <!-- Newsfeed Content -->
-                <!--===================================================-->
-
-                <!--===================================================-->
-                <!-- End Newsfeed Content -->
-
-
-
-                <!-- Newsfeed Content -->
-                <!--===================================================-->
-
-                <!--===================================================-->
-                <!-- End Newsfeed Content -->
-
-
-                <!-- Newsfeed Content -->
-                <!--===================================================-->
-
-                <!--===================================================-->
-                <!-- End Newsfeed Content -->
-
-
-
-                <!-- Newsfeed Content -->
-                <!--===================================================-->
-
-                <!--===================================================-->
-                <!-- End Newsfeed Content -->
-
-
-
-                <!-- Newsfeed Content -->
-                <!--===================================================-->
-
-                <!--===================================================-->
-                <!-- End Newsfeed Content -->
-
-
-                <!-- Newsfeed Content -->
-                <!--===================================================-->
-
-                <!--===================================================-->
-                <!-- End Newsfeed Content -->
-
-
 
             </div>
-        </div>
-    </div>
+            <div class="modal fade" id="demo-default-modal2<?php echo $res->id_jurnal?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+                <!--Modal header-->
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                  <h4 class="modal-title">Hapus</h4>
+              </div>
+
+              <!--Modal body-->
+              <div class="modal-body">
+                  <p class="text-semibold text-main"></p>
+                  <p>Anda Yakin Ingin Menghapus jurnal? </p>
+                  <br>
+
+
+
+              </div>
+
+              <!--Modal footer-->
+              <div class="modal-footer">
+                  <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
+                  <a class="btn btn-danger" href="<?php echo base_url('siswa_jurnal/hapus/'. $res->id_jurnal) ?>">Hapus jurnal</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+        <?php }?>
+        <button class="btn btn-primary btn-block mar-ver"><span class="text-semibold">36</span> Load More</button>
+        
+
+
+
+
+  <!-- Comments -->
+
+
+
+
+
+  <!-- Newsfeed Content -->
+  <!--===================================================-->
+
+  <!--===================================================-->
+  <!-- End Newsfeed Content -->
+
+
+
+  <!-- Newsfeed Content -->
+  <!--===================================================-->
+
+  <!--===================================================-->
+  <!-- End Newsfeed Content -->
+
+
+  <!-- Newsfeed Content -->
+  <!--===================================================-->
+
+  <!--===================================================-->
+  <!-- End Newsfeed Content -->
+
+
+
+  <!-- Newsfeed Content -->
+  <!--===================================================-->
+
+  <!--===================================================-->
+  <!-- End Newsfeed Content -->
+
+
+
+  <!-- Newsfeed Content -->
+  <!--===================================================-->
+
+  <!--===================================================-->
+  <!-- End Newsfeed Content -->
+
+
+  <!-- Newsfeed Content -->
+  <!--===================================================-->
+
+  <!--===================================================-->
+  <!-- End Newsfeed Content -->
+
+
+
+</div>
+</div>
+</div>
 </div>
 
 </div>

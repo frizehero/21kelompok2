@@ -237,11 +237,8 @@
                         <p><?php echo $res->kegiatan?> </p>
 
                         <div class="comment-content comment-photos row">
-                            <div class="col-sm-6">
-                                <img class="img-responsive" src="https://tempatpkltkjdibandunghome.files.wordpress.com/2019/05/d84d97e8-70cc-4ecb-948f-256b17646461.jpg?w=700&h=" alt="Image">
-                            </div>
-                            <div class="col-sm-6">
-                                <img class="img-responsive" src="https://tempatpkltkjdibandunghome.files.wordpress.com/2019/05/9491d9df-e25e-4ee2-a926-1383f67cab1e.jpg?w=700&h=" alt="Image">
+                            <div class="col-sm-12">
+                                <img style="height: 150px" class="img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_kegiatan?>" alt="Image">
                             </div>
                         </div>
 

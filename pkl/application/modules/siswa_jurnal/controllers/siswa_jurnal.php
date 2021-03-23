@@ -8,7 +8,7 @@ class siswa_jurnal extends MX_Controller {
 		parent::__construct();
 		// model
 		 $this->load->model('m_siswa_jurnal');
-		 $this->load->library('session');
+		 $this->load->model('login/m_session');
 
 	}
 
@@ -24,6 +24,7 @@ class siswa_jurnal extends MX_Controller {
 			'namamodule' 	=> "siswa_jurnal",
 			'namafileview' 	=> "V_siswa_jurnal",
 			'tampil'		=> $this->m_siswa_jurnal->tampil($datasiswa),
+			'tampil_data'		=> $this->m_siswa_jurnal->tampil_data($datasiswa),
 		);
 		echo Modules::run('template_siswa/tampilCore', $data);
 		// $data = array(
@@ -38,8 +39,9 @@ class siswa_jurnal extends MX_Controller {
 
 	function tambah()
 	{
-		$this->m_data_pengumuman->tambah();
-		redirect('Data_pengumuman');
+		$this->m_siswa_jurnal->tambah();
+		echo "<script>alert ('data telah ditambahkan') </script>";
+		redirect('siswa_jurnal');
 	}
 
 	function edit()
@@ -50,8 +52,8 @@ class siswa_jurnal extends MX_Controller {
 
 	function hapus($id)
 	{
-		$this->m_data_pengumuman->hapus($id);
-		redirect('Data_pengumuman');
+		$this->m_siswa_jurnal->hapus($id);
+		redirect('siswa_jurnal');
 	}
 
 	function cari()

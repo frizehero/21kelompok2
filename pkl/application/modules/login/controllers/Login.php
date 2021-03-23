@@ -47,7 +47,7 @@ class Login extends MX_Controller {
 		// check
 		if ( ! empty($getData) )
 		{
-			$this->M_session->store_session( $getData->id_admin );
+			
 
 			// flashdata
 			$this->session->set_flashdata('msg', 'greeting');
@@ -57,20 +57,17 @@ class Login extends MX_Controller {
 
 			
 
+			    // redirect('data_dashboard');
 			    redirect('data_dashboard');
-			    // redirect('siswa_jurnal');
-			    echo $getData->id_admin;
+			  $this->M_session->store_session( $getData->id_admin );
 			}
 			else if ($getData->level==2) 
 			{
 
 			    redirect('siswa_dashboard');
+			   $this->M_session->store_session( $getData->id_siswa );
 			}
 			
-
-			// flashdata
-			$this->session->set_flashdata('msg', 'greeting');
-			$this->M_session->store_session( $getData->id_admin);
 		} else { // gagal login
 
 			$this->session->set_flashdata('msg', 'loginError');

@@ -30,14 +30,14 @@ class M_data_dashboard extends CI_Model {
 	
 		
 	}
-	function tampil_dudi()
-	{
-		$this->db->select('*')
-		         ->from('dudi')
-		$query = $this->db->get('kelas');
-		return $query->result();
-		$jml = mysqli_num_rows($query);
-	}
+	// function tampil_dudi()
+	// {
+	// 	$this->db->select('*')
+	// 	         ->from('dudi')
+	// 	$query = $this->db->get('kelas');
+	// 	return $query->result();
+	// 	$jml = mysqli_num_rows($query);
+	// }
 
 	function edit()
 	{
