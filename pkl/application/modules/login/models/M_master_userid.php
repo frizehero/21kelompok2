@@ -16,6 +16,7 @@ Class M_master_userid extends CI_Model {
 
 		$this->db->select('*')
 				 ->from('tb_login')
+				 ->join('siswa', 'siswa.id_siswa = tb_login.id_siswa')
 				 ->where('username',$varUser,'password',$varPassword,'level' AND 'id_admin');
 				 
 		$query = $this->db->get();

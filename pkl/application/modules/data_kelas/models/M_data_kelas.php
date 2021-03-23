@@ -223,10 +223,12 @@ class M_data_kelas extends CI_Model {
 
 	function cari_siswa()
 	{
-		$cari 		= $this->input->post('cari_siswa');
-		return $this->db->like('nama_siswa',$cari)
-		->select('*')
-		->get('siswa')->result();
+		$cari_siswa 		= $this->input->post('cari_siswa');
+		return $this->db->like('nama_siswa',$cari_siswa)
+		->from('kelas')
+		->where('id_kelas');
+		$query = $this->db->get();
+		return $query->row_array();;
 	}
 
 	function filter ($jurusan)

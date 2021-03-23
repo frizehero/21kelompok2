@@ -57,14 +57,14 @@ class Login extends MX_Controller {
 
 			
 
-			    redirect('data_sekolah');
+			    redirect('data_dashboard');
 			    // redirect('siswa_jurnal');
 			    echo $getData->id_admin;
 			}
 			else if ($getData->level==2) 
 			{
 
-			    redirect('data_siswa');
+			    redirect('siswa_dashboard');
 			}
 			
 

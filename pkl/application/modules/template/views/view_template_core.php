@@ -526,12 +526,11 @@
 
 
                         <ul id="mainnav-menu" class="list-group">
-                            <?php if($this->uri->segment('1') == 'dashboard'){ ?>
+                            <?php if($this->uri->segment('1') == 'data_dashboard'){ ?>
                                 <li class="active-sub">
-                                    <a href="<?php echo base_url('dashboard'); ?>">
+                                    <a href="<?php echo base_url('data_dashboard'); ?>">
                                         <i class="demo-pli-home"></i>
                                         <span class="menu-title">dashboard</span>
-                                        <i class="arrow"></i>
                                     </a>
                                     <!--Submenu-->
                                 </li>
@@ -540,10 +539,9 @@
 
 
                                 <li>
-                                    <a href="<?php echo base_url('dashboard'); ?>">
+                                    <a href="<?php echo base_url('data_dashboard'); ?>">
                                         <i class="demo-pli-home"></i>
                                         <span class="menu-title">dashboard</span>
-                                        <i class="arrow"></i>
                                     </a>
                                     <!--Submenu-->
                                 </li>

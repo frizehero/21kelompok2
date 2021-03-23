@@ -20,7 +20,7 @@
   <!--End breadcrumb-->
 
 </div>
-<div id="page-content"> 
+ 
   <div class="row pad-btm">
     <div class="col-sm-6 toolbar-left">
       <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">tambah</button>
@@ -98,11 +98,10 @@
       <?php } ?>
     </div>
     
-   <button class="btn btn-default">Cari</button>
+   <button class="btn btn-purple btn-default">Cari</button>
 
  </div>
 </form>
-</div>
 
 
 
