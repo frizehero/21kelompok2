@@ -39,29 +39,13 @@ class M_data_pengumuman extends CI_Model {
 		$isi_pengumuman	= $this->input->post('isi_pengumuman');
 		$tertuju	= $this->input->post('tertuju');
 
-        {
-            if ($this->upload->do_upload(''))
-            {
 				$data = array(
-					'id_pengumuman'		=> $id_pengumuman,
 					'judul_pengumuman'		=> $judul_pengumuman,
 					'tanggal'		=> $tanggal,
 					'isi_pengumuman'		=> $isi_pengumuman,
 					'tertuju'		=> $tertuju,
 				);
 				$this->db->where('id_pengumuman',$id_pengumuman)->update('pengumuman', $data);
-			
-			}
-			else{
-			$data = array(
-				'judul_pengumuman'		=> $judul_pengumuman,
-					'tanggal'		=> $tanggal,
-					'isi_pengumuman'		=> $isi_pengumuman,
-					'tertuju'		=> $tertuju,
-			);
-			$this->db->where('id_pengumuman',$id_pengumuman)->update('pengumuman', $data);
-		}	 
-		}
 		
 	}
 

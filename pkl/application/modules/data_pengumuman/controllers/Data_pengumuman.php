@@ -33,6 +33,7 @@ class Data_pengumuman extends MX_Controller {
 	{
 		$this->m_data_pengumuman->edit();
 		redirect('Data_pengumuman');
+		
 	}
 
 	function hapus($id)

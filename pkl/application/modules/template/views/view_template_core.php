@@ -38,8 +38,6 @@
     <script src="<?php echo base_url(); ?>assets/plugins/pace/pace.min.js"></script>
 
 
-    <!--Demo [ DEMONSTRATION ]-->
-    <link href="<?php echo base_url(); ?>assets/css/demo/nifty-demo.min.css" rel="stylesheet">
 
     <!--Ion Icons [ OPTIONAL ]-->
     <link href="<?php echo base_url(); ?>assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet">

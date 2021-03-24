@@ -19,6 +19,7 @@ class Data_siswa extends MX_Controller {
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_data_siswa",
 			'tampil'		=> $this->m_data_siswa->tampil(),
+			'filter_dudi'		=> $this->m_data_siswa->filter_dudi(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -51,4 +52,17 @@ class Data_siswa extends MX_Controller {
 		echo Modules::run('template/tampilCore', $data);
 	}
 	
+	function filter()
+	{
+
+		$dudi 					= $this->input->post('dudi');
+
+		$data = array(
+			'namamodule' 	=> "data_siswa",
+			'namafileview' 	=> "V_data_siswa",
+			'tampil'		=> $this->m_data_siswa->filter($dudi),
+			'filter_dudi'	=> $this->m_data_siswa->filter_dudi(),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
 }

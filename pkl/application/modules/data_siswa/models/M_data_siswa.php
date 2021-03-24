@@ -111,4 +111,18 @@ class M_data_siswa extends CI_Model {
 		$cari 		= $this->input->post('cari');
 		return $this->db->like('nama_siswa',$cari)->get('siswa')->result();
 	}
+
+	function filter($dudi)
+	{
+
+			$this->db->select('*')
+			->join('dudi','dudi.id_dudi = siswa.id_dudi')
+			->where('siswa.id_dudi',$dudi);
+			$query = $this->db->get('siswa');
+			return $query->result();
+	}
+	function filter_dudi()
+	{
+			return $this->db->get('dudi')->result();
+	}
 }

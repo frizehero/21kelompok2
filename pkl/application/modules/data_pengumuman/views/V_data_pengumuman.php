@@ -115,7 +115,7 @@
         
         <div class="modal fade" id="exampleModal3<?php echo $res->id_pengumuman?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-   <?= form_open_multipart('data_pengumuman/'); ?>
+   <?= form_open_multipart('data_pengumuman/edit'); ?>
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">edit Pengumuman</h5>
@@ -128,7 +128,7 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Judul</label>
-            <input type="hidden" value='<?php echo $res->id_kelas?>' name="id_jurnal">
+            <input type="hidden" value='<?php echo $res->id_pengumuman?>' name="id_pengumuman">
             <input name="judul_pengumuman" type="text" class="form-control" id="inputEmail4" placeholder="Judul pengumuman">
           </div>
           <div class="form-group col-md-6">

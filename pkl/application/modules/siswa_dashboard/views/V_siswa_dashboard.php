@@ -188,7 +188,12 @@
                 <h3 class="panel-title">Pengumuman</h3>
               </div>
               <div class="panel-body">
-                1. <b>Admin</b> Melengkapi Nilai Yang Kurang
+                <?php $nomor=1?>
+                <?php foreach ($tampil as $res) {?>
+
+                <b><?php echo $nomor?>. <?php echo $res->judul_pengumuman?></b><br>
+                <?php $nomor++?>
+              <?php }?>
               </div>
             </div>
           </div>
