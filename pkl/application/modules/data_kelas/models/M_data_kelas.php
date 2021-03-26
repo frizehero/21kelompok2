@@ -232,13 +232,13 @@ class M_data_kelas extends CI_Model {
 		return $query->row_array();;
 	}
 
-	function filter ($jurusan)
+	function filter ($jurusan,$limit, $start)
 	{
 
 		$this->db->select('*')
-		->join('jurusan','jurusan.id_jurusan = kelas.id_jurusan')
-		->where('kelas.id_jurusan',$jurusan);
-		$query = $this->db->get('kelas');
+		->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
+	
+		$query = $this->db->get('kelas', $limit, $start);
 		return $query->result();
 	}
 	

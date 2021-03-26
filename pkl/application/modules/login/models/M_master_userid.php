@@ -14,19 +14,19 @@ Class M_master_userid extends CI_Model {
 		// $result = $this->db->row($query);
 
 
-		$this->db->select('*')
-				 ->from('tb_login')
-				 ->join('siswa', 'siswa.id_siswa = tb_login.id_siswa')
-				 ->where('username',$varUser,'password',$varPassword,'level' AND 'id_admin');
+		// $this->db->select('*')
+		// 		 ->from('tb_login')
+		// 		 ->join('siswa', 'siswa.id_siswa = tb_login.id_siswa')
+		// 		 ->where('username',$varUser,'password',$varPassword,'level' AND 'id_admin');
 				 
-		$query = $this->db->get();
-		return $query->row();
-		
-		// $getField = array('username' => $varUser, 'password' => $varPassword );
-
-		// $query = $this->db->get_where('tb_login', $getField);
-
+		// $query = $this->db->get();
 		// return $query->row();
+		
+		$getField = array('username' => $varUser, 'password' => $varPassword );
+
+		$query = $this->db->get_where('tb_login', $getField);
+
+		return $query->row();
 		
 	}
 

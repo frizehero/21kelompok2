@@ -19,42 +19,15 @@
   <!--End breadcrumb-->
 
 </div>
-<div style="left: 30px">
-  <form method="post" action="<?php echo site_url('data_pengumuman/cari') ?>" >
-      <div class="col-md-2" style="padding: 0px">
-        <div id="demo-dp-txtinput">
-          <?php if($this->uri->segment(2) != 'cari'){?>
-            <input type="text" autocomplete="off" name="cari" class="form-control input-sm " placeholder="Cari">
-          <?php } ?>
-          <?php if($this->uri->segment(2) == 'cari'){
-            $cari = $this->input->post('cari'); ?>
-            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control input-sm " placeholder="Outlet">
-          <?php } ?> 
-        </div>
-      </div>
-      
-      
-      <div class="col-md-2" style="">
-        
-        <button class="btn btn-success btn-sm">
-          <span class="fa fa-filter"></span>
-          Cari
-        </button>
-        <a class="btn btn-default btn-sm" href="<?php echo base_url('data_pengumuman'); ?>">
-          <i class="fa fa-refresh" ></i>
-        </a>
-      </div>
-    </form>
-</div>
+
 
 <div class="row pad-btm">
-  <div class="col-sm-4 toolbar-left" style=" bottom: 15px; left: 700px;">
+  <div class="col-sm-6 toolbar-left" style=" bottom: 15px;">
     <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">Tambah</button>
   </div>
 <?= form_open_multipart('data_pengumuman/tambah'); ?>
 </div>
-
-
+ 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
    
