@@ -3,12 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_data_kelas extends CI_Model {
 
-	function tampil()
+	function tampil($limit, $start)
 	{
-		return $this->db->from('kelas')
-		->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan')
-		->get()
-		->result();
+		$this->db->select('*')
+		->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
+	
+		$query = $this->db->get('kelas', $limit, $start);
+		return $query->result();
 	}
 	function filter_jurusan()
 	{

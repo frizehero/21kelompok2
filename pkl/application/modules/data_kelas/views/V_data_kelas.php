@@ -101,7 +101,7 @@
 
 
 <div class="row">
-  <?php foreach($tampil as $res) {
+  <?php foreach($row as $res) {
     $id = $res->id_kelas;
     $gambar = $res->logo_kelas;
     ?>
@@ -131,6 +131,8 @@
       </div>
     </div>
   </div>
+
+
   <div class="modal fade" id="demo-default-modal2<?php echo $res->id_kelas?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -256,7 +258,10 @@
 <?php }?>
 
 
+
 </div>
+<?php echo $pagination;?>
+
 
 
 
