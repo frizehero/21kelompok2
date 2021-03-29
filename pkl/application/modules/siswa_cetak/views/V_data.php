@@ -105,7 +105,9 @@
 
 					<td><?php echo $ww->tanggal?></td>
 					<td><?php echo $ww->kegiatan?></td>
-					<td><?php echo $ww->foto_kegiatan?></td>
+					<td>
+						<img style="height: 200px" class="img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $ww->foto_kegiatan?>" alt="Image">
+					</td>
 				
 				</tr>
                 <?php }?>

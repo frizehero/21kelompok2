@@ -241,7 +241,7 @@
                            </div>
                        </div>
 
-                       <p class="text-muted text-sm"><i class="demo-pli-smartphone-3 icon-lg"></i> Mobile - 15-02-2021</p>
+                       <p class="text-muted text-sm"><i class="demo-pli-smartphone-3 icon-lg"></i><?php echo $res->tanggal?></p>
                    </div>
                    <p><?php echo $res->kegiatan?> </p>
 

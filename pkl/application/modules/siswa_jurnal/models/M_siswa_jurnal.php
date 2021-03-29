@@ -7,6 +7,7 @@ class M_siswa_jurnal extends CI_Model {
 	{
 		$this->db->select('*')
 				 ->from('siswa')
+				  ->order_by(`tanggal`, "desc")
 				 ->where('id_siswa',$datasiswa);
 		$query = $this->db->get();
 		return $query->row_array();
