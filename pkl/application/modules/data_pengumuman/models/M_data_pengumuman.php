@@ -48,6 +48,7 @@ class M_data_pengumuman extends CI_Model {
 				$this->db->where('id_pengumuman',$id_pengumuman)->update('pengumuman', $data);
 		
 	}
+	
 
 	function hapus($id)
 	{

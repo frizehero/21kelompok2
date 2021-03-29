@@ -36,7 +36,7 @@
                      
                  </div>
              </div>
-             <?php foreach($tampil as $res) {
+             <?php foreach($row as $res) {
                 ?>
              <div class="col-sm-4 col-md-3">
 
@@ -72,6 +72,8 @@
 
            </div>
          <?php }?>
+         <?php echo $pagination;?>
+
 
    
 <!--jQuery [ REQUIRED ]-->

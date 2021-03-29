@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Data_pengumuman extends MX_Controller {
+class Siswa_cetak extends MX_Controller {
 
 	function __construct()
 	{
 		parent::__construct();
 		// model
-		 $this->load->model('m_data_pengumuman');
+		 $this->load->model('m_data_cetak');
 		 $this->load->model('login/m_session');
 	}
 
@@ -16,11 +16,13 @@ class Data_pengumuman extends MX_Controller {
 	function index()
 	{
 		$data = array(
-			'namamodule' 	=> "Data_pengumuman",
-			'namafileview' 	=> "V_data_pengumuman",
-			'tampil'		=> $this->m_data_pengumuman->tampil(),
+			'namamodule' 	=> "Siswa_cetak",
+			'namafileview' 	=> "V_data_cetak",
+			'tampil'		=> $this->m_data_cetak->tampil(),
+			
+
 		);
-		echo Modules::run('template/tampilCore', $data);
+		echo Modules::run('template_siswa/tampilCore', $data);
 	}
 
 	function tambah()
@@ -35,6 +37,7 @@ class Data_pengumuman extends MX_Controller {
 		redirect('Data_pengumuman');
 		
 	}
+	
 
 	function hapus($id)
 	{
@@ -44,12 +47,15 @@ class Data_pengumuman extends MX_Controller {
 
 	function cari()
 	{
+		$awl = $this->input->post('awl');
+		$akr = $this->input->post('akr');
+		$datasiswa=  $this->session->userdata('session_id');
 		$data = array(
-			'namamodule' 	=> "Data_pengumuman",
-			'namafileview' 	=> "V_data_pengumuman",
-			'tampil'		=> $this->m_data_pengumuman->cari(),
+			'namamodule' 	=> "Siswa_cetak",
+			'namafileview' 	=> "V_data",
+			'tt'		=> $this->m_data_cetak->cari($awl,$akr,$datasiswa),
 		);
-		echo Modules::run('template/tampilCore', $data);
+		echo Modules::run('template_siswa/tampilCore', $data);
 	}
 	
 }

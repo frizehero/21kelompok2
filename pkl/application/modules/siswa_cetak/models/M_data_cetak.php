@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_data_pengumuman extends CI_Model {
+class M_data_cetak extends CI_Model {
 
 	function tampil()
 	{
@@ -54,9 +54,18 @@ class M_data_pengumuman extends CI_Model {
 		$this->db->where('id_pengumuman', $id)->delete('pengumuman');
 	}
 
-	function cari()
+	function cari($awl,$akr,$datasiswa)
 	{
-		$cari 		= $this->input->post('cari');
-		return $this->db->like('judul_pengumuman',$cari)->get('pengumuman')->result();
+      // return $this->db->query("SELECT * FROM jurnal WHERE tanggal between '$awl' AND '$akr' ORDER BY tanggal ASC");
+
+      return $this->db->from('jurnal')
+        ->order_by("tanggal", "asc")
+        // ->where('tanggal >=', $awl)
+        // ->where('tanggal <=', $akr)
+        ->where("tanggal BETWEEN '$awl' AND '$akr'")
+        ->join('siswa', 'siswa.id_siswa = jurnal.id_siswa')
+		->where('siswa.id_siswa',$datasiswa)
+		->get()
+		->result();	
 	}
 }
