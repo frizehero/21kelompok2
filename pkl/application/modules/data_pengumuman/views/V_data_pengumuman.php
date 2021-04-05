@@ -157,22 +157,22 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>tanggal</th>
-                        <th>Judul</th>
-                        <th>Tertuju</th>
-                        <th>Aksi</th>
+                        <th class="text-center">tanggal</th>
+                        <th class="text-center">Judul</th>
+                        <th class="text-center">Tertuju</th>
+                        <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($tampil as $res) {?>
                     <tr>
-                        <td><?php echo $res->tanggal?></td>
-                        <td><?php echo $res->judul_pengumuman?></td>
-                        <td><?php echo $res->tertuju?></td>
-                        <td> 
+                        <td class="text-center"><?php echo $res->tanggal?></td>
+                        <td class="text-center"><?php echo $res->judul_pengumuman?></td>
+                        <td class="text-center"><?php echo $res->tertuju?></td>
+                        <td class="text-center"> 
                        <button data-toggle="modal" data-target="#exampleModal3<?php echo $res->id_pengumuman?>" class="btn btn-warning">EDIT</button>
                        <button class="btn btn-danger" data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pengumuman?>">HAPUS</button>     
-                         <button class="btn btn-primary" data-toggle="modal" data-target="#demo-default-modal4<?php echo $res->id_pengumuman?>">Detail</button>                                                                                                                                                                       
+                         <button class="btn btn-primary" data-toggle="modal" data-target="#demo-default-modal4<?php echo $res->id_pengumuman?>">Detail</button>
                       </td>
                   </tr>
               <?php }?>

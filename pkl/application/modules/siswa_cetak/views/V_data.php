@@ -73,13 +73,22 @@
 <div class="panel">
 
 	<div class="panel-body">
-		<table class="table table-striped table-bordered" cellspacing="0" width="100%">
+		<img style="
+    width: 1000px;
+    margin-right: 50px;
+" src="https://i0.wp.com/titikdua.net/wp-content/uploads/2019/12/Contoh-kop-surat-kementrian-pendidikan.jpg">
+		<table style="
+    width: 900px;
+    margin-left: 50px;
+    margin-top: 40px;
+" class="table table-striped table-bordered" cellspacing="0" width="100%">
 			<thead>
 				<tr >
 					
 					<th class="text-center">Tanggal</th>
 					<th class="text-center">Kegiatan</th>
 					<th class="text-center">Foto Kegiatan</th>
+					<th class="text-center">Tanda Tangan</th>
 				</tr>
 			</thead>
 
@@ -107,6 +116,9 @@
 					<td><?php echo $ww->kegiatan?></td>
 					<td>
 						<img style="height: 200px" class="img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $ww->foto_kegiatan?>" alt="Image">
+					</td>
+					<td>
+						
 					</td>
 				
 				</tr>

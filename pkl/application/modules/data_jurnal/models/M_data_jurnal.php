@@ -12,6 +12,33 @@ class M_data_jurnal extends CI_Model {
 		return $query->result();
 
 	}
+	function get_filter_count($st = NULL)
+	{
+		if ($st == "NIL") $st = "";
+		$this->db->select('*')
+			->join('dudi','dudi.id_dudi = siswa.id_dudi')
+			// ->where('siswa.id_dudi',$st);
+			->like('siswa.id_dudi',$st);
+			$query = $this->db->get('siswa');
+			return $query->num_rows();
+
+	}
+	function cari_tgl($awl,$akr,$idid)
+	{
+      // return $this->db->query("SELECT * FROM jurnal WHERE tanggal between '$awl' AND '$akr' ORDER BY tanggal ASC");
+
+      return $this->db->from('jurnal')
+        ->order_by("tanggal", "asc")
+        // ->where('tanggal >=', $awl)
+        // ->where('tanggal <=', $akr)
+        ->where("tanggal BETWEEN '$awl' AND '$akr'")
+        ->join('siswa', 'siswa.id_siswa = jurnal.id_siswa')
+		->where('siswa.id_siswa',$idid)
+		->get()
+		->result();	
+	}
+
+
 	function tampil_detail($id)
 	{
 
@@ -31,7 +58,10 @@ class M_data_jurnal extends CI_Model {
 	}
 	function filter_dudi()
 	{
-			return $this->db->get('dudi')->result();
+			$this->db->select('*')
+		->from('dudi');
+		$query = $this->db->get();
+		return $query->result();
 	}
 	
 
@@ -129,13 +159,13 @@ class M_data_jurnal extends CI_Model {
 		$cari 		= $this->input->post('cari');
 		return $this->db->like('nama_sekolah',$cari)->get('sekolah')->result();
 	}
-	function filter($dudi)
-	{
-
+	function filter($limit, $start, $st = NULL)
+	{ 
+		     if ($st == "NIL") $st = "";
 			$this->db->select('*')
 			->join('dudi','dudi.id_dudi = siswa.id_dudi')
-			->where('siswa.id_dudi',$dudi);
-			$query = $this->db->get('siswa');
+			->where('siswa.id_dudi',$st);
+			$query = $this->db->get('siswa',$limit, $start);
 			return $query->result();
 	}
 }

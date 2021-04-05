@@ -38,6 +38,8 @@
     <script src="<?php echo base_url(); ?>assets/plugins/pace/pace.min.js"></script>
 
 
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="<?php echo base_url(); ?>assets/css/demo/nifty-demo.min.css" rel="stylesheet">
 
     <!--Ion Icons [ OPTIONAL ]-->
     <link href="<?php echo base_url(); ?>assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
@@ -460,7 +462,7 @@
                             <div id="mainnav-profile" class="mainnav-profile">
 
 
-                               <div class="profile-wrap text-center">
+                             <div class="profile-wrap text-center">
                                 <div class="pad-btm">
                                     <img class="img-circle img-md" src="<?php echo base_url(); ?>assets/img/1.png" alt="Profile Picture">
                                 </div>
@@ -527,76 +529,86 @@
                             <?php if($this->uri->segment('1') == 'siswa_dashboard'){ ?>
                                 <li class="active-sub">
                                     <a href="<?php echo base_url('siswa_dashboard'); ?>">
-                                        <i class="demo-pli-home"></i>
-                                        <span class="menu-title">dashboard</span>
-                                    </a>
-                                    <!--Submenu-->
-                                </li>
-                            <?php } else{ ?>
+                                        <i >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                              <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                                              <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                                          </svg>
+                                      </i>
+                                      <span class="menu-title">dashboard</span>
+                                  </a>
+                                  <!--Submenu-->
+                              </li>
+                          <?php } else{ ?>
 
 
 
-                                <li>
-                                    <a href="<?php echo base_url('siswa_dashboard'); ?>">
-                                        <i class="demo-pli-home"></i>
-                                        <span class="menu-title">dashboard</span>
-                                    </a>
-                                    <!--Submenu-->
-                                </li>
-                            <?php } ?>
+                            <li>
+                                <a href="<?php echo base_url('siswa_dashboard'); ?>">
+                                    <i >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                          <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                                          <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                                      </svg>
+                                  </i>
+                                  <span class="menu-title">dashboard</span>
+                              </a>
+                              <!--Submenu-->
+                          </li>
+                      <?php } ?>
 
-                           <li class=" <?=$this->uri->segment('1') == 'siswa_jurnal' || $this->uri->segment(1) == 'siswa_cetak' ? "active-sub" : ''?>">
-                                <a href="">
-                                   <i class="demo-pli-receipt-4"></i>
-                                    <span>Data</span>
-                                    <i class="arrow"></i>
-                                </a>
-                                <ul class="collapse">
-                                        <li <?=$this->uri->segment('1') == 'siswa_jurnal' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('siswa_jurnal'); ?>">Data Jurnal</a></li>
-                                        <li <?=$this->uri->segment('1') == 'siswa_cetak' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('siswa_cetak'); ?>">Cetak Jurnal</a></li>
-                                    </ul>
-                            </li>
-
-
-                            <?php if($this->uri->segment('1') == 'siswa_dudi'){ ?>
-                                <li class="active-sub">
-                                    <a href="<?php echo base_url('siswa_dudi'); ?>">
-                                        <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data Dudi</span>
-                                    </a>
-                                    <!--Submenu-->
-                                </li>
-                            <?php } else{ ?>
-                                <li>
-                                    <a href="<?php echo base_url('siswa_dudi'); ?>">
-                                        <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data Dudi</span>
-                                    </a>
-                                    <!--Submenu-->
-                                </li>
-                            <?php } ?>
+                      <li class=" <?=$this->uri->segment('1') == 'siswa_jurnal' || $this->uri->segment(1) == 'siswa_cetak' ? "active-sub" : ''?>">
+                        <a href="">
+                          <i class="fa fa-list"></i>
+                          <span>Data</span>
+                          <i class="arrow"></i>
+                      </a>
+                      <ul class="collapse">
+                        <li <?=$this->uri->segment('1') == 'siswa_jurnal' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('siswa_jurnal'); ?>">Data Jurnal</a></li>
+                        <li <?=$this->uri->segment('1') == 'siswa_cetak' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('siswa_cetak'); ?>">Cetak Jurnal</a></li>
+                    </ul>
+                </li>
 
 
+                <?php if($this->uri->segment('1') == 'siswa_dudi'){ ?>
+                    <li class="active-sub">
+                        <a href="<?php echo base_url('siswa_dudi'); ?>">
+                            <i class="fa fa-list"></i>
+                            <span class="menu-title">Data Dudi</span>
+                        </a>
+                        <!--Submenu-->
+                    </li>
+                <?php } else{ ?>
+                    <li>
+                        <a href="<?php echo base_url('siswa_dudi'); ?>">
+                            <i class="fa fa-list"></i>
+                            <span class="menu-title">Data Dudi</span>
+                        </a>
+                        <!--Submenu-->
+                    </li>
+                <?php } ?>
 
-                        </ul>
 
 
-                        <!--Widget-->
-                        <!--================================-->
+            </ul>
 
-                        <!--================================-->
-                        <!--End widget-->
 
-                    </div>
-                </div>
-            </div>
+            <!--Widget-->
             <!--================================-->
-            <!--End menu-->
+
+            <!--================================-->
+            <!--End widget-->
 
         </div>
-    </nav>
-    <!--===================================================-->
-    <!--END MAIN NAVIGATION-->
+    </div>
+</div>
+<!--================================-->
+<!--End menu-->
+
+</div>
+</nav>
+<!--===================================================-->
+<!--END MAIN NAVIGATION-->
 
 </div>
 
@@ -617,16 +629,16 @@
     <!-- Visible when footer positions are static -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="hide-fixed pull-right pad-rgt">
-     Hummasoft Technologhy
- </div>
+       Hummasoft Technologhy
+   </div>
 
 
 
- <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
- <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
- <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+   <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
- <p class="pad-lft">&#0169; 2019 HummaPOS</p>
+   <p class="pad-lft">&#0169; 2019 HummaPOS</p>
 
 
 
@@ -696,6 +708,7 @@
 <script src="<?php echo base_url(); ?>assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
 
 <!--Demo script [ DEMONSTRATION ]-->
+<script src="<?php echo base_url(); ?>assets/js/demo/nifty-demo.min.js"></script>
 
 
 <!--Unite Gallery [ OPTIONAL ]-->
@@ -722,7 +735,6 @@
 
 <!--Form File Upload [ SAMPLE ]-->
 <script src="<?php echo base_url(); ?>assets/js/demo/form-file-upload.js"></script>
-
 
 
 

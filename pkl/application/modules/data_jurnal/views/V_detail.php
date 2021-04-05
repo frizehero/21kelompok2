@@ -190,63 +190,55 @@
                         </div>
                     </div>
                     <div class="row pad-btm">
-
-                       <div>
-                           <div class="col-sm-12 toolbar-right text-right">
-
-                              <div class="select">
-                               <select >
-                                   <option value="date-created" selected="">01-02-2021</option>
-                                   <option value="date-modified">XI RPL 2</option>
-                                   <option value="frequency-used">XI RPL 1</option>
-                                   <option value="alpabetically">XI TKJ</option>
-                                   <option value="alpabetically-reversed">XI PNP</option>
-                               </select>
-                           </div>
-                           Sampai
-                           <div class="select">
-                               <select id="demo-ease">
-                                   <option value="date-created" selected="">15-02-2021</option>
-                                   <option value="date-modified">KODESFOT</option>
-                                   <option value="frequency-used">ANGON DATA</option>
-                               </select>
-                           </div>
-
-                           <button class="btn btn-primary">Filter</button>
-
-                       </div>
-                   </div>
-               </div>
+                        <?= form_open_multipart('data_jurnal/tgl'); ?>
+                        <div style="margin-right: -40px">
+                            <div class="col-md-10">
+                            <div class="input-daterange input-group" id="datepicker">
+                                <input type="date" name="awl" class="form-control">
+                                <div class="input-group-addon">to</div>
+                                <input type="date" name="akr" class="form-control" >
+                                <input type="hidden" value="<?php echo $tampil_detail['id_siswa']?>" name="idid">
 
 
-
-
-
-               <hr>
-               <?php foreach($tampil_data as $res) {
-                  $id = $res->id_siswa;
-                  $gambar = $res->logo;
-                  ?>
-                  <div class="comments media-block">
-                    <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="img/profile-photos/10.png"></a>
-                    <div class="media-body">
-                        <div class="comment-header">
-                            <div><a href="#" class="media-heading box-inline text-main text-semibold">uzi</a>  <span class="text-semibold text-main">added new Jurnal</span></div>
-                            <p class="text-muted text-sm"><i class="demo-pli-smartphone-3 icon-lg"></i> Mobile - 15-02-2021</p>
-                        </div>
-                        <p><?php echo $res->kegiatan?> </p>
-
-                        <div class="comment-content comment-photos row">
-                            <div class="col-sm-12">
-                                <img style="height: 150px" class="img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_kegiatan?>" alt="Image">
                             </div>
+                            
+                        </div>
+                        <button type="submit" class="btn btn-primary">Cari</button>
                         </div>
 
-                        
+
                     </div>
-                </div>
-            <?php }?>
-            <button class="btn btn-primary btn-block mar-ver"><span class="text-semibold">36</span> Load More</button>
+                    <?= form_close(); ?>
+
+
+
+
+
+                    <hr>
+                    <?php foreach($tampil_data as $res) {
+                      $id = $res->id_siswa;
+                      $gambar = $res->logo;
+                      ?>
+                      <div class="comments media-block">
+                        <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="img/profile-photos/10.png"></a>
+                        <div class="media-body">
+                            <div class="comment-header">
+                                <div><a href="#" class="media-heading box-inline text-main text-semibold">uzi</a>  <span class="text-semibold text-main">added new Jurnal</span></div>
+                                <p class="text-muted text-sm"><i class="demo-pli-smartphone-3 icon-lg"></i> Mobile - 15-02-2021</p>
+                            </div>
+                            <p><?php echo $res->kegiatan?> </p>
+
+                            <div class="comment-content comment-photos row">
+                                <div class="col-sm-12">
+                                    <img style="height: 150px" class="img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_kegiatan?>" alt="Image">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                <?php }?>
+                <button class="btn btn-primary btn-block mar-ver"><span class="text-semibold">36</span> Load More</button>
 
 
 
