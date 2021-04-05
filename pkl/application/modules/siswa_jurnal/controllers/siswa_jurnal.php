@@ -46,8 +46,8 @@ class siswa_jurnal extends MX_Controller {
 
 	function edit()
 	{
-		$this->m_data_pengumuman->edit();
-		redirect('Data_pengumuman');
+		$this->M_siswa_jurnal->edit();
+		redirect('siswa_jurnal');
 	}
 
 	function hapus($id)
@@ -59,9 +59,9 @@ class siswa_jurnal extends MX_Controller {
 	function cari()
 	{
 		$data = array(
-			'namamodule' 	=> "Data_pengumuman",
-			'namafileview' 	=> "V_data_pengumuman",
-			'tampil'		=> $this->m_data_pengumuman->cari(),
+			'namamodule' 	=> "Data_jurnal",
+			'namafileview' 	=> "V_data_jurnal",
+			'tampil'		=> $this->m_data_jurnal->cari(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}

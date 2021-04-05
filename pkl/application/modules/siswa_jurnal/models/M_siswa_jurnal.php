@@ -12,6 +12,32 @@ class M_siswa_jurnal extends CI_Model {
 		$query = $this->db->get();
 		return $query->row_array();
 	}
+	function edit()
+	{
+		$id_jurnal = $this->input->post('id_jurnal');
+		$kegiatan = $this->input->post('kegiatan');
+		$foto_kegiatan		= $this->input->post('foto_kegiatan');
+
+        {
+            if ($this->upload->do_upload(''))
+            {
+				$data = array(
+					'id_jurnal'		=> $id_jurnal,
+					'kegiatan'		=> $kegiatan,
+					'foto_kegiatan'		=> $foto_kegiatan,
+				);
+				$this->db->where('id_jurnal',$id_jurnal)->update('jurnal', $data);
+			
+			}
+			else{
+			$data = array(
+					'kegiatan'		=> $kegiatan,
+			);
+			$this->db->where('id_jurnal',$id_jurnal)->update('jurnal', $data);
+		}	 
+		}
+		
+	}
 	function tampil_data($datasiswa)
 	{
 		return $this->db->from('jurnal')
@@ -67,39 +93,7 @@ class M_siswa_jurnal extends CI_Model {
 			}
 	}
 
-	function edit()
-	{
-		$id_pengumuman = $this->input->post('id_pengumuman');
-		$judul_pengumuman = $this->input->post('judul_pengumuman');
-		$tanggal		= $this->input->post('tanggal');
-		$isi_pengumuman	= $this->input->post('isi_pengumuman');
-		$tertuju	= $this->input->post('tertuju');
-
-        {
-            if ($this->upload->do_upload(''))
-            {
-				$data = array(
-					'id_pengumuman'		=> $id_pengumuman,
-					'judul_pengumuman'		=> $judul_pengumuman,
-					'tanggal'		=> $tanggal,
-					'isi_pengumuman'		=> $isi_pengumuman,
-					'tertuju'		=> $tertuju,
-				);
-				$this->db->where('id_pengumuman',$id_pengumuman)->update('pengumuman', $data);
-			
-			}
-			else{
-			$data = array(
-				'judul_pengumuman'		=> $judul_pengumuman,
-					'tanggal'		=> $tanggal,
-					'isi_pengumuman'		=> $isi_pengumuman,
-					'tertuju'		=> $tertuju,
-			);
-			$this->db->where('id_pengumuman',$id_pengumuman)->update('pengumuman', $data);
-		}	 
-		}
-		
-	}
+	
 
 	function hapus($id)
 	{
@@ -109,6 +103,6 @@ class M_siswa_jurnal extends CI_Model {
 	function cari()
 	{
 		$cari 		= $this->input->post('cari');
-		return $this->db->like('judul_pengumuman',$cari)->get('pengumuman')->result();
+		return $this->db->like('judul_jurnal',$cari)->get('jurnal')->result();
 	}
 }
