@@ -27,6 +27,7 @@ class M_template_siswa extends CI_Model {
 		return $query;
 
 	}
+	
 
 	function kategori()
 	{

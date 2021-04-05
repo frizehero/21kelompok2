@@ -17,8 +17,10 @@ class Template_siswa extends MX_Controller {
 	// view core templating
 	public function index()
 	{
-		
+		$datasiswa=  $this->session->userdata('session_id');
+		$this->load->model('m_template_siswa');
 		$this->load->view('view_template_core_siswa');
+		
 	}
 
 	public function tampilCore($data)

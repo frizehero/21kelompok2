@@ -136,7 +136,7 @@
                     <!-- Simple profile -->
                     <div class="text-center">
                         <div class="pad-ver">
-                            <img src="https://smanegeri1pseksu.files.wordpress.com/2017/10/dsc_0010.jpg?w=246&h=370" class="img-lg img-circle" alt="Profile Picture">
+                            <img src="<?php echo base_url ()?>assets/img/<?php echo $tampil_detail ['logo']?>" class="img-lg img-circle" alt="Profile Picture">
                         </div>
                         <h4 class="text-lg text-overflow mar-no"><?php echo $tampil_detail['nama_siswa'] ?></h4>
                         <p class="text-sm text-muted">Rekayasa Perangkat Lunak</p>
