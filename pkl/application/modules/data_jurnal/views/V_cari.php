@@ -136,7 +136,7 @@
                     <!-- Simple profile -->
                     <div class="text-center">
                         <div class="pad-ver">
-                            <img src="https://smanegeri1pseksu.files.wordpress.com/2017/10/dsc_0010.jpg?w=246&h=370" class="img-lg img-circle" alt="Profile Picture">
+                            <img src="<?php echo base_url ()?>assets/img/<?php echo $tampil_detail ['logo']?>" class="img-lg img-circle" alt="Profile Picture">
                         </div>
                         <h4 class="text-lg text-overflow mar-no"><?php echo $tampil_detail['nama_siswa'] ?></h4>
                         <p class="text-sm text-muted">Rekayasa Perangkat Lunak</p>
@@ -220,11 +220,16 @@
                       $gambar = $res->logo;
                       ?>
                       <div class="comments media-block">
-                        <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="img/profile-photos/10.png"></a>
+                        <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>"></a>
                         <div class="media-body">
                             <div class="comment-header">
-                                <div><a href="#" class="media-heading box-inline text-main text-semibold">uzi</a>  <span class="text-semibold text-main">added new Jurnal</span></div>
-                                <p class="text-muted text-sm"><i class="demo-pli-smartphone-3 icon-lg"></i> Mobile - 15-02-2021</p>
+                                <div class="col-md-9">
+                                  <a href="#" class="media-heading box-inline text-main text-semibold"></i><?php echo $res->nama_siswa?></a>
+                              </div>
+                              <div class="col-md-3">
+                                  <span class="text-semibold text-main"><?php echo $res->tanggal?></span>
+                              </div>
+    
                             </div>
                             <p><?php echo $res->kegiatan?> </p>
 
@@ -292,7 +297,7 @@
 
                 <!--===================================================-->
                 <!-- End Newsfeed Content -->
-
+</div>
 
 
             </div>

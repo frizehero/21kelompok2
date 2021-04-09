@@ -46,7 +46,7 @@ class siswa_jurnal extends MX_Controller {
 
 	function edit()
 	{
-		$this->M_siswa_jurnal->edit();
+		$this->m_siswa_jurnal->edit();
 		redirect('siswa_jurnal');
 	}
 

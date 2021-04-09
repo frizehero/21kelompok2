@@ -193,17 +193,17 @@
                         <?= form_open_multipart('data_jurnal/tgl'); ?>
                         <div style="margin-right: -40px">
                             <div class="col-md-10">
-                            <div class="input-daterange input-group" id="datepicker">
-                                <input type="date" name="awl" class="form-control">
-                                <div class="input-group-addon">to</div>
-                                <input type="date" name="akr" class="form-control" >
-                                <input type="hidden" value="<?php echo $tampil_detail['id_siswa']?>" name="idid">
+                                <div class="input-daterange input-group" id="datepicker">
+                                    <input type="date" name="awl" class="form-control">
+                                    <div class="input-group-addon">to</div>
+                                    <input type="date" name="akr" class="form-control" >
+                                    <input type="hidden" value="<?php echo $tampil_detail['id_siswa']?>" name="idid">
 
+
+                                </div>
 
                             </div>
-                            
-                        </div>
-                        <button type="submit" class="btn btn-primary">Cari</button>
+                            <button type="submit" class="btn btn-primary">Cari</button>
                         </div>
 
 
@@ -220,84 +220,89 @@
                       $gambar = $res->logo;
                       ?>
                       <div class="comments media-block">
-                        <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="img/profile-photos/10.png"></a>
+                        <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>"></a>
                         <div class="media-body">
                             <div class="comment-header">
-                                <div><a href="#" class="media-heading box-inline text-main text-semibold">uzi</a>  <span class="text-semibold text-main">added new Jurnal</span></div>
-                                <p class="text-muted text-sm"><i class="demo-pli-smartphone-3 icon-lg"></i> Mobile - 15-02-2021</p>
+                                <div class="col-md-9">
+                                  <a href="#" class="media-heading box-inline text-main text-semibold"></i><?php echo $res->nama_siswa?></a>
+                              </div>
+                              <div class="col-md-3">
+                                  <span class="text-semibold text-main"><?php echo $res->tanggal?></span>
+                              </div>
+
+                          </div>
+                          <p><?php echo $res->kegiatan?> </p>
+
+                          <div class="comment-content comment-photos row">
+                            <div class="col-sm-12">
+                                <img style="height: 150px" class="img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_kegiatan?>" alt="Image">
                             </div>
-                            <p><?php echo $res->kegiatan?> </p>
-
-                            <div class="comment-content comment-photos row">
-                                <div class="col-sm-12">
-                                    <img style="height: 150px" class="img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_kegiatan?>" alt="Image">
-                                </div>
-                            </div>
-
-
                         </div>
+
+
                     </div>
-                <?php }?>
-                <button class="btn btn-primary btn-block mar-ver"><span class="text-semibold">36</span> Load More</button>
+                </div>
+            <?php }?>
+            <button class="btn btn-primary btn-block mar-ver"><span class="text-semibold">36</span> Load More</button>
 
 
 
 
-                <!-- Comments -->
+            <!-- Comments -->
 
 
 
 
 
-                <!-- Newsfeed Content -->
-                <!--===================================================-->
+            <!-- Newsfeed Content -->
+            <!--===================================================-->
 
-                <!--===================================================-->
-                <!-- End Newsfeed Content -->
-
-
-
-                <!-- Newsfeed Content -->
-                <!--===================================================-->
-
-                <!--===================================================-->
-                <!-- End Newsfeed Content -->
-
-
-                <!-- Newsfeed Content -->
-                <!--===================================================-->
-
-                <!--===================================================-->
-                <!-- End Newsfeed Content -->
+            <!--===================================================-->
+            <!-- End Newsfeed Content -->
 
 
 
-                <!-- Newsfeed Content -->
-                <!--===================================================-->
+            <!-- Newsfeed Content -->
+            <!--===================================================-->
 
-                <!--===================================================-->
-                <!-- End Newsfeed Content -->
-
-
-
-                <!-- Newsfeed Content -->
-                <!--===================================================-->
-
-                <!--===================================================-->
-                <!-- End Newsfeed Content -->
+            <!--===================================================-->
+            <!-- End Newsfeed Content -->
 
 
-                <!-- Newsfeed Content -->
-                <!--===================================================-->
+            <!-- Newsfeed Content -->
+            <!--===================================================-->
 
-                <!--===================================================-->
-                <!-- End Newsfeed Content -->
+            <!--===================================================-->
+            <!-- End Newsfeed Content -->
 
 
 
-            </div>
+            <!-- Newsfeed Content -->
+            <!--===================================================-->
+
+            <!--===================================================-->
+            <!-- End Newsfeed Content -->
+
+
+
+            <!-- Newsfeed Content -->
+            <!--===================================================-->
+
+            <!--===================================================-->
+            <!-- End Newsfeed Content -->
+
+
+            <!-- Newsfeed Content -->
+            <!--===================================================-->
+
+            <!--===================================================-->
+            <!-- End Newsfeed Content -->
+
+
+
         </div>
     </div>
+</div>
 </div>
 
 </div>
