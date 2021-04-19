@@ -9,6 +9,7 @@ class Siswa_cetak extends MX_Controller {
 		// model
 		 $this->load->model('m_data_cetak');
 		 $this->load->model('login/m_session');
+		 $this->load->library('Pdf');
 	}
 
 	
@@ -57,6 +58,17 @@ class Siswa_cetak extends MX_Controller {
 		);
 		echo Modules::run('template_siswa/tampilCore', $data);
 	}
+	function cetak()
+  {
+ 
+
+		$awl = $this->input->post('awl');
+		$akr = $this->input->post('akr');
+		$datasiswa=  $this->session->userdata('session_id');
+		$data ['tt'] = $this->m_data_cetak->cari($awl,$akr,$datasiswa);
+		$this->load->view('V_cetak', $data);
+    
+  }
 	
 }
  

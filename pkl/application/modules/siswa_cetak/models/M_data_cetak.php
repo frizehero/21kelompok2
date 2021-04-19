@@ -30,6 +30,7 @@ class M_data_cetak extends CI_Model {
 	
 		
 	}
+	
 
 	function edit()
 	{

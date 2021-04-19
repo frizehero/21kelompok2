@@ -45,7 +45,7 @@
         <!--===================================================-->
         <div id="demo-dp-range">
           <div class="col-md-11">
-            <?= form_open_multipart('siswa_cetak/cari'); ?>
+            <?= form_open_multipart('siswa_cetak/cetak'); ?>
             <div class="input-daterange input-group" id="datepicker">
             <input type="date" name="awl" class="form-control">
             <div class="input-group-addon">to</div>
