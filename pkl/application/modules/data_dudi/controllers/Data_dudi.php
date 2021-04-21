@@ -60,5 +60,9 @@ class Data_dudi extends MX_Controller {
 		echo Modules::run('template/tampilCore', $data);
 	}
 	
+	function edit_sampul()
+	{
+		$this->m_data_dudi->edit_sampul();
+		redirect('data_dudi');
 }
  

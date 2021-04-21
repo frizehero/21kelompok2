@@ -3,12 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_data_jurnal extends CI_Model {
 
-	function tampil($limit, $start)
+	function tampil()
 	{
 	    $this->db->select('*');
-
-	
-		$query = $this->db->get('siswa', $limit, $start);
+		$query = $this->db->get('siswa');
 		return $query->result();
 
 	}
@@ -58,7 +56,7 @@ class M_data_jurnal extends CI_Model {
 	}
 	function filter_dudi()
 	{
-			$this->db->select('*')
+		$this->db->select('*')
 		->from('dudi');
 		$query = $this->db->get();
 		return $query->result();
@@ -159,13 +157,11 @@ class M_data_jurnal extends CI_Model {
 		$cari 		= $this->input->post('cari');
 		return $this->db->like('nama_sekolah',$cari)->get('sekolah')->result();
 	}
-	function filter($limit, $start, $st = NULL)
+	function filter($dudi)
 	{ 
-		     if ($st == "NIL") $st = "";
-			$this->db->select('*')
-			->join('dudi','dudi.id_dudi = siswa.id_dudi')
-			->where('siswa.id_dudi',$st);
-			$query = $this->db->get('siswa',$limit, $start);
-			return $query->result();
+		$query = $this->db->get('siswa');
+		return $this->db->like('nama_dudi',$dudi)
+ 		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
+		->get('siswa')->result();
 	}
 }

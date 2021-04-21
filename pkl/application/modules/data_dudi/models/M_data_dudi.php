@@ -63,7 +63,7 @@ class M_data_dudi extends CI_Model {
 					'alamat' 	=> $alamat,
 					'id_jurusan' 	=> $jurusan,
 					'email' 	=> $email,
-					'logo' 				=> $gbr['file_name'],
+					'logo_dudi' 				=> $gbr['file_name'],
 					
 					
 				);
@@ -90,9 +90,14 @@ class M_data_dudi extends CI_Model {
 
 	function edit()
 	{
-		$id_sekolah = $this->input->post('id_sekolah');
-		$nama 		= $this->input->post('nama_sekolah');
-		$keterangan	= $this->input->post('keterangan');
+		$nama 		= $this->input->post('nama_dudi');
+		$telepon	= $this->input->post('telepon_dudi');
+		$alamat  	= $this->input->post('alamat');
+		$email 		= $this->input->post('email_dudi');
+		$jurusan 	= $this->input->post('jurusan_dudi');
+
+
+
 
 
 		$this->load->library('upload');
@@ -112,21 +117,68 @@ class M_data_dudi extends CI_Model {
             {
 				$gbr = $this->upload->data();
 				$data = array(
-					'nama_sekolah'		=> $nama,
-					'keterangan'		=> $keterangan,
-					'logo' 				=> $gbr['file_name'],
+					'nama_dudi'		=> $nama,
+					'no_telepon'		=> $telepon,
+					'id_jurusan' 	=> $jurusan,
+					'alamat' 	=> $alamat,
+					'id_jurusan' 	=> $jurusan,
+					'email' 	=> $email,
+					'logo_dudi' 				=> $gbr['file_name'],
+					
+					
 				);
-				$this->db->where('id_sekolah',$id_sekolah)->update('sekolah', $data);
+				$this->db->update('dudi', $data);
 			
 			}	 
 		}
 		else{
 				$data = array(
-					'nama_sekolah'		=> $nama,
-					'keterangan'		=> $keterangan,
+					'nama_dudi'		=> $nama,
+					'no_telepon'		=> $telepon,
+					'id_jurusan' 	=> $jurusan,
+					'alamat' 	=> $alamat,
+					'id_jurusan' 	=> $jurusan,
+					'email' 	=> $email,
+
+
+
+
 				);
-				$this->db->where('id_sekolah',$id_sekolah)->update('sekolah', $data);
+				$this->db->update('dudi', $data);
 			}
+	}
+
+	function edit_sampul()
+	{
+		$id_dudi 		= $this->input->post('id_dudi');
+
+
+		echo $id_dudi;
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
+		
+		$this->upload->initialize($config);
+		
+		if($_FILES['foto']['name'])
+		{
+			if ($this->upload->do_upload('foto'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'foto' 			=> $gbr['file_name'],
+
+
+				);
+				$this->db->where('id_dudi',$id_dudi)->update('dudi', $data);
+
+			}
+		}
 	}
 
 	function hapus($id)

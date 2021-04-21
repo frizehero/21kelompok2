@@ -86,12 +86,10 @@
     </div>
   </div>
   <?= form_close(); ?>
-  <form method="post" action="<?php echo site_url('data_kelas/cari_siswa/'. $tampil_detail['id_kelas']) ?>" >
+  <form method="post" action="<?php echo site_url('data_kelas/cari_siswa/'.$tampil_detail['id_kelas']) ?>" >
   <div class="col-sm-6 toolbar-right text-right">
     <div class="form-group">
-      <?php if($this->uri->segment(2) != 'cari_siswa'){?>
-      <input type="text" placeholder="Cari Nama" name="cari_siswa" class="form-control" id="demo-is-inputnormal">
-      <?php } ?>
+      <input placeholder="Cari Nama" name="cari_siswa" type="text"  class="form-control" id="demo-is-inputnormal">
     </div>
     
    <button class="btn btn-purple btn-default">Cari</button>
@@ -102,7 +100,7 @@
 
 
 <div class="row">
-  <?php foreach($tampil_data as $res) {
+  <?php foreach($tampil as $res) {
     $id = $res->id_siswa;
     $gambar = $res->logo;
     ?>
@@ -177,7 +175,6 @@
         </div>
         <?= form_open_multipart('data_kelas/edit_siswa/'.$tampil_detail['id_kelas']); ?>
         <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa?>">
-        <input type="hidden" name="kelas" value="<?php echo $tampil_detail['id_kelas'] ?>">
 
         <!--Modal body--> 
         <div class="modal-body">

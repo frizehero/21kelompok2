@@ -16,44 +16,13 @@ class Data_jurnal extends MX_Controller {
 	// index
 	function index()
 	{
-		$config['base_url'] = site_url('data_jurnal/index'); //site url
-        $config['total_rows'] = $this->db->count_all('siswa'); //total row
-        $config['per_page'] = 8;  //show record per halaman
-        $config["uri_segment"] = 3;  // uri parameter
-        $choice = $config["total_rows"] / $config["per_page"];
-        $config["num_links"] = floor($choice);
-
-
-        $config['first_link']       = 'First';
-        $config['last_link']        = 'Last';
-        $config['next_link']        = 'Next';
-        $config['prev_link']        = 'Prev';
-        $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
-        $config['full_tag_close']   = '</ul></nav></div>';
-        $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
-        $config['num_tag_close']    = '</span></li>';
-        $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
-        $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
-        $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
-        $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
-        $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
-        $config['prev_tagl_close']  = '</span>Next</li>';
-        $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
-        $config['first_tagl_close'] = '</span></li>';
-        $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
-        $config['last_tagl_close']  = '</span></li>';
-
-        $this->pagination->initialize($config);
-
-        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
+	
         $data = array(
         	'namamodule' 	=> "Data_jurnal",
         	'namafileview' 	=> "V_data_jurnal",
 
         	'filter_dudi'		=> $this->m_data_jurnal->filter_dudi(),
-        	'row'			=> $this->m_data_jurnal->tampil($config["per_page"], $data['page']),
-        	'pagination' 	=> $this->pagination->create_links(),
+        	'tampil'       => $this->m_data_jurnal->tampil(),
         );
         echo Modules::run('template/tampilCore', $data);
     }
@@ -171,55 +140,15 @@ class Data_jurnal extends MX_Controller {
 
     function filter()
     {
-		$dudi = ($this->input->post("dudi"))? $this->input->post("dudi") : "NIL";
-
-        $dudi = ($this->uri->segment(4)) ? $this->uri->segment(4) : $dudi;
-    	// $dudi 						= $this->input->post('dudi');
-   	     $dudis =$this->input->post("dudi"); 
-    	// $dudi = ($this->uri->segment(4)) ? $this->uri->segment(4) : $dudi;
-        	// pagination settings
-    	$config = array();
-    	$config['base_url'] = site_url("data_jurnal/filter/$dudi/");
-    	$config['total_rows'] = $this->m_data_jurnal->get_filter_count($dudi);
-    	$d=$this->m_data_jurnal->get_filter_count($dudi);
-    	echo $d;
-
-
-    	$config['per_page'] = "2";
-    	$config["uri_segment"] = 4;
-    	$choice = $config["total_rows"]/$config["per_page"];
-    	$config["num_links"] = floor($choice);
-
-
-    	$config['first_link']       = 'First';
-    	$config['last_link']        = 'Last';
-    	$config['next_link']        = 'Next';
-    	$config['prev_link']        = 'Prev';
-    	$config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
-    	$config['full_tag_close']   = '</ul></nav></div>';
-    	$config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
-    	$config['num_tag_close']    = '</span></li>';
-    	$config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
-    	$config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
-    	$config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
-    	$config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
-    	$config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
-    	$config['prev_tagl_close']  = '</span>Next</li>';
-    	$config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
-    	$config['first_tagl_close'] = '</span></li>';
-    	$config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
-    	$config['last_tagl_close']  = '</span></li>';
-    	$this->pagination->initialize($config);
-
-    	$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+		
+   	     $dudi =$this->input->post("dudi"); 
+    	
 
     	$data = array(
-    		'namamodule' 	=> "data_jurnal",
-    		'namafileview' 	=> "V_data_jurnal",
-    		'filter_dudi'	=> $this->m_data_jurnal->filter_dudi(),
-    		'row'			=> $this->m_data_jurnal->filter($config["per_page"], $data['page'],$dudi),
-    		'pagination' 	=> $this->pagination->create_links(),
-    		'dudi_fil'		=> $dudis,
+    		'namamodule'  => "Data_jurnal",
+            'namafileview'  => "V_data_jurnal",
+    		'tampil'      => $this->m_data_jurnal->filter($dudi),
+            'filter_dudi'    => $this->m_data_jurnal->filter_dudi(),
     	);
     	echo Modules::run('template/tampilCore', $data);
     }

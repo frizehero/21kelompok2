@@ -3,12 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_data_kelas extends CI_Model {
 
-	function tampil($limit, $start)
+	function tampil()
 	{
 		$this->db->select('*')
 		->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
 	
-		$query = $this->db->get('kelas', $limit, $start);
+		$query = $this->db->get('kelas');
 		return $query->result();
 	}
 	function filter_jurusan()
@@ -106,16 +106,6 @@ class M_data_kelas extends CI_Model {
 
 			}
 		}
-
-		// else{
-		// 	$gbr = $this->upload->data();
-		// 	$data = array(
-		// 		'foto' 				=> 'kosong1.png',
-
-		// 	);
-		// 	$this->db->where('id_kelas',$id_kelas)->update('kelas', $data);
-		// }
-
 	}
 
 	function tambah_siswa()
@@ -222,23 +212,24 @@ class M_data_kelas extends CI_Model {
 		return $this->db->like('nama_kelas',$cari)->get('kelas')->result();
 	}
 
-	function cari_siswa()
+	function cari_siswa($cari_siswa,$id)
 	{
-		$cari_siswa 		= $this->input->post('cari_siswa');
-		return $this->db->like('nama_siswa',$cari_siswa)
-		->from('kelas')
-		->where('id_kelas');
-		$query = $this->db->get();
-		return $query->row_array();;
+		$this->db->select('*')
+		->where('id_kelas',$id)
+		->like('nama_siswa',$cari_siswa);
+		$query = $this->db->get('siswa');
+		return $query->result();
 	}
 
-	function filter ($jurusan,$limit, $start)
+	function filter ($jurusan)
 	{
 
-		$this->db->select('*')
-		->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan');
+		 $this->db->select('*')
+		->from ('kelas')
+		->join('jurusan', 'jurusan.id_jurusan = kelas.id_jurusan')
+		->like('nama',$jurusan);
 	
-		$query = $this->db->get('kelas', $limit, $start);
+		$query = $this->db->get();
 		return $query->result();
 	}
 	
@@ -284,9 +275,10 @@ class M_data_kelas extends CI_Model {
 		else{
 			$data = array(
 				'nama_siswa'			=> $nama_siswa,
-				'nisn'					=> $nisn,
-				'jenis_kelamin'			=> $jenis_kelamin,
-				'dudi'					=> $dudi,
+					'nisn'					=> $nisn,
+					'jenis_kelamin'			=> $jenis_kelamin,
+					'dudi'					=> $dudi,
+					'id_kelas'              => $kelas,
 			);
 			$this->db->where('id_siswa',$id_siswa)->update('siswa', $data);
 		}

@@ -25,9 +25,8 @@
                      <form method="post" action="<?php echo site_url('data_jurnal/filter/') ?>">
                      <div class="select">
                          <select name="dudi" id="demo-ease">
-                          <option selected="" value="">Dudi</option>
                           <?php foreach ($filter_dudi as $zi) {$dufil=$dudi_fil ?>  
-                             <option  <?php echo ($dufil == $zi->id_dudi) ? "selected": "" ?> value="<?php echo $zi->id_dudi?>" ><?php echo $zi->nama_dudi?></option>
+                             <option  <?php echo ($dufil == $zi->id_dudi) ? "selected": "" ?> value="<?php echo $zi->nama_dudi?>" ><?php echo $zi->nama_dudi?></option>
                            <?php }?>
                          </select>
                      </div>
@@ -36,7 +35,7 @@
                      
                  </div>
              </div>
-             <?php foreach($row as $res) {
+             <?php foreach($tampil as $res) {
                 ?>
              <div class="col-sm-4 col-md-3">
 
@@ -72,7 +71,7 @@
 
            </div>
          <?php }?>
-           <?php echo $pagination;?>
+          
        
 
 

@@ -85,7 +85,7 @@
 
      <select name="jurusan">
       <?php foreach ($filter_jurusan as $fil) {?>
-       <option value="<?= $fil->id_jurusan?>" ><?= $fil->nama?></option>
+       <option value="<?= $fil->nama?>" ><?= $fil->nama?></option>
      <?php }?>
    </select>
    
@@ -101,7 +101,7 @@
 
 
 <div class="row">
-  <?php foreach($row as $res) {
+  <?php foreach($tampil as $res) {
     $id = $res->id_kelas;
     $gambar = $res->logo_kelas;
     ?>
@@ -268,8 +268,6 @@
 
 
 </div>
-<?php echo $pagination;?>
-
 
 
 
