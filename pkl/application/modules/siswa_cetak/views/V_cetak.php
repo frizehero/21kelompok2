@@ -26,7 +26,7 @@
                             <td align="center">'.$i.'</td>
                             <td>'.$row->tanggal .'</td>
                             <td>'.$row->kegiatan .'</td>
-    <td><img alt="test alt attribute" width="150" height="100" border="0" src="http://localhost/21kelompok2/pkl/assets/img/'.$row->foto_kegiatan.'" /> </td>
+    <td><img alt="test alt attribute" width="150" height="100" border="0" src="assets/img/'.$row->foto_kegiatan.'" /> </td>
                             <td></td>
                         </tr>';
 

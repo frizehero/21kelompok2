@@ -268,9 +268,11 @@
                           <div class="modal-body">
                             <form>
                               <div class="form-group col-md-6">
-                                <label for="inputEmail4">Kegiatan</label>
-                                <input name="kegiatan"  class="form-control" id="inputEmail4" placeholder="Kegiatan">
+                                <label for="inputEmail4">Kegiatan</label><br>
+                                <textarea name="kegiatan"><?php echo $res->kegiatan ?></textarea>
+                                <input type="hidden" value="<?php echo date('y-m-d')?>" name="tanggal">
                               </div>
+
                               <div class="col-md-6" >
                                 <label for="" class="control-label">Foto :</label>
                                 <input type="file" name="foto_kegiatan" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
