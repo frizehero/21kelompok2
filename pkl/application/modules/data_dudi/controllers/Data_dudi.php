@@ -31,8 +31,8 @@ class Data_dudi extends MX_Controller {
 
 	function edit()
 	{
-		$this->m_data_sekolah->edit();
-		redirect('data_sekolah');
+		$this->m_data_dudi->edit();
+		redirect('data_dudi');
 	}
 
 	function hapus($id)
@@ -64,5 +64,6 @@ class Data_dudi extends MX_Controller {
 	{
 		$this->m_data_dudi->edit_sampul();
 		redirect('data_dudi');
+	}
 }
  

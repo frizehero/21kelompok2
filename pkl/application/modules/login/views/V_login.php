@@ -5,7 +5,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Magang - Hummasoft</title>
+        <title>Prakerin-2021</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
 
@@ -50,8 +50,8 @@
                         <img class="login-logo" src="<?php echo base_url(); ?>assets/login/pages/img/login/magang1.png" style="width:200px"/> 
                     </div>
                     <div class="login-content">
-                        <h1>CORE Hummasoft </h1>
-                        <p> Selamat datang di Hummasoft , silahkan login terlebih dahulu sebelum melanjutkan ke halaman dasboard . </p>
+                        <h1> Prakerin-2021 </h1>
+                        <p> Selamat datang di Prakerin , silahkan login terlebih dahulu sebelum melanjutkan ke halaman dasboard . </p>
                         <?php if($cekAdmin){ 
                         
                      }

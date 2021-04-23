@@ -90,6 +90,7 @@ class M_data_dudi extends CI_Model {
 
 	function edit()
 	{
+		$id_dudi	= $this->input->post('id_dudi');
 		$nama 		= $this->input->post('nama_dudi');
 		$telepon	= $this->input->post('telepon_dudi');
 		$alamat  	= $this->input->post('alamat');
@@ -117,6 +118,7 @@ class M_data_dudi extends CI_Model {
             {
 				$gbr = $this->upload->data();
 				$data = array(
+					'id_dudi'		=> $id_dudi,
 					'nama_dudi'		=> $nama,
 					'no_telepon'		=> $telepon,
 					'id_jurusan' 	=> $jurusan,
@@ -127,12 +129,13 @@ class M_data_dudi extends CI_Model {
 					
 					
 				);
-				$this->db->update('dudi', $data);
+				$this->db->where('id_dudi',$id_dudi)->update('dudi', $data);
 			
 			}	 
 		}
 		else{
 				$data = array(
+					'id_dudi'		=> $id_dudi,
 					'nama_dudi'		=> $nama,
 					'no_telepon'		=> $telepon,
 					'id_jurusan' 	=> $jurusan,
@@ -144,7 +147,7 @@ class M_data_dudi extends CI_Model {
 
 
 				);
-				$this->db->update('dudi', $data);
+				$this->db->where('id_dudi',$id_dudi)->update('dudi', $data);
 			}
 	}
 
@@ -165,13 +168,13 @@ class M_data_dudi extends CI_Model {
 		
 		$this->upload->initialize($config);
 		
-		if($_FILES['foto']['name'])
+		if($_FILES['foto_dudi']['name'])
 		{
-			if ($this->upload->do_upload('foto'))
+			if ($this->upload->do_upload('foto_dudi'))
 			{
 				$gbr = $this->upload->data();
 				$data = array(
-					'foto' 			=> $gbr['file_name'],
+					'foto_dudi' 			=> $gbr['file_name'],
 
 
 				);
