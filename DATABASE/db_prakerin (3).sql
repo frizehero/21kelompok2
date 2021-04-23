@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Mar 2021 pada 04.36
+-- Waktu pembuatan: 23 Apr 2021 pada 08.14
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.4
 
@@ -24,6 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_pengelola` int(11) NOT NULL,
+  `nama_admin` varchar(50) NOT NULL,
+  `email_admin` varchar(50) NOT NULL,
+  `nomer_admin` int(50) NOT NULL,
+  `alamat` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `admin`
+--
+
+INSERT INTO `admin` (`id_pengelola`, `nama_admin`, `email_admin`, `nomer_admin`, `alamat`) VALUES
+(1, 'ss', 'ss', 2, 's');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `dudi`
 --
 
@@ -35,7 +56,7 @@ CREATE TABLE `dudi` (
   `alamat` varchar(500) DEFAULT NULL,
   `tentang` varchar(500) DEFAULT NULL,
   `no_telepon` varchar(20) DEFAULT NULL,
-  `logo` varchar(100) DEFAULT NULL,
+  `logo_dudi` varchar(100) DEFAULT NULL,
   `foto` varchar(100) DEFAULT NULL,
   `kepala_perusahaan` varchar(100) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
@@ -47,10 +68,10 @@ CREATE TABLE `dudi` (
 -- Dumping data untuk tabel `dudi`
 --
 
-INSERT INTO `dudi` (`id_dudi`, `id_guru`, `id_jurusan`, `nama_dudi`, `alamat`, `tentang`, `no_telepon`, `logo`, `foto`, `kepala_perusahaan`, `email`, `website`, `create_at`) VALUES
-(6, NULL, 1, 'CV Hummasoft', 'Perum Permata Regency 1 Blok 10/28.\r\nPerum Gpa, Ngijo, Kec. Karang Ploso, Malang, Jawa Timur 65152', ' merupakan sebuah perusahaan yang bergerak dibidang IT (Information Technology) yang memiliki beberapa divisi layanan, diantaranya: Software Development (Website Application, Desktop Application, and Mobile Application), IT Course, IT Training, IT Research, and IT Services. Hummasoft berdiri sejak 21 Mei 2013. Perusahaan Hummasoft ini dibawah naungan badan usaha yang bernama Hummasoft Komputindo dan kemudian beralih menjadi Hummasoft Technology pada Oktober 2019.', '0821 3256 0566', 'file_1614573722.png', NULL, NULL, 'info@hummasoft.com', NULL, '2021-03-10 03:37:35'),
-(8, NULL, 1, 'dadad', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, '2021-03-10 03:20:32'),
-(9, NULL, 2, 'angon data', NULL, NULL, NULL, NULL, NULL, NULL, 'angon@angon.com', NULL, '2021-03-10 03:39:45');
+INSERT INTO `dudi` (`id_dudi`, `id_guru`, `id_jurusan`, `nama_dudi`, `alamat`, `tentang`, `no_telepon`, `logo_dudi`, `foto`, `kepala_perusahaan`, `email`, `website`, `create_at`) VALUES
+(6, NULL, 1, 'Hummasoft.', NULL, ' merupakan sebuah perusahaan yang bergerak dibidang IT (Information Technology) yang memiliki beberapa divisi layanan, diantaranya: Software Development (Website Application, Desktop Application, and Mobile Application), IT Course, IT Training, IT Research, and IT Services. Hummasoft berdiri sejak 21 Mei 2013. Perusahaan Hummasoft ini dibawah naungan badan usaha yang bernama Hummasoft Komputindo dan kemudian beralih menjadi Hummasoft Technology pada Oktober 2019.', NULL, 'file_1614573722.png', NULL, NULL, NULL, NULL, '2021-04-23 03:24:34'),
+(9, NULL, 0, NULL, NULL, NULL, NULL, 'file_1614573722.png', NULL, NULL, NULL, NULL, '2021-04-23 03:14:57'),
+(11, NULL, 2, 'Lalala.', NULL, NULL, NULL, 'file_1618977868.png', NULL, NULL, NULL, NULL, '2021-04-23 03:24:41');
 
 -- --------------------------------------------------------
 
@@ -80,7 +101,7 @@ CREATE TABLE `jurnal` (
   `id_siswa` int(11) NOT NULL,
   `tanggal` date DEFAULT NULL,
   `foto_kegiatan` varchar(100) DEFAULT NULL,
-  `kegiatan` varchar(100) DEFAULT NULL,
+  `kegiatan` text DEFAULT NULL,
   `create_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -89,10 +110,9 @@ CREATE TABLE `jurnal` (
 --
 
 INSERT INTO `jurnal` (`id_jurnal`, `id_siswa`, `tanggal`, `foto_kegiatan`, `kegiatan`, `create_at`) VALUES
-(1, 8, '2021-03-10', 'sdfsdf', 'sdfsdf', '2021-03-10 08:11:51'),
-(2, 4, '2021-03-04', '12', '211', '2021-03-10 08:15:57'),
-(10, 4, '2021-03-04', 'rgdg', 'rgd', '2021-03-10 08:16:02'),
-(12, 9, '2021-03-04', '23423', 'efwfw', '2021-03-10 08:10:53');
+(37, 57, '2021-04-06', 'kosong1.png', NULL, '2021-04-23 02:30:30'),
+(38, 57, '2021-04-23', 'file_1619143270.jpg', 'aaaaa', '2021-04-23 02:22:26'),
+(39, 57, '2021-04-23', 'file_1619145745.jpg', 'hjkhjkhjk', '2021-04-23 02:42:26');
 
 -- --------------------------------------------------------
 
@@ -134,9 +154,13 @@ CREATE TABLE `kelas` (
 --
 
 INSERT INTO `kelas` (`id_kelas`, `id_jurusan`, `nama_kelas`, `logo_kelas`, `foto`, `create_at`) VALUES
-(1, 1, 'X', 'file_1616126078.jpg', 'file_1616136331.png', '2021-03-19 08:06:34'),
-(2, 2, 'XI ', 'file_1616141210.png', 'file_1616136495.jpg', '2021-03-19 08:07:09'),
-(38, 0, 'ff', 'kosong1.png', '', '2021-03-19 07:16:56');
+(40, 0, 'trgrtgrtg', 'kosong1.png', '', '2021-03-24 06:54:48'),
+(52, 2, 'XI TKJ 1', 'file_1617610922.jpg', 'file_1617610947.jpg', '2021-04-05 08:22:27'),
+(53, 1, 'XI RPL 2', 'file_1617610970.jpg', 'file_1617610979.jpg', '2021-04-05 08:22:59'),
+(54, 2, 'XI TKJ 2', 'file_1617611010.jpg', 'file_1618976638.png', '2021-04-21 03:43:58'),
+(55, 1, 'XI RPL 3', 'file_1617611038.jpg', 'file_1617611049.jpg', '2021-04-05 08:24:09'),
+(56, 2, 'XI TKJ 3', 'file_1617611069.jpg', 'file_1617611080.jpg', '2021-04-05 08:24:40'),
+(57, 1, 'XI RPL 1', 'file_1617771267.jpg', 'file_1617771249.jpg', '2021-04-07 04:54:50');
 
 -- --------------------------------------------------------
 
@@ -147,8 +171,8 @@ INSERT INTO `kelas` (`id_kelas`, `id_jurusan`, `nama_kelas`, `logo_kelas`, `foto
 CREATE TABLE `pengumuman` (
   `id_pengumuman` int(100) NOT NULL,
   `id_user` int(100) DEFAULT NULL,
-  `judul_pengumuman` varchar(100) NOT NULL,
-  `tertuju` varchar(100) NOT NULL,
+  `judul_pengumuman` varchar(100) DEFAULT NULL,
+  `tertuju` varchar(100) DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `isi_pengumuman` text DEFAULT NULL,
   `ctreate_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -159,9 +183,9 @@ CREATE TABLE `pengumuman` (
 --
 
 INSERT INTO `pengumuman` (`id_pengumuman`, `id_user`, `judul_pengumuman`, `tertuju`, `tanggal`, `isi_pengumuman`, `ctreate_at`) VALUES
-(3, NULL, 'sefes', 'siswa', NULL, 'setest', '2021-03-19 09:44:02'),
-(4, NULL, 'd', 'siswa', NULL, '', '2021-03-19 09:47:44'),
-(5, NULL, 'ygvytftyf', 'guru', NULL, 'lakaf', '2021-03-19 09:53:59');
+(12, NULL, 'adadadad', 'siswa', NULL, 'rfeferf', '2021-03-31 07:24:27'),
+(16, NULL, 'sdf', 'siswa', NULL, 'eeeeefffffffff', '2021-03-31 07:24:38'),
+(17, NULL, 's', 'guru', NULL, 'freeeeeeeeeeeeeeee', '2021-03-31 07:24:51');
 
 -- --------------------------------------------------------
 
@@ -174,7 +198,7 @@ CREATE TABLE `pesan` (
   `nama_pengirim` varchar(100) NOT NULL,
   `judul_pesan` varchar(100) NOT NULL,
   `tanggal_pesan` date NOT NULL,
-  `isi_pesan` varchar(300) NOT NULL
+  `isi_pesan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -182,7 +206,7 @@ CREATE TABLE `pesan` (
 --
 
 INSERT INTO `pesan` (`id_pesan`, `nama_pengirim`, `judul_pesan`, `tanggal_pesan`, `isi_pesan`) VALUES
-(1, 'dheiudh', 'wedwedwe', '2021-03-14', 'wefwefwef'),
+(1, 'Uzi', 'Terima Kasih', '2021-03-14', 'contoh Pesan,kesan,serta kritik dan saran untuk kakak kelas MOS\r\nPesan : Saya ingin berteirmakasih untuk kakak pendamping MOS yang sudah mendampingi dan membimbing saya dalam kegiatan MOS ini sehingga saya lebih mengenal lingkungan sekolah ini. \r\nKesan : Saya merasa terbimbing oleh kakak dan merasa aman karena kaka selalu mendampingi saya dan mengarahkan saya di lingkungan yang baru ini. \r\nKritik: Meskipun begitu kakak sepertinya sering tampak panik pasa masa orientasi dan seringkali memberikan pengumuman secara mendadak dan tiba-tiba\r\nSaran : mungkin sebaiknya kakak lebih tenang dan jangan merasa panik karena kakak sudah melakukan tugas kakak dengan baik dan sebaiknya jika ingin memberikan pengumuman jangan mendadak. Terimakasih kak\r\n\r\nPembahasan lebih lanjut\r\nPesan : merupakan isi yang ingin disampaikan kepada yang tertuju\r\nKesan : Hal-hal yang dialami dan dirasakan biasanya merupakan hal yang baik karena memberi kesan membekas\r\nKritik : Mengungkapkan hal-hal yang dianggap tidak sesuai, tidak berkenan atau tidak baik kepada yang tertuju. Ketika mengungkapkan kritik sebaiknya menggunakan bahasa yang sopan agar tidak menyakiti yang tertuju dan harus memiliki alasan yang logis dan objektif. \r\nSaran: Solusi atau penyelsaian masalah yang diberikan dan bersifat membangun dan jugamendidik\r\n\r\nSemoga jawaban ini dapat membantu yaa...\r\n\r\nKelas : 7 SMP\r\nMata pelajaran : Bahasa Indonesia\r\nKategori : Kritik\r\nKata kunci : Pesan, kesan, kritik, saran\r\nKode sesuai kurikulum KTSP : 7.1.9'),
 (2, 'tes', 'judul', '2021-03-16', 'edfwedwe'),
 (3, 'dita sari', 'untuk ceramah', '2021-03-08', 'hahahahahahahahahahahaha');
 
@@ -196,7 +220,6 @@ CREATE TABLE `siswa` (
   `id_siswa` int(11) NOT NULL,
   `id_kelas` int(11) DEFAULT NULL,
   `id_dudi` int(11) DEFAULT NULL,
-  `id_jurusan` int(11) NOT NULL,
   `nama_siswa` varchar(100) DEFAULT NULL,
   `no_telepon` varchar(20) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
@@ -213,19 +236,15 @@ CREATE TABLE `siswa` (
 -- Dumping data untuk tabel `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `id_kelas`, `id_dudi`, `id_jurusan`, `nama_siswa`, `no_telepon`, `email`, `alamat`, `nisn`, `dudi`, `logo`, `jenis_kelamin`, `tempat_tanggal_lahir`, `create_at`) VALUES
-(4, 22, 6, 0, 'QQQQQ', NULL, NULL, NULL, '', '', 'kosong1.png', 'Jenis Kelamin Anda', NULL, '2021-03-19 02:39:50'),
-(9, 22, 8, 0, 'wwww', NULL, NULL, NULL, '', '', 'kosong1.png', 'Jenis Kelamin Anda', NULL, '2021-03-10 06:35:28'),
-(20, 2, NULL, 0, 'Uzi', NULL, NULL, NULL, '', '', 'kosong1.png', 'Jenis Kelamin Anda', NULL, '2021-03-16 05:48:03'),
-(35, 0, NULL, 0, 'es', NULL, NULL, NULL, '', '', 'kosong1.png', 'Jenis Kelamin Anda', NULL, '2021-03-19 08:16:14'),
-(36, 0, NULL, 0, 'd', NULL, NULL, NULL, '', '', 'kosong1.png', 'Jenis Kelamin Anda', NULL, '2021-03-19 08:19:35'),
-(37, 2, NULL, 0, 'w', NULL, NULL, NULL, '', '', 'kosong1.png', 'Jenis Kelamin Anda', NULL, '2021-03-19 08:24:22'),
-(41, 1, NULL, 0, 'Uziws', NULL, NULL, NULL, '', '', 'file_1616147516.png', 'Jenis Kelamin Anda', NULL, '2021-03-22 03:34:17'),
-(42, 1, NULL, 0, '12121', NULL, NULL, NULL, '', '', 'kosong1.png', 'Jenis Kelamin Anda', NULL, '2021-03-22 01:21:14'),
-(43, NULL, NULL, 0, 'w', NULL, NULL, NULL, '', '', 'kosong1.png', 'Jenis Kelamin Anda', NULL, '2021-03-22 01:28:54'),
-(44, NULL, NULL, 0, 'w', NULL, NULL, NULL, '', '', 'kosong1.png', 'Jenis Kelamin Anda', NULL, '2021-03-22 01:29:17'),
-(45, NULL, NULL, 0, 'wqeqweqw', NULL, NULL, NULL, '', '', 'kosong1.png', 'Jenis Kelamin Anda', NULL, '2021-03-22 01:29:36'),
-(46, NULL, NULL, 0, 'ddd', NULL, NULL, NULL, '', '', 'kosong1.png', 'Jenis Kelamin Anda', NULL, '2021-03-22 01:29:48');
+INSERT INTO `siswa` (`id_siswa`, `id_kelas`, `id_dudi`, `nama_siswa`, `no_telepon`, `email`, `alamat`, `nisn`, `dudi`, `logo`, `jenis_kelamin`, `tempat_tanggal_lahir`, `create_at`) VALUES
+(57, 51, 6, 'Muhmmad Kadafi', NULL, NULL, NULL, '12312', 'hummasoft', 'file_1617611381.jpg', 'Laki Laki', NULL, '2021-04-21 03:55:42'),
+(58, 51, 7, 'udin', NULL, NULL, NULL, '3424', 'adasd', 'file_1617611769.jpeg', 'Perempuan', NULL, '2021-04-21 02:22:30'),
+(59, 53, 8, 'asep', NULL, NULL, NULL, '', '', 'file_1618977160.jpeg', 'Jenis Kelamin Anda', NULL, '2021-04-21 03:58:51'),
+(60, 57, 6, 'budi', NULL, NULL, NULL, '3423', 'humagang', 'file_1617771374.jpeg', 'Laki Laki', NULL, '2021-04-21 03:58:10'),
+(61, 55, NULL, 'dafi', NULL, NULL, NULL, '656', 'gf', 'file_1617777245.jpeg', 'Laki Laki', NULL, '2021-04-07 06:34:05'),
+(62, 53, NULL, 'wawa', NULL, NULL, NULL, '', '', 'file_1618976827.png', 'Jenis Kelamin Anda', NULL, '2021-04-21 03:53:14'),
+(63, 53, NULL, 'hhh', NULL, NULL, NULL, '', '', 'file_1618976531.png', 'Jenis Kelamin Anda', NULL, '2021-04-21 03:53:17'),
+(64, 53, 11, 'Uzi', NULL, NULL, NULL, '2013534', 'hummasoft', 'file_1618977677.png', 'Laki Laki', NULL, '2021-04-21 04:04:47');
 
 -- --------------------------------------------------------
 
@@ -235,7 +254,8 @@ INSERT INTO `siswa` (`id_siswa`, `id_kelas`, `id_dudi`, `id_jurusan`, `nama_sisw
 
 CREATE TABLE `tb_login` (
   `id_admin` int(11) NOT NULL,
-  `nama` varchar(100) NOT NULL,
+  `id_siswa` int(11) NOT NULL,
+  `id_pengelola` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `level` int(5) NOT NULL
@@ -245,9 +265,10 @@ CREATE TABLE `tb_login` (
 -- Dumping data untuk tabel `tb_login`
 --
 
-INSERT INTO `tb_login` (`id_admin`, `nama`, `username`, `password`, `level`) VALUES
-(1, 'Somad', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1),
-(2, 'uzi', 'uzi', 'f2b545bd0099b1c89c3ef7acd0e4e1e50874bf74', 2);
+INSERT INTO `tb_login` (`id_admin`, `id_siswa`, `id_pengelola`, `username`, `password`, `level`) VALUES
+(2, 57, 0, 'dafi', 'ad0264553015a541693a5827cd89aed12952ae43', 2),
+(3, 58, 0, 'udin', '0ff6f2c78c3f785fd15525e78e1fe9a223479ed1', 2),
+(4, 0, 0, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1);
 
 -- --------------------------------------------------------
 
@@ -268,6 +289,12 @@ CREATE TABLE `user` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_pengelola`);
 
 --
 -- Indeks untuk tabel `dudi`
@@ -322,14 +349,15 @@ ALTER TABLE `pesan`
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`id_siswa`),
   ADD UNIQUE KEY `id_kelas` (`id_kelas`,`id_dudi`),
-  ADD KEY `id_dudi` (`id_dudi`),
-  ADD KEY `id_jurusan` (`id_jurusan`);
+  ADD KEY `id_dudi` (`id_dudi`);
 
 --
 -- Indeks untuk tabel `tb_login`
 --
 ALTER TABLE `tb_login`
-  ADD PRIMARY KEY (`id_admin`);
+  ADD PRIMARY KEY (`id_admin`),
+  ADD KEY `id_siswa` (`id_siswa`),
+  ADD KEY `id_pengelola` (`id_pengelola`);
 
 --
 -- Indeks untuk tabel `user`
@@ -344,10 +372,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_pengelola` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT untuk tabel `dudi`
 --
 ALTER TABLE `dudi`
-  MODIFY `id_dudi` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_dudi` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `guru`
@@ -359,7 +393,7 @@ ALTER TABLE `guru`
 -- AUTO_INCREMENT untuk tabel `jurnal`
 --
 ALTER TABLE `jurnal`
-  MODIFY `id_jurnal` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_jurnal` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT untuk tabel `jurusan`
@@ -371,13 +405,13 @@ ALTER TABLE `jurusan`
 -- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_kelas` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengumuman`
 --
 ALTER TABLE `pengumuman`
-  MODIFY `id_pengumuman` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pengumuman` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `pesan`
@@ -389,13 +423,13 @@ ALTER TABLE `pesan`
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_login`
 --
 ALTER TABLE `tb_login`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
