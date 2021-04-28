@@ -15,10 +15,12 @@ class Siswa_dashboard extends MX_Controller {
 	// index
 	function index()
 	{
+		$data_siswa=  $this->session->userdata('session_id');
 		$data = array(
 			'namamodule' 	=> "Siswa_dashboard",
 			'namafileview' 	=> "V_siswa_dashboard",
-			'tampil'		=> $this->M_siswa_dashboard->tampil(),
+			'tampil'		=> $this->M_siswa_dashboard->tampil($data_siswa),
+			'tampilp'		=> $this->M_siswa_dashboard->tampilp(),
 		);
 		echo Modules::run('template_siswa/tampilCore', $data);
 	}

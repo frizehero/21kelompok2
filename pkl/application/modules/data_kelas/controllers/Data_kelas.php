@@ -82,6 +82,7 @@ class Data_kelas extends MX_Controller {
 			'tampil'		=> $this->m_data_kelas->cari_siswa($cari_siswa,$id),
 			'tampil_detail'		=> $this->m_data_kelas->tampil_detail($id),
 			'tampil_data'		=> $this->m_data_kelas->tampil_data($id),
+			'tampil_dudi'		=> $this->m_data_kelas->tampil_dudi(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -93,6 +94,8 @@ class Data_kelas extends MX_Controller {
 			'namafileview' 	=> "V_detail_kelas",
 			'tampil_detail'		=> $this->m_data_kelas->tampil_detail($id),
 			'tampil_data'		=> $this->m_data_kelas->tampil_data($id),
+			'tampil_dudi'		=> $this->m_data_kelas->tampil_dudi(),
+
 
 		
 

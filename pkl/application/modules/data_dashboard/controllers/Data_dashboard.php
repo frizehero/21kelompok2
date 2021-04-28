@@ -19,6 +19,7 @@ class data_dashboard extends MX_Controller {
 			'namamodule' 	=> "data_dashboard",
 			'namafileview' 	=> "V_data_dashboard",
 			'tampil'		=> $this->M_data_dashboard->tampil(),
+			'hitungsiswa'   => $this->M_data_dashboard->hitsi(),
 			// 'tampil_dudi'		=> $this->M_data_dashboard->tampil_dudi(),
 		);
 		echo Modules::run('template/tampilCore', $data);

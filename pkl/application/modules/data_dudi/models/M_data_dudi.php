@@ -10,6 +10,12 @@ class M_data_dudi extends CI_Model {
 		->get()
 		->result();
 	}
+
+	function filter_jurusan()
+	{
+		return $this->db->get('jurusan')->result();
+	}
+
 	function tampil_detail($id)
 	{
 
@@ -30,11 +36,12 @@ class M_data_dudi extends CI_Model {
 
 	function tambah()
 	{
-		$nama 		= $this->input->post('nama_dudi');
-		$telepon	= $this->input->post('telepon_dudi');
-		$alamat  	= $this->input->post('alamat');
-		$email 		= $this->input->post('email_dudi');
-		$jurusan 	= $this->input->post('jurusan_dudi');
+		$nama 				= $this->input->post('nama_dudi');
+		$telepon			= $this->input->post('telepon_dudi');
+		$alamat  			= $this->input->post('alamat');
+		$email 				= $this->input->post('email_dudi');
+		$jurusan 			= $this->input->post('jurusan_dudi');
+		$nama_pembimbing 	= $this->input->post('nama_pembimbing');
 
 
 
@@ -57,12 +64,13 @@ class M_data_dudi extends CI_Model {
             {
 				$gbr = $this->upload->data();
 				$data = array(
-					'nama_dudi'		=> $nama,
+					'nama_dudi'			=> $nama,
 					'no_telepon'		=> $telepon,
-					'id_jurusan' 	=> $jurusan,
-					'alamat' 	=> $alamat,
-					'id_jurusan' 	=> $jurusan,
-					'email' 	=> $email,
+					'id_jurusan' 		=> $jurusan,
+					'alamat' 			=> $alamat,
+					'id_jurusan' 		=> $jurusan,
+					'email' 			=> $email,
+					'nama_pembimbing' 	=> $nama_pembimbing,
 					'logo_dudi' 				=> $gbr['file_name'],
 					
 					
@@ -73,12 +81,14 @@ class M_data_dudi extends CI_Model {
 		}
 		else{
 				$data = array(
-					'nama_dudi'		=> $nama,
+					'nama_dudi'			=> $nama,
 					'no_telepon'		=> $telepon,
-					'id_jurusan' 	=> $jurusan,
-					'alamat' 	=> $alamat,
-					'id_jurusan' 	=> $jurusan,
-					'email' 	=> $email,
+					'id_jurusan' 		=> $jurusan,
+					'alamat' 			=> $alamat,
+					'id_jurusan' 		=> $jurusan,
+					'email' 			=> $email,
+					'nama_pembimbing' 	=> $nama_pembimbing,
+
 
 
 
@@ -91,11 +101,12 @@ class M_data_dudi extends CI_Model {
 	function edit()
 	{
 		$id_dudi	= $this->input->post('id_dudi');
-		$nama 		= $this->input->post('nama_dudi');
-		$telepon	= $this->input->post('telepon_dudi');
-		$alamat  	= $this->input->post('alamat');
-		$email 		= $this->input->post('email_dudi');
-		$jurusan 	= $this->input->post('jurusan_dudi');
+		$nama 				= $this->input->post('nama_dudi');
+		$telepon			= $this->input->post('telepon_dudi');
+		$alamat  			= $this->input->post('alamat');
+		$email 				= $this->input->post('email_dudi');
+		$jurusan 			= $this->input->post('jurusan_dudi');
+		$nama_pembimbing 	= $this->input->post('nama_pembimbing');
 
 
 
@@ -119,12 +130,13 @@ class M_data_dudi extends CI_Model {
 				$gbr = $this->upload->data();
 				$data = array(
 					'id_dudi'		=> $id_dudi,
-					'nama_dudi'		=> $nama,
+					'nama_dudi'			=> $nama,
 					'no_telepon'		=> $telepon,
-					'id_jurusan' 	=> $jurusan,
-					'alamat' 	=> $alamat,
-					'id_jurusan' 	=> $jurusan,
-					'email' 	=> $email,
+					'id_jurusan' 		=> $jurusan,
+					'alamat' 			=> $alamat,
+					'id_jurusan' 		=> $jurusan,
+					'email' 			=> $email,
+					'nama_pembimbing' 	=> $nama_pembimbing,
 					'logo_dudi' 				=> $gbr['file_name'],
 					
 					
@@ -136,13 +148,13 @@ class M_data_dudi extends CI_Model {
 		else{
 				$data = array(
 					'id_dudi'		=> $id_dudi,
-					'nama_dudi'		=> $nama,
+					'nama_dudi'			=> $nama,
 					'no_telepon'		=> $telepon,
-					'id_jurusan' 	=> $jurusan,
-					'alamat' 	=> $alamat,
-					'id_jurusan' 	=> $jurusan,
-					'email' 	=> $email,
-
+					'id_jurusan' 		=> $jurusan,
+					'alamat' 			=> $alamat,
+					'id_jurusan' 		=> $jurusan,
+					'email' 			=> $email,
+					'nama_pembimbing' 	=> $nama_pembimbing,
 
 
 
@@ -208,5 +220,17 @@ class M_data_dudi extends CI_Model {
 		->get('dudi')->result();
 
 
+	}
+
+	function filter ($jurusan)
+	{
+
+		 $this->db->select('*')
+		->from ('dudi')
+		->join('jurusan', 'jurusan.id_jurusan = dudi.id_jurusan')
+		->like('nama',$jurusan);
+	
+		$query = $this->db->get();
+		return $query->result();
 	}
 }

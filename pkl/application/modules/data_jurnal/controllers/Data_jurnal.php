@@ -68,17 +68,33 @@ class Data_jurnal extends MX_Controller {
     	);
     	echo Modules::run('template/tampilCore', $data);
     }
-    function detail_jurnal($id)
+    function detail_jurnal()
     {
+        $idd=$_GET['id'];
+        
     	$data = array(
     		'namamodule' 	=> "Data_jurnal",
     		'namafileview' 	=> "V_detail",
-    		'tampil_detail'		=> $this->m_data_jurnal->tampil_detail($id),
-    		'tampil_data'		=> $this->m_data_jurnal->tampil_data($id),
+    		'tampil_detail'		=> $this->m_data_jurnal->tampil_detail($idd),
+    		'tampil_data'		=> $this->m_data_jurnal->tampil_data($idd),
+            'dd'       => $this->m_data_jurnal->tampil_dudi(),
+
 
     	);
     	echo Modules::run('template/tampilCore', $data);
     }
+    function detail_dudi($id)
+    {
+        $data = array(
+            'namamodule'    => "Data_jurnal",
+            'namafileview'  => "V_detail",
+            'dd'       => $this->m_data_jurnal->tampil_dudi($id),
+
+
+        );
+        echo Modules::run('template/tampilCore', $data);
+    }
+
     function tambah_siswa()
     {
     	$this->m_data_dudi->tambah_siswa();

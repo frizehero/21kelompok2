@@ -479,6 +479,13 @@
                                 <a href="<?php echo base_url('login/logoutApp'); ?>" class="list-group-item">
                                     <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
                                 </a>
+
+
+
+                                <a href="<?php echo base_url('data_pengaturan'); ?>" class="list-group-item">
+                                    <i class="demo-pli-unlock icon-lg icon-fw"></i> Pengaturan
+                                </a>
+                            
                             </div>
                         </div>
 

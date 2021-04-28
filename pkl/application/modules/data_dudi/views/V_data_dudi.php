@@ -59,11 +59,17 @@
               <input name="email_dudi" type="text" placeholder="Email Dudi" class="form-control" id="inputCity">
             </div>
 
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-6">
               <label for="inputCity">telepon</label>
               <input name="telepon_dudi" type="text" placeholder="Telepon Dudi" class="form-control" id="inputCity">
             </div>
-           <div class="form-group col-md-12">
+
+            <div class="form-group col-md-6">
+              <label for="inputCity">Guru Pembimbing</label>
+              <input name="nama_pembimbing" type="text" placeholder="Guru Pembimbing" class="form-control" id="inputCity">
+            </div>
+
+            <div class="form-group col-md-12">
               <label for="inputCity">tentang</label>
               <input style="height: 100px;" name="tentang" type="text" placeholder="tentang Dudi" class="form-control" id="inputCity">
             </div>
@@ -77,29 +83,19 @@
   </div>
 </div>
 <?= form_close(); ?>
-<form method="post" action="<?php echo site_url('data_dudi/cari') ?>" >
-  <div class="col-sm-6 toolbar-right text-right">
-    <div class="form-group">
-      <?php if($this->uri->segment(2) != 'cari'){?>
-        <input type="text" placeholder="Normal" name="cari" class="form-control" id="demo-is-inputnormal">
-      <?php } ?>
-      <?php if($this->uri->segment(2) == 'cari'){
-        $cari = $this->input->post('cari'); ?>
-        <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control" id="demo-is-inputnormal" placeholder="Outlet">
-      <?php } ?>
-    </div>
-    <div class="select">
-     <select name="cari_jurusan">
-       <option>RPL</option>
-       <option>AKL</option>
-       <option>TKJ</option>
-     </select>
-   </div>
-   <button class="btn btn-default">Cari</button>
-
+<div class="col-sm-6 toolbar-right text-right">
+  <div class="select">
+    <form method="post" action="<?php echo site_url('data_dudi/filter') ?>">
+     <select name="jurusan">
+      <?php foreach ($tampil_jurusan as $fil) {?>
+       <option value="<?= $fil->nama?>" ><?= $fil->nama?></option>
+     <?php }?>
+   </select>
  </div>
-</div>
+ <button type="submit" class="btn btn-default">Cari</button>
 </form>
+</div>
+</div>
 <!---------------------------------->
 
 
@@ -140,6 +136,7 @@
           <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo_dudi?>">
           <h4 class="mar-no text-main"><?php echo $res->nama_dudi?></h4>
           <p class="text-muted mar-no"><?php echo $res->nama?></p>
+          <p class="text-muted mar-no"><?php echo $res->nama_pembimbing?></p>
         </div>
       </div>
 
@@ -162,7 +159,7 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nama DU/DI</label>
-              <input name="nama_dudi"  class="form-control" id="inputEmail4" placeholder="Nama DU/DI">
+              <input name="nama_dudi"  class="form-control" value="<?php echo $res->nama_dudi ?>" id="inputEmail4" placeholder="Nama DU/DI">
             </div>
             <div class="form-group col-md-6">
               <label for="inputState">Jurusan:</label>
@@ -179,14 +176,24 @@
               <label for="inputCity">Email</label>
               <input name="email_dudi" type="text" placeholder="Email Dudi" class="form-control" id="inputCity">
             </div>
+
             <div class="form-group col-md-6">
               <label for="inputCity">telepon</label>
-              <input name="telepon" type="text" placeholder="Email Dudi" class="form-control" id="inputCity">
+              <input name="telepon_dudi" type="text" placeholder="Telepon Dudi" class="form-control" id="inputCity">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="inputCity">Guru Pembimbing</label>
+              <input name="nama_pembimbing" type="text" placeholder="Guru Pembimbing" class="form-control" id="inputCity">
+            </div>
+
+            <div class="form-group col-md-12">
+              <label for="inputCity">tentang</label>
+              <input style="height: 100px;" name="tentang" type="text" placeholder="tentang Dudi" class="form-control" id="inputCity">
             </div>
           </div>
           <div class="modal-footer">
-            <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-            <button class="btn btn-primary" type="submit">Simpan</button>
+            <button type="submit" class="btn btn-primary">Save</button>
           </div>
         </form>
       </div>

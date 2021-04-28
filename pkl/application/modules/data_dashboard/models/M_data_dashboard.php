@@ -7,6 +7,15 @@ class M_data_dashboard extends CI_Model {
 	{
 		return $this->db->get('pengumuman')->result();
 	}
+ function hitsi()
+	{
+		
+		$this->db->select_sum('id_siswa')
+		->from('siswa');
+		$query = $this->db->get();
+		return $query->result();
+
+	}
 
 	function tambah()
 	{
@@ -17,17 +26,17 @@ class M_data_dashboard extends CI_Model {
 
 		
 
-				$data = array(
-					'judul_pengumuman'		=> $judul_pengumuman,
-					'tanggal'		=> $tanggal,
-					'isi_pengumuman' 				=> $isi_pengumuman,
-					'tertuju'						=>$tertuju,
-					
-					
-				);
-				$this->db->insert('pengumuman', $data);
-			
-	
+		$data = array(
+			'judul_pengumuman'		=> $judul_pengumuman,
+			'tanggal'		=> $tanggal,
+			'isi_pengumuman' 				=> $isi_pengumuman,
+			'tertuju'						=>$tertuju,
+
+
+		);
+		$this->db->insert('pengumuman', $data);
+
+
 		
 	}
 	// function tampil_dudi()
@@ -47,9 +56,9 @@ class M_data_dashboard extends CI_Model {
 		$isi_pengumuman	= $this->input->post('isi_pengumuman');
 		$tertuju	= $this->input->post('tertuju');
 
-        {
-            if ($this->upload->do_upload(''))
-            {
+		{
+			if ($this->upload->do_upload(''))
+			{
 				$data = array(
 					'id_pengumuman'		=> $id_pengumuman,
 					'judul_pengumuman'		=> $judul_pengumuman,
@@ -58,17 +67,17 @@ class M_data_dashboard extends CI_Model {
 					'tertuju'		=> $tertuju,
 				);
 				$this->db->where('id_pengumuman',$id_pengumuman)->update('pengumuman', $data);
-			
+
 			}
 			else{
-			$data = array(
-				'judul_pengumuman'		=> $judul_pengumuman,
+				$data = array(
+					'judul_pengumuman'		=> $judul_pengumuman,
 					'tanggal'		=> $tanggal,
 					'isi_pengumuman'		=> $isi_pengumuman,
 					'tertuju'		=> $tertuju,
-			);
-			$this->db->where('id_pengumuman',$id_pengumuman)->update('pengumuman', $data);
-		}	 
+				);
+				$this->db->where('id_pengumuman',$id_pengumuman)->update('pengumuman', $data);
+			}	 
 		}
 		
 	}

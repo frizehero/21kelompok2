@@ -3,7 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_siswa_dashboard extends CI_Model {
 
-	function tampil()
+	function tampil($data_siswa)
+	{
+		$this->db->select('*')
+				 ->from('siswa')
+				 ->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
+
+				  				 ->where('id_siswa',$data_siswa);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+	function tampilp()
 	{
 		return $this->db->get('pengumuman')->result();
 	}

@@ -11,7 +11,7 @@ class M_data_pengumuman extends CI_Model {
 	function tambah()
 	{
 		$judul_pengumuman 		= $this->input->post('judul_pengumuman');
-		$tanggal	= $this->input->post('tanggal');
+		$tanggal	= $this->input->post('tanggal_pengumuman');
 		$isi_pengumuman	= $this->input->post('isi_pengumuman');
 		$tertuju	= $this->input->post('tertuju');
 

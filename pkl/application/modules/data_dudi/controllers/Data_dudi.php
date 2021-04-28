@@ -19,6 +19,7 @@ class Data_dudi extends MX_Controller {
 			'namamodule' 	=> "Data_dudi",
 			'namafileview' 	=> "V_data_dudi",
 			'tampil'		=> $this->m_data_dudi->tampil(),
+			'tampil_jurusan'		=> $this->m_data_dudi->filter_jurusan(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -64,6 +65,21 @@ class Data_dudi extends MX_Controller {
 	{
 		$this->m_data_dudi->edit_sampul();
 		redirect('data_dudi');
+	}
+
+	function filter()
+	{
+
+		$jurusan 					= $this->input->post('jurusan');
+		// echo $jurusan;
+
+		$data = array(
+			'namamodule' 	=> "data_dudi",
+			'namafileview' 	=> "V_data_dudi",
+			'tampil'		=> $this->m_data_dudi->filter($jurusan),
+			'tampil_jurusan'		=> $this->m_data_dudi->filter_jurusan(),
+		);
+		echo Modules::run('template/tampilCore', $data);
 	}
 }
  

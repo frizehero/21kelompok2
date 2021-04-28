@@ -115,7 +115,7 @@
                       </div>
                       <div class="media-body">
                         <p class="text-2x mar-no text-bold media-heading">Tempat PKL</p>
-                        <span>Humasoft</span>
+                        <span><?php echo $tampil['nama_dudi'] ?></span>
                       </div>
                     </div>
                   </div>
@@ -134,7 +134,7 @@
                     </div>
                     <div class="media-body">
                       <p class="text-2x mar-no text-bold media-heading">Pembimbing</p>
-                      <span>Bpk.ivan zuwanta.Spd</span>
+                     <span><?php echo $tampil['nama_pembimbing'] ?></span>
                     </div>
                   </div>
                 </div>
@@ -151,12 +151,12 @@
                   <div class="list-unstyled text-center pad-btm pad-top  mar-no row badge-mint">
                     <li class="col-xs-6">
                       <span class="text-lg text-semibold text-light">Masuk Prakerin</span>
-                      <p class="text-sm mar-no text-light">04-01-2021</p>
+                      <p class="text-sm mar-no text-light"><?php echo $tampil['masuk_p'] ?></p>
                     </li>
                     <div class="col-xs-6">
 
                       <span class="text-lg text-semibold text-light">Keluar Prakerin</span>
-                      <p class="text-sm mar-no text-light">04-06-2021</p>
+                      <p class="text-sm mar-no text-light"><?php echo $tampil['keluar_p'] ?></p>
 
 
                     </div>
@@ -189,7 +189,7 @@
               </div>
               <div class="panel-body">
                 <?php $nomor=1?>
-                <?php foreach ($tampil as $res) {?>
+                <?php foreach ($tampilp as $res) {?>
 
                 <b><?php echo $nomor?>. <?php echo $res->judul_pengumuman?></b><br>
                 <?php $nomor++?>

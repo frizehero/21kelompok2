@@ -149,7 +149,7 @@
         <div class ="text-center" style="margin-top:15px;">
           <p class="text-muted mar-no" style="height:10px;">
             Du/Di :
-            <b><?= $res->dudi ?></b>
+            <b><?= $res->nama_dudi ?></b>
 
           </p>
         </div>

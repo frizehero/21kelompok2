@@ -46,11 +46,19 @@ class M_data_jurnal extends CI_Model {
 		$query = $this->db->get();
 		return $query->row_array();
 	}
-	function tampil_data($id)
+	function tampil_data($idd)
 	{
 		return $this->db->from('jurnal')
 		->join('siswa', 'siswa.id_siswa = jurnal.id_siswa')
-		->where('siswa.id_siswa',$id)
+		->where('siswa.id_siswa',$idd)
+		->get()
+		->result();
+	}
+	function tampil_dudi()
+	{
+		return $this->db->from('siswa')
+		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
+		->where('dudi.id_dudi')
 		->get()
 		->result();
 	}

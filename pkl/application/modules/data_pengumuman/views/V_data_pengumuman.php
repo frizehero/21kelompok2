@@ -101,52 +101,7 @@
 </div>
 <?= form_close(); ?>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tambah Pengumuman</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-      </button>
-  </div>
-  <div class="modal-body">
-     <form>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputEmail4">Judul</label>
-          <input type="text" class="form-control" id="inputEmail4" placeholder="Judul pengumuman">
-      </div>
-      <div class="form-group col-md-6">
-          <label for="inputPassword4">Tanggal</label>
-          <input type="date" class="form-control" id="inputPassword4">
-      </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Isi pengumuman</label>
-    <textarea  class="form-control" id="inputAddress"></textarea>
-</div>
-<div class="form-row">
 
-
-  <label for="inputState">Tertuju:</label>
-  <select id="inputState" class="form-control">
-    <option selected>siswa</option>
-    <option>Guru</option>
-</select>
-
-</div>
-
-
-</form>
-</div>
-<div class="modal-footer">
-
-    <button type="button" data-dismiss="modal" class="btn btn-primary">Save changes</button>
-</div>
-</div>
-</div>
-</div>
 
 <div class="panel">
     <div class="panel-heading">

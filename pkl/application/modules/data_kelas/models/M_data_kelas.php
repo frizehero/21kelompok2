@@ -15,6 +15,10 @@ class M_data_kelas extends CI_Model {
 	{
 		return $this->db->get('jurusan')->result();
 	}
+	function tampil_dudi()
+	{
+		return $this->db->get('dudi')->result();
+	}
 	function tampil_detail($id)
 	{
 
@@ -28,6 +32,10 @@ class M_data_kelas extends CI_Model {
 	{
 		return $this->db->from('siswa')
 		->join('kelas', 'kelas.id_kelas = siswa.id_kelas')
+
+		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
+		
+
 		->where('kelas.id_kelas',$id)
 		->get()
 		->result();
@@ -115,7 +123,8 @@ class M_data_kelas extends CI_Model {
 		$jenis_kelamin 		= $this->input->post('jenis_kelamin');
 		$dudi 				= $this->input->post('dudi');
 		$kelas              = $this->input->post('kelas');
-
+		$masuk_p            = $this->input->post('masuk_p');
+		$keluar_p           = $this->input->post('keluar_p');
 
 		$this->load->library('upload');
 		$nmfile = "file_".time();
@@ -137,8 +146,10 @@ class M_data_kelas extends CI_Model {
 					'nama_siswa'			=> $nama_siswa,
 					'nisn'					=> $nisn,
 					'jenis_kelamin'			=> $jenis_kelamin,
-					'dudi'					=> $dudi,
+					'id_dudi'				=> $dudi,
 					'id_kelas'              => $kelas,
+					'masuk_p'               => $masuk_p,
+					'keluar_p'              => $keluar_p,
 					'logo' 					=> $gbr['file_name'],
 
 				);
@@ -151,8 +162,10 @@ class M_data_kelas extends CI_Model {
 				'nama_siswa'			=> $nama_siswa,
 				'nisn'					=> $nisn,
 				'jenis_kelamin'			=> $jenis_kelamin,
-				'dudi'					=> $dudi,
+				'id_dudi'					=> $dudi,
 				'id_kelas'              => $kelas,
+				'masuk_p'               => $masuk_p,
+			    'keluar_p'              => $keluar_p,
 				'logo' 				=> 'kosong1.png',
 			);
 			$this->db->insert('siswa', $data);
@@ -216,6 +229,7 @@ class M_data_kelas extends CI_Model {
 	{
 		$this->db->select('*')
 		->where('id_kelas',$id)
+		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
 		->like('nama_siswa',$cari_siswa);
 		$query = $this->db->get('siswa');
 		return $query->result();

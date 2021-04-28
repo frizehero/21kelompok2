@@ -478,9 +478,20 @@
 
                             <div id="profile-nav" class="collapse list-group bg-trans">
 
+
+
+                                <a href="<?php echo base_url('siswa_profil'); ?>" class="list-group-item">
+                                    <i class="demo-pli-unlock icon-lg icon-fw"></i> Profil
+                                </a>
+
+                                <a href="<?php echo base_url('siswa_pengaturan'); ?>" class="list-group-item">
+                                    <i class="demo-pli-unlock icon-lg icon-fw"></i> Pengaturan
+                                </a>
+                                
                                 <a href="<?php echo base_url('login/logoutApp'); ?>" class="list-group-item">
                                     <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
-                                </a>
+                                </a>                            
+
                             </div>
                         </div>
 

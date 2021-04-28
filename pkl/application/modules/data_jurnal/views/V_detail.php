@@ -33,89 +33,23 @@
                     </p>
 
                     <!--Family-->
+
                     <div class="list-group bg-trans bord-btm">
-                       <hr class="new-section-xs">
-                       <div class="list-group-item">
+                        <!-- <?php foreach ($dd as $pecah) {?> -->
+                         <div class="list-group-item">
                         <div class="media-left pos-rel">
                             <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
                         </div>
                         <div class="media-body">
                             <a href="#" class="text-main">
-                                <p>Brittany Meyer</p>
+                                <p>
+                                   <!--  <?php echo $pecah->nama_siswa?> -->
+                                </p>
                             </a>
                         </div>
                     </div>
-                    <div class="list-group-item">
-                        <div class="media-left pos-rel">
-                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                        </div>
-                        <div class="media-body">
-                            <a href="#" class="text-main">
-                                <p>Brittany Meyer</p>
-                            </a>
-                        </div>
+             <!--    <?php }?> -->
                     </div>
-                    <div class="list-group-item">
-                        <div class="media-left pos-rel">
-                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                        </div>
-                        <div class="media-body">
-                            <a href="#" class="text-main">
-                                <p>Brittany Meyer</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="list-group-item">
-                        <div class="media-left pos-rel">
-                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                        </div>
-                        <div class="media-body">
-                            <a href="#" class="text-main">
-                                <p>Brittany Meyer</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="list-group-item">
-                        <div class="media-left pos-rel">
-                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                        </div>
-                        <div class="media-body">
-                            <a href="#" class="text-main">
-                                <p>Brittany Meyer</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="list-group-item">
-                        <div class="media-left pos-rel">
-                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                        </div>
-                        <div class="media-body">
-                            <a href="#" class="text-main">
-                                <p>Brittany Meyer</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="list-group-item">
-                        <div class="media-left pos-rel">
-                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                        </div>
-                        <div class="media-body">
-                            <a href="#" class="text-main">
-                                <p>Brittany Meyer</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="list-group-item">
-                        <div class="media-left pos-rel">
-                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                        </div>
-                        <div class="media-body">
-                            <a href="#" class="text-main">
-                                <p>Brittany Meyer</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
 
                 <!--Monthly billing-->
