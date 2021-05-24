@@ -170,6 +170,24 @@ class M_data_kelas extends CI_Model {
 			);
 			$this->db->insert('siswa', $data);
 		}
+		$insert_id = $this->db->insert_id();
+ 		$id_user					= $this->input->post('id_admin');
+ 		$username					= $this->input->post('username');
+ 		$password 					= $this->input->post('password');
+ 		$password1 					= sha1($password);
+ 		$level 						= $this->input->post('level');
+
+ 		$data = array(
+ 			'id_admin'				=> $id_user,
+ 			'id_siswa'				=> $insert_id,
+ 			'username'				=> $username,
+ 			'password'				=> $password1,
+ 			'level'					=> $level,
+
+ 		);
+
+ 		$this->db->insert('tb_login', $data);
+ 		$insert_id = $this->db->insert_id();
 	}
 
 	function edit()

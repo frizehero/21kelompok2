@@ -49,7 +49,7 @@
               <label for="" class="control-label">NISN :</label>
               <input type="text" name="nisn" placeholder="NISN" class="form-control"></input>
             </div>
-            <div style="margin-top: 2%" class="col-md-6">
+            <div class="col-md-6">
               <label for="" class="control-label">Jenis Kelamin :</label>
               <select class="form-control" name="jenis_kelamin">
                 <option>
@@ -65,7 +65,7 @@
               <label for="" class="control-label">DU/DI :</label>
               <select class="form-control" name="dudi">
                 <option>
-                  Dudi
+                  Jenis Kelamin Anda
                 </option>
                 <?php foreach ($tampil_dudi as $i) {?>
                   <option  value="<?php echo $i->id_dudi?>"><?php echo $i->nama_dudi;?>
@@ -81,6 +81,16 @@
             <label for="" class="control-label">Tgl Keluar:</label>
             <input type="date" name="keluar_p" placeholder="NISN" class="form-control"></input>
           </div>
+          <div class="col-md-6">
+              <label for="" class="control-label">username :</label>
+              <input type="text" name="username" placeholder="username" class="form-control"></input>
+              <input type="hidden" value="2" name="level">
+            </div>
+            <div class="col-md-6">
+              <label for="" class="control-label">password :</label>
+              <input type="text" name="password" placeholder="password" class="form-control"></input>
+            </div>
+
           <div class="col-md-6" >
               <label for="" class="control-label">Foto :</label>
               <input type="file" name="gambar" placeholder="Logo " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
@@ -204,7 +214,7 @@
               <label for="" class="control-label">NISN :</label>
               <input type="text" name="nisn" placeholder="NISN" class="form-control"></input>
             </div>
-            <div  class="col-md-6">
+            <div class="col-md-6">
               <label for="" class="control-label">Jenis Kelamin :</label>
               <select class="form-control" name="jenis_kelamin">
                 <option>
@@ -216,6 +226,7 @@
                 </option>
               </select>
             </div>
+            
             <div class="col-md-6" >
               <label for="" class="control-label">Foto :</label>
               <input type="file" name="gambar" placeholder="Logo " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
