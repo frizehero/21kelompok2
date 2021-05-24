@@ -177,7 +177,7 @@
                     </div>
                 </div>
             <?php }?>
-            <button class="btn btn-primary btn-block mar-ver"><span class="text-semibold">36</span> Load More</button>
+            
 
 
 
