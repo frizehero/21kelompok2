@@ -49,7 +49,7 @@
               <label for="" class="control-label">NISN :</label>
               <input type="text" name="nisn" placeholder="NISN" class="form-control"></input>
             </div>
-            <div class="col-md-6">
+            <div style="margin-top: 2%" class="col-md-6">
               <label for="" class="control-label">Jenis Kelamin :</label>
               <select class="form-control" name="jenis_kelamin">
                 <option>
@@ -65,7 +65,7 @@
               <label for="" class="control-label">DU/DI :</label>
               <select class="form-control" name="dudi">
                 <option>
-                  Jenis Kelamin Anda
+                  Dudi
                 </option>
                 <?php foreach ($tampil_dudi as $i) {?>
                   <option  value="<?php echo $i->id_dudi?>"><?php echo $i->nama_dudi;?>
@@ -204,7 +204,7 @@
               <label for="" class="control-label">NISN :</label>
               <input type="text" name="nisn" placeholder="NISN" class="form-control"></input>
             </div>
-            <div class="col-md-6">
+            <div  class="col-md-6">
               <label for="" class="control-label">Jenis Kelamin :</label>
               <select class="form-control" name="jenis_kelamin">
                 <option>

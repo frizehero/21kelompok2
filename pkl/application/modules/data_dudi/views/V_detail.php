@@ -53,7 +53,7 @@
                 <div id="demo-gallery">
 
                     <a href="#"> 
-                        <img width="500" height="350" alt="The winding road"
+                        <img width="100%" height="50%" alt="The winding road"
                         src="<?php echo base_url ()?>assets/img/<?php echo $tampil_detail['foto_dudi'] ?>"
                         data-image="img/gallery/big/tile1.jpg"
                         data-description="The winding road description">
@@ -107,14 +107,19 @@
             <div class="mar-all">
                 <div class="media">
                     <div class="panel">
+
                         <div class="panel-body">
+
                             <span class="text-semibold"><?php echo $tampil_detail['nama_dudi']?> </span><span><?php echo $tampil_detail['tentang']?></span>
 
                         </div>
 
                     </div>
+
                     <div class="media-left">
-                        <i class="icon-lg icon-fw demo-pli-map-marker-2"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
+</svg>
                     </div>
                     <div class="media-body">
                         <address>
@@ -143,20 +148,20 @@
            
     </div>
     <script>
-            var mapOptions = {
-                center: [<?php echo $tampil_detail['lon']?>,<?php echo $tampil_detail['lat']?>],
-                zoom: 25
-            }
-            var mapid = new L.map('mapid', mapOptions);
-            var marker = L.marker([-7.97712060,112.63402910]).addTo(mapid);
-            marker.bindPopup("<b><?php echo $tampil_detail['nama_dudi']?></b><br><?php echo $tampil_detail['alamat']?>").openPopup();
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?access_token={accessToken}', {
-                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                maxZoom: 18,
-                id: 'mapbox.streets',
-                accessToken: 'pk.eyJ1IjoicGF4aXRvdDE5OSIsImEiOiJja2Jmenp4M3MxMHA1MnhvNXl1cDdvaDQxIn0.qC-z0-WmnyfnWC8Yo_mQMg'
-            }).addTo(mapid);
-        </script>
+    var mapOptions = {
+      center: [<?php echo $tampil_detail['lat']?>,<?php echo $tampil_detail['lon']?>],
+      zoom: 25
+    }
+    var mapid = new L.map('mapid', mapOptions);
+    var marker = L.marker([<?php echo $tampil_detail['lat']?>,<?php echo $tampil_detail['lon']?>]).addTo(mapid);
+    marker.bindPopup("<b><?php echo $tampil_detail['nama_dudi']?></b><br>").openPopup();
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox.streets',
+      accessToken: 'pk.eyJ1IjoicGF4aXRvdDE5OSIsImEiOiJja2Jmenp4M3MxMHA1MnhvNXl1cDdvaDQxIn0.qC-z0-WmnyfnWC8Yo_mQMg'
+    }).addTo(mapid);
+    </script>
 
 </div>
 </div>

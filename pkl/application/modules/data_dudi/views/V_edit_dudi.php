@@ -10,11 +10,12 @@
 
 							<!--Input Size-->
 							<!--===================================================-->
-							<?= form_open_multipart('data_dudi/tambah'); ?>
+							<?= form_open_multipart('data_dudi/edit'); ?>
 								<div class="panel-body"><div class="form-group">
 
 									<div style="margin-bottom: 20px" class="col-sm-9">
-										<input type="text" placeholder="Nama Dudi" name="nama_dudi" class="form-control input-lg" id="demo-is-inputnormal">
+										<input type="text" placeholder="Nama Dudi" value="<?php echo $tampil['nama_dudi']?>" name="nama_dudi" class="form-control input-lg" id="demo-is-inputnormal">
+										<input type="hidden" value="<?php echo $tampil['id_dudi']?>" name="id_dudi">
 									</div>
 									<div style="margin-bottom: 20px" class="col-sm-3"><div class="select">
 										<select name="jurusan_dudi" style="height: 48px">
@@ -28,23 +29,23 @@
 										<input type="file" name="gambar" placeholder=".input-lg" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
 									<div style="margin-bottom: 20px" class="col-sm-6">
-										<input name="email_dudi" type="text" placeholder="Email" class="form-control input-lg" id="demo-is-inputlarge">
+										<input name="email_dudi" type="text" value="<?php echo $tampil['email']?>" placeholder="Email" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
-									<input type="hidden" name="lon" id="lon" size=12 value="" class="form-control" id="inputCity">
+									<input type="hidden" name="lon" id="lon" size=12 value="<?php echo $tampil['lon']?>" class="form-control" id="inputCity">
 
 
-									<input type="hidden" name="lat" id="lat" size=12 value=""
+									<input type="hidden" name="lat" id="lat" size=12 value="<?php echo $tampil['lat']?>"
 									class="form-control" id="inputCity">
 									<div style="margin-bottom: 20px" class="col-sm-6">
-										<input name="telepon_dudi" type="text" placeholder="Telepon Dudi" class="form-control input-lg" id="demo-is-inputlarge">
+										<input name="telepon_dudi" type="text" placeholder="Telepon Dudi" class="form-control input-lg" value="<?php echo $tampil['no_telepon']?>" id="demo-is-inputlarge">
 									</div>
 									<div style="margin-bottom: 20px" class="col-sm-6">
-										<input name="nama_pembimbing" type="text" placeholder="nama pembimbing" class="form-control input-lg" id="demo-is-inputlarge">
+										<input name="nama_pembimbing" value="<?php echo $tampil['nama_pembimbing']?>"	 type="text" placeholder="nama pembimbing" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
 
 
 									<div class="col-md-6">
-										<textarea placeholder="deskripsi" class="form-control" id="inputCity" name="tentang" style=" width: 100%; height: 100px; margin-bottom: 20px"></textarea>
+										<textarea placeholder="deskripsi" class="form-control" id="inputCity" name="tentang" style=" width: 100%; height: 100px; margin-bottom: 20px"><?php echo $tampil['tentang']?></textarea>
 									</div>
 
 									<div class="col-md-6">
@@ -64,7 +65,7 @@
 										.address:hover { color:#AA0000;text-decoration:underline }
 									</style>
 									<div style="margin-top: 20px" class="col-md-12">
-										<textarea class="form-control" id="inputCity" name="alamat" style="height: 100px; width:100%;"></textarea>
+										<textarea class="form-control" id="inputCity"  name="alamat" style="height: 100px; width:100%;"><?php echo $tampil['alamat']?></textarea>
 
 									</div>
 
@@ -77,7 +78,6 @@
 										</div>
 									</div>
 								</div>
-						
 							<?= form_close(); ?>
 							
 							<!--===================================================-->
@@ -90,8 +90,8 @@
 
 
 // New York
-var startlat = -7.80119450;
-var startlon = 110.36491700;
+var startlat = <?php echo $tampil['lat']?>;
+var startlon = <?php echo $tampil['lon']?>;
 
 var options = {
  center: [startlat, startlon],

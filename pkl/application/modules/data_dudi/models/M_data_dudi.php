@@ -115,10 +115,13 @@ class M_data_dudi extends CI_Model {
 		$id_dudi	= $this->input->post('id_dudi');
 		$nama 				= $this->input->post('nama_dudi');
 		$telepon			= $this->input->post('telepon_dudi');
-		$alamat  			= $this->input->post('alamat');
 		$email 				= $this->input->post('email_dudi');
 		$jurusan 			= $this->input->post('jurusan_dudi');
 		$nama_pembimbing 	= $this->input->post('nama_pembimbing');
+		$lat = $this->input->post('lat');
+		$lon = $this->input->post('lon');
+		$alamat = $this->input->post('alamat');
+		$tentang=  $this->input->post('tentang');
 
 
 
@@ -150,6 +153,10 @@ class M_data_dudi extends CI_Model {
 					'email' 			=> $email,
 					'nama_pembimbing' 	=> $nama_pembimbing,
 					'logo_dudi' 				=> $gbr['file_name'],
+					'lon'				=> $lon,
+					'lat'				=> $lat,
+					'alamat'			=> $alamat,
+					'tentang'			=> $tentang,
 					
 					
 				);
@@ -167,12 +174,24 @@ class M_data_dudi extends CI_Model {
 					'id_jurusan' 		=> $jurusan,
 					'email' 			=> $email,
 					'nama_pembimbing' 	=> $nama_pembimbing,
+					'lon'				=> $lon,
+					'lat'				=> $lat,
+					'alamat'			=> $alamat,
+					'tentang'			=> $tentang,
 
 
 
 				);
 				$this->db->where('id_dudi',$id_dudi)->update('dudi', $data);
 			}
+	}
+	function edit1($id)
+	{
+      $this->db->select('*')
+		->from('dudi')
+		->where('id_dudi',$id);
+		$query = $this->db->get();
+		return $query->row_array();
 	}
 
 	function edit_sampul()

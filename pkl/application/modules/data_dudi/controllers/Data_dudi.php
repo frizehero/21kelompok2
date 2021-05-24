@@ -47,6 +47,19 @@ class Data_dudi extends MX_Controller {
 		$this->m_data_dudi->edit();
 		redirect('data_dudi');
 	}
+	function edit1($id)
+	{
+		// $this->m_data_dudi->tambah();
+		// redirect('data_dudi');
+		 $data = array(
+			'namamodule' 	=> "data_dudi",
+			'namafileview' 	=> "V_edit_dudi",
+			'tampil'		=> $this->m_data_dudi->edit1($id),
+			
+		);
+		echo Modules::run('template/tampilCore', $data);
+
+	}
 
 	function hapus($id)
 	{
