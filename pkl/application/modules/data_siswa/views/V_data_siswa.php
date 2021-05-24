@@ -107,13 +107,6 @@
     ?>
     <div class="col-md-3">
 
-      <div class="panel widget">
-
-        <div class="widget-body text-center">
-          <divc class="widget-header">
-            <img class="widget-img img-circle" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>">
-          </div>
-          <div class="widget-control">
            <div class="btn-group dropdown">
              <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
              <ul class="dropdown-menu dropdown-menu-right" style="">

@@ -64,12 +64,12 @@ class M_siswa_jurnal extends CI_Model {
 		->get()
 		->result();
 	}
-	function tampil_dudi($datasiswa)
+	function tampil_dudi($a)
 	{
-		$w=6;
+		$w=25;
 		 $this->db->from('siswa')
 		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
-		->where('siswa.id_dudi',$w);
+		->where('siswa.id_dudi',$a);
 		$query = $this->db->get();
 		return $query->result();
 	}

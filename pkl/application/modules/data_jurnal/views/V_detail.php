@@ -35,33 +35,41 @@
                     <!--Family-->
 
                     <div class="list-group bg-trans bord-btm">
-                        <!-- <?php foreach ($dd as $pecah) {?> -->
-                         <div class="list-group-item">
-                        <div class="media-left pos-rel">
-                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                        </div>
-                        <div class="media-body">
-                            <a href="#" class="text-main">
-                                <p>
-                                   <!--  <?php echo $pecah->nama_siswa?> -->
-                                </p>
-                            </a>
-                        </div>
-                    </div>
-             <!--    <?php }?> -->
-                    </div>
+                      <?php
+                      $a=$tampil_detail['id_dudi'];
+                      $as= $this->m_data_jurnal->tampil_d($a);
+                      ?>
 
 
-                <!--Monthly billing-->
+                      <?php 
+                      foreach ($as as $ss) 
+                        {?>
+                           <div class="list-group-item">
+                            <div class="media-left pos-rel">
+                                <a href="<?php echo base_url('data_jurnal/')?>?id=<?php echo $ss->id_siswa?>"><img class="img-circle img-xs" src="<?php echo base_url ()?>assets/img/<?php echo $ss->logo?>" alt="Profile Picture"></a>
+                            </div>
+                            <div class="media-body">
+                                <a href="#" class="text-main">
+                                    <p>
+                                    <?php echo $ss->nama_siswa?>
+                                 </p>
+                             </a>
+                         </div>
+                     </div>
+                     <?php }?>
+                 </div>
+
+
+                 <!--Monthly billing-->
 
 
 
-            </div>
-        </div>
-    </div>
-</div>
+             </div>
+         </div>
+     </div>
+ </div>
 
-<div id="page-content">
+ <div id="page-content">
     <div class="panel">
         <div class="panel-body">
             <div class="fixed-fluid">
@@ -95,7 +103,7 @@
 
                     </div>
                     <div class="fluid">
-                     <div>
+                       <div>
                         <div class="col-md-6">
                             <div class="panel panel-info panel-colorful media middle pad-all">
                                 <div class="media-left">

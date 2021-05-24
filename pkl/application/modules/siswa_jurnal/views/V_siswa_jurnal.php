@@ -35,19 +35,18 @@
           <!--Family-->
           <div class="list-group bg-trans bord-btm">
            <hr class="new-section-xs">
-           
-          
-          
-          
-          
+           <?php
+           $a=$tampil['id_dudi'];
+           $as= $this->m_siswa_jurnal->tampil_dudi($a);
+           ?>
           
           
           <?php 
-          foreach ($tampil_dudi as $ss) 
+          foreach ($as as $ss) 
             {?>
             <div class="list-group-item">
             <div class="media-left pos-rel">
-              <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
+              <a href="#"><img class="img-circle img-xs" src="<?php echo base_url ()?>assets/img/<?php echo $ss->logo?>" alt="Profile Picture"></a>
             </div>
             <div class="media-body">
               <a href="#" class="text-main">

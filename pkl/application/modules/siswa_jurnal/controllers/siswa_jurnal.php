@@ -19,6 +19,7 @@ class siswa_jurnal extends MX_Controller {
 	{
 
 		$datasiswa=  $this->session->userdata('session_id');
+		
 
 
 		$data = array(
@@ -26,8 +27,7 @@ class siswa_jurnal extends MX_Controller {
 			'namafileview' 	=> "V_siswa_jurnal",
 			'tampil'		=> $this->m_siswa_jurnal->tampil($datasiswa),
 			'tampil_data'		=> $this->m_siswa_jurnal->tampil_data($datasiswa),
-			'tampil_dudi'		=> $this->m_siswa_jurnal->tampil_dudi($datasiswa),
-			
+
 
 		);
 		echo Modules::run('template_siswa/tampilCore', $data);
