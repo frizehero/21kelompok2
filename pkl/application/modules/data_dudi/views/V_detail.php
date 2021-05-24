@@ -139,13 +139,31 @@
             <a href="#" class="mar-rgt box-inline demo-pli-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body">Hummasoft</a>
         </div>
         <div>
-            <iframe src="https://www.google.com/maps/embed/v1/place?q=New+York+University&amp;key=AIzaSyBSFRN6WWGYwmFi498qXXsD2UwkbmD74v4" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width: 100%; height: 200px;"></iframe> 
-        </div>
+           <div id="mapid" style="height:50vh;"></div>
+           
     </div>
+    <script>
+            var mapOptions = {
+                center: [<?php echo $tampil_detail['lon']?>,<?php echo $tampil_detail['lat']?>],
+                zoom: 25
+            }
+            var mapid = new L.map('mapid', mapOptions);
+            var marker = L.marker([-7.97712060,112.63402910]).addTo(mapid);
+            marker.bindPopup("<b><?php echo $tampil_detail['nama_dudi']?></b><br><?php echo $tampil_detail['alamat']?>").openPopup();
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?access_token={accessToken}', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox.streets',
+                accessToken: 'pk.eyJ1IjoicGF4aXRvdDE5OSIsImEiOiJja2Jmenp4M3MxMHA1MnhvNXl1cDdvaDQxIn0.qC-z0-WmnyfnWC8Yo_mQMg'
+            }).addTo(mapid);
+        </script>
+
 </div>
 </div>
 </div>
 </div>
+</div>
+
 <!---------------------------------->
 
 <!--jQuery [ REQUIRED ]-->

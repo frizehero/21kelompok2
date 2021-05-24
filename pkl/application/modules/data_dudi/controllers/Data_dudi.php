@@ -24,6 +24,18 @@ class Data_dudi extends MX_Controller {
 		echo Modules::run('template/tampilCore', $data);
 	}
 
+	function tambah1()
+	{
+		// $this->m_data_dudi->tambah();
+		// redirect('data_dudi');
+		 $data = array(
+			'namamodule' 	=> "data_dudi",
+			'namafileview' 	=> "V_tambah_dudi",
+			
+		);
+		echo Modules::run('template/tampilCore', $data);
+
+	}
 	function tambah()
 	{
 		$this->m_data_dudi->tambah();

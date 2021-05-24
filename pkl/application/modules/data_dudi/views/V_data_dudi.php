@@ -1,3 +1,32 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+<style type="text/css">
+html, body { width:100%;padding:0;margin:0; }
+.container { width:95%;max-width:980px;padding:1% 2%;margin:0 auto }
+#lat, #lon { text-align:right }
+#map { width:10%;height:50%;padding:0;margin:0; }
+.address { cursor:pointer }
+.address:hover { color:#AA0000;text-decoration:underline }
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <!-- Load Esri Leaflet from CDN -->
+  <script src="https://unpkg.com/esri-leaflet@3.0.1/dist/esri-leaflet.js"
+    integrity="sha512-JmpptMCcCg+Rd6x0Dbg6w+mmyzs1M7chHCd9W8HPovnImG2nLAQWn3yltwxXRM7WjKKFFHOAKjjF2SC4CgiFBg=="
+    crossorigin=""></script>
+
+  <!-- Load Esri Leaflet Geocoder from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@3.0.0/dist/esri-leaflet-geocoder.css"
+    integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
+    crossorigin="">
+  <script src="https://unpkg.com/esri-leaflet-geocoder@3.0.0/dist/esri-leaflet-geocoder.js"
+    integrity="sha512-vZbMwAf1/rpBExyV27ey3zAEwxelsO4Nf+mfT7s6VTJPUbYmD2KSuTRXTxOFhIYqhajaBU+X5PuFK1QJ1U9Myg=="
+    crossorigin=""></script>
 <div id="page-head">
 
   <!--Page Title-->
@@ -24,10 +53,11 @@
 
 <div class="row pad-btm">
   <div class="col-sm-6 toolbar-left">
-    <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">tambah</button>
+    <!-- <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">tambah</button> -->
+    <a href="data_dudi/tambah1" class="btn btn-purple">Tambah</a>
   </div>
-  <?= form_open_multipart('data_dudi/tambah'); ?>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -73,6 +103,17 @@
               <label for="inputCity">tentang</label>
               <input style="height: 100px;" name="tentang" type="text" placeholder="tentang Dudi" class="form-control" id="inputCity">
             </div>
+            <div class="form-group col-md-12">
+              <input type="text" name="addr" value="" id="addr" size="58" />
+              <button type="button" onclick="addr_search();">Search</button>
+              <div id="results"></div>
+              <div id="map"></div>  
+              
+            </div>
+
+
+
+            
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Save</button>
@@ -81,8 +122,8 @@
       </div>  
     </div>
   </div>
-</div>
-<?= form_close(); ?>
+</div> -->
+
 <div class="col-sm-6 toolbar-right text-right">
   <div class="select">
     <form method="post" action="<?php echo site_url('data_dudi/filter') ?>">
