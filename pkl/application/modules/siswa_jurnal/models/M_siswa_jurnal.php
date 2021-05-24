@@ -59,7 +59,7 @@ class M_siswa_jurnal extends CI_Model {
 	{
 		return $this->db->from('jurnal')
 		->join('siswa', 'siswa.id_siswa = jurnal.id_siswa')
-		->order_by('tanggal', 'DESC')
+		->order_by('id_jurnal', 'DESC')
 		->where('siswa.id_siswa',$datasiswa)
 		->get()
 		->result();
