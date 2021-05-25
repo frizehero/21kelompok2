@@ -290,6 +290,7 @@
 
 
       <?php }?>
+     <?php echo $pagination ?>
 
 
 

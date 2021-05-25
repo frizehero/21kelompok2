@@ -61,7 +61,7 @@
                 </option>
               </select>
             </div>
-            <div class="col-md-6" style="margin-top: 2%">
+            <div class="col-md-6" >
               <label for="" class="control-label">DU/DI :</label>
               <select class="form-control" name="dudi">
                 <option>

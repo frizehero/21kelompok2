@@ -70,7 +70,7 @@
                             
 
                            <p class="text-lg text-semibold mar-no text-main"><?php echo $res->nama_siswa?> </p>
-                           <p class="text-sm">Rekayasa Perangkat Lunak</p>
+                           <p class="text-sm"><?php echo $res->nama_dudi?></p>
 
                      </a>
 

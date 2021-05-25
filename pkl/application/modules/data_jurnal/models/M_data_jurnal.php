@@ -5,9 +5,11 @@ class M_data_jurnal extends CI_Model {
 
 	function tampil()
 	{
-	    $this->db->select('*');
-		$query = $this->db->get('siswa');
-		return $query->result();
+	    return $this->db->from('siswa')
+		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
+		->get()
+		->result();
+
 
 	}
 	function get_filter_count($st = NULL)
@@ -181,4 +183,29 @@ class M_data_jurnal extends CI_Model {
  		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
 		->get('siswa')->result();
 	}
+
+
+
+	function chartsenin()
+	{
+		$query = $this->db->query("SELECT * FROM jurnal WHERE WEEKDAY(CONCAT(tanggal)) BETWEEN 0 AND 0 AND WEEK(CONCAT(tanggal)) = WEEK(now()) GROUP BY id_siswa");
+
+		return $query->num_rows();
+	}
+
+	function chartselasa()
+	{
+		$query = $this->db->query("SELECT * FROM jurnal WHERE WEEKDAY(CONCAT(create_at)) BETWEEN 1 AND 1 AND WEEK(CONCAT(create_at)) = WEEK(now()) GROUP BY id_siswa");
+		return $query->num_rows();
+	}
+	function isi($idd)
+	{
+			return $this->db->from('jurnal')
+		->join('siswa', 'siswa.id_siswa = jurnal.id_siswa')
+		->where('siswa.id_siswa',$idd)
+		->get()
+		->num_rows();
+	}
+
+	
 }

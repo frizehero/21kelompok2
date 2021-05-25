@@ -644,23 +644,6 @@ html, body { width:100%;padding:0;margin:0; }
                         </li>
                     <?php } ?>
 
-                    <?php if($this->uri->segment('1') == 'data_pesan'){ ?>
-                        <li class="active-sub">
-                            <a href="<?php echo base_url('data_pesan'); ?>">
-                                <i class="fa fa-list"></i>
-                                <span class="menu-title">Data pesan</span>
-                            </a>
-                            <!--Submenu-->
-                        </li>
-                    <?php } else{ ?>
-                        <li>
-                            <a href="<?php echo base_url('data_pesan'); ?>">
-                                <i class="fa fa-list"></i>
-                                <span class="menu-title">Data pesan</span>
-                            </a>
-                            <!--Submenu-->
-                        </li>
-                    <?php } ?>
 
 
 

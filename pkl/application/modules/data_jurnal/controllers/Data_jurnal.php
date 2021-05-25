@@ -23,6 +23,8 @@ class Data_jurnal extends MX_Controller {
 
         	'filter_dudi'		=> $this->m_data_jurnal->filter_dudi(),
         	'tampil'       => $this->m_data_jurnal->tampil(),
+            
+
         );
         echo Modules::run('template/tampilCore', $data);
     }
@@ -78,6 +80,8 @@ class Data_jurnal extends MX_Controller {
     		'tampil_detail'		=> $this->m_data_jurnal->tampil_detail($idd),
     		'tampil_data'		=> $this->m_data_jurnal->tampil_data($idd),
             'dd'       => $this->m_data_jurnal->tampil_dudi(),
+            'tes'             => $this->m_data_jurnal->chartselasa(),
+             'isi'             => $this->m_data_jurnal->isi($idd),
 
 
     	);

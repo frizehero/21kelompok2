@@ -10,10 +10,37 @@ class M_data_dashboard extends CI_Model {
  function hitsi()
 	{
 		
-		$this->db->select_sum('id_siswa')
+		$this->db->select('*')
 		->from('siswa');
 		$query = $this->db->get();
-		return $query->result();
+		return $query->num_rows();
+
+	}
+	function hitdudi()
+	{
+		
+		$this->db->select('*')
+		->from('dudi');
+		$query = $this->db->get();
+		return $query->num_rows();
+
+	}
+	function hitjurusan()
+	{
+		
+		$this->db->select('*')
+		->from('jurusan');
+		$query = $this->db->get();
+		return $query->num_rows();
+
+	}
+	function hitkelas()
+	{
+		
+		$this->db->select('*')
+		->from('kelas');
+		$query = $this->db->get();
+		return $query->num_rows();
 
 	}
 
@@ -91,5 +118,44 @@ class M_data_dashboard extends CI_Model {
 	{
 		$cari 		= $this->input->post('cari');
 		return $this->db->like('judul_pengumuman',$cari)->get('pengumuman')->result();
+	}
+
+
+
+	function chartsenin()
+	{
+		$query = $this->db->query("SELECT * FROM jurnal WHERE WEEKDAY(CONCAT(tanggal)) BETWEEN 0 AND 0 AND WEEK(CONCAT(tanggal)) = WEEK(now()) GROUP BY id_jurnal");
+
+		return $query->num_rows();
+	}
+
+	function chartselasa()
+	{
+		$query = $this->db->query("SELECT * FROM jurnal WHERE WEEKDAY(CONCAT(tanggal)) BETWEEN 1 AND 1 AND WEEK(CONCAT(tanggal)) = WEEK(now()) GROUP BY id_jurnal");
+		return $query->num_rows();
+	}
+
+	function chartrabu()
+	{
+		$query = $this->db->query("SELECT * FROM jurnal WHERE WEEKDAY(CONCAT(tanggal)) BETWEEN 2 AND 2 AND WEEK(CONCAT(tanggal)) = WEEK(now()) GROUP BY id_jurnal");
+		return $query->num_rows();
+	}
+
+	function chartkamis()
+	{
+		$query = $this->db->query("SELECT * FROM jurnal WHERE WEEKDAY(CONCAT(tanggal)) BETWEEN 3 AND 3 AND WEEK(CONCAT(tanggal)) = WEEK(now()) GROUP BY id_jurnal");
+		return $query->num_rows();
+	}
+
+	function chartjumat()
+	{
+		$query = $this->db->query("SELECT * FROM jurnal WHERE WEEKDAY(CONCAT(tanggal)) BETWEEN 4 AND 4 AND WEEK(CONCAT(tanggal)) = WEEK(now()) GROUP BY id_jurnal");
+		return $query->num_rows();
+	}
+
+	function chartsabtu()
+	{
+		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 5 AND 5 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now()) GROUP BY id_siswa");
+		return $query->num_rows();
 	}
 }

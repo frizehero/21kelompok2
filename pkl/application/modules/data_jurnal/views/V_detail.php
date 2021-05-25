@@ -112,7 +112,7 @@
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <p class="text-2x mar-no text-semibold">958</p>
+                                    <p class="text-2x mar-no text-semibold"><?php echo $isi?></p>
                                     <p class="mar-no">Telah Mengisi Jurnal</p>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <p class="text-2x mar-no text-semibold">5</p>
+                                    <p class="text-2x mar-no text-semibold"><?php echo $tes?></p>
                                     <p class="mar-no">Tidak Mengisi Jurnal</p>
                                 </div>
                             </div>
@@ -173,7 +173,7 @@
                               </div>
 
                           </div>
-                          <p><?php echo $res->kegiatan?> </p>
+                          <p ><?php echo $res->kegiatan?> </p>
 
                           <div class="comment-content comment-photos row">
                             <div class="col-sm-12">
