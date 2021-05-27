@@ -37,7 +37,7 @@
              </div>
              <?php foreach($tampil as $res) {
                 ?>
-             <div class="col-sm-4 col-md-3">
+             <div style="margin-top: -20px" class="col-sm-4 col-md-3">
 
 
                <!-- Contact Widget -->

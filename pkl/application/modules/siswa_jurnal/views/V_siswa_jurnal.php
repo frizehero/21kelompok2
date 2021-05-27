@@ -110,7 +110,7 @@
                 </div>
               </div>
               <div class="media-body">
-                <p class="text-2x mar-no text-semibold">958</p>
+                <p class="text-2x mar-no text-semibold"><?php echo $hitung?></p>
                 <p class="mar-no">Telah Mengisi Jurnal</p>
               </div>
             </div>

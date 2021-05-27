@@ -64,7 +64,8 @@ class M_siswa_jurnal extends CI_Model {
 			$query = $this->db->get('jurnal');
 			return $query->num_rows();
 	}
-	function tampil_data($datasiswa,$start,$limit)
+	
+	function tampil_data($limit,$start,$datasiswa)
 	{
 		
 		$this->db->select('*')

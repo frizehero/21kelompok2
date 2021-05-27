@@ -186,18 +186,18 @@ class M_data_jurnal extends CI_Model {
 
 
 
-	function chartsenin()
-	{
-		$query = $this->db->query("SELECT * FROM jurnal WHERE WEEKDAY(CONCAT(tanggal)) BETWEEN 0 AND 0 AND WEEK(CONCAT(tanggal)) = WEEK(now()) GROUP BY id_siswa");
+	// function chartsenin()
+	// {
+	// 	$query = $this->db->query("SELECT * FROM jurnal WHERE WEEKDAY(CONCAT(tanggal)) BETWEEN 0 AND 0 AND WEEK(CONCAT(tanggal)) = WEEK(now()) GROUP BY id_siswa");
 
-		return $query->num_rows();
-	}
+	// 	return $query->num_rows();
+	// }
 
-	function chartselasa()
-	{
-		$query = $this->db->query("SELECT * FROM jurnal WHERE WEEKDAY(CONCAT(create_at)) BETWEEN 1 AND 1 AND WEEK(CONCAT(create_at)) = WEEK(now()) GROUP BY id_siswa");
-		return $query->num_rows();
-	}
+	// function chartselasa()
+	// {
+	// 	$query = $this->db->query("SELECT * FROM jurnal WHERE_NOT_IN (tanggal)");
+	// 	return $query->num_rows();
+	// }
 	function isi($idd)
 	{
 			return $this->db->from('jurnal')
