@@ -23,6 +23,16 @@ class M_data_jurnal extends CI_Model {
 			return $query->num_rows();
 
 	}
+	function tampild($a)
+	{
+		$ee=25;
+		$this->db->select('*')
+			->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
+			->where('dudi.id_dudi',$a);
+			$query = $this->db->get('siswa');
+			return $query->row_array();
+	}
+
 	function cari_tgl($awl,$akr,$idid)
 	{
       // return $this->db->query("SELECT * FROM jurnal WHERE tanggal between '$awl' AND '$akr' ORDER BY tanggal ASC");

@@ -64,7 +64,7 @@ class M_siswa_jurnal extends CI_Model {
 			$query = $this->db->get('jurnal');
 			return $query->num_rows();
 	}
-	
+
 	function tampil_data($limit,$start,$datasiswa)
 	{
 		
@@ -76,13 +76,22 @@ class M_siswa_jurnal extends CI_Model {
 	}
 	function tampil_dudi($a)
 	{
-		$w=25;
 		 $this->db->from('siswa')
 		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
 		->where('siswa.id_dudi',$a);
 		$query = $this->db->get();
 		return $query->result();
 	}
+	function tampild($a)
+	{
+		$ee=25;
+		$this->db->select('*')
+			->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
+			->where('dudi.id_dudi',$a);
+			$query = $this->db->get('siswa');
+			return $query->row_array();
+	}
+
 
 
 	function tambah()

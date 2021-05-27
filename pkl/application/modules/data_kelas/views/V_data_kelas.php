@@ -51,10 +51,10 @@
                 <option>
                   Pilih Jurusan
                 </option>
-                <option  value="1">Rekasaya Perangkat Lunak
+                <?php foreach ($filter_jurusan as $ee) {?>
+                <option  value="<?php echo $ee->id_jurusan?>"><?php echo $ee->nama?>
                 </option>
-                <option  value="2">Teknik Komputer Jaringan
-                </option>
+                <?php }?>
               </select>
             </div>
             <div class="col-md-6" >

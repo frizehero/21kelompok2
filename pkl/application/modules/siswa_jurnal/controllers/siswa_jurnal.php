@@ -57,6 +57,7 @@ class siswa_jurnal extends MX_Controller {
 			'tampil'		=> $this->m_siswa_jurnal->tampil($datasiswa),
 			'tampil_data'	=> $this->m_siswa_jurnal->tampil_data($config["per_page"], $data['page'],$datasiswa),
 			'hitung' 		=> $this->m_siswa_jurnal->hitung($datasiswa),
+            'tampid'       => $this->m_siswa_jurnal->tampild($datasiswa),
 
 			'pagination' 	=> $this->pagination->create_links(),
 
