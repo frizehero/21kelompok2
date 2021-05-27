@@ -29,7 +29,11 @@
       <div class="nano">
         <div class="nano-content">
           <p class="pad-all text-main text-sm text-uppercase text-bold">
-            Siswa Yang  PKL di Hummasoft
+            <?php
+           $a=$tampil['id_dudi'];
+           $ass= $this->m_siswa_jurnal->tampild($a);
+           ?>
+            Siswa Yang  PKL di <?php echo $ass['nama_dudi'] ?>
           </p>
 
           <!--Family-->
