@@ -232,10 +232,18 @@
               <label for="" class="control-label">Foto :</label>
               <input type="file" name="gambar" placeholder="Logo " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
             </div>
-            <div class="col-md-6" style="margin-top: 2%">
+            <div class="col-md-6" >
               <label for="" class="control-label">DU/DI :</label>
-              <textarea type="text" name="dudi" rows="5" placeholder="dudi" class="form-control"></textarea>
-            </div>
+              <select class="form-control" name="dudi">
+                <option>
+                  Tempat Du/Di
+                </option>
+                <?php foreach ($tampil_dudi as $i) {?>
+                  <option  value="<?php echo $i->id_dudi?>"><?php echo $i->nama_dudi;?>
+                </option>
+              <?php }?>   
+            </select>
+          </div>
             <div class="col-md-6 " style="margin-top: 2%">
               <label for="" class="control-label">Preview Foto Profile</label>
               <img id="preview" width="150px" />

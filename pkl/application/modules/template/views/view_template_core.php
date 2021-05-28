@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Hummagang</title>
+    <title>Prakerin</title>
 
 
     <!--STYLESHEET-->
@@ -179,7 +179,7 @@ html, body { width:100%;padding:0;margin:0; }
                 <!--================================-->
                 <div class="navbar-header">
                     <a href="index.html" class="navbar-brand">
-                        <img src="<?php echo base_url(); ?>assets/login/pages/img/login/logo7.png" alt="Nifty Logo" class="brand-icon">
+                        <img src="<?php echo base_url(); ?>assets/login/pages/img/login/22.png" alt="Nifty Logo" class="brand-icon">
                         <div class="brand-title">
                             <span class="brand-text">Hummagang</span>
                         </div>
