@@ -59,9 +59,9 @@
             </div>
             <div class="col-md-6" >
               <label for="" class="control-label">Foto :</label>
-              <input type="file" name="gambar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
+              <input type="file" name="Gambarbar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
             </div>
-            <div class="col-md-6 " style="margin-top: 2%">
+            <div class="col-md-6 " >
               <label for="" class="control-label">Preview Foto Profile</label>
               <img id="preview" width="150px" />
             </div>
@@ -232,25 +232,23 @@
       <div class="modal-header"></div>
       <!--Modal body-->
       <div class="panel">
-        <div class="panel-body">
-          <p class="text-main text-bold mar-no">Edit foto sampul</p>
+         <div class="panel-head" style="margin-left: 20px">
+           <h4 class="text-main text-bold mar-no">Edit foto sampul</h4>
           <p>masukan foto yang anda pilih</p>
-
           <br>
-
-          <!--Dropzonejs-->
-          <!--===================================================-->
+         </div>
+        <div class="panel-body">
+          <div class="col-md-6 " style="margin-top: 2%">
           <?= form_open_multipart('data_kelas/edit_sampul'); ?>
-
           <input type="hidden" name="id_kelas" value="<?php echo $res->id_kelas?>">
-
-
-          <input name="foto" type="file"  multiple>
-
-          <!--===================================================-->
-          <!-- End Dropzonejs -->
-
+          <input type="file" name="foto" placeholder="Logo " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
+          </div>
+          <div class="col-md-6 " >
+              <label for="" class="control-label">Preview Foto Profile</label>
+              <img id="preview" width="150px" />
+            </div>
         </div>
+
       </div>
 
       <!--Modal footer-->
