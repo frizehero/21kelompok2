@@ -107,6 +107,26 @@ class Data_kelas extends MX_Controller {
 		$this->m_data_kelas->tambah_siswa();
 		redirect('data_kelas/detail_kelas/'.$id);
 	}
+	function tambah_siswaa()
+	{
+		$id=$_GET['id'];
+		// $this->m_data_kelas->tambah_siswa();
+		// redirect('data_kelas/detail_kelas/'.$id);
+		$data = array(
+			'namamodule' 	=> "data_kelas",
+			'namafileview' 	=> "V_tambah",
+			'tampil_detail'		=> $this->m_data_kelas->tampil_detail($id),
+			'tampil_dudi'		=> $this->m_data_kelas->tampil_dudi(),
+
+
+			// 'filter_jurusan'		=> $this->m_data_kelas->filter_jurusan(),
+			// 'tampil'		=> $this->m_data_kelas->tampil(),
+			
+			
+
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
 
 	function filter()
 	{

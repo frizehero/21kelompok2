@@ -126,6 +126,9 @@ class M_data_kelas extends CI_Model {
 		$masuk_p            = $this->input->post('masuk_p');
 		$keluar_p           = $this->input->post('keluar_p');
 		$kelas              = $this->input->post('kelas');
+		$email              = $this->input->post('email');
+		$telepon            = $this->input->post('telepon');
+		$alamat				= $this->input->post('alamat');
 
 		$this->load->library('upload');
 		$nmfile = "file_".time();
@@ -151,6 +154,9 @@ class M_data_kelas extends CI_Model {
 					'masuk_p'               => $masuk_p,
 					'keluar_p'              => $keluar_p,
 					'id_kelas'              => $kelas,
+					'no_telepon'			=> $telepon,
+					'email'					=> $email,
+					'alamat'				=> $alamat,
 					'logo' 					=> $gbr['file_name'],
 
 				);
@@ -167,6 +173,9 @@ class M_data_kelas extends CI_Model {
 				'masuk_p'               => $masuk_p,
 			    'keluar_p'              => $keluar_p,
 			    'id_kelas'              => $kelas,
+			    'no_telepon'			=> $telepon,
+				'email'					=> $email,
+				'alamat'				=> $alamat,
 				'logo' 				=> 'kosong1.png',
 			);
 			$this->db->insert('siswa', $data);
