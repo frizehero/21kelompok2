@@ -9,23 +9,39 @@
   <div class="row">
     <div class="col-lg-6">
 
+
       <!--Network Line Chart-->
       <!--===================================================-->
       <div id="demo-panel-network" class="panel">
         <div class="panel-heading">
-          <div class="panel-control">
-            <button id="demo-panel-network-refresh" class="btn btn-default btn-active-primary" data-toggle="panel-overlay" data-target="#demo-panel-network"><i class="demo-psi-repeat-2"></i></button>
-            <div class="dropdown">
-              <button class="dropdown-toggle btn btn-default btn-active-primary" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical"></i></button>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </div>
-          </div>
+          
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+var xValues = ["Januari", "Februari", "Maret", "April", "Mei"];
+var yValues = [55, 49, 44, 24, 15];
+var barColors = ["red", "green","blue","orange","brown"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Chart Pengisian Jurnal Perbulan"
+    }
+  }
+});
+</script>
+    
           <h3 class="panel-title">Chart Pengisian Jurnal Perhari</h3>
         </div>
 

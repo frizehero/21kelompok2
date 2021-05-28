@@ -213,7 +213,7 @@
                             <form>
                               <div class="form-group col-md-6">
                                 <label for="inputEmail4">Kegiatan</label><br>
-                                <textarea name="kegiatan"><?php echo $res->kegiatan ?></textarea>
+                                <textarea style="width: 100%; height: 150px" name="kegiatan"><?php echo $res->kegiatan ?></textarea>
                                 <input type="hidden" value="<?php echo date('y-m-d')?>" name="tanggal">
                               </div>
 
