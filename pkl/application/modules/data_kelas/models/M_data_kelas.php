@@ -29,6 +29,23 @@ class M_data_kelas extends CI_Model {
 		$query = $this->db->get();
 		return $query->row_array();
 	}
+	function tampil_edit($id)
+	{
+		$this->db->select('*')
+		->from('siswa')
+	
+		->where('id_siswa',$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+	function user($id)
+	{
+		$this->db->select('*')
+		->from('tb_login')
+		->where('id_siswa',$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
 	function tampil_data($id)
 	{
 		return $this->db->from('siswa')
@@ -281,11 +298,20 @@ class M_data_kelas extends CI_Model {
 	function edit_siswa()
 	{	
 		$id_siswa			= $this->input->post('id_siswa');
+
+
 		$nama_siswa 		= $this->input->post('nama_siswa');
 		$nisn 				= $this->input->post('nisn');
 		$jenis_kelamin 		= $this->input->post('jenis_kelamin');
 		$dudi 				= $this->input->post('dudi');
+		$masuk_p            = $this->input->post('masuk_p');
+		$keluar_p           = $this->input->post('keluar_p');
 		$kelas              = $this->input->post('kelas');
+		$email              = $this->input->post('email');
+		$telepon            = $this->input->post('telepon');
+		$alamat				= $this->input->post('alamat');
+		$gelombang			= $this->input->post('gelombang');
+
 
 
 		$this->load->library('upload');
@@ -308,9 +334,16 @@ class M_data_kelas extends CI_Model {
 					'nama_siswa'			=> $nama_siswa,
 					'nisn'					=> $nisn,
 					'jenis_kelamin'			=> $jenis_kelamin,
-					'dudi'					=> $dudi,
+					'id_dudi'				=> $dudi,
+					'masuk_p'               => $masuk_p,
+					'keluar_p'              => $keluar_p,
 					'id_kelas'              => $kelas,
+					'no_telepon'			=> $telepon,
+					'email'					=> $email,
+					'alamat'				=> $alamat,
+					'gelombang'				=> $gelombang,
 					'logo' 					=> $gbr['file_name'],
+
 
 				);
 				$this->db->where('id_siswa',$id_siswa)->update('siswa', $data);
@@ -322,8 +355,15 @@ class M_data_kelas extends CI_Model {
 				'nama_siswa'			=> $nama_siswa,
 					'nisn'					=> $nisn,
 					'jenis_kelamin'			=> $jenis_kelamin,
-					'dudi'					=> $dudi,
+					'id_dudi'				=> $dudi,
+					'masuk_p'               => $masuk_p,
+					'keluar_p'              => $keluar_p,
 					'id_kelas'              => $kelas,
+					'no_telepon'			=> $telepon,
+					'email'					=> $email,
+					'alamat'				=> $alamat,
+					'gelombang'				=> $gelombang,
+
 			);
 			$this->db->where('id_siswa',$id_siswa)->update('siswa', $data);
 		}
