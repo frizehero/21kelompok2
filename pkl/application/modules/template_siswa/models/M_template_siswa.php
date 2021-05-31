@@ -47,6 +47,15 @@ class M_template_siswa extends CI_Model {
 		return $query;
 	}
 
+	function oke($id)
+	{
+		$this->db->select('*')
+			->join('tb_login', 'tb_login.id_siswa = siswa.id_siswa')
+			->where('tb_login.id_siswa',$id);
+			$query = $this->db->get('siswa');
+			return $query->row_array();
+	}
+
 	function getLimitProfile($id_p){
 		$this->db->select('*')
 				 ->from('tb_profile')
