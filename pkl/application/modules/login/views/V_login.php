@@ -42,16 +42,16 @@
         <div class="user-login-5">
             <div class="row bs-reset">
                 <div class="col-md-6 bs-reset mt-login-5-bsfix">
-                    <div class="login-bg" style="background-image:url(<?php echo base_url(); ?>assets/login/pages/img/login/1.jpg)">
+                    <div class="login-bg" style="background-image:url(<?php echo base_url(); ?>assets/login/pages/img/login/d.jpg)">
                         </div>
                 </div>
                 <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
                     <div class="col-md-12">
-                        <img class="login-logo" src="<?php echo base_url(); ?>assets/login/pages/img/login/magang1.png" style="width:200px"/> 
+                        <img class="login-logo" src="<?php echo base_url(); ?>assets/login/pages/img/login/a.png" style="width:300px"/> 
                     </div>
                     <div class="login-content">
                         <h1> Prakerin-2021 </h1>
-                        <p> Selamat datang di Prakerin , silahkan login terlebih dahulu sebelum melanjutkan ke halaman dasboard . </p>
+                        <p> Selamat datang di Prakerin, silahkan login terlebih dahulu sebelum melanjutkan ke halaman beranda. </p>
                         <?php if($cekAdmin){ 
                         
                      }
@@ -253,10 +253,10 @@
 
                     // init background slide images
                     $('.login-bg').backstretch([
-                        "<?php echo base_url(); ?>assets/login/pages/img/login/1.jpg",
-                        "<?php echo base_url(); ?>assets/login/pages/img/login/2.jpg",
-                        "<?php echo base_url(); ?>assets/login/pages/img/login/3.jpg",
-                        "<?php echo base_url(); ?>assets/login/pages/img/login/4.jpg",
+                        "<?php echo base_url(); ?>assets/login/pages/img/login/d.jpg",
+                        "<?php echo base_url(); ?>assets/login/pages/img/login/a.jpg",
+                        "<?php echo base_url(); ?>assets/login/pages/img/login/dd.jpg",
+                        "<?php echo base_url(); ?>assets/login/pages/img/login/ddd.jpg",
                         "<?php echo base_url(); ?>assets/login/pages/img/login/5.jpg"
                         ], {
                           fade: 1000,

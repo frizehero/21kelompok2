@@ -148,9 +148,9 @@
                 <!--================================-->
                 <div class="navbar-header">
                     <a href="index.html" class="navbar-brand">
-                        <img src="<?php echo base_url(); ?>assets/login/pages/img/login/logo7.png" alt="Nifty Logo" class="brand-icon">
+                        <img src="<?php echo base_url(); ?>assets/login/pages/img/login/c.png" alt="Nifty Logo" class="brand-icon">
                         <div class="brand-title">
-                            <span class="brand-text">Hummagang</span>
+                            <span style="margin-left: 10px" class="brand-text">Prakerin</span>
                         </div>
                     </a>
                 </div>
@@ -462,16 +462,18 @@
                             <div id="mainnav-profile" class="mainnav-profile">
 
 
-                             <div class="profile-wrap text-center">
+                               <div class="profile-wrap text-center">
                                 <div class="pad-btm">
-                                    <img class="img-circle img-md" src="<?php echo base_url ()?>assets/img/<?php echo $nama['logo']?>" alt="Profile Picture">
+                                    <a href="">
+                                        <img class="img-circle img-md" src="<?php echo base_url ()?>assets/img/<?php echo $nama['logo']?>" alt="Profile Picture">
+                                    </a>
                                 </div>
                                 <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
                                     <span class="pull-right dropdown-toggle">
                                         <i class="dropdown-caret"></i>
                                     </span>
-                                    <p class="mnp-name"><?php echo $nama['nama_siswa'] ; ?></p>
-                                    <span class="mnp-desc"><?php echo $email['email']; ?></span>
+                                    <p class="text-center mnp-name"><?php echo $nama['nama_siswa'] ; ?></p>
+                                    <span class="text-center mnp-desc"><?php echo $email['nisn']; ?></span>
                                 </a>
                             </div>
 
@@ -571,10 +573,10 @@
                       <li class=" <?=$this->uri->segment('1') == 'siswa_jurnal' || $this->uri->segment(1) == 'siswa_cetak' ? "active-sub" : ''?>">
                         <a href="">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">
-  <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z"/>
-  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
-  <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
-</svg>
+                              <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z"/>
+                              <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                              <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                          </svg>
                           <span class="menu-title" style="margin-left: 10px">Data</span>
                           <i class="arrow"></i>
                       </a>
@@ -644,16 +646,16 @@
     <!-- Visible when footer positions are static -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="hide-fixed pull-right pad-rgt">
-       Hummasoft Technologhy
-   </div>
+     Hummasoft Technologhy
+ </div>
 
 
 
-   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-   <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
-   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+ <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-   <p class="pad-lft">&#0169; 2019 HummaPOS</p>
+ <p class="pad-lft">&#0169; 2019 HummaPOS</p>
 
 
 
