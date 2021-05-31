@@ -75,6 +75,61 @@ class M_siswa_dashboard extends CI_Model {
 		
 	}
 
+	function jan($data_siswa)
+	{
+		$this->db->select('*')
+		->where('DATE_FORMAT(tanggal,"%m")',1)
+		->like('DATE_FORMAT(tanggal,"%y")',date('y'))
+		->where('id_siswa',$data_siswa);
+		$query = $this->db->get('jurnal');
+		return $query->num_rows();	
+	}
+	function feb($data_siswa)
+	{
+		$this->db->select('*')
+		->where('DATE_FORMAT(tanggal,"%m")',2)
+		->like('DATE_FORMAT(tanggal,"%y")',date('y'))
+		->where('id_siswa',$data_siswa);
+		$query = $this->db->get('jurnal');
+		return $query->num_rows();	
+	}
+	function mar($data_siswa)
+	{
+		$this->db->select('*')
+		->where('DATE_FORMAT(tanggal,"%m")',3)
+		->like('DATE_FORMAT(tanggal,"%y")',date('y'))
+		->where('id_siswa',$data_siswa);
+		$query = $this->db->get('jurnal');
+		return $query->num_rows();	
+	}
+	function apr($data_siswa)
+	{
+		$this->db->select('*')
+		->where('DATE_FORMAT(tanggal,"%m")',4)
+		->like('DATE_FORMAT(tanggal,"%y")',date('y'))
+		->where('id_siswa',$data_siswa);
+		$query = $this->db->get('jurnal');
+		return $query->num_rows();	
+	}
+	function mei($data_siswa)
+	{
+		$this->db->select('*')
+		->where('DATE_FORMAT(tanggal,"%m")',5)
+		->like('DATE_FORMAT(tanggal,"%y")',date('y'))
+		->where('id_siswa',$data_siswa);
+		$query = $this->db->get('jurnal');
+		return $query->num_rows();	
+	}
+	function juni($data_siswa)
+	{
+		$this->db->select('*')
+		->where('DATE_FORMAT(tanggal,"%m")',6)
+		->like('DATE_FORMAT(tanggal,"%y")',date('y'))
+		->where('id_siswa',$data_siswa);
+		$query = $this->db->get('jurnal');
+		return $query->num_rows();	
+	}
+
 	function hapus($id)
 	{
 		$this->db->where('id_pengumuman', $id)->delete('pengumuman');

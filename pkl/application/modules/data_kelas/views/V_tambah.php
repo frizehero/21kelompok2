@@ -60,9 +60,11 @@
 									</div>
 
 									<div style="margin-bottom: 20px" class="col-sm-6">
+										<label>Tanggal Masuk PKL</label>
 										<input name="masuk_p" type="date" placeholder="Telepon" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
 									<div style="margin-bottom: 20px" class="col-sm-6">
+										<label>Tanggal Keluar PKL</label>
 										<input name="keluar_p" type="date" placeholder="nama pembimbing" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
 

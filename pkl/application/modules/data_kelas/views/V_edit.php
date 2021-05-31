@@ -68,6 +68,7 @@
 
 									<div style="margin-bottom: 20px" class="col-sm-6">
 										<input name="username" type="text"value="<?php echo $e['username'];?>" class="form-control input-lg" id="demo-is-inputlarge">
+										<input type="hidden" value="2" name="level">
 									</div>
 									<div style="margin-bottom: 20px" class="col-sm-6">
 										<input name="password" type="text" value="<?php echo $e['password'];?>" class="form-control input-lg" id="demo-is-inputlarge">

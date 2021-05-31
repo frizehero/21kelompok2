@@ -20,6 +20,12 @@ class Siswa_dashboard extends MX_Controller {
 			'namamodule' 	=> "Siswa_dashboard",
 			'namafileview' 	=> "V_siswa_dashboard",
 			'tampil'		=> $this->M_siswa_dashboard->tampil($data_siswa),
+			'jan'		=> $this->M_siswa_dashboard->jan($data_siswa),
+			'feb'		=> $this->M_siswa_dashboard->feb($data_siswa),
+			'mar'		=> $this->M_siswa_dashboard->mar($data_siswa),
+			'apr'		=> $this->M_siswa_dashboard->apr($data_siswa),
+			'mei'		=> $this->M_siswa_dashboard->mei($data_siswa),
+			'juni'		=> $this->M_siswa_dashboard->juni($data_siswa),
 			'tampilp'		=> $this->M_siswa_dashboard->tampilp(),
 		);
 		echo Modules::run('template_siswa/tampilCore', $data);

@@ -92,7 +92,7 @@
          <!-- Profile Details -->
          <p class="pad-top text-main text-center text-uppercase text-bold">profil siswa </p></p>
          <p><a class><strong>Nis/Nisn:</strong><?php echo $tampil['nisn'] ?></a></p>
-         <p><a class><strong>Ttgl Lahir:</strong><?php echo $tampil['tempat_tanggal_lahir'] ?></a></p>
+         
          <p><a class><strong>Agama:</strong>Islam</a></p>
          <p><a class><strong>jenis kelamin:</strong>L</a></p>
          <p><a class><strong>Alamat:</strong>Dsn.Depok kec.pule</a></p>

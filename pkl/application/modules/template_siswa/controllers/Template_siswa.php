@@ -17,6 +17,7 @@ public function index()
 	{
 		
 		$this->load->view('view_template_core_siswa');
+
 	}
 
 	public function tampilCore($data)
@@ -28,5 +29,7 @@ public function index()
 		$data['email'] = $this->m_template_siswa->oke($id);
 		
 		$this->load->view('view_template_core_siswa',$data);
+
+
 	}
 }

@@ -16,12 +16,12 @@
         <div class="panel-heading">
           
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+      <canvas style="margin-left: 14px" id="myChart" style="width:100%;max-width:600px"></canvas>
 
 <script>
-var xValues = ["Januari", "Februari", "Maret", "April", "Mei"];
-var yValues = [55, 49, 44, 24, 15];
-var barColors = ["red", "green","blue","orange","brown"];
+var xValues = ["Januari", "Februari", "Maret", "April", "Mei", "juni"];
+var yValues = [<?php echo $jan?>, <?php echo $feb?>, <?php echo $mar?>, <?php echo $apr?>, <?php echo $mei?>, <?php echo $juni?>];
+var barColors = ["red", "green","blue","orange","brown","yellow"];
 
 new Chart("myChart", {
   type: "bar",
