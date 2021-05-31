@@ -41,14 +41,30 @@ class Data_kelas extends MX_Controller {
 	}
 
 	function edit()
-	{
-		$this->m_data_kelas->edit();
+	{		$this->m_data_kelas->edit();
 		redirect('data_kelas');
 	}
 	function edit_siswa($id)
 	{
 		$this->m_data_kelas->edit_siswa();
 		redirect('data_kelas/detail_kelas/'.$id);
+	}
+	function edit_siswaa()
+	{
+		$id=$_GET['id'];
+			 	$data = array(
+			'namamodule' 	=> "data_kelas",
+			'namafileview' 	=> "V_edit",
+			'filter_jurusan'		=> $this->m_data_kelas->filter_jurusan(),
+			'tampil'		=> $this->m_data_kelas->tampil(),
+			'te'		=> $this->m_data_kelas->tampil_edit($id),
+			'e'		=> $this->m_data_kelas->user($id),
+			'tampil_dudi'		=> $this->m_data_kelas->tampil_dudi(),
+			
+			
+
+		);
+		echo Modules::run('template/tampilCore', $data);
 	}
 
 	function hapus($id)

@@ -70,7 +70,9 @@ class M_siswa_jurnal extends CI_Model {
 		
 		$this->db->select('*')
 				->join('siswa', 'siswa.id_siswa = jurnal.id_siswa')
+				->order_by('id_jurnal', 'DESC')
 			->where('siswa.id_siswa',$datasiswa);
+
 		$query = $this->db->get('jurnal',$limit, $start);
 		return $query->result();
 	}
