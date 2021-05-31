@@ -29,6 +29,8 @@ class data_dashboard extends MX_Controller {
 			'jumat'   => $this->M_data_dashboard->chartjumat(),
 			'hitungkelas'   => $this->M_data_dashboard->hitkelas(),
 			'hitungjurusan'   => $this->M_data_dashboard->hitjurusan(),
+			'hg1'   => $this->M_data_dashboard->hitgel1(),
+			'hg2'   => $this->M_data_dashboard->hitgel2(),
 
 			// 'tampil_dudi'		=> $this->M_data_dashboard->tampil_dudi(),
 		);

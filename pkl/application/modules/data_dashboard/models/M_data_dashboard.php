@@ -25,6 +25,26 @@ class M_data_dashboard extends CI_Model {
 		return $query->num_rows();
 
 	}
+	function hitgel1()
+	{
+		$i=1;
+		$this->db->select('*')
+		->from('siswa')
+		->where('gelombang',$i);
+		$query = $this->db->get();
+		return $query->num_rows();
+
+	}
+	function hitgel2()
+	{
+		$i=2;
+		$this->db->select('*')
+		->from('siswa')
+		->where('gelombang',$i);
+		$query = $this->db->get();
+		return $query->num_rows();
+
+	}
 	function hitjurusan()
 	{
 		

@@ -209,11 +209,11 @@
                     <p class="text-sm">Klik untuk melihat detail</p>
                     <ul class="list-unstyled text-center bord-top pad-top mar-no row">
                         <li class="col-xs-6">
-                            <span class="text-lg text-semibold text-main">412</span>
+                            <span class="text-lg text-semibold text-main"><?php echo $hg1?></span>
                             <p class="text-sm text-muted mar-no">Gelombang 1</p>
                         </li>
                         <li class="col-xs-6">
-                            <span class="text-lg text-semibold text-main">421</span>
+                            <span class="text-lg text-semibold text-main"><?php echo $hg2?></span>
                             <p class="text-sm text-muted mar-no">Gelombang 2</p>
                         </li>
                     </ul>

@@ -129,6 +129,7 @@ class M_data_kelas extends CI_Model {
 		$email              = $this->input->post('email');
 		$telepon            = $this->input->post('telepon');
 		$alamat				= $this->input->post('alamat');
+		$gelombang			= $this->input->post('gelombang');
 
 		$this->load->library('upload');
 		$nmfile = "file_".time();
@@ -157,6 +158,7 @@ class M_data_kelas extends CI_Model {
 					'no_telepon'			=> $telepon,
 					'email'					=> $email,
 					'alamat'				=> $alamat,
+					'gelombang'				=> $gelombang,
 					'logo' 					=> $gbr['file_name'],
 
 				);
@@ -176,6 +178,7 @@ class M_data_kelas extends CI_Model {
 			    'no_telepon'			=> $telepon,
 				'email'					=> $email,
 				'alamat'				=> $alamat,
+				'gelombang'				=> $gelombang,
 				'logo' 				=> 'kosong1.png',
 			);
 			$this->db->insert('siswa', $data);

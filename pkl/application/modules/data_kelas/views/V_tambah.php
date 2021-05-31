@@ -38,24 +38,11 @@
 							<?= form_open_multipart('data_kelas/tambah_siswa/'.$tampil_detail['id_kelas']); ?>
 								<div class="panel-body"><div class="form-group">
 
-									<div style="margin-bottom: 20px" class="col-md-9">
+									<div style="margin-bottom: 20px" class="col-md-6">
 										<input type="text" placeholder="Nama siswa" name="nama_siswa" class="form-control input-lg" id="demo-is-inputnormal">
 										<input type="hidden" value="<?php echo $tampil_detail['id_kelas']?> " name="kelas">
 									</div>
-									<div style="margin-bottom: 20px;" class="col-md-3">
-										<div class="select">
-										<select name="dudi" style="height: 48px;width: 180px;">
-											<option>Pilih Dudi</option>t
-											<?php foreach ($tampil_dudi as $tt) {?>
-											<option value="<?php echo $tt->id_dudi?>"><?php echo $tt->nama_dudi?></option>
-										<?php }?>
-					
-										</select>
-									</div></div>
-									<div style="margin-bottom: 20px" class="col-sm-6">
-										<input type="file" name="gambar" placeholder=".input-lg" class="form-control input-lg" id="demo-is-inputlarge">
-
-									</div>
+									
 									<div style="margin-bottom: 20px" class="col-sm-6">
 										<input name="nisn" type="text" placeholder="NISN" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
@@ -66,7 +53,6 @@
 									<div style="margin-bottom: 20px" class="col-sm-6">
 										<input name="telepon" type="text" placeholder="Telepon" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
-									
 
 									<div style="margin-bottom: 20px" class="col-sm-6">
 										<input name="masuk_p" type="date" placeholder="Telepon" class="form-control input-lg" id="demo-is-inputlarge">
@@ -82,11 +68,46 @@
 									<div style="margin-bottom: 20px" class="col-sm-6">
 										<input name="password" type="text" placeholder="password" class="form-control input-lg" id="demo-is-inputlarge">
 										<input type="hidden" value="2" name="level">
-									</div>	
+									</div>
 
+									<div style="margin-bottom: 20px" class="col-sm-6">
+										<input type="file" name="gambar" placeholder=".input-lg" class="form-control input-lg" id="demo-is-inputlarge">
+
+									</div>
+
+									<div style="margin-bottom: 20px;" class="col-md-2">
+										<div class="select">
+										<select name="dudi" style="height: 48px;width: 160px;">
+											<option>Pilih Dudi</option>t
+											<?php foreach ($tampil_dudi as $tt) {?>
+											<option value="<?php echo $tt->id_dudi?>"><?php echo $tt->nama_dudi?></option>
+										<?php }?>
 					
+										</select>
+									</div></div>
+
+									<div  class="col-md-2">
+										<div class="select">
+										<select name="jenis_kelamin" style="height: 48px;width: 160px;">
+											<option>Pilih Jenis Kelamin</option>
+											<option>Laki Laki</option>
+											<option>Perempuan</option>
+										</select>
+									</div>
+									</div>
+
+									<div  class="col-md-2">
+										<div class="select">
+										<select name="gelombang" style="height: 48px;width: 160px;">
+											<option>Pilih Gelombang</option>
+											<option value="1">Gelombang 1</option>
+											<option value="2">Gelombang 2</option>
+					
+										</select>
+									</div>
+									</div>
 			
-									<div style="margin-top: 20px" class="col-md-12">
+									<div style="margin-top: 20px" class="col-sm-12">
 										<textarea class="form-control" id="inputCity" name="alamat" style="height: 100px; width:100%;" placeholder="ALAMAT"></textarea>
 
 									</div>
