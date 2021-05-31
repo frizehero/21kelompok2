@@ -1,3 +1,27 @@
+<div id="page-head">
+
+  <!--Page Title-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <div id="page-title">
+    <h1 style="margin-top: -20px; margin-left: -20px" class="page-header text-overflow">Pengaturan</h1>
+
+  </div>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--End page title-->
+
+
+  <!--Breadcrumb-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <ol style="margin-bottom: 20px; margin-left: -20px" class="breadcrumb">
+    <li><a href="index.html"><i class="demo-pli-home"></i></a></li>
+    <li class="active">Pengaturan</li>
+
+  </ol>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--End breadcrumb-->
+    
+</div>
+
 <div id="page-content">
 
  <div class="row">
@@ -35,7 +59,7 @@
               <input name="baru" type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukan Ulang Password Baru">
               <small id="emailHelp" class="form-text text-muted">Samakan Password Baru</small>
             </div>
-            <button type="submit" class="btn btn-primary" style="margin-left: 1000px">Simpan</button>
+            <button type="submit" class="btn btn-primary" style="margin-left: 950px">Simpan</button>
           </form>
           <?= form_close(); ?>
         </div>

@@ -22,7 +22,12 @@
   </ol>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End breadcrumb-->
+  <div class="panel">
+  	<div class="col-sm-6 toolbar-left">
+  		<input class="btn btn-purple" class="form-control" type="button" value="Kembali" onclick="history.back(-1)" />
 
+  	</div>
+  </div>
 </div>
 					
 					<div class="col-lg-12">

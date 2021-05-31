@@ -23,9 +23,9 @@
 
 <div class="row pad-btm">
   <div class="col-sm-6 toolbar-left">
-    <!-- <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">tambah</button> -->
-    <a class="btn btn-purple" href="<?php echo base_url('data_kelas/tambah_siswaa/')?>?id=<?php echo $tampil_detail['id_kelas']?>">Tambah</a>
-  </div>
+      <input class="btn btn-purple" class="form-control" type="button" value="Kembali" onclick="history.back(-1)" />
+      <a class="btn btn-purple" href="<?php echo base_url('data_kelas/tambah_siswaa/')?>?id=<?php echo $tampil_detail['id_kelas']?>">Tambah</a>
+    </div>
   <!-- <?= form_open_multipart('data_kelas/tambah_siswa/'.$tampil_detail['id_kelas']); ?>
 
   <input type="hidden" value="<?php echo $tampil_detail['id_kelas']?>" name="kelas"> -->
