@@ -54,6 +54,8 @@ class M_data_jurnal extends CI_Model {
 
 		$this->db->select('*')
 				 ->from('siswa')
+				 ->join('kelas', 'kelas.id_kelas = siswa.id_kelas')
+				 ->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
 				 ->where('id_siswa',$id);
 		$query = $this->db->get();
 		return $query->row_array();

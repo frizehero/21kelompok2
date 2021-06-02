@@ -75,33 +75,7 @@ new Chart("myChart", {
 
             </div>
 
-            <div class="col-lg-4">
-              <p class="text-uppercase text-semibold text-main">Informasi Jurnal</p>
-              <ul class="list-unstyled">
-                <li class="pad-btm">
-                  <div class="clearfix">
-                    <p class="pull-left mar-no">Siswa mengisi</p>
-                    <p class="pull-right mar-no">70%</p>
-                  </div>
-                  <div class="progress progress-sm">
-                    <div class="progress-bar progress-bar-info" style="width: 70%;">
-                      <span class="sr-only">70% Complete</span>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="clearfix">
-                    <p class="pull-left mar-no">Siswa belum mengisi</p>
-                    <p class="pull-right mar-no">10%</p>
-                  </div>
-                  <div class="progress progress-sm">
-                    <div class="progress-bar progress-bar-primary" style="width: 10%;">
-                      <span class="sr-only">10% Complete</span>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+            
           </div>
         </div>
 

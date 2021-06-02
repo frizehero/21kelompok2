@@ -3,9 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_siswa_pengaturan extends CI_Model {
 
-	function tampil()
+	function tampil($data_siswa)
 	{
-		return $this->db->get('tb_login')->result();
+		 $this->db->select('*')
+			->join('tb_login', 'tb_login.id_siswa = siswa.id_siswa')
+			->where('tb_login.id_siswa',$data_siswa);
+			$query = $this->db->get('siswa');
+			return $query->row_array();
 	}
 
 	function tambah()
@@ -31,17 +35,18 @@ class M_siswa_pengaturan extends CI_Model {
 		
 	}
 
-	function edit($data_siswa)
+	function edit()
 	{
 		
-		$baru = sha1($this->input->post('baru'));
-		
-
-				$data = array(
-					
-					'password'		=> $baru,
+		$id = $this->input->post('id');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$password1 					= sha1($password);
+		$data = array(
+					'username'		=> $username,
+					'password'		=> $password1,
 				);
-				$this->db->where('id_siswa',$data_siswa)->update('tb_login', $data);
+				$this->db->where('id_admin',$id)->update('tb_login', $data);
 		
 	}
 	

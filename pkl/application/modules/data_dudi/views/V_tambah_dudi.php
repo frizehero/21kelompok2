@@ -39,10 +39,11 @@
 								<div class="panel-body"><div class="form-group">
 
 									<div style="margin-bottom: 20px" class="col-sm-9">
-										<input type="text" placeholder="Nama Dudi" name="nama_dudi" class="form-control input-lg" id="demo-is-inputnormal">
+										<input required="" type="text" placeholder="Nama Dudi" name="nama_dudi" class="form-control input-lg" id="demo-is-inputnormal">
 									</div>
 									<div style="margin-bottom: 20px" class="col-sm-3"><div class="select">
-										<select name="jurusan_dudi" style="height: 48px">
+										<select required name="jurusan_dudi" style="height: 48px">
+											<option value="">Pilih Dudi</option>
 											<option value="1">RPL</option>
 											<option value="2">TKJ</option>
 											<option value="3">TKRO</option>
@@ -50,12 +51,12 @@
 										</select>
 									</div></div>
 									<div style="margin-bottom: 20px" class="col-sm-6">
-										<input type="file" name="gambar" placeholder=".input-lg" class="form-control input-lg" id="demo-is-inputlarge">
+										<input required="" type="file" name="gambar" placeholder=".input-lg" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
 									<div style="margin-bottom: 20px" class="col-sm-6">
-										<input name="email_dudi" type="text" placeholder="Email" class="form-control input-lg" id="demo-is-inputlarge">
+										<input required="" name="email_dudi" type="text" placeholder="Email" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
-									<input type="hidden" name="lon" id="lon" size=12 value="" class="form-control" id="inputCity">
+									<input required="" type="hidden" name="lon" id="lon" size=12 value="" class="form-control" id="inputCity">
 
 
 									<input type="hidden" name="lat" id="lat" size=12 value=""

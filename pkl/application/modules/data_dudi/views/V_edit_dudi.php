@@ -29,7 +29,7 @@
 										<input type="file" name="gambar" placeholder=".input-lg" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
 									<div style="margin-bottom: 20px" class="col-sm-6">
-										<input name="email_dudi" type="text" value="<?php echo $tampil['email']?>" placeholder="Email" class="form-control input-lg" id="demo-is-inputlarge">
+										<input name="email_dudi" type="text" value="<?php echo $tampil['email_dudi']?>" placeholder="Email" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
 									<input type="hidden" name="lon" id="lon" size=12 value="<?php echo $tampil['lon']?>" class="form-control" id="inputCity">
 
@@ -73,7 +73,7 @@
 								<div class="panel-footer">
 									<div class="row">
 										<div>
-											<button  class="btn btn-mint" type="submit">Tambah</button>
+											<button  class="btn btn-mint" type="submit">Edit</button>
 								
 										</div>
 									</div>

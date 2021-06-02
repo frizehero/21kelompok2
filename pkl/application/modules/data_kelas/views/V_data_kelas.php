@@ -41,13 +41,13 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nama Kelas</label>
-              <input name="nama_kelas"  class="form-control" id="inputEmail4" placeholder="Nama Kelas">
+              <input required="" name="nama_kelas"  class="form-control" id="inputEmail4" placeholder="Nama Kelas">
             </div>
           </div>
           <div class="form-row">
             <div class="col-md-6">
               <label for="" class="control-label">Jurusan:</label>
-              <select class="form-control" name="jurusan">
+              <select required="" class="form-control" name="jurusan">
                 <option>
                   Pilih Jurusan
                 </option>
@@ -59,7 +59,7 @@
             </div>
             <div class="col-md-6" >
               <label for="" class="control-label">Foto :</label>
-              <input type="file" name="Gambarbar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
+              <input required="" type="file" name="gambar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
             </div>
             <div class="col-md-6 " >
               <label for="" class="control-label">Preview Foto Profile</label>
@@ -243,10 +243,7 @@
           <input type="hidden" name="id_kelas" value="<?php echo $res->id_kelas?>">
           <input type="file" name="foto" placeholder="Logo " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
           </div>
-          <div class="col-md-6 " >
-              <label for="" class="control-label">Preview Foto Profile</label>
-              <img id="preview" width="150px" />
-            </div>
+          
         </div>
 
       </div>

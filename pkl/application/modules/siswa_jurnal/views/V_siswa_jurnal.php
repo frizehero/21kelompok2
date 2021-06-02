@@ -74,39 +74,10 @@
 <div id="page-content">
   <div class="panel">
     <div class="panel-body">
-      <div class="fixed-fluid">
-        <div class="fixed-md-200 pull-sm-left fixed-right-border">
-
-          <!-- Simple profile -->
-          <div class="text-center">
-            <div class="pad-ver">
-             <img src="<?php echo base_url ()?>assets/img/<?php echo $tampil ['logo']?>" class="img-lg img-circle" alt="Profile Picture">
-           </div>
-           <h4 class="text-lg text-overflow mar-no"><?php echo $tampil['nama_siswa'] ?></h4>
-           <p class="text-sm text-muted">Rekayasa Perangkat Lunak</p>
-
-
-         </div>
-         <hr>
-
-         <!-- Profile Details -->
-         <p class="pad-top text-main text-center text-uppercase text-bold">profil siswa </p></p>
-         <p><a class><strong>Nis/Nisn:</strong><?php echo $tampil['nisn'] ?></a></p>
-         
-         <p><a class><strong>Agama:</strong>Islam</a></p>
-         <p><a class><strong>jenis kelamin:</strong>L</a></p>
-         <p><a class><strong>Alamat:</strong>Dsn.Depok kec.pule</a></p>
-         <P><a class><strong>No.HP:</strong>081295588487</a></p>
-          <p><a class><strong>Jurusan:</strong>Rekayasa Perangkat Lunak</a></p>
-          <p><a class><strong>Email:</strong>asfianggraini@gmail.com</a></p>
-
-
-
-
-        </div>
+      
         <div class="fluid">
          <div>
-          <div class="col-md-6">
+          <div class="col-md-12">
             <div class="panel panel-info panel-colorful media middle pad-all">
               <div class="media-left">
                 <div class="pad-hor">
@@ -119,23 +90,11 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="panel panel-danger panel-colorful media middle pad-all">
-              <div class="media-left">
-                <div class="pad-hor">
-                  <img height="50px" src="img/ww.png">
-                </div>
-              </div>
-              <div class="media-body">
-                <p class="text-2x mar-no text-semibold">5</p>
-                <p class="mar-no">Tidak Mengisi Jurnal</p>
-              </div>
-            </div>
-          </div>
+          
         </div>
         <div class="pad-btm">
           <?= form_open_multipart('siswa_jurnal/tambah'); ?>
-          <textarea name="jurnal" class="form-control" rows="4" placeholder="Tulis Jurnal"></textarea>
+          <textarea name="jurnal" required="" class="form-control" rows="4" placeholder="Tulis Jurnal"></textarea>
           <input type="hidden" value="<?php echo $tampil['id_siswa']?>" name="id_bang">
           <input type="hidden" value="<?php echo date('y-m-d')?>" name="tanggal">
           <div class="mar-top clearfix">
@@ -145,7 +104,7 @@
               <label for="file-input">
                 <img height="30px" src="img/kamera.png">
               </label>
-              <input type="file" id="file-input" name="foto_kegiatan">
+              <input required="" type="file" id="file-input" name="foto_kegiatan">
               <style type="text/css">
                 .image-uploud >input
                 {
@@ -172,14 +131,14 @@
             <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="<?php echo base_url ()?>assets/img/<?php echo $tampil ['logo']?>"></a>
             <div class="media-body">
               <div class="comment-header">
-                <div class="col-md-7">
+                <div class="col-md-9">
                   <a href="#" class="media-heading box-inline text-main text-semibold"></i><?php echo $res->nama_siswa?></a>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-2">
                   <span class="text-semibold text-main"><?php echo $res->tanggal?></span>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-1">
 
                  <div class="btn-group dropdown">
                    <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">

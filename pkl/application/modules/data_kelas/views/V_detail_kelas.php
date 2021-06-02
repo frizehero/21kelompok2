@@ -18,6 +18,7 @@
   </ol>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End breadcrumb-->
+  
 
 </div>
 
@@ -292,7 +293,7 @@
         <!--Modal footer-->
         <div class="modal-footer">
           <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-          <a class="btn btn-danger" href="<?php echo base_url('data_kelas/hapus_siswa/'. $res->id_siswa) ?>">Hapus Dudi</a>
+          <a class="btn btn-danger" href="<?php echo base_url('data_kelas/hapus_siswa/'. $res->id_siswa) ?>">Hapus Siswa</a>
         </div>
       </div>
     </div>

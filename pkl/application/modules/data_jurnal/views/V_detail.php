@@ -93,14 +93,12 @@
 
           <!-- Profile Details -->
           <p class="pad-top text-main text-center text-uppercase text-bold">profil siswa </p></p>
-          <p><a class><strong>Nis/Nisn:</strong><?php echo $tampil_detail['nisn'] ?></a></p>
-          <p><a class><strong>Ttgl Lahir:</strong><?php echo $tampil_detail['tempat_tanggal_lahir'] ?></a></p>
-          <p><a class><strong>Agama:</strong>Islam</a></p>
-          <p><a class><strong>jenis kelamin:</strong>L</a></p>
-          <p><a class><strong>Alamat:</strong>Dsn.Depok kec.pule</a></p>
-          <P><a class><strong>No.HP:</strong>081295588487</a></p>
-            <p><a class><strong>Jurusan:</strong>Rekayasa Perangkat Lunak</a></p>
-            <p><a class><strong>Email:</strong>asfianggraini@gmail.com</a></p>
+          <p><a class><strong>Nis: </strong><?php echo $tampil_detail['nisn'] ?></a></p>
+          <p><a class><strong>jenis kelamin: </strong></a><?php echo $tampil_detail['jenis_kelamin'] ?></p>
+          <p><a class><strong>Alamat: </strong></a><?php echo $tampil_detail['alamat'] ?></p>
+          <P><a class><strong>No.HP: </strong></a><?php echo $tampil_detail['no_telepon'] ?></p>
+          <p><a class><strong>Kelas: </strong></a><?php echo $tampil_detail['nama_kelas'] ?></p>
+          <p><a class><strong>Email: </strong></a><?php echo $tampil_detail['email'] ?></p>
 
 
 
@@ -108,11 +106,11 @@
           </div>
           <div class="fluid">
            <div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="panel panel-info panel-colorful media middle pad-all">
                 <div class="media-left">
                   <div class="pad-hor">
-                    <img height="50px" src="img/qq.png">
+                    <img height="50px" src="http://localhost/21kelompok2/pkl/img/qq.png">
                   </div>
                 </div>
                 <div class="media-body">
@@ -121,19 +119,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="panel panel-danger panel-colorful media middle pad-all">
-                <div class="media-left">
-                  <div class="pad-hor">
-                    <img height="50px" src="img/ww.png">
-                  </div>
-                </div>
-                <div class="media-body">
-                  <p class="text-2x mar-no text-semibold"><?php echo $tes?></p>
-                  <p class="mar-no">Tidak Mengisi Jurnal</p>
-                </div>
-              </div>
-            </div>
+            
           </div>
           <div class="row pad-btm">
             <?= form_open_multipart('data_jurnal/tgl'); ?>

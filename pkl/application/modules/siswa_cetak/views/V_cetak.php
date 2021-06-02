@@ -1,6 +1,7 @@
 <?php
+
             $pdf = new Pdf('L', 'mm', 'A4', true, 'UTF-8', false);
-            $pdf->SetTitle('Daftar Produk');
+            $pdf->SetTitle('Cetak Jurnal');
             $pdf->SetHeaderMargin(0);
             $pdf->SetTopMargin(20);
             $pdf->setFooterMargin(20);
@@ -9,7 +10,8 @@
             $pdf->SetDisplayMode('real', 'default');
             $pdf->AddPage();
             $i=0;
-            $html='<h3>Daftar Produk</h3>
+
+            $html='<img style="margin-bottom: 10px" src="http://localhost/21kelompok2/pkl/img/ee.png">
                     <table cellspacing="1" bgcolor="#666666" cellpadding="2">
                         <tr bgcolor="#ffffff">
                             <th width="5%" align="center">No</th>

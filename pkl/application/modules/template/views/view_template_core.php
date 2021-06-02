@@ -501,8 +501,8 @@ html, body { width:100%;padding:0;margin:0; }
                                     <span class="pull-right dropdown-toggle">
                                         <i class="dropdown-caret"></i>
                                     </span>
-                                    <p class="mnp-name">somad</p>
-                                    <span class="mnp-desc">somad@gmail.com</span>
+                                    <p class="mnp-name">admin</p>
+                                    <span class="mnp-desc">admin@gmail.com</span>
                                 </a>
                             </div>
 

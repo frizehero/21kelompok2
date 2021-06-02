@@ -21,7 +21,7 @@ class siswa_pengaturan extends MX_Controller {
 		$data = array(
 			'namamodule' 	=> "siswa_pengaturan",
 			'namafileview' 	=> "V_siswa_pengaturan",
-			'tampil'		=> $this->m_siswa_pengaturan->edit($data_siswa),
+			'tampil'		=> $this->m_siswa_pengaturan->tampil($data_siswa),
 		
 		);
 		echo Modules::run('template_siswa/tampilCore', $data);
@@ -35,7 +35,8 @@ class siswa_pengaturan extends MX_Controller {
 
 	function edit()
 	{
-		$this->m_siswa_pengaturan->edit();
+		$data_siswa=  $this->session->userdata('session_id');
+		$this->m_siswa_pengaturan->edit($data_siswa);
 		redirect('siswa_pengaturan');
 		
 	}

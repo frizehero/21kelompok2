@@ -70,25 +70,22 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Judul</label>
-            <input name="judul_pengumuman" type="text" class="form-control" id="inputEmail4" placeholder="Judul pengumuman">
+            <input required="" name="judul_pengumuman" type="text" class="form-control" id="inputEmail4" placeholder="Judul pengumuman">
           </div>
           <div class="form-group col-md-6">
             <label for="inputPassword4">Tanggal</label>
-            <input name="tanggal_pengumuman" type="date" class="form-control" id="inputPassword4">
+            <input required="" name="tanggal_pengumuman" type="date" class="form-control" id="inputPassword4">
           </div>
         </div>
         <div class="form-group">
           <label for="inputAddress">Isi pengumuman</label>
-          <textarea name="isi_pengumuman" type="text"  class="form-control" id="inputAddress"></textarea>
+          <textarea required="" name="isi_pengumuman" type="text"  class="form-control" id="inputAddress"></textarea>
         </div>
         <div class="form-row">
 
 
-          <label for="inputState">Tertuju:</label>
-          <select name="tertuju" id="inputState" class="form-control">
-            <option value="siswa" selected>siswa</option>
-            <option value="guru" >Guru</option>
-          </select>
+          
+          <input type="hidden" name="tertuju" value="siswa">
 
         </div>
       </div>
@@ -112,6 +109,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th class="text-center">nomer</th>
                         <th class="text-center">tanggal</th>
                         <th class="text-center">Judul</th>
                         <th class="text-center">Tertuju</th>
@@ -119,8 +117,10 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $no=1?>
                     <?php foreach ($tampil as $res) {?>
                     <tr>
+                         <td class="text-center"><?php echo $no?></td>
                         <td class="text-center"><?php echo $res->tanggal?></td>
                         <td class="text-center"><?php echo $res->judul_pengumuman?></td>
                         <td class="text-center"><?php echo $res->tertuju?></td>
@@ -130,6 +130,7 @@
                          <button class="btn btn-primary" data-toggle="modal" data-target="#demo-default-modal4<?php echo $res->id_pengumuman?>">Detail</button>
                       </td>
                   </tr>
+                  <?php $no++?>
               <?php }?>
               </tbody>
           </table>
@@ -162,16 +163,13 @@
         </div>
         <div class="form-group">
           <label for="inputAddress">Isi pengumuman</label>
-          <textarea name="isi_pengumuman" type="text"  class="form-control" id="inputAddress"></textarea>
+          <textarea name="isi_pengumuman" type="text"  class="form-control" id="inputAddress"><?php echo $rd->isi_pengumuman?></textarea>
         </div>
         <div class="form-row">
 
 
-          <label for="inputState">Tertuju:</label>
-          <select name="tertuju" id="inputState" class="form-control">
-            <option value="siswa" selected>siswa</option>
-            <option value="guru" >Guru</option>
-          </select>
+          
+          <input type="hidden" name="tertuju" value="siswa">
 
         </div>
 

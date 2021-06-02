@@ -9,6 +9,10 @@
   </div>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End page title-->
+  <?php
+    $id=$tampil['id_dudi'];
+    $tampil_detail=$this->m_siswa_dudi->tampil_detail($id);
+    ?>
 
 
   <!--Breadcrumb-->
@@ -19,11 +23,6 @@
     <li class="active"><?php echo $tampil_detail['nama_dudi']?></li>
 
   </ol>
-  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-  <!--End breadcrumb-->
-
-
-      <input style="margin-bottom: 10px" class="btn btn-purple" class="form-control" type="button" value="Kembali" onclick="history.back(-1)" />
 
     
 </div>
@@ -101,6 +100,7 @@
         </div>
       </div>
     </div>
+    
     <div class="col-sm-6">
       <div class="mar-all">
         <div class="media">
