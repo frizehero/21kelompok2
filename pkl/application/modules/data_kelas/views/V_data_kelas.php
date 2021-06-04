@@ -187,20 +187,17 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nama Kelas</label>
-              <input name="nama_kelas"  class="form-control" id="inputEmail4" placeholder="Nama Kelas">
+              <input name="nama_kelas" value="<?php echo $res->nama_kelas?>" class="form-control" id="inputEmail4" placeholder="Nama Kelas">
             </div>
           </div>
           <div class="form-row">
             <div class="col-md-6">
               <label for="" class="control-label">Jurusan:</label>
               <select class="form-control" name="jurusan">
-                <option>
-                  Pilih Jurusan
-                </option>
-                <option  value="1">Rekasaya Perangkat Lunak
-                </option>
-                <option  value="2">Teknik Komputer Jaringan
-                </option>
+                <option value="<?php echo $res->id_jurusan?>"><?php echo $res->nama?></option>
+                <?php foreach ($filter_jurusan as $ee) {?>
+                <option  value="<?php echo $ee->id_jurusan?>"><?php echo $ee->nama?></option>
+              <?php }?>
               </select>
             </div>
             <div class="col-md-6" >

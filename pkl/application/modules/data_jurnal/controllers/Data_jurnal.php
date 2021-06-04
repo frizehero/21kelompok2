@@ -38,6 +38,13 @@ class Data_jurnal extends MX_Controller {
             'namafileview'  => "V_cari",
             'tt'        => $this->m_data_jurnal->cari_tgl($awl,$akr,$idid),
             'tampil_detail'     => $this->m_data_jurnal->tampil_detail($idid),
+            'tampil_data'       => $this->m_data_jurnal->tampil_data($idid),
+            'dd'       => $this->m_data_jurnal->tampil_dudi(),
+            // 'tes'             => $this->m_data_jurnal->chartselasa(),
+             'isi'             => $this->m_data_jurnal->isi($idid),
+             'isisi'             => $this->m_data_jurnal->isisi($idid),
+             
+
         );
         echo Modules::run('template/tampilCore', $data);
     }
@@ -82,6 +89,7 @@ class Data_jurnal extends MX_Controller {
             'dd'       => $this->m_data_jurnal->tampil_dudi(),
             // 'tes'             => $this->m_data_jurnal->chartselasa(),
              'isi'             => $this->m_data_jurnal->isi($idd),
+             'isisi'             => $this->m_data_jurnal->isisi($idd),
 
 
     	);

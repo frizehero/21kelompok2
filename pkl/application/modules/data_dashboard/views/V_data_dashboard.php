@@ -182,15 +182,17 @@
                     <p class="text-sm text-bold text-uppercase">Jumlah Siswa</p>
                 </div>
                 <div class="col-sm-8">
-                    <a href="siswa.html"><button class="btn btn-mint ">Lihat Detail</button></a>
+                    <a href="data_kelas"><button class="btn btn-mint ">Lihat Detail</button></a>
                     <p class="text-sm">Klik untuk melihat detail</p>
                     <ul class="list-unstyled text-center bord-top pad-top mar-no row">
                         <li class="col-xs-6">
-                            <span class="text-lg text-semibold text-main"><?php echo $hg1?></span>
+                            <a href="<?php echo base_url('data_dashboard/detail1/') ?>"><span class="text-lg text-semibold text-main"><?php echo $hg1?></span></a>
                             <p class="text-sm text-muted mar-no">Gelombang 1</p>
                         </li>
                         <li class="col-xs-6">
+                            <a href="<?php echo base_url('data_dashboard/detail2/') ?>">
                             <span class="text-lg text-semibold text-main"><?php echo $hg2?></span>
+                        </a>
                             <p class="text-sm text-muted mar-no">Gelombang 2</p>
                         </li>
                     </ul>

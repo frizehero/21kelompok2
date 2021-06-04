@@ -75,11 +75,12 @@ class M_data_dudi extends CI_Model {
 					'nama_pembimbing' 	=> $nama_pembimbing,
 					'lon'				=> $lon,
 					'lat'				=> $lat,
-					'alamat'			=> $alamat,
+					'alamat_dudi'			=> $alamat,
 					'tentang'			=> $tentang,
 
 
 					'logo_dudi' 				=> $gbr['file_name'],
+					'foto_dudi'			=> 'kosong1.png',
 					
 					
 				);
@@ -98,8 +99,9 @@ class M_data_dudi extends CI_Model {
 					'nama_pembimbing' 	=> $nama_pembimbing,
 					'lon'				=> $lon,
 					'lat'				=> $lat,
-					'alamat'			=> $alamat,
+					'alamat_dudi'			=> $alamat,
 					'tentang'			=> $tentang,
+					'foto_dudi'			=> 'kosong1.png',
 
 
 
@@ -120,7 +122,7 @@ class M_data_dudi extends CI_Model {
 		$nama_pembimbing 	= $this->input->post('nama_pembimbing');
 		$lat = $this->input->post('lat');
 		$lon = $this->input->post('lon');
-		$alamat = $this->input->post('alamat');
+		$alamat = $this->input->post('alamat_dudi');
 		$tentang=  $this->input->post('tentang');
 
 
@@ -148,14 +150,13 @@ class M_data_dudi extends CI_Model {
 					'nama_dudi'			=> $nama,
 					'no_telepon'		=> $telepon,
 					'id_jurusan' 		=> $jurusan,
-					'alamat' 			=> $alamat,
 					'id_jurusan' 		=> $jurusan,
 					'email_dudi' 			=> $email,
 					'nama_pembimbing' 	=> $nama_pembimbing,
 					'logo_dudi' 				=> $gbr['file_name'],
 					'lon'				=> $lon,
 					'lat'				=> $lat,
-					'alamat'			=> $alamat,
+					'alamat_dudi'			=> $alamat,
 					'tentang'			=> $tentang,
 					
 					
@@ -170,13 +171,12 @@ class M_data_dudi extends CI_Model {
 					'nama_dudi'			=> $nama,
 					'no_telepon'		=> $telepon,
 					'id_jurusan' 		=> $jurusan,
-					'alamat' 			=> $alamat,
+					'alamat_dudi' 			=> $alamat,
 					'id_jurusan' 		=> $jurusan,
 					'email_dudi' 			=> $email,
 					'nama_pembimbing' 	=> $nama_pembimbing,
 					'lon'				=> $lon,
 					'lat'				=> $lat,
-					'alamat'			=> $alamat,
 					'tentang'			=> $tentang,
 
 

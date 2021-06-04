@@ -16,6 +16,24 @@ class M_data_dashboard extends CI_Model {
 		return $query->num_rows();
 
 	}
+	function detail()
+	{
+		return $this->db
+		->from('siswa')
+		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
+		->where('gelombang',1)
+		->get()
+		->result();
+	}
+	function detail2()
+	{
+		return $this->db
+		->from('siswa')
+		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
+		->where('gelombang',2)
+		->get()
+		->result();
+	}
 	function hitdudi()
 	{
 		

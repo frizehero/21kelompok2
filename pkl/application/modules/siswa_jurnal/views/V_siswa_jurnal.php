@@ -13,7 +13,10 @@
   <!--Breadcrumb-->
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <ol class="breadcrumb">
-    <li><a href="#"><i class="demo-pli-home"></i></a></li>
+    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+</svg></i></a></li>
     <li><a href="#">Jurnal</a></li>
     <li class="active"<?php echo $tampil['nama_siswa']?>></li><br>
   </ol>
@@ -24,69 +27,78 @@
 </div>
 <div id="container" class="effect aside-float aside-bright mainnav-sm page-fixedbar page-fixedbar-right">
 
-  <div class="page-fixedbar-container">
+  <div style="margin-top: -50px" class="page-fixedbar-container">
     <div class="page-fixedbar-content">
-      <div class="nano">
-        <div class="nano-content">
-          <p class="pad-all text-main text-sm text-uppercase text-bold">
-            <?php
-           $a=$tampil['id_dudi'];
-           $ass= $this->m_siswa_jurnal->tampild($a);
-           ?>
-            Siswa Yang  PKL di <?php echo $ass['nama_dudi'] ?>
-          </p>
+      
+        <p class="pad-all text-main text-sm text-uppercase text-bold">
+          <?php
+          $a=$tampil['id_dudi'];
+          $ass= $this->m_siswa_jurnal->tampild($a);
+          ?>
+          Siswa Yang  PKL di <?php echo $ass['nama_dudi'] ?>
+        </p>
 
-          <!--Family-->
-          <div class="list-group bg-trans bord-btm">
-           <hr class="new-section-xs">
-           <?php
-           $a=$tampil['id_dudi'];
-           $as= $this->m_siswa_jurnal->tampil_dudi($a);
-           ?>
-          
-          
-          <?php 
-          foreach ($as as $ss) 
-            {?>
+        <!--Family-->
+        <div class="list-group bg-trans bord-btm">
+         <hr class="new-section-xs">
+         <?php
+         $a=$tampil['id_dudi'];
+         $as= $this->m_siswa_jurnal->tampil_dudi($a);
+         ?>
+
+
+         <?php 
+         foreach ($as as $ss) 
+          {?>
             <div class="list-group-item">
-            <div class="media-left pos-rel">
-              <a href="#"><img class="img-circle img-xs" src="<?php echo base_url ()?>assets/img/<?php echo $ss->logo?>" alt="Profile Picture"></a>
+              <div class="media-left pos-rel">
+                <a href="#"><img class="img-circle img-xs" src="<?php echo base_url ()?>assets/img/<?php echo $ss->logo?>" alt="Profile Picture"></a>
+              </div>
+              <div class="media-body">
+                <a href="#" class="text-main">
+                  <p><?php echo $ss->nama_siswa?> </p>
+                </a>
+              </div>
             </div>
-            <div class="media-body">
-              <a href="#" class="text-main">
-                <p><?php echo $ss->nama_siswa?> </p>
-              </a>
-            </div>
-          </div>
           <?php }?>
         </div>
 
-
-        <!--Monthly billing-->
-
-
-
-      </div>
     </div>
   </div>
-</div>
 
-<div id="page-content">
-  <div class="panel">
-    <div class="panel-body">
-      
+  <div id="page-content">
+    <div class="panel">
+      <div class="panel-body">
+
         <div class="fluid">
          <div>
-          <div class="col-md-12">
+          <div class="col-md-6">
             <div class="panel panel-info panel-colorful media middle pad-all">
               <div class="media-left">
                 <div class="pad-hor">
-                  <img height="50px" src="img/qq.png">
+                  <img height="50px" src="http://localhost/21kelompok2/pkl/img/qq.png">
                 </div>
               </div>
               <div class="media-body">
                 <p class="text-2x mar-no text-semibold"><?php echo $hitung?></p>
                 <p class="mar-no">Telah Mengisi Jurnal</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel panel-info panel-colorful media middle pad-all">
+              <div class="media-left">
+                <div class="pad-hor">
+                  <img height="52px" src="/21kelompok2/pkl/img/qwqw.png">
+                </div>
+              </div>
+              <div class="media-body">
+                <?php
+                $s=$ass['id_dudi'];
+                $p= $this->m_siswa_jurnal->tampil_dd($s);?>
+                <p class="text-2x mar-no text-semibold"><?php echo $p?></p>
+                <p class="mar-no">Siswa Yang PKL di <?php echo $ass['nama_dudi'] ?></p>
+                
               </div>
             </div>
           </div>
@@ -102,7 +114,7 @@
             <!-- <a class="btn btn-icon demo-pli-camera-2 icon-lg add-tooltip" href="#" data-original-title="Add Photo" data-toggle="tooltip"></a> -->
             <div style="margin-top: -5px" class="image-uploud">
               <label for="file-input">
-                <img height="30px" src="img/kamera.png">
+                <img height="30px" src="http://localhost/21kelompok2/pkl/img/kamera.png">
               </label>
               <input required="" type="file" id="file-input" name="foto_kegiatan">
               <style type="text/css">
@@ -114,7 +126,7 @@
             </div>
 
           </div>
-          <button style="margin-top: -30px" class="btn btn-sm btn-primary pull-right" type="submit"><i class="demo-psi-right-4 icon-fw"></i> Share</button>
+          <button style="margin-top: -30px" class="btn btn-sm btn-primary pull-right" type="submit"><i class="demo-psi-right-4 icon-fw"></i> Tambah</button>
           <?= form_close(); ?>
         </div> 
 
@@ -128,15 +140,18 @@
           $gambar = $res->logo;
           ?>
           <div class="comments media-block">
-            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="<?php echo base_url ()?>assets/img/<?php echo $tampil ['logo']?>"></a>
+            <a class="media-left" href=""><img class="img-circle img-sm" alt="Profile Picture" src="<?php echo base_url ()?>assets/img/<?php echo $tampil ['logo']?>"></a>
             <div class="media-body">
               <div class="comment-header">
                 <div class="col-md-9">
                   <a href="#" class="media-heading box-inline text-main text-semibold"></i><?php echo $res->nama_siswa?></a>
                 </div>
+                <?php 
+                $date = date('d-m-Y', strtotime($res->tanggal));
+                ?>
 
                 <div class="col-md-2">
-                  <span class="text-semibold text-main"><?php echo $res->tanggal?></span>
+                  <span class="text-semibold text-main"><?php echo $date?></span>
                 </div>
                 <div class="col-md-1">
 
@@ -184,17 +199,17 @@
                                 <label for="" class="control-label">Preview Foto Profile</label>
                                 <img id="preview" width="150px" />
                               </div>
-                            
+
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      <!--Modal footer-->
-                      <div class="modal-footer">
-                        <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-                        <button class="btn btn-primary" type="submit">Simpan</button>
-                        <?= form_close(); ?>
-                      </div>
+                        <!--Modal footer-->
+                        <div class="modal-footer">
+                          <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
+                          <button class="btn btn-primary" type="submit">Simpan</button>
+                          <?= form_close(); ?>
+                        </div>
                       </form>
                     </div>
                   </div>
@@ -253,7 +268,7 @@
 
 
       <?php }?>
-     <?php echo $pagination ?>
+      <?php echo $pagination ?>
 
 
 

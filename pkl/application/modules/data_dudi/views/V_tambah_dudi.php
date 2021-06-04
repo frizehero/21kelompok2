@@ -20,6 +20,8 @@
     <li><a href="#">Data Dudi</a></li>
     <li class="active">Tambah dudi</li>
   </ol>
+
+      <input style="margin-bottom: 10px" class="btn btn-purple" class="form-control" type="button" value="Kembali" onclick="history.back(-1)" />
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End breadcrumb-->
 
@@ -43,10 +45,10 @@
 									</div>
 									<div style="margin-bottom: 20px" class="col-sm-3"><div class="select">
 										<select required name="jurusan_dudi" style="height: 48px">
-											<option value="">Pilih Dudi</option>
-											<option value="1">RPL</option>
-											<option value="2">TKJ</option>
-											<option value="3">TKRO</option>
+											<option value="">Pilih Jurusan</option>
+											<?php foreach ($tampil_jurusan as $ee) {?>
+											<option value="<?php echo $ee->id_jurusan?>"><?php echo $ee->nama?></option>
+											<?php }?>
 					
 										</select>
 									</div></div>

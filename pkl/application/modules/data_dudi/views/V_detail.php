@@ -122,7 +122,7 @@
           <div class="media-body">
             <address>
               <strong class="text-main"><?php echo $tampil_detail['nama_dudi']?></strong><br>
-              <?php echo $tampil_detail['alamat']?>
+              <?php echo $tampil_detail['alamat_dudi']?>
             </address>
           </div>
         </div>

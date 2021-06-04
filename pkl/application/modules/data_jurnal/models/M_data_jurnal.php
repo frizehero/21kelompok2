@@ -25,7 +25,6 @@ class M_data_jurnal extends CI_Model {
 	}
 	function tampild($a)
 	{
-		$ee=25;
 		$this->db->select('*')
 			->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
 			->where('dudi.id_dudi',$a);
@@ -67,6 +66,15 @@ class M_data_jurnal extends CI_Model {
 		->where('siswa.id_dudi',$a);
 		$query = $this->db->get();
 		return $query->result();
+
+	}
+	function tampil_dd($aa)
+	{
+		 $this->db->from('siswa')
+		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
+		->where('siswa.id_dudi',$aa);
+		$query = $this->db->get();
+		return $query->num_rows();
 
 	}
 	function tampil_data($idd)
@@ -219,5 +227,18 @@ class M_data_jurnal extends CI_Model {
 		->num_rows();
 	}
 
+	function isisi($idd)
+	{
+		$this->db->select('*')
+		->from('siswa')
+		->where('id_dudi',$idd);
+		$query = $this->db->get();
+		return $query->num_rows();
+		// return $this->db->from('jurnal')
+		// ->join('siswa', 'siswa.id_siswa = jurnal.id_siswa')
+		// ->where('siswa.id_siswa',$idd)
+		// ->get()
+		// ->num_rows();
+	}
 	
 }

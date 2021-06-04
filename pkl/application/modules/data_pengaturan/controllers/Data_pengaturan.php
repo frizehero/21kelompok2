@@ -19,7 +19,9 @@ class Data_pengaturan extends MX_Controller {
 			'namamodule' 	=> "Data_pengaturan",
 			'namafileview' 	=> "V_data_pengaturan",
 			'tampil'		=> $this->m_data_pengaturan->tampil(),
-		);
+			'kop'		=> $this->m_data_pengaturan->kop(),
+
+			);
 		echo Modules::run('template/tampilCore', $data);
 	}
 
@@ -33,6 +35,16 @@ class Data_pengaturan extends MX_Controller {
 	{
 		$this->m_data_pengaturan->edit();
 		redirect('Data_pengaturan');
+		
+	}
+	function edit_kop()
+	{
+		$this->m_data_pengaturan->edit_kop();
+		redirect('Data_pengaturan');
+		// $foto= $this->input->post('foto');
+		// $idd= $this->input->post('id');
+		// echo $idd;
+		// echo $foto;
 		
 	}
 

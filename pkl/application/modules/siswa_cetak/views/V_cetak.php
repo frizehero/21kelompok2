@@ -11,7 +11,7 @@
             $pdf->AddPage();
             $i=0;
 
-            $html='<img style="margin-bottom: 10px" src="http://localhost/21kelompok2/pkl/img/ee.png">
+            $html='<img style="margin-bottom: 10px" src="assets/img/'.$ewo["foto_surat"].'">
                     <table cellspacing="1" bgcolor="#666666" cellpadding="2">
                         <tr bgcolor="#ffffff">
                             <th width="5%" align="center">No</th>

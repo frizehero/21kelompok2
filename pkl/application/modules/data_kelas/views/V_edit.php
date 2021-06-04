@@ -22,6 +22,12 @@
   </ol>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End breadcrumb-->
+  <div class="panel">
+  	<div class="col-sm-6 toolbar-left">
+  		<input class="btn btn-purple" class="form-control" type="button" value="Kembali" onclick="history.back(-1)" />
+
+  	</div>
+  </div>
 
 </div>
 					
@@ -39,19 +45,23 @@
 								<div class="panel-body"><div class="form-group">
 
 									<div style="margin-bottom: 20px" class="col-md-6">
+										<label>Nama</label>
 										<input type="text" value="<?php echo $te ['nama_siswa']?>" name="nama_siswa" class="form-control input-lg" id="demo-is-inputnormal">
 										<input type="hidden"  value="<?php echo $te ['id_kelas']?>" name="kelas">
 										<input type="hidden" value="<?php echo $te ['id_siswa']?>" name="id_siswa">
 									</div>
 									
 									<div style="margin-bottom: 20px" class="col-sm-6">
+										<label>Nisn</label>
 										<input name="nisn" type="text" value="<?php echo $te ['nisn']?>" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
 									<div style="margin-bottom: 20px" class="col-sm-6">
+										<label>Email</label>
 										<input name="email" type="text" value="<?php echo $te['email']?>" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
 					
 									<div style="margin-bottom: 20px" class="col-sm-6">
+										<label>Telepon</label>
 										<input name="telepon" type="text" value="<?php echo $te ['no_telepon']?>" class="form-control input-lg" id="demo-is-inputlarge">
 									</div>
 
@@ -105,8 +115,13 @@
 										</select>
 									</div>
 									</div>
+									<div style="margin-bottom: 20px" class="col-sm-6">
+										<label>Foto lama</label><br>
+										<img src="<?php echo base_url ()?>assets/img/<?php echo $te['logo']?>">
+									</div>
 			
-									<div style="margin-top: 20px" class="col-sm-12">
+									<div style="margin-top: 20px" class="col-sm-6">
+										<label>Alamat</label>
 										<textarea class="form-control" id="inputCity" name="alamat" style="height: 100px; width:100%;" placeholder="ALAMAT"><?php echo $te ['alamat']?></textarea>
 
 									</div>

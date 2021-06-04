@@ -24,11 +24,11 @@
     <div class="col-md-2" style="padding: 0px">
       <div id="demo-dp-txtinput">
         <?php if($this->uri->segment(2) != 'cari'){?>
-          <input type="text" autocomplete="off" name="cari" class="form-control input-sm " placeholder="Cari">
+          <input type="text" autocomplete="off" name="cari" class="form-control input-sm " placeholder="Cari judul">
         <?php } ?>
         <?php if($this->uri->segment(2) == 'cari'){
           $cari = $this->input->post('cari'); ?>
-          <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control input-sm " placeholder="Outlet">
+          <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control input-sm " placeholder="Cari judul">
         <?php } ?> 
       </div>
     </div>
@@ -76,11 +76,14 @@
             <label for="inputPassword4">Tanggal</label>
             <input required="" name="tanggal_pengumuman" type="date" class="form-control" id="inputPassword4">
           </div>
-        </div>
-        <div class="form-group">
+          <div class="form-group col-md-12">
           <label for="inputAddress">Isi pengumuman</label>
           <textarea required="" name="isi_pengumuman" type="text"  class="form-control" id="inputAddress"></textarea>
         </div>
+
+        </div>
+      </form>
+        
         <div class="form-row">
 
 

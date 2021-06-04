@@ -24,6 +24,11 @@ public function index()
 	{
 		$id = $this->session->userdata('session_id');
 		$user = $this->m_template_siswa->oke($id);
+		if ( empty( $this->session->userdata('session_id') ) )
+		{
+			redirect(base_url("login"));
+		}
+		// echo $id;
 
 		$data['nama'] = $this->m_template_siswa->oke($id);
 		$data['email'] = $this->m_template_siswa->oke($id);

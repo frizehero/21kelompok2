@@ -66,6 +66,7 @@ class Siswa_cetak extends MX_Controller {
 		$akr = $this->input->post('akr');
 		$datasiswa=  $this->session->userdata('session_id');
 		$data ['tt'] = $this->m_data_cetak->cari($awl,$akr,$datasiswa);
+		$data ['ewo'] = $this->m_data_cetak->ewo();
 		$this->load->view('V_cetak', $data);
     
   }

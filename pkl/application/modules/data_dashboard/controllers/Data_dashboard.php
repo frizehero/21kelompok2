@@ -36,6 +36,26 @@ class data_dashboard extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+	function detail1()
+	{
+		$data = array(
+			'namamodule' 	=> "data_dashboard",
+			'namafileview' 	=> "V_data_detail",
+			'detail'		=> $this->M_data_dashboard->detail(),
+			// 'tampil_jurusan'		=> $this->m_data_dudi->filter_jurusan(),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
+	function detail2()
+	{
+		$data = array(
+			'namamodule' 	=> "data_dashboard",
+			'namafileview' 	=> "V_data_detail2",
+			'detail'		=> $this->M_data_dashboard->detail2(),
+			// 'tampil_jurusan'		=> $this->m_data_dudi->filter_jurusan(),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
 
 	function tambah()
 	{

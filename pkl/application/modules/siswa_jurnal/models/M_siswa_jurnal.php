@@ -55,6 +55,22 @@ class M_siswa_jurnal extends CI_Model {
 			}
 		
 	}
+	function tampil_dd($s)
+	{
+		 $this->db->from('siswa')
+		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
+		->where('siswa.id_dudi',$s);
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+	function detail($s)
+	{
+		return $this->db->from('jurnal')
+		->join('siswa', 'siswa.id_siswa = jurnal.id_siswa')
+		->where('siswa.id_siswa',$s)
+		->get()
+		->result();
+	}
 	function hitung($datasiswa)
 	{
 		

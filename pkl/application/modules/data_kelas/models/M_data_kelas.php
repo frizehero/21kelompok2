@@ -85,6 +85,7 @@ class M_data_kelas extends CI_Model {
 					'nama_kelas'			=> $nama_kelas,
 					'logo_kelas' 			=> $gbr['file_name'],
 					'id_jurusan' =>$jurusan,
+					'foto'		=>'kosong1.png',
 
 
 				);
@@ -97,6 +98,7 @@ class M_data_kelas extends CI_Model {
 				'nama_kelas'			=> $nama_kelas,
 				'logo_kelas' 				=> 'kosong1.png',
 				'id_jurusan' =>$jurusan,
+				'foto'		=>'kosong1.png',
 			);
 			$this->db->insert('kelas', $data);
 		}
@@ -224,6 +226,7 @@ class M_data_kelas extends CI_Model {
 	{
 		$id_kelas 		= $this->input->post('id_kelas');
 		$nama_kelas 			= $this->input->post('nama_kelas');
+		$jur            = $this->input->post('jurusan');
 
 		$this->load->library('upload');
 		$nmfile = "file_".time();
@@ -244,6 +247,7 @@ class M_data_kelas extends CI_Model {
 				$data = array(
 					'nama_kelas'			=> $nama_kelas,
 					'logo_kelas' 			=> $gbr['file_name'],
+					'id_jurusan'			=>$jur,
 				);
 				$this->db->where('id_kelas',$id_kelas)->update('kelas', $data);
 
@@ -252,6 +256,7 @@ class M_data_kelas extends CI_Model {
 		else{
 			$data = array(
 				'nama_kelas'			=> $nama_kelas,
+				'id_jurusan'			=>$jur,
 			);
 			$this->db->where('id_kelas',$id_kelas)->update('kelas', $data);
 		}

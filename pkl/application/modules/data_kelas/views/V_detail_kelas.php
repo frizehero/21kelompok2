@@ -138,7 +138,9 @@
 
         <div class="widget-body text-center">
           <divc class="widget-header">
+            <a href="<?php echo base_url('data_jurnal/detail_jurnal/')?>?id=<?php echo $res->id_siswa?> ">
             <img class="widget-img img-circle" src="<?php echo base_url ()?>assets/img/<?php echo $res->logo?>">
+          </a>
 
           </div>
           <div class="widget-control">

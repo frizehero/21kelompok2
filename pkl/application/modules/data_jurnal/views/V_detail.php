@@ -42,6 +42,7 @@
           <?php
           $a=$tampil_detail['id_dudi'];
           $as= $this->m_data_jurnal->tampil_d($a);
+
           ?>
 
 
@@ -85,7 +86,7 @@
               <img src="<?php echo base_url ()?>assets/img/<?php echo $tampil_detail ['logo']?>" class="img-lg img-circle" alt="Profile Picture">
             </div>
             <h4 class="text-lg text-overflow mar-no"><?php echo $tampil_detail['nama_siswa'] ?></h4>
-            <p class="text-sm text-muted">Rekayasa Perangkat Lunak</p>
+            <p class="text-sm text-muted"><?php echo $tampil_detail['nama_kelas'] ?></p>
 
 
           </div>
@@ -106,7 +107,7 @@
           </div>
           <div class="fluid">
            <div>
-            <div class="col-md-12">
+            <div class="col-md-6">
               <div class="panel panel-info panel-colorful media middle pad-all">
                 <div class="media-left">
                   <div class="pad-hor">
@@ -116,6 +117,22 @@
                 <div class="media-body">
                   <p class="text-2x mar-no text-semibold"><?php echo $isi?></p>
                   <p class="mar-no">Telah Mengisi Jurnal</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="panel panel-info panel-colorful media middle pad-all">
+                <div class="media-left">
+                  <div class="pad-hor">
+                    <img height="52px" src="/21kelompok2/pkl/img/qwqw.png">
+                  </div>
+                </div>
+                <div class="media-body">
+                  <?php
+                 $aa=$tampil_detail['id_dudi'];
+                 $p= $this->m_data_jurnal->tampil_dd($aa);?>
+                  <p class="text-2x mar-no text-semibold"><?php echo $p?></p>
+                  <p class="mar-no">Siswa Yang PKL di <?php echo $ass['nama_dudi'] ?></p>
                 </div>
               </div>
             </div>

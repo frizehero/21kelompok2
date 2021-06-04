@@ -175,14 +175,48 @@ new Chart("myChart", {
           <div class="panel-body">
             <div class="panel panel-bordered panel-mint">
               <div class="panel-heading">
-                <h3 class="panel-title">Pengumuman</h3>
+                <h3 class="panel-title">Pengumuman </h3> 
+               
               </div>
               <div class="panel-body">
                 <?php $nomor=1?>
                 <?php foreach ($tampilp as $res) {?>
-
-                <b><?php echo $nomor?>. <?php echo $res->judul_pengumuman?></b><br>
+                <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pengumuman?>">
+                  <p class="text-semibold text-lg"><?php echo $nomor?> . <?php echo $res->judul_pengumuman?><sub class="text-light" style="color: blue"> (detail)</sub></p>
+                </a>
                 <?php $nomor++?>
+
+                <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pengumuman?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+
+                      <!--Modal Update-->
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+          <h4 class="modal-title"><?php echo $res->judul_pengumuman?></h4>
+        </div>
+         <div class="modal-body">
+          <div class="panel-body">
+            <p class="text-lg text-main"><?php echo $res->isi_pengumuman?></p>
+            
+
+          </div>
+        
+
+          </div>
+        </div>
+
+
+
+        </div>
+
+        <!--Modal footer-->
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+          <button class="btn btn-primary" type="submit">Simpan</button>
+        </div>
+        <?= form_close(); ?>
+      </div>
               <?php }?>
               </div>
             </div>
@@ -193,6 +227,7 @@ new Chart("myChart", {
 
     </div>
 
+  
 
 
   </div>

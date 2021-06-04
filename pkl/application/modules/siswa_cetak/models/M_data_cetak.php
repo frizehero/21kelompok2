@@ -7,6 +7,15 @@ class M_data_cetak extends CI_Model {
 	{
 		return $this->db->get('pengumuman')->result();
 	}
+	function ewo()
+	{
+		$e=1;
+		$this->db->select('*')
+		->from('surat')
+		->where('id_surat',$e);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
 
 	function tambah()
 	{

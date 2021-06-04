@@ -31,6 +31,7 @@ class Data_dudi extends MX_Controller {
 		 $data = array(
 			'namamodule' 	=> "data_dudi",
 			'namafileview' 	=> "V_tambah_dudi",
+			'tampil_jurusan'		=> $this->m_data_dudi->filter_jurusan(),
 			
 		);
 		echo Modules::run('template/tampilCore', $data);
@@ -55,6 +56,7 @@ class Data_dudi extends MX_Controller {
 			'namamodule' 	=> "data_dudi",
 			'namafileview' 	=> "V_edit_dudi",
 			'tampil'		=> $this->m_data_dudi->edit1($id),
+			'tampil_jurusan'		=> $this->m_data_dudi->filter_jurusan(),
 			
 		);
 		echo Modules::run('template/tampilCore', $data);
