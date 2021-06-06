@@ -6,7 +6,7 @@ class M_data_jurnal extends CI_Model {
 	function tampil()
 	{
 	    return $this->db->from('siswa')
-		->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
+	    ->join('dudi', 'dudi.id_dudi = siswa.id_dudi')
 		->get()
 		->result();
 
@@ -42,6 +42,7 @@ class M_data_jurnal extends CI_Model {
         // ->where('tanggal <=', $akr)
         ->where("tanggal BETWEEN '$awl' AND '$akr'")
         ->join('siswa', 'siswa.id_siswa = jurnal.id_siswa')
+         ->join('kelas', 'kelas.id_kelas = siswa.id_kelas')
 		->where('siswa.id_siswa',$idid)
 		->get()
 		->result();	

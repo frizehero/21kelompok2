@@ -3,7 +3,7 @@
   <!--Page Title-->
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <div id="page-title">
-    <h1 style="margin-top: -20px; margin-left: -20px" class="page-header text-overflow">siswa_pengaturan</h1>
+    <h1 style="margin-top: -20px; margin-left: -20px" class="page-header text-overflow">siswa pengaturan</h1>
 
   </div>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -34,32 +34,136 @@
 
        <!--Nav tabs-->
        <ul class="nav nav-tabs tabs-right">
-
-
-         <li  class="active">
-           <a data-toggle="tab" href="#demo-rgt-tab-3">Edit Password</a>
-         </li>
-       </ul>
+        <li class="active"><a href="#demo-bsc-tab-1" data-toggle="tab">Pengaturan Akun</a></li>
+        <li><a href="#demo-bsc-tab-2" data-toggle="tab">Pengaturan profil</a></li>
+      </ul>
 
        <!--Tabs Content-->
-       <div class="tab-content">
-         <div id="demo-rgt-tab-1" class="tab-pane fade active in">
-            <?= form_open_multipart('siswa_pengaturan/edit'); ?>
-           <form>
+       
+
+
+      <div  id="demo-bv-bsc-tabs">
+        <?= form_open_multipart('siswa_pengaturan/edit'); ?>
+        <div class="tab-content">
+          <div class="tab-pane pad-btm fade in active" id="demo-bsc-tab-1">
+            <p class="text-main text-bold">Pengaturan Akun</p>
+            <hr>
             <div class="form-group">
-              <label for="exampleInputEmail">Username Baru</label>
-              <input name="username" value="<?php echo $tampil['username']?>" type="text" class="form-control" id="exampleInputEmail">
-              <input type="hidden" value="<?php echo $tampil['id_admin']?>" name="id">
+              <label class="col-lg-3 control-label">username</label>
+              <div class="col-lg-7">
+             <input name="username" value="<?php echo $tampil['username']?>" type="text" class="form-control" id="exampleInputEmail">
+            </div>
+              <input type="hidden" value="34" name="id_admin">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password Baru</label>
-              <input name="password" value="<?php echo $tampil['password']?>" type="password" class="form-control" id="exampleInputPassword1">
+              <label   class="col-lg-3 control-label">Password Baru</label>
+              <div class="col-lg-7">
+               <input name="password" value="<?php echo $tampil['password']?>" type="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <button type="submit" class="btn btn-primary" style="margin-left: 950px">Simpan</button>
-          </form>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-left: 1120px">Simpan</button>
+          </div>
           <?= form_close(); ?>
+          
+          <div class="tab-pane fade" id="demo-bsc-tab-2">
+             <?= form_open_multipart('siswa_pengaturan/edit_siswa'); ?>
+            <p class="text-main text-bold">Edit Profil Siswa</p>
+            <hr>
+            <div class="col-lg-12">
+            <div class="panel">
+              
+
+
+
+              <!--Input Size-->
+              <!--===================================================-->
+            <?= form_open_multipart('siswa_pengaturan/edit_siswa/'.$te['id_kelas']); ?>
+                <div class="panel-body"><div class="form-group">
+
+                  <div style="margin-bottom: 20px" class="col-md-6">
+                    <label>Nama</label>
+                    <input disabled="" type="text" value="<?php echo $te['nama_siswa']?>" name="nama_siswa" class="form-control input-lg" id="demo-is-inputnormal">
+                    <input type="hidden"  value="<?php echo $te ['id_kelas']?>" name="kelas">
+                    <input type="hidden" value="<?php echo $te ['id_siswa']?>" name="id_siswa">
+                  </div>
+                  
+                  
+                  <div style="margin-bottom: 20px" class="col-sm-6">
+                    <label>Nisn</label>
+                    <input disabled="" name="nisn" type="text" value="<?php echo $te ['nisn']?>" class="form-control input-lg" id="demo-is-inputlarge">
+                  </div>
+                  <div style="margin-bottom: 20px" class="col-sm-6">
+                    <label>Email</label>
+                    <input disabled="" name="email" type="text" value="<?php echo $te['email']?>" class="form-control input-lg" id="demo-is-inputlarge">
+                  </div>
+          
+                  <div style="margin-bottom: 20px" class="col-sm-6">
+                    <label>Telepon</label>
+                    <input disabled="" name="telepon" type="text" value="<?php echo $te ['no_telepon']?>" class="form-control input-lg" id="demo-is-inputlarge">
+                  </div>
+
+                  <div style="margin-bottom: 20px" class="col-sm-6">
+                    <label>Tanggal Masuk PKL</label>
+                    <input disabled="" name="masuk_p" type="date" value="<?php echo $te ['masuk_p']?>" placeholder="Telepon" class="form-control input-lg" id="demo-is-inputlarge">
+                  </div>
+                  <div style="margin-bottom: 20px" class="col-sm-6">
+                    <label>Tanggal Keluar PKL</label>
+                    <input disabled="" name="keluar_p" type="date" value="<?php echo $te ['keluar_p']?>" class="form-control input-lg" id="demo-is-inputlarge">
+                  </div>
+
+
+
+                  
+                  
+
+                  <div style="margin-bottom: 20px" class="col-sm-6">
+                    <input type="file" name="gambar" placeholder=".input-lg" class="form-control input-lg" id="demo-is-inputlarge">
+
+                  </div>
+
+                  <!-- <div  style="margin-bottom: 20px;" class="col-md-2">
+                    <div class="select">
+                    <select name="dudi" style="height: 48px;width: 160px;">
+                      <option value="<?php echo $te ['id_dudi']?>">Pilih Dudi</option>t
+                      <?php foreach ($tampil_dudi as $tt) {?>
+                      <option value="<?php echo $tt->id_dudi?>"><?php echo $tt->nama_dudi?></option>
+                    <?php }?>
+          
+                    </select>
+                  </div></div> -->
+                  <input type="hidden" value="<?php echo $te ['id_dudi']?>" name="dudi">
+
+                  
+                  <input value="<?php echo $te ['jenis_kelamin']?>" type="hidden" name="jenis_kelamin">
+                  <input type="hidden" value="<?php echo $te ['gelombang']?>" name="gelombang">
+
+                  
+                  <div style="margin-bottom: 20px" class="col-sm-6">
+                    <label>Foto lama</label><br>
+                    <img width="50%" src="<?php echo base_url ()?>assets/img/<?php echo $te['logo']?>">
+                  </div>
+      
+                  
+                  <input type="hidden" value="<?php echo $te ['alamat']?>" name="alamat">
+
+                </div></div>
+                
+            
+             
+              
+              <!--===================================================-->
+              <!--End Input Size-->
+
+
+              </div>
+              </div>
+         
+            
+            <button type="submit" class="btn btn-primary" style="margin-left: 1120px">Edit</button>
+             <?= form_close(); ?>
+          </div>
         </div>
-      </div>
+    </div>
     </div>
   </div>
 </div>

@@ -42,7 +42,7 @@ new Chart("myChart", {
 });
 </script>
     
-          <h3 class="panel-title">Chart Pengisian Jurnal Perhari</h3>
+          
         </div>
 
 

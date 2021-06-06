@@ -69,6 +69,34 @@
   <div id="page-content">
     <div class="panel">
       <div class="panel-body">
+         <div class="fixed-fluid">
+        <div class="fixed-md-200 pull-sm-left fixed-right-border">
+
+          <!-- Simple profile -->
+          <div class="text-center">
+            <div class="pad-ver">
+              <img src="<?php echo base_url ()?>assets/img/<?php echo $tampil ['logo']?>" class="img-lg img-circle" alt="Profile Picture">
+            </div>
+            <h4 class="text-lg text-overflow mar-no"><?php echo $tampil['nama_siswa'] ?></h4>
+            <p class="text-sm text-muted"><?php echo $tampil['nama_kelas'] ?></p>
+
+
+          </div>
+          <hr>
+
+          <!-- Profile Details -->
+          <p class="pad-top text-main text-center text-uppercase text-bold">profil siswa </p></p>
+          <p><a class><strong>Nis: </strong><?php echo $tampil['nisn'] ?></a></p>
+          <p><a class><strong>jenis kelamin: </strong></a><?php echo $tampil['jenis_kelamin'] ?></p>
+          <p><a class><strong>Alamat: </strong></a><?php echo $tampil['alamat'] ?></p>
+          <P><a class><strong>No.HP: </strong></a><?php echo $tampil['no_telepon'] ?></p>
+          <p><a class><strong>Kelas: </strong></a><?php echo $tampil['nama_kelas'] ?></p>
+          <p><a class><strong>Email: </strong></a><?php echo $tampil['email'] ?></p>
+
+
+
+
+          </div>
 
         <div class="fluid">
          <div>
@@ -112,7 +140,7 @@
           <div class="mar-top clearfix">
 
             <!-- <a class="btn btn-icon demo-pli-camera-2 icon-lg add-tooltip" href="#" data-original-title="Add Photo" data-toggle="tooltip"></a> -->
-            <div style="margin-top: -5px" class="image-uploud">
+            <!-- <div style="margin-top: -5px" class="image-uploud">
               <label for="file-input">
                 <img height="30px" src="http://localhost/21kelompok2/pkl/img/kamera.png">
               </label>
@@ -123,7 +151,8 @@
                   display: none;
                 }
               </style>
-            </div>
+            </div> -->
+             <input required="" type="file" id="file-input" name="foto_kegiatan">
 
           </div>
           <button style="margin-top: -30px" class="btn btn-sm btn-primary pull-right" type="submit"><i class="demo-psi-right-4 icon-fw"></i> Tambah</button>
@@ -196,8 +225,8 @@
                                 <input type="file" name="foto_kegiatan" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
                               </div>
                               <div class="col-md-6 " style="margin-top: 2%">
-                                <label for="" class="control-label">Preview Foto Profile</label>
-                                <img id="preview" width="150px" />
+                                <label for="" class="control-label">Preview Foto Jurnal</label>
+                                <img  src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_kegiatan?>" width="150px" />
                               </div>
 
                             </div>

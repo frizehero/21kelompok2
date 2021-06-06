@@ -176,11 +176,16 @@
                     <a href="#" class="media-heading box-inline text-main text-semibold"></i><?php echo $res->nama_siswa?></a>
                   </div>
                   <div class="col-md-3">
-                    <span class="text-semibold text-main"><?php echo $res->tanggal?></span>
+                    <?php 
+                $date = date('d-m-Y', strtotime($res->tanggal));
+                ?>
+                    <span class="text-semibold text-main"><?php echo $date?></span>
                   </div>
 
                 </div>
-                <p ><?php echo $res->kegiatan?> </p>
+                <div class="col-md-12">
+                  <p ><?php echo $res->kegiatan?> </p>
+                </div>
 
                 <div class="comment-content comment-photos row">
                   <div class="col-sm-12">

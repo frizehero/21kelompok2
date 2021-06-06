@@ -11,6 +11,15 @@ class M_data_pengaturan extends CI_Model {
 	{
 		return $this->db->get('surat')->result();
 	}
+	function oo($data_siswa)
+	{
+		$this->db->select('*')
+		->from('siswa')
+	
+		->where('id_siswa',$data_siswa);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
 	function edit_kop()
 	{
 		$id= $this->input->post('id');
@@ -20,11 +29,12 @@ class M_data_pengaturan extends CI_Model {
 		$config['upload_path']		= 'assets/img/';
 		$config['allowed_types']	= 'gif|jpg|png|jpeg';
 		$config['max_size']			= 5120;
-		$config['max_width']		= 4300;
-		$config['max_height']		= 4300;
+		$config['max_width']		= 645;
+		$config['max_height']		= 135;
 		$config['file_name'] 		= $nmfile;
 		
 		$this->upload->initialize($config);
+
 		
 		if($_FILES['foto']['name'])
 		{

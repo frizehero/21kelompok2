@@ -122,9 +122,12 @@
                 <tbody>
                     <?php $no=1?>
                     <?php foreach ($tampil as $res) {?>
+                       <?php 
+                $date = date('d-m-Y', strtotime($res->tanggal));
+                ?>
                     <tr>
                          <td class="text-center"><?php echo $no?></td>
-                        <td class="text-center"><?php echo $res->tanggal?></td>
+                        <td class="text-center"><?php echo $date?></td>
                         <td class="text-center"><?php echo $res->judul_pengumuman?></td>
                         <td class="text-center"><?php echo $res->tertuju?></td>
                         <td class="text-center"> 

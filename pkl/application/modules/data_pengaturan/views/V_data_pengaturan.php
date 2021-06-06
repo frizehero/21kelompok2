@@ -33,6 +33,7 @@
       <ul class="nav nav-tabs tabs-right">
         <li class="active"><a href="#demo-bsc-tab-1" data-toggle="tab">Pengaturan Akun</a></li>
         <li><a href="#demo-bsc-tab-2" data-toggle="tab">Edit Kop Surat</a></li>
+         <li><a href="#demo-bsc-tab-3" data-toggle="tab">Edit Kop Surat</a></li>
       </ul>
 
       <!-- Tabs Content -->
@@ -65,7 +66,7 @@
             <hr>
             <?php foreach ($kop as $res) {?>
             <div class="form-group">
-              <label class="col-lg-3 control-label">Address</label>
+              <label style="color: red" class="col-lg-3 control-label">Maksimal Ukuran 645px 135px</label>
               <div class="col-lg-7">
                 <img src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_surat?>">
                 <input type="hidden" value="<?php echo $res->id_surat?>" name="id">
@@ -73,7 +74,7 @@
             </div>
           <?php }?>
             <div class="form-group">
-              <label class="col-lg-3 control-label">Kop</label>
+              <label class="col-lg-3 control-label">Edit Kop Surat</label>
               <div class="col-lg-7">
                 <input type="file" class="form-control" name="foto" placeholder="City">
                 
@@ -82,6 +83,39 @@
             <button type="submit" class="btn btn-primary" style="margin-left: 1120px">Edit</button>
              <?= form_close(); ?>
           </div>
+          <div class="tab-pane fade" id="demo-bsc-tab-3">
+             <?= form_open_multipart('data_pengaturan/edit_kop'); ?>
+            <p class="text-main text-bold">Edit Kop Surat</p>
+            <hr>
+            <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-center">nomer</th>
+                        <th class="text-center">Nama Jurusan</th>
+                        <th class="text-center">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    <tr>
+                         <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"> 
+                       <button data-toggle="modal" data-target="#exampleModal3" class="btn btn-warning">EDIT</button>
+                       <button class="btn btn-danger" data-toggle="modal" data-target="#demo-default-modal2">HAPUS</button>     
+                      </td>
+                  </tr>
+                 
+              </tbody>
+          </table>
+      </div>
+            <button type="submit" class="btn btn-primary" style="margin-left: 1120px">Edit</button>
+             <?= form_close(); ?>
+          </div>
+
         </div>
     </div>
 

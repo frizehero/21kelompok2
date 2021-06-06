@@ -512,9 +512,7 @@ html, body { width:100%;padding:0;margin:0; }
 
 
 
-                                <a href="<?php echo base_url('siswa_profil'); ?>" class="list-group-item">
-                                    <i class="demo-pli-unlock icon-lg icon-fw"></i> Profil
-                                </a>
+                              
 
                                 <a href="<?php echo base_url('siswa_pengaturan'); ?>" class="list-group-item">
                                     <i class="demo-pli-unlock icon-lg icon-fw"></i> Pengaturan

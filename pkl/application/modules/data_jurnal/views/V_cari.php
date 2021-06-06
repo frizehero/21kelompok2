@@ -85,7 +85,7 @@
                                     <img src="<?php echo base_url ()?>assets/img/<?php echo $tampil_detail ['logo']?>" class="img-lg img-circle" alt="Profile Picture">
                                 </div>
                                 <h4 class="text-lg text-overflow mar-no"><?php echo $tampil_detail['nama_siswa'] ?></h4>
-                                <p class="text-sm text-muted">Rekayasa Perangkat Lunak</p>
+                                <p class="text-sm text-muted"><?php echo $tampil_detail['nama_kelas'] ?></p>
 
 
                             </div>

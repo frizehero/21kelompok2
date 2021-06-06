@@ -22,9 +22,17 @@ class siswa_pengaturan extends MX_Controller {
 			'namamodule' 	=> "siswa_pengaturan",
 			'namafileview' 	=> "V_siswa_pengaturan",
 			'tampil'		=> $this->m_siswa_pengaturan->tampil($data_siswa),
+			'te'		=> $this->m_siswa_pengaturan->oo($data_siswa),
+			'tampil_dudi'		=> $this->m_siswa_pengaturan->tampil_dudi(),
+			'eo'		=> $this->m_siswa_pengaturan->eo($data_siswa),
 		
 		);
 		echo Modules::run('template_siswa/tampilCore', $data);
+	}
+	function edit_siswa()
+	{
+		$this->m_siswa_pengaturan->edit_siswa();
+		redirect('siswa_pengaturan');
 	}
 
 	function tambah()
