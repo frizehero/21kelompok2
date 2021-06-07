@@ -20,6 +20,7 @@ class Data_pengaturan extends MX_Controller {
 			'namafileview' 	=> "V_data_pengaturan",
 			'tampil'		=> $this->m_data_pengaturan->tampil(),
 			'kop'		=> $this->m_data_pengaturan->kop(),
+			'jur'		=> $this->m_data_pengaturan->jur(),
 
 			);
 		echo Modules::run('template/tampilCore', $data);
@@ -28,6 +29,11 @@ class Data_pengaturan extends MX_Controller {
 	function tambah()
 	{
 		$this->m_data_pengaturan->tambah();
+		redirect('Data_pengaturan');
+	}
+	function tj()
+	{
+		$this->m_data_pengaturan->tj();
 		redirect('Data_pengaturan');
 	}
 

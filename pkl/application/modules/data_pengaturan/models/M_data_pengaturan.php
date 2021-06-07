@@ -11,6 +11,20 @@ class M_data_pengaturan extends CI_Model {
 	{
 		return $this->db->get('surat')->result();
 	}
+	function jur()
+	{
+		$this->db->select('*');
+		$query = $this->db->get('jurusan');
+		return $query->result();
+	}
+	function hit($id)
+	{
+		$this->db->select('*')
+				 ->where('id_jurusan',$id);
+		$query = $this->db->get('kelas');
+		return $query->num_rows();
+
+	}
 	function oo($data_siswa)
 	{
 		$this->db->select('*')
@@ -71,6 +85,23 @@ class M_data_pengaturan extends CI_Model {
 					
 				);
 				$this->db->insert('tb_login', $data);
+			
+	
+		
+	}
+	function tj()
+	{
+		$jur 		= $this->input->post('jur');
+		$kep	= $this->input->post('kepala');
+		
+
+				$data = array(
+					'nama'		=> $jur,
+					'kepala'		=> $kep,
+					
+					
+				);
+				$this->db->insert('jurusan', $data);
 			
 	
 		
