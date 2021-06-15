@@ -5,7 +5,12 @@ class M_data_pengaturan extends CI_Model {
 
 	function tampil()
 	{
-		return $this->db->get('tb_login')->result();
+		$ee=1;
+		$this->db->select('*')
+				 ->from('tb_login')
+				 ->where('id_siswa',$ee);
+		$query = $this->db->get();
+		return $query->row_array();
 	}
 	function kop()
 	{
@@ -110,7 +115,6 @@ class M_data_pengaturan extends CI_Model {
 	function edit()
 	{
 		$level = 1;
-		$username =$this->input->post('username');
 		$password = $this->input->post('password');
 		$password1 	=sha1($password);
 		$id = $this->input->post('id_admin');
@@ -119,7 +123,6 @@ class M_data_pengaturan extends CI_Model {
 				$data = array(
 					
 					'password'		=> $password1,
-					'username'		=> $username,
 				);
 				$this->db->where('id_admin',$id)->update('tb_login', $data);
 		
@@ -129,6 +132,10 @@ class M_data_pengaturan extends CI_Model {
 	function hapus($id)
 	{
 		$this->db->where('id_pengaturan', $id)->delete('pengaturan');
+	}
+	function hapusj($id)
+	{
+		$this->db->where('id_jurusan', $id)->delete('jurusan');
 	}
 
 	function cari()

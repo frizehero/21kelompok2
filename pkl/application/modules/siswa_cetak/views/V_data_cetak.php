@@ -43,7 +43,7 @@
         <!--===================================================-->
 
         <hr class="new-section-sm bord-no">
-        <p style="margin-top: -30px" class="text-main text-bold">Range</p>
+        <p style="margin-top: -30px" class="text-main text-bold">Filter tanggal</p>
 
         <!--Bootstrap Datepicker : Range-->
         <!--===================================================-->

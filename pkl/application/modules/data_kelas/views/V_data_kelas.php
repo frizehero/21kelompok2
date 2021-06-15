@@ -61,15 +61,12 @@
               <label for="" class="control-label">Foto :</label>
               <input required="" type="file" name="gambar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
             </div>
-            <div class="col-md-6 " >
+            <div class="col-md-12 " >
               <label for="" class="control-label">Preview Foto Profile</label>
               <img id="preview" width="150px" />
             </div>
-
-
           </div>
           <div class="modal-footer">
-
             <button type="submit" class="btn btn-primary">Save</button>
           </div>
         </form>
@@ -189,8 +186,7 @@
               <label for="inputEmail4">Nama Kelas</label>
               <input name="nama_kelas" value="<?php echo $res->nama_kelas?>" class="form-control" id="inputEmail4" placeholder="Nama Kelas">
             </div>
-          </div>
-          <div class="form-row">
+            
             <div class="col-md-6">
               <label for="" class="control-label">Jurusan:</label>
               <select class="form-control" name="jurusan">
@@ -204,12 +200,13 @@
               <label for="" class="control-label">Foto :</label>
               <input type="file" name="gambar" placeholder="Foto " class="form-control" id="userfile" onchange="tampilkanPreview(this,'preview')">
             </div>
-            <div class="col-md-6 " style="margin-top: 2%">
+            <div class="col-md-12 " style="margin-top: 2%">
               <label for="" class="control-label">Preview Foto Profile</label>
               <img id="preview" width="150px" />
             </div>
+          
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer" style="margin-top: 2%">
             <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
             <button class="btn btn-primary" type="submit">Simpan</button>
           </div>

@@ -253,14 +253,13 @@
 
                     // init background slide images
                     $('.login-bg').backstretch([
-                        "<?php echo base_url(); ?>assets/login/pages/img/login/d.jpg",
+                        "<?php echo base_url(); ?>assets/login/pages/img/login/ddd.jpg",
                         "<?php echo base_url(); ?>assets/login/pages/img/login/a.jpg",
                         "<?php echo base_url(); ?>assets/login/pages/img/login/dd.jpg",
                         "<?php echo base_url(); ?>assets/login/pages/img/login/ddd.jpg",
-                        "<?php echo base_url(); ?>assets/login/pages/img/login/5.jpg"
                         ], {
                           fade: 1000,
-                          duration: 5000
+                          duration: 2
                         }
                     );
 

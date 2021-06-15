@@ -99,7 +99,7 @@ class M_siswa_pengaturan extends CI_Model {
 					'username'		=> $username,
 					'password'		=> $password1,
 				);
-				$this->db->where('id_admin',$id)->update('tb_login', $data);
+				$this->db->where('id_siswa',$id)->update('tb_login', $data);
 		
 	}
 	

@@ -59,6 +59,11 @@ class Data_pengaturan extends MX_Controller {
 		$this->m_data_pengaturan->hapus($id);
 		redirect('Data_pengaturan');
 	}
+	function hapusj($id)
+	{
+		$this->m_data_pengaturan->hapusj($id);
+		redirect('Data_pengaturan');
+	}
 
 	function cari()
 	{

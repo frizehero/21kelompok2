@@ -61,7 +61,7 @@
 				<input type="file" name="gambar" placeholder=".input-lg" class="form-control input-lg" id="demo-is-inputlarge">
 				<label style="margin-top: px">Foto Lama</label>
 				<br>
-				<img height="200" width="200" src="<?php echo base_url ()?>assets/img/<?php echo $tampil['logo_dudi']?>">
+				<img height="200"  src="<?php echo base_url ()?>assets/img/<?php echo $tampil['logo_dudi']?>">
 			</div>
 			<div style="margin-bottom: 20px" class="col-md-6">
 				<label>Email Dudi</label>
@@ -91,7 +91,7 @@
 				</div>
 			</div>
 			<div id="map"></div>
-			<style type="text/css">
+			<style style="height: 200px" type="text/css">
 				html, body { width:100%;padding:0;margin:0; }
 				.container { width:100%;max-width:980px;padding:1% 2%;margin:0 auto }
 				#lat, #lon { text-align:right }

@@ -31,7 +31,7 @@
 
 
             <!--chart placeholder-->
-            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+            <canvas id="myChart" style="margin-left: 15px; width:100%;max-width:700px"></canvas>
 
             <script>
                 var xValues = ["senin", "selasa", "rabu", "kamis", "jumat"];

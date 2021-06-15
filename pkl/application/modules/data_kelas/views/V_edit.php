@@ -117,7 +117,7 @@
 									</div>
 									<div style="margin-bottom: 20px" class="col-sm-6">
 										<label>Foto lama</label><br>
-										<img src="<?php echo base_url ()?>assets/img/<?php echo $te['logo']?>">
+										<img height="200" src="<?php echo base_url ()?>assets/img/<?php echo $te['logo']?>">
 									</div>
 			
 									<div style="margin-top: 20px" class="col-sm-6">

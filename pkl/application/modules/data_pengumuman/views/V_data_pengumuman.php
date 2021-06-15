@@ -51,10 +51,10 @@
   <div class="col-sm-4 toolbar-left" style=" bottom: 15px; left: 600px;">
     <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">Tambah</button>
   </div>
-  <?= form_open_multipart('data_pengumuman/tambah'); ?>
+ 
 </div>
 
-
+ <?= form_open_multipart('data_pengumuman/tambah'); ?>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
 

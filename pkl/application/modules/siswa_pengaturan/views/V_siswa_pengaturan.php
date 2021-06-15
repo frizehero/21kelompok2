@@ -53,7 +53,7 @@
               <div class="col-lg-7">
              <input name="username" value="<?php echo $tampil['username']?>" type="text" class="form-control" id="exampleInputEmail">
             </div>
-              <input type="hidden" value="34" name="id_admin">
+              <input type="hidden" value="<?php echo $tampil['id_siswa']?>" name="id">
             </div>
             <div class="form-group">
               <label   class="col-lg-3 control-label">Password Baru</label>

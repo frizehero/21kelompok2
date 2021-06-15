@@ -503,7 +503,7 @@ html, body { width:100%;padding:0;margin:0; }
                                         <i class="dropdown-caret"></i>
                                     </span>
                                     <p class="text-center mnp-name"><?php echo $nama['nama_siswa'] ; ?></p>
-                                    <span class="text-center mnp-desc"><?php echo $email['nisn']; ?></span>
+                                    <span class="text-center mnp-desc"><?php echo $email['email']; ?></span>
                                 </a>
                             </div>
 
@@ -605,7 +605,7 @@ html, body { width:100%;padding:0;margin:0; }
                               <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
                               <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
                           </svg>
-                          <span class="menu-title" style="margin-left: 10px">Data</span>
+                          <span class="menu-title" style="margin-left: 10px">Jurnal</span>
                           <i class="arrow"></i>
                       </a>
                       <ul class="collapse">
@@ -661,33 +661,7 @@ html, body { width:100%;padding:0;margin:0; }
 
 <!-- FOOTER -->
 <!--===================================================-->
-<footer id="footer">
 
-    <!-- Visible when footer positions are fixed -->
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <div class="show-fixed pad-rgt pull-right">
-        You have <a href="#" class="text-main"><span class="badge badge-danger">3</span> pending action.</a>
-    </div>
-
-
-
-    <!-- Visible when footer positions are static -->
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <div class="hide-fixed pull-right pad-rgt">
-     Hummasoft Technologhy
- </div>
-
-
-
- <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
- <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
- <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
- <p class="pad-lft">&#0169; 2019 HummaPOS</p>
-
-
-
-</footer>
 <!--===================================================-->
 <!-- END FOOTER -->
 
