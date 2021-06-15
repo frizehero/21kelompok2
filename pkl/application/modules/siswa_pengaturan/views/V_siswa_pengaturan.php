@@ -159,7 +159,7 @@
               </div>
          
             
-            <button type="submit" class="btn btn-primary" style="margin-left: 1120px">Edit</button>
+            <button type="submit" class="btn btn-primary" style="margin-left: 90%">Edit</button>
              <?= form_close(); ?>
           </div>
         </div>
